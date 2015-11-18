@@ -1,0 +1,20 @@
+****************************************
+* SOM SOBRE TIEMPOS RELATIVOS POR NODO *
+****************************************
+
+>> sM=som_make(sDN, 'lattice', 'hexa');
+Determining map size...
+ map size [17, 13]
+
+Final quantization error: 0.052
+Final topographic error:  0.084
+
+------------------------------------------------------
+
+>> sM1=som_make(sDN, 'msize', [30 20], 'lattice', 'hexa');
+
+
+------------------------------------------------------
+
+>> sM2=som_make(sDN, 'msize', [40 26], 'lattice', 'hexa');
+
