@@ -56,13 +56,24 @@ Traffic information is currently gathered using several kind of devices. The loc
 
 The traffic monitors nowadays include pneumatic tubes, loop detectors, floating vehicles or automatic Optical Character Recognition (OCR) among others, but most of them are not able to identify and follow the same vehicle along the road network. In this paper we present a system able to do this while improving the quality of the gathered information and allowing the easy construction of traffic flow models or mobility graphs. In addition, the proposed system is formed by low-cost devices, which is another advantage over the usual monitoring systems, since the cost is an important factor for authorities which tend to install the simplest and cheapest monitors.
 
-Each device, called MOBYWIT (Mobility by Wireless Tracking), evolution of the system presented in \cite{castillo2014_book_sipesca}, is based in a single-board computer which monitors the radioelectric space catching Bluetooth (BT) and WiFi signals emitted by other devices. These will be mainly smartphones or hands-free systems on vehicles, which are detected and identified by means of their Media Access Control number (MAC) - which is unique - and stored as a traffic `step'. Thus, depending on the position of the monitoring device, we could gather information about specific people or vehicles displacements. In order to respect the person's privacy and data protection laws, the MAC is one-direction encrypted before storing it, so, we cannot relate a captured MAC with any person.
+Each device, evolution of the one presented in \cite{castillo2014_book_sipesca}, is based in a single-board computer which monitors the radioelectric space catching Bluetooth (BT) and WiFi signals emitted by other devices. These will be mainly smartphones or hands-free systems on vehicles, which are detected and identified by means of their Media Access Control number (MAC) - which is unique - and stored as a traffic `step'. 
+% Antonio - ¿Se os ocurre un nombre mejor para los 'pasos'?
+Thus, depending on the position of the monitoring device, we could gather information about specific people or vehicles displacements. In order to respect the person's privacy and data protection laws, the MAC is one-direction encrypted before storing it, so, we cannot relate a captured MAC with any person.
 
 These devices cannot detect all the real persons and vehicles moving close to them, since not all of them will be emitting BT or WiFi signals, but after a poll that we did among 600 people we can conclude that we detect around the 22\% of the drivers due to BT detection and around the 70\% of the drivers due to WiFi detection, which are good figures to be considered as representative of the real traffic flows.
+These data
+% Antonio - quizá se podría quitar esto, ya que se analizará en el caso del tráfico en carreteras (datos DGT)
 
-In this paper we present, in addition to the monitoring system \textit{MOBYWIT}, three different scenarios in which real traffic/mobility data has been gathered. They are namely: a Spanish highway with six different nodes (devices) and two main roads, a junction inside the city of Granada and a discotheque. These data have been deeply processed, extracting interesting models such as in/out matrices and flow graphs that had been exhaustively analyzed. Moreover, some forecast techniques have been applied on them, in order to predict the traffic/movements inside those scenarios in a near future.
+In this paper we present, four different scenarios centred in the city of Granada (Spain), in which real traffic/mobility data have been gathered. They are namely: a discotheque, a public building of the University, a highway between Granada and Málaga; and one of the main streets in the city. 
+Several devices or nodes have been deployed in each scenario.
+The data have been deeply processed in this work, using different techniques, such as time series forecasting, clustering, in/out matrices, and statistical methods.
+The aim is to extract useful information and conclusions in every scenario, proving the value of this monitoring system as a tool to improve different issues inside the city and buildings. Thus, the system would be suitable to be part of a \textit{Smart City}.
+% Antonio - Hay que hacer referencias a Smart City a lo largo del paper. ;)
 
-The rest of the work is structured as follows...
+The rest of the work is structured as follows. Section \ref{sec:soa} presents the background and state of the art on the main topics of the work: traffic and mobility monitoring, traffic series forecast, and smart city tools, among others.
+Then, our monitoring device is introduced in Section \ref{sec:mobywit}.
+After this, there are four sections devoted to describe and analyze a different scenario, namely: Section \ref{sec:disco} explains the discotheque scenario and the methods applied to its data, Section \ref{sec:etsiit} presents the study on the University building, Section \ref{sec:traffic} shows the analysis on the highway traffic, and Section \ref{sec:city} comments the scenario on the street of Granada.
+Finally, Section \ref{sec:conclusions} plots the conclusions reached in the work.
 
 
 %----------------------------------------------------------------------------
@@ -71,7 +82,7 @@ The rest of the work is structured as follows...
 
 
 \section{Background and state of the art}
-\label{sec:preliminaryconcepts}
+\label{sec:soa}
 
 - Talk about current technologies of monitoring (a couple of paragraphs)\\
 - Talk about traffic modeling and forecast or other analyses on it.\\
@@ -93,7 +104,7 @@ The rest of the work is structured as follows...
 
 This device was designed by one of the authors and it is based in a single-board computer, Raspberri Pi\footnote{https://es.wikipedia.org/wiki/Raspberry\_Pi}. It has two USB cards, namely a Bluetooth (BT) and WiFi ones, and it uses their interfaces in monitor mode, scanning the radioelectric space searching for BT devices and beacon frames (for WiFi).
 
-Every device, called MOBYWIT (***from Mobility...***) is formed by a hardware and a software layer very interconnected. It is part in the whole monitoring system, which also includes Cloud-based storage and computing services. The software architecture of the whole system is shown in Figure \ref{fig:mobywit}.
+Every device, called MOBYWIT (Mobility by Wireless Tracking) is formed by a hardware and a software layer very interconnected. It is part in the whole monitoring system, which also includes Cloud-based storage and computing services. The software architecture of the whole system is shown in Figure \ref{fig:mobywit}.
 
 \begin{figure}[ht]
 	\begin{center}
@@ -120,6 +131,97 @@ Ezequiel: This module is responsible of the publication of data in a cloud-based
 \end{itemize}
 
 In addition, and as it is shown in Figure 1, the device runs an specific Operative System, called \textit{Horeb}, which is a modification of the original Raspbian 3.10.24, adapted by MOBYWIT system designer to be more robust (to power fails, for instance) and reliable.
+
+%----------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%   PEOPLE'S MOBILITY IN A DISCO  %%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------------
+
+\section{Analysis of people's mobility in a discotheque}
+\label{sec:disco}
+
+In the first scenario of this work, a Discotheque has been monitored using five MOBYWIT devices, deployed one in every of the three main rooms (each room devoted to a type of music), one on the main entrance, and one in the terrace.
+% Antonio - JJ, revisa y completa esto, por favor
+
+A total of XXXX devices were detected in one of the busy nights (from a Thursday at 8pm to Friday at 8am), distributed per node as it is shown in Figure \ref{fig:disco_data}.
+
+\begin{figure}[ht]
+	\begin{center}
+		\includegraphics[width=\textwidth]{imgs/DISCO/time_series-bars.eps}
+		\caption{Detected devices in a night in the Discotheque scenario.}
+		% Antonio - explicar lo que se ve en las gráficas (histograma y serie). Lo de la serie quizá no sea necesario
+		\label{fig:disco_data}
+	\end{center}
+\end{figure}
+% Antonio - Antares porfa, genera las gráficas correctas. ;)
+
+
+These data have been processed and several variables have been extracted from them, in order to apply clustering and classification methods. 
+% Antonio - si no se aplica clasificación corregir esto.
+
+The clustering study has been conducted by means of a Self-Organizing Map (SOM) \cite{Kohonen90}, a feed-forward neural network \cite{NN_Haykin94} that uses an unsupervised training algorithm and nonlinear regression techniques to learn or find unknown relationships among the set of variables that describe a problem. The main property of the SOM is that it makes a nonlinear projection from a high-dimensional data space on a regular, low-dimensional (usually 2D) grid of neurons, called units. This grid can be later processed to obtain the unified distance matrix (U-matrix) \cite{UmatUlts} which uses SOM yielded neurons' codevectors (vectors of variables of the problem) as data source, and generates a matrix where each component is a distance measure between two adjacent neurons. Then, these distances are codified as different color shades in a graph. 
+The U-Matrix graph allows visualize any multi-variable dataset in a two-dimensional display, which helps detecting topological relations among neurons and inferring about the input data structure in a straightforward visual manner. High values in the U-matrix represent a frontier region between clusters, and low values represent a high degree of similarities among neurons on that region, i.e. clusters. MATLAB 2009 along with SOM Toolbox \cite{SOMPAK} was used for the SOM analysis.
+
+%and every neuron (cell in the graph) is labeled according the class of the majority of the most similar input patterns. To this end the distance from every pattern to every neuron is computed considering their respective codevectors, the closest neuron to an input is named the best matching unit (BMU), and it is labeled with the pattern class (stage in this problem). Once the process has finished every neuron with more than one associated class finally displays the label with more occurrences.
+
+In order to analyze the data, several features have been extracted (generated) from the gathered `steps', composing a pattern per device of its whole stay in the disco. These are described in Table \ref{tab:features_disco}.
+
+\begin{table}[htpb]
+\centering
+{\scriptsize
+\begin{tabular}{lll}
+\hline\noalign{\smallskip}
+Variable name & Description & Type\\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+\texttt{entrance\_time} & First date/time when the device was detected & Date\\
+\texttt{out\_time} & Last date/time when the device was detected  & Date\\
+\texttt{stay\_time} & Number of seconds the device has been in the disco & Integer\\
+\texttt{abs\_time\_node\_X} & Number of seconds the device has been detected in every node X (from 1 to 5) & Integer\\
+\texttt{relat\_time\_node\_X} & Percentage of time the device has been detected in every node X (from 1 to 5) & Float\\
+\texttt{relat\_night\_time\_node\_X} & Percentage of time the device has been detected in every node X (from 1 to 5) &\\ 
+& regarding the whole timetable of the disco & Float\\
+\texttt{non\_detected\_time} & Number of seconds the device has not been detected (but it still is in the disco) & Integer\\
+\noalign{\smallskip}\hline
+\end{tabular}
+ \caption{Extracted features from gathered data in the discotheque. \label{tab:features_disco}}
+}
+\end{table}
+
+
+The application of SOM produces the graph shown in Figure \ref{fig:som_disco}.
+
+\begin{figure}[ht]
+	\begin{center}
+		\includegraphics[width=14cm]{imgs/DISCO/som_disco.eps}
+		\caption{Detected devices in a night in the Discotheque scenario.}
+		\label{fig:som_disco}
+	\end{center}
+\end{figure}
+% Antonio - Poner la figura de experimento definitivo
+
+The results show that... *** COMENTARLOS ***
+
+
+%----------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%  PEOPLE'S MOBILITY IN A BUILDING  %%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------------
+
+\section{Analysis of people's mobility in a building of the University}
+\label{sec:etsiit}
+
+% Study of people flow with data from the ETSIIT/Discoteque nodes...
+
+In this section we will focus on people mobility in a public building, a university in this particular study case. To discover people motion flow devices has been placed in every access as can be seen on figure \ref{fig:etsiit}.
+
+Because devices can capture data from the university staff and the students two of them has been placed very close of the main access trying to distinguish staff (1) from students (2). The back door (3) is also the parking an can be used only by the staff.
+% Antonio - No recuerdo si en esta écpoca podían entrar/salir estudiantes todavía... ¿Antares de qué cuándo son los datos?
+
+\begin{figure}[ht]
+	\begin{center}
+		\includegraphics[width=7cm]{imgs/ETSIIT/etsiit_nodes.eps}
+		\caption{ETSIIT MOBYWIT device location}
+		\label{fig:etsiit}
+	\end{center}
+\end{figure}
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%   TRAFFIC in a HIGHWAY  %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -151,7 +253,7 @@ ID   & Province & Location & Latitude & Longitude \\ \hline
 \caption{Location of the devices for the highway traffic scenario (K.P. = Kilometric Point).}
 \label{tab:nodosDGT}
 \end{table}
-
+% Antonio - Fergu, no sé si no será mejor poner el mapa con los nodos en lugar de sus posiciones en la tabla. Es más comprensible su situación. ;)
 
 
 %----------------------------------------------------------------------------
@@ -163,26 +265,6 @@ ID   & Province & Location & Latitude & Longitude \\ \hline
 
 Study of the traffic with data from the Granada nodes...
 
-%----------------------------------------------------------------------------
-%%%%%%%%%%%%%%%%%%%%%%%%%%%   PEOPLE'S MOBILITY  %%%%%%%%%%%%%%%%%%%%%%%%%%%
-%----------------------------------------------------------------------------
-
-\section{Analysis of people's mobility in a building}
-\label{sec:mobility}
-
-% Study of people flow with data from the ETSIIT/Discoteque nodes...
-
-In this section we will focus on people mobility in a public building, a university in this particular study case. To discover people motion flow devices has been placed in every access as can be seen on figure \ref{fig:etsiit}.
-
-Because devices can capture data from the university staff and the students two of them has been placed very close of the main access trying to distinguish staff (1) from students (2). The back door (3) is also the parking an can be used only by the staff.
-
-\begin{figure}[ht]
-	\begin{center}
-		\includegraphics[width=\textwidth]{imgs/etsiit.png}
-		\caption{ETSIIT MOBYWIT device location}
-		\label{fig:etsiit}
-	\end{center}
-\end{figure}
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   CONCLUSIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
