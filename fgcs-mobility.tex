@@ -87,8 +87,13 @@ Finally, Section \ref{sec:conclusions} plots the conclusions reached in the work
 - Talk about current technologies of monitoring (a couple of paragraphs)\\
 - Talk about traffic modeling and forecast or other analyses on it.\\
 % El estado del arte de la predicción de trafico, voy a poner la idea en español en comentarios para estructurármela yo misma en la cabeza.
+
+The traffic flow forecasting in a dual carriageway, in a road, or in any transport way plays an important role for alleviating urban congestions, or for adapting traffic control systems and traffic guidance systems. The main goal is design intelligent transportation sytems (ITS) and it cannot be realized without an ability to anticipate traffic conditions in the short-term (less than one hour into the future) although the medium-term or the large-term would help too. In short-term forecasting the traffic control systems could adapt along the time. For example, a traffic light could adjust its red or green time depending on the short-time forecasting of its close streets. Moreover medium-term or long-term could to be useful if there is special conditions in a medium or long time period although nowdays the results of this research is not outstanding and it is an open question for many research groups, but ussually in other subjets like time series in general \cite{ParrasGutierrez2014433} or economic development and political decisions 	cite{longTermBussines2014}. 
 %La predicción del tráfico en una ciudad, una carretera o en general cualquier vía de transporte es esencial para mejorar el transporte. Los %usuarios de cualquier transporte público estarían más contentos si el flujo de tráfico de una ciudad cumpliera unos tiempos preestablecidos, puesto que así el transporte sería más rápido y eficiente. Sin embargo es un problema totalmente abierto en el que numerosos investigadores de todo el mundo realizan sus aportaciones. (Accurate and real-time traffic flow forecasting is essential to adaptive traffic control system and traffic guidance system, which is of great significance for alleviating urban traffic congestions. Because of the importance of traffic flow prediction results, many traffic engineering researchers began to apply mature prediction models of other areas to short-term traffic flow prediction and developed a variety of forecasting methods at the beginning of the 1960s. )
+There are many research papers related with traffic flow forecasting and each of them focus the problem from their authors point of view. All the contribution are important because each of them assists the problem with a particular bit. The diverse solutions provided by the researches include \cite{SurveyKumar2007} series models, Kalman Filter Theory, Markov Chain models, non-parametric methods, simulationmodels, local regression models, fuzzy-neural approaches, sequential learning, spectral analysis, Basesian networks, neural networks, diffusion models or Big Data based approaches.  %(buscar referencias recientes de cada una y ponerlas)
 % Existen numerosos trabajos relacionados con la predicción de tráfico y cada uno de ellos enfoca el problema de formas diferentes. Estos enfoques incluyen "series models, Kalman Filter Theory, Markov Chain models, non-parametric methods simulation models, local regression models, fuzzy-neural approaches, sequential learning, spectral analysis, Bayesian networks, neural networks, modelos de difusión o la técnicas de bigdata. (buscar referencias recientes de cada una y ponerlas)
+Being the traffic flow forecasting a trending topic several surveys exist and they provide a comprehensive idea about the scope 
+
 % Al tratarse de un tema muy estudiado, existen también numerosos resúmenes que te dan una idea general sobre este ámbito como el [SurveyKumar2007] publicado en el 2007 y centrado en la predicción del tráfico a corto plazo, o el publicado en 2012 por E. Bolshinsky [SurveyBolshinsky2012] donde se repasan las diferentes técnicas utilizadas, los datos de entrada que necesita cada una y algunas arquitecturas de los sistemas utilizados. También hay resúmenes específicos para un tipo de predicción como el propio [SurveyKumar2007] o [Vlahogianni2014] que tiene un enfoque un poco más generalista clasificando la literatura existente en los objetivos que perseguía cada trabajo o dentro de qué ambito estaba emarcado cada artículo, como por ejemplo si predecía el tráfico o predecía el tiempo esperado para un desplazamiento o estaba centrado en la forma de recolección de los datos utilizados.
 %Algunos de los trabajos más recientes que versan sobre la predicción del tráfico intentan ya integrar nuevas tecnologías como "Big Data" [TrafficFlowPredictionWithBigData2015] donde intentan abarcar nuevos enfoques en la predicción incluyendo una predicción temporal y espacial simultáneamente utilizando modelos de predicción simples como piezas que forman un sistema mucho más complejo, o tecnologías de Cloud Computing [CloudComputing2014] donde se aborda el problema de predicción desarrollando herramientas específicas como HadoopWatch.
 %También existen numerosas revistas que proponen números especiales que versan sobre este tema [Zhang20141], donde se puede encontrar los últimos avances que intentan ir más allá y predecir no sólo el estado del tráfico sino el tiempo de los desplazamientos [Dong201420] [Zou201433]  utilizando modelos espacio-temporales del tráfico en diferentes situaciones (spatial?temporal patterns of the congested and non-congested traffic) o trabajos que le dan una vuelta de tuerca más a las técnicas y proponen nuevos métodos de predicción [Zhang201465] utilizando datos del tráfico en tiempo real o métodos ya conocidos y mejorados como [Wang201479][Qi201495].
@@ -187,16 +192,29 @@ Variable name & Description & Type\\
 \end{table}
 
 
-The application of SOM produces the graph shown in Figure \ref{fig:som_disco}.
+The application of SOM + U-Matrix produces the graphs shown in Figure \ref{fig:som_disco_no_detec_0} and \ref{fig:som_disco_sin_no_detec}.
 
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=14cm]{imgs/DISCO/som_disco.eps}
-		\caption{Detected devices in a night in the Discotheque scenario.}
-		\label{fig:som_disco}
+		\includegraphics[width=14cm]{imgs/DISCO/som_disco_no_detec_0.eps}
+		\includegraphics[width=8cm]{imgs/DISCO/umatrix_disco_no_detec_0.eps}
+		\caption{Detected devices in a night in the Discotheque scenario. Extracted features}
+% Antonio - Ajustados los no detectados a 0
+		\label{fig:som_disco_no_detec_0}
 	\end{center}
 \end{figure}
-% Antonio - Poner la figura de experimento definitivo
+
+\begin{figure}[ht]
+	\begin{center}
+		\includegraphics[width=14cm]{imgs/DISCO/som_disco_sin_no_detec.eps}
+		\includegraphics[width=8cm]{imgs/DISCO/umatrix_disco_sin_no_detec.eps}
+		\caption{Detected devices in a night in the Discotheque scenario. Extracted features}
+% Antonio - Sin no detectados
+		\label{fig:som_disco_sin_no_detec}
+	\end{center}
+\end{figure}
+
+% Antonio - Poner las figuras de los experimentos definitivos
 
 The results show that... *** COMENTARLOS ***
 
@@ -208,11 +226,13 @@ The results show that... *** COMENTARLOS ***
 \section{Analysis of people's mobility in a building of the University}
 \label{sec:etsiit}
 
-% Study of people flow with data from the ETSIIT/Discoteque nodes...
+People mobility is studied for important reasons. Many of them involve profit: conversion rate, marketing effectiveness or staff planning are some of the best known. Conversion rate is the percentage of visitors who effectively make a purchase. It can show you if a shop improve, or decline, is because more people visit it or more of the visitors finally end buying something. Shopping mall professionals study people behavior to know if their marketing techniques are paying off. In the same line, stuff planning is directly related with the amount of visitors, as is the maintenance and cleaning needs.
+
+Other reasons are more practical than commercial. How many people visit a public building? When? It will help to improve the planning of the services provided, heating or cooling of the building, facility cleaning, staff shifts and so on. In a museum or a sport stadium you can adjust many parameters to help people enjoy from a better experience while raising the profit.
 
 In this section we will focus on people mobility in a public building, a university in this particular study case. To discover people motion flow devices has been placed in every access as can be seen on figure \ref{fig:etsiit}.
 
-Because devices can capture data from the university staff and the students two of them has been placed very close of the main access trying to distinguish staff (1) from students (2). The back door (3) is also the parking an can be used only by the staff.
+Because devices can capture data from the university staff and the students two of them has been placed very close of the main access trying to distinguish staff (1) from students (2). The back door (3) is also the parking access an can be used only by the staff.
 % Antonio - No recuerdo si en esta écpoca podían entrar/salir estudiantes todavía... ¿Antares de qué cuándo son los datos?
 
 \begin{figure}[ht]
