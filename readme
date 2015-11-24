@@ -4,3 +4,64 @@ En él se analizarán:
 - flujos de tráfico en carrera
 - flujos de tráfico en ciudad
 - movilidad dentro de un local
+
+#Correo de Antonio Mora de 16/Nov explicando el plan de trabajo#
+
+##Discoteca:##
+
+(Datos anonimizados y normalizados)
+	- Se tienen datos de 5 nodos (las salas y la terraza)
+	- Vamos a generar un juego de datos en base a los pasos con las características (para cada dispositivo detectado):
+		o   Tiempo_Relat_P1, ? ,Tiempo_Relat_P5 -> tiempos de estancia junto a cada nodo en relación al tiempo de estancia total de la persona en la discoteca
+		o   Tiempo_Relat_T1, ? ,Tiempo_Relat_T5 -> tiempos de estancia junto a cada nodo en relación al tiempo de estancia respecto a la apertura/cierre de la discoteca
+		o   Tiempo_Absol1, ? ,Tiempo_Absol5 -> tiempos de estancia real junto a cada nodo
+		o   Tiempo_no_detect -> tiempo que se ha pasado sin detectar al dispositivo antes de su salida definitiva del local
+		o   Hora_entrada, Hora_salida -> pos eso
+
+De los datos se pueden extraer más características, como número de nodos por los que ha pasado, marca/modelo del dispositivo, pero tenemos que pensar si son de interés.
+	- Clustering de comportamientos -> aplicar sobre esos datos selección de características, clustering, clasificación, etc. Y analizar los diferentes comportamientos que se detecten.
+Con esto se pretende obtener información útil para estrategias de empresa:
+
+	- estudio de mercado
+	- hábitos de consumo
+	- etc
+
+##ETSIIT:##
+	-  Se tienen datos de 4 nodos (hall, entrada alumnos, entrada parking exterior, entrada parking interior)
+	-  Se harán matrices de entrada/salida, organizadas por días y rangos horarios
+Puede ser de interés para cuestiones de seguridad, publicidad, vending, no sé?
+
+
+##Granada Ciudad (MOSOS):##
+	- Se tienen dos nodos en Doctor Olóriz
+	- Se harán series temporales para modelado y predicción de atascos
+	- Se considerarán datos de Bluetooth (filtrando por coches) y WiFi
+	- Se calcularán y mostrarán gráficamente tiempos de desplazamiento y densidad de tráfico
+
+Se quiere modelar una función que defina los intervalos de duración del semáforo para que la densidad de tráfico sea constante y el tiempo de desplazamiento mínimo.
+
+##Carreteras (PETRA):##
+	- Se tienen 6 nodos: 4 entre Granada (Albolote) y Málaga, uno en Guadix y otro más lejos en la carretera de Almería
+	- Se tienen datos de algunos aforadores junto a los nodos (o muy cerca)
+	- Se harán series temporales
+	- Se calcularán velocidades promedio
+	- Se obtendrán porcentajes de detección
+	- Se intentará obtener el ratio de ocupación de los coches, en base a los pasos detectados y su relación con los de los aforadores
+
+Si se os ocurren más cosas, serán bienvenidas.
+
+Respecto a las tareas, yo había pensado, grosso modo, algo así:
+	- Antares -> Extracción de datos. Ayuda en matrices E/S. Supervisión del artículo.
+	- Yo mismo -> Estado del arte (smart cities y smart traffic). Métodos de clustering y clasificación. Organización del artículo. Ayuda en todo.
+	- Fergu -> Descripción de problema y datos de PETRA. Matrices de E/S. Ayuda en Extracción de datos.
+	- Maribel -> Descripción de problema y datos de MOSOS. Estado del arte (series temporales). Ayuda en extracción de datos.
+	- Gustavo -> Descripción de problema y datos de ETSIIT. Estado del arte (otros sistemas de detección). Ayuda en estado del arte (smart cities y smart traffic).
+	- Víctor -> Descripción de métodos de series temporales a aplicar. Aplicación de éstos sobre los datos.
+	- Pedro -> Ayuda en descripciones de problemas y datos. Ayuda en análisis de datos (estadística). Ayuda en series temporales.
+	- JJ -> Descripción de problema y datos de discoteca. Ayuda en métodos de clustering y clasificación. Ayuda en análisis.
+
+Todo esto lo iremos ajustando sobre la marcha, es una primera aproximación.
+
+Si vamos terminando tareas ayudamos a otros, claro.
+
+La cuestión es que todos trabajemos en el artículo y que cada uno aporte donde sea mejor, como debe ser. Aunque algunas cosas las he ?estimado?, sorry si he metido la gamba. ;D
