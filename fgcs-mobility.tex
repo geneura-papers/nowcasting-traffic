@@ -260,13 +260,17 @@ ID   & Province & Location & Latitude & Longitude \\ \hline
 %2) La media del ratio por 15min
 %3) La mediana del ratio por 15min
 
+Different metrics will be used to obtain a correct correlation between the number of detected devices and the real number detected by the ESPIRAS.
+
 \begin{itemize}
-\item Total ratio: El número de vehiculos detectados por la DGT / el numero detectado por nosotros
-\item Dividir una serie entre otra
-\item Average ratio: se coge el ratio cada 15 minutos de (la dgt/lo nuestro), se suma todos esos ratios, y se divide entre el número de rangos de 15 minutos %TAMBIEN COGER LA MEDIANA
+\item Total ratio: ratio between the number of vehicles detected by the ESPIRAS and the number of vehicles detected by our device.
+\item Average of ratios: as the maximum granularity of the data provided by the DGT is 15 minutes, the sum of all ratios of each 15 minutes section has been divided by the total number of sectinons.
+\item Median ratio: instead the average ratio as in previous metric, this one uses the median.
 \item Time ratio: se calcula el ratio pero agrupado por las mismas horas del (por ejemplo: vehiculos dgt/vehiculos nuestros a las 12:00)
 \item Igual con mediana?
 \end{itemize}
+
+Ventajas e inconvenientes
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%   TRAFFIC in a CITY  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
