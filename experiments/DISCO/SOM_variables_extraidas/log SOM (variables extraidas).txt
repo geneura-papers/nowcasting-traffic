@@ -1,0 +1,23 @@
+********************************************************
+* SOM SOBRE VARIABLES EXTRAIDAS * Con No_Detectado a 0 *
+********************************************************
+
+>> sM=som_make(sDN, 'lattice', 'hexa');
+
+  map size [20, 12]
+
+Final quantization error: 2.598
+Final topographic error:  0.046
+
+------------------------------------------------------
+
+****************************************************
+* SOM SOBRE VARIABLES EXTRAIDAS * Sin No_Detectado *
+****************************************************
+
+>> sM=som_make(sDN, 'lattice', 'hexa');
+
+  map size [22, 11]
+
+Final quantization error: 2.147
+Final topographic error:  0.036
