@@ -252,9 +252,9 @@ Because devices can capture data from the university staff and the students two 
 
 This section describes the experimental analysis of the data gathered by a different number of devices placed in statal highways.
 
-The main difference with respect to the other experimental scenarios are that, in this case, the devices detected are cars that are moving at higher velocities. However, in this scenario we have access to the information collected by Spanish Direcci\'on General de Tr\'afico (DGT) using their ESPIRAS, so in this section we can use real data to validate our approach and obtain a realistic ratio of real devices and detected ones.
+The main difference with respect to the other experimental scenarios are that, in this case, the devices detected are cars that are moving at higher velocities. However, in this scenario we have access to the information collected by Spanish Direcci\'on General de Tr\'afico (DGT) using their loop detectors, so in this section we can use real data to validate our approach and obtain a realistic ratio of real devices and detected ones.
 
-6 nodes have been placed near to different roads in Andalusia. Table \ref{tab:nodosDGT} shows the identifiers of the devices and their exact location. These locations have been chosen because are the nearest ones to existent ESPIRAS monitored by the DGT, and also, they count with Internet connection to allow the data transmission to our server.
+6 nodes have been placed near to different roads in Andalusia. Table \ref{tab:nodosDGT} shows the identifiers of the devices and their exact location. These locations have been chosen because are the nearest ones to existent loop detectors monitored by the DGT, and also, they count with Internet connection to allow the data transmission to our server.
 
 \begin{table}
 \centering
@@ -265,8 +265,8 @@ ID   & Province & Location & Latitude & Longitude \\ \hline
 1010 & Granada  & A-44 K.P. 118+300 increasing direction (link A-44 K.P. 118+300 with A-92 K.P. 241+000) & 37.241668  & -3.6526 \\ \hline
 1020 & Granada  & A-92 K.P. 294+300 increasing direction  & 37.318763 & -3.137978 \\ \hline
 1030 & Granada  & A-92 K.P. 344+950, increasing direction & 37.141298 & -2.710871 \\ \hline
-1040 & Málaga  & A-7  K.P. 241+800, decreasing direction (Link A-7 K.P. 241+800 with A-45 K.P. 142+400) &  36.757427 & -4.426879 \\ \hline
-1050 & Málaga  & A-45 K.P. 121+700, decreasing direction & 36.910454 & -4.444769 \\ \hline
+1040 & M{\'a}laga  & A-7  K.P. 241+800, decreasing direction (Link A-7 K.P. 241+800 with A-45 K.P. 142+400) &  36.757427 & -4.426879 \\ \hline
+1050 & M{\'a}laga  & A-45 K.P. 121+700, decreasing direction & 36.910454 & -4.444769 \\ \hline
 1060 & Granada & A-92 K.P. 177+900, decreasing direction (Link A-92 with A-92M) & 37.136209 & -4.282619 \\ \hline
 \end{tabular}
 }
@@ -280,14 +280,14 @@ ID   & Province & Location & Latitude & Longitude \\ \hline
 %2) La media del ratio por 15min
 %3) La mediana del ratio por 15min
 
-Different metrics will be used to obtain a correct correlation between the number of detected devices and the real number detected by the ESPIRAS.
+Different metrics will be used to obtain a correct correlation between the number of detected devices and the real number detected by the loop detectors.
 
 \begin{itemize}
-\item Total ratio: ratio between the number of vehicles detected by the ESPIRAS and the number of vehicles detected by our device.
-\item Average of ratios: as the maximum granularity of the data provided by the DGT is 15 minutes, the sum of all ratios of each 15 minutes section has been divided by the total number of sectinons.
-\item Median ratio: instead the average ratio as in previous metric, this one uses the median.
-\item Time ratio: se calcula el ratio pero agrupado por las mismas horas del (por ejemplo: vehiculos dgt/vehiculos nuestros a las 12:00)
-\item Igual con mediana?
+\item {\em Total ratio}: ratio between the total number of vehicles detected by the DGT and the total number of vehicles detected by our device.
+\item {\em Average of ratios}: as the maximum granularity of the data provided by the DGT is 15 minutes, the sum of all ratios between the DGT data and our data in each 15 minutes section has been divided by the total number of sections to calculate the average.
+\item {\em Median ratio}: instead the average ratio as in previous metric, this one uses the median of all ratios.
+\item {\em Time ratio}: this metric calculate a vector of ratios separated by hour of the day, instead obtaining a global ratio for all data. An average ratio per hour in the vector is calculated taking into account all the ratios of that hour during all the days we have data.
+\item {\em Time median}: as in the previous metric, this one uses a vector of ratios per hour, but every element is calculated using the median, instead the average.
 \end{itemize}
 
 Ventajas e inconvenientes
