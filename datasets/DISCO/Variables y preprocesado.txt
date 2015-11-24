@@ -1,0 +1,17 @@
+* Se han creado nuevas variables:
+	- derivadas de las fechas: 
+		. como número (contado desde el 1/1/70) [hora_entrad_num, hora_sal_num]
+		. ajustada desde las 20h del día 26/9 (el primer día a la hora de apertura de la disco) [hora_entrad_ajust, hora_sal_ajust]
+		. transformada en segundos desde la apertura [hora_entrad_seg, hora_sal_seg]
+		. tiempo de estancia (tiempo desde la entrada hasta la salida en segundos) [tiempo_estancia]
+	- tiempo no detectado:
+		. tiempo que el dispositivo no ha sido detectado por ningún nodo (diferencia entre el tiempo de estancia y la suma de tiempos detectado en los nodos)
+
+
+PREPROCESADO:
+- quitamos registros con tiempo de estancia a '0'
+- ponemos a 0 el tiempo no detectado negativo
+
+
+- PARA APLICAR SOM:
+	. se cambian las comas por puntos
