@@ -269,27 +269,35 @@ This section describes the experimental analysis of the data gathered by a diffe
 
 The main difference with respect to the other experimental scenarios are that, in this case, the devices detected are cars that are moving at higher velocities. However, in this scenario we have access to the information collected by Spanish Direcci\'on General de Tr\'afico (DGT) using their loop detectors, so in this section we can use real data to validate our approach and obtain a realistic ratio of real devices and detected ones.
 
-6 nodes have been placed near to different roads in Andalusia. Table \ref{tab:nodosDGT} shows the identifiers of the devices and their exact location. These locations have been chosen because are the nearest ones to existent loop detectors monitored by the DGT, and also, they count with Internet connection to allow the data transmission to our server.
+6 nodes have been placed near to different roads in Andalusia. Figure \ref{fig:nodosDGT} shows the identifiers of the devices and their exact location. These locations have been chosen because are the nearest ones to existent loop detectors monitored by the DGT, and also, they count with Internet connection to allow the data transmission to our server. 
 
-\begin{table}
-\centering
-\resizebox{12cm}{!}{
-\begin{tabular}{|c|c|p{5cm}|c|c|}
-\hline
-ID   & Province & Location & Latitude & Longitude \\ \hline
-1010 & Granada  & A-44 K.P. 118+300 increasing direction (link A-44 K.P. 118+300 with A-92 K.P. 241+000) & 37.241668  & -3.6526 \\ \hline
-1020 & Granada  & A-92 K.P. 294+300 increasing direction  & 37.318763 & -3.137978 \\ \hline
-1030 & Granada  & A-92 K.P. 344+950, increasing direction & 37.141298 & -2.710871 \\ \hline
-1040 & M{\'a}laga  & A-7  K.P. 241+800, decreasing direction (Link A-7 K.P. 241+800 with A-45 K.P. 142+400) &  36.757427 & -4.426879 \\ \hline
-1050 & M{\'a}laga  & A-45 K.P. 121+700, decreasing direction & 36.910454 & -4.444769 \\ \hline
-1060 & Granada & A-92 K.P. 177+900, decreasing direction (Link A-92 with A-92M) & 37.136209 & -4.282619 \\ \hline
-\end{tabular}
-}
-\caption{Location of the devices for the highway traffic scenario (K.P. = Kilometric Point).}
-\label{tab:nodosDGT}
-\end{table}
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.4]{imgs/nodos_dgt.png}
+		\caption{Location of the devices for the highway traffic scenario.}
+	\label{fig:nodosDGT}
+	\end{center}
+\end{figure}
+
+%\begin{table}
+%\centering
+%\resizebox{12cm}{!}{
+%\begin{tabular}{|c|c|p{5cm}|c|c|}
+%\hline
+%ID   & Province & Location & Latitude & Longitude \\ \hline
+%1010 & Granada  & A-44 K.P. 118+300 increasing direction (link A-44 K.P. 118+300 with A-92 K.P. 241+000) & 37.241668  & -3.6526 \\ \hline
+%1020 & Granada  & A-92 K.P. 294+300 increasing direction  & 37.318763 & -3.137978 \\ \hline
+%1030 & Granada  & A-92 K.P. 344+950, increasing direction & 37.141298 & -2.710871 \\ \hline
+%1040 & M{\'a}laga  & A-7  K.P. 241+800, decreasing direction (Link A-7 K.P. 241+800 with A-45 K.P. 142+400) &  36.757427 & -4.426879 \\ \hline
+%1050 & M{\'a}laga  & A-45 K.P. 121+700, decreasing direction & 36.910454 & -4.444769 \\ \hline
+%1060 & Granada & A-92 K.P. 177+900, decreasing direction (Link A-92 with A-92M) & 37.136209 & -4.282619 \\ \hline
+%\end{tabular}
+%}
+%\caption{Location of the devices for the highway traffic scenario (K.P. = Kilometric Point).}
+%\label{tab:nodosDGT}
+%\end{table}
 % Antonio - Fergu, no sé si no será mejor poner el mapa con los nodos en lugar de sus posiciones en la tabla. Es más comprensible su situación. ;)
-
+% FERGU: Hecho
 %DATOS A MOSTRAR:
 %1) El total DGT/total nosotros
 %2) La media del ratio por 15min
