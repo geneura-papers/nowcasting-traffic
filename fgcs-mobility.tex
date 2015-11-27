@@ -21,7 +21,7 @@
 
 \author{author1, author2, author3, author4}
 \ead{\{author1, author2, author3, author4\}@ugr.es}
-\address{Departamento de Arquitectura y Tecnologï¿½a de Computadores.\\ ETSIIT - CITIC. University of Granada, Spain}
+\address{Departamento de Arquitectura y Tecnología de Computadores.\\ ETSIIT - CITIC. University of Granada, Spain}
 
 %\maketitle
 
@@ -38,7 +38,7 @@ The wonderful abstract
 \begin{keyword}
 Smart traffic \sep Transit indicators \sep Traffic forecast \sep Mobility analysis
 \end{keyword}
-% Antonio - A aï¿½adir y mejorar
+% Antonio - A añadir y mejorar
 
 \end{frontmatter}
 
@@ -56,15 +56,15 @@ Traffic information is currently gathered using several kind of devices. The loc
 
 The traffic monitors nowadays include pneumatic tubes, loop detectors, floating vehicles or automatic Optical Character Recognition (OCR) among others, but most of them are not able to identify and follow the same vehicle along the road network. In this paper we present a system able to do this while improving the quality of the gathered information and allowing the easy construction of traffic flow models or mobility graphs. In addition, the proposed system is formed by low-cost devices, which is another advantage over the usual monitoring systems, since the cost is an important factor for authorities which tend to install the simplest and cheapest monitors.
 
-Each device, evolution of the one presented in \cite{castillo2014_book_sipesca}, is based in a single-board computer which monitors the radioelectric space catching Bluetooth (BT) and WiFi signals emitted by other devices. These will be mainly smartphones or hands-free systems on vehicles, which are detected and identified by means of their Media Access Control number (MAC) - which is unique - and stored as a traffic `step'.
-% Antonio - ï¿½Se os ocurre un nombre mejor para los 'pasos'?
+Each device, evolution of the one presented in \cite{castillo2014_book_sipesca}, is based in a single-board computer which monitors the radioelectric space catching Bluetooth (BT) and WiFi signals emitted by other devices. These will be mainly smartphones or hands-free systems on vehicles, which are detected and identified by means of their Media Access Control number (MAC) - which is unique - and stored as a traffic `step'. 
+% Antonio - ¿Se os ocurre un nombre mejor para los 'pasos'?
 Thus, depending on the position of the monitoring device, we could gather information about specific people or vehicles displacements. In order to respect the person's privacy and data protection laws, the MAC is one-direction encrypted before storing it, so, we cannot relate a captured MAC with any person.
 
 These devices cannot detect all the real persons and vehicles moving close to them, since not all of them will be emitting BT or WiFi signals, but after a poll that we did among 600 people we can conclude that we detect around the 22\% of the drivers due to BT detection and around the 70\% of the drivers due to WiFi detection, which are good figures to be considered as representative of the real traffic flows.
 These data
-% Antonio - quizï¿½ se podrï¿½a quitar esto, ya que se analizarï¿½ en el caso del trï¿½fico en carreteras (datos DGT)
+% Antonio - quizá se podría quitar esto, ya que se analizará en el caso del tráfico en carreteras (datos DGT)
 
-In this paper we present, four different scenarios centred in the city of Granada (Spain), in which real traffic/mobility data have been gathered. They are namely: a discotheque, a public building of the University, a highway between Granada and Mï¿½laga; and one of the main streets in the city.
+In this paper we present, four different scenarios centred in the city of Granada (Spain), in which real traffic/mobility data have been gathered. They are namely: a discotheque, a public building of the University, a highway between Granada and Málaga; and one of the main streets in the city. 
 Several devices or nodes have been deployed in each scenario.
 The data have been deeply processed in this work, using different techniques, such as time series forecasting, clustering, in/out matrices, and statistical methods.
 The aim is to extract useful information and conclusions in every scenario, proving the value of this monitoring system as a tool to improve different issues inside the city and buildings. Thus, the system would be suitable to be part of a \textit{Smart City}.
@@ -87,29 +87,29 @@ Finally, Section \ref{sec:conclusions} plots the conclusions reached in the work
 - Talk about current technologies of monitoring (a couple of paragraphs)\\
 
 - Talk about traffic modeling and forecast or other analyses on it.\\
-% El estado del arte de la predicciï¿½n de trafico, voy a poner la idea en espaï¿½ol en comentarios para estructurï¿½rmela yo misma en la cabeza.
+% El estado del arte de la predicción de trafico, voy a poner la idea en español en comentarios para estructurármela yo misma en la cabeza.
 
-The traffic flow forecasting in a dual carriageway, in a road, or in any transport way plays an important role for alleviating urban congestions, or for arranging traffic control systems and traffic guidance systems. The main goal is design intelligent transportation systems (ITS) and it cannot be realized without an ability to anticipate traffic conditions in the short-term (less than one hour into the future) although the medium-term or the large-term would help too. In short-term forecasting the traffic control systems could adapt along the time. For example, a traffic light could adjust its red or green time depending on the short-time forecasting of its close streets. Moreover medium-term or long-term could to be useful if there is special conditions in a medium or long time period although nowadays the results of this research is not outstanding and it is an open question for many research groups, but usually in other subjects like time series in general \cite{ParrasGutierrez2014433} or economic development and political decisions 	cite{longTermBussines2014}.
+The traffic flow forecasting in a dual carriageway, in a road, or in any transport way plays an important role for alleviating urban congestions, or for arranging traffic control systems and traffic guidance systems. The main goal is design intelligent transportation systems (ITS) and it cannot be realized without an ability to anticipate traffic conditions in the short-term (less than one hour into the future) although the medium-term or the large-term would help too. In short-term forecasting the traffic control systems could adapt along the time. For example, a traffic light could adjust its red or green time depending on the short-time forecasting of its close streets. Moreover medium-term or long-term could to be useful if there is special conditions in a medium or long time period although nowadays the results of this research is not outstanding and it is an open question for many research groups, but usually in other subjects like time series in general \cite{ParrasGutierrez2014433} or economic development and political decisions 	cite{longTermBussines2014}. 
 
-%La predicciï¿½n del trï¿½fico en una ciudad, una carretera o en general cualquier vï¿½a de transporte es esencial para mejorar el transporte. Los %usuarios de cualquier transporte pï¿½blico estarï¿½an mï¿½s contentos si el flujo de trï¿½fico de una ciudad cumpliera unos tiempos preestablecidos, puesto que asï¿½ el transporte serï¿½a mï¿½s rï¿½pido y eficiente. Sin embargo es un problema totalmente abierto en el que numerosos investigadores de todo el mundo realizan sus aportaciones. (Accurate and real-time traffic flow forecasting is essential to adaptive traffic control system and traffic guidance system, which is of great significance for alleviating urban traffic congestions. Because of the importance of traffic flow prediction results, many traffic engineering researchers began to apply mature prediction models of other areas to short-term traffic flow prediction and developed a variety of forecasting methods at the beginning of the 1960s. )
+%La predicción del tráfico en una ciudad, una carretera o en general cualquier vía de transporte es esencial para mejorar el transporte. Los %usuarios de cualquier transporte público estarían más contentos si el flujo de tráfico de una ciudad cumpliera unos tiempos preestablecidos, puesto que así el transporte sería más rápido y eficiente. Sin embargo es un problema totalmente abierto en el que numerosos investigadores de todo el mundo realizan sus aportaciones. (Accurate and real-time traffic flow forecasting is essential to adaptive traffic control system and traffic guidance system, which is of great significance for alleviating urban traffic congestions. Because of the importance of traffic flow prediction results, many traffic engineering researchers began to apply mature prediction models of other areas to short-term traffic flow prediction and developed a variety of forecasting methods at the beginning of the 1960s. )
 
 
-There are many research papers related with traffic flow forecasting and each of them focus the problem from their authors point of view. All the contribution are important because each of them assists the problem with a particular bit. The diverse solutions provided by the researches include \cite{SurveyKumar2007} series models, Kalman Filter Theory, Markov Chain models, non-parametric methods, simulation models, local regression models, fuzzy-neural approaches, sequential learning, spectral analysis, Basesian networks, neural networks, diffusion models or Big Data based approaches.  %(buscar referencias recientes de cada una y ponerlas si queremos ampliar este pï¿½rrafo)
+There are many research papers related with traffic flow forecasting and each of them focus the problem from their authors point of view. All the contribution are important because each of them assists the problem with a particular bit. The diverse solutions provided by the researches include \cite{SurveyKumar2007} series models, Kalman Filter Theory, Markov Chain models, non-parametric methods, simulation models, local regression models, fuzzy-neural approaches, sequential learning, spectral analysis, Basesian networks, neural networks, diffusion models or Big Data based approaches.  %(buscar referencias recientes de cada una y ponerlas si queremos ampliar este párrafo)
 
-% Existen numerosos trabajos relacionados con la predicciï¿½n de trï¿½fico y cada uno de ellos enfoca el problema de formas diferentes. Estos enfoques incluyen "series models, Kalman Filter Theory, Markov Chain models, non-parametric methods simulation models, local regression models, fuzzy-neural approaches, sequential learning, spectral analysis, Bayesian networks, neural networks, modelos de difusiï¿½n o la tï¿½cnicas de bigdata. (buscar referencias recientes de cada una y ponerlas)
+% Existen numerosos trabajos relacionados con la predicción de tráfico y cada uno de ellos enfoca el problema de formas diferentes. Estos enfoques incluyen "series models, Kalman Filter Theory, Markov Chain models, non-parametric methods simulation models, local regression models, fuzzy-neural approaches, sequential learning, spectral analysis, Bayesian networks, neural networks, modelos de difusión o la técnicas de bigdata. (buscar referencias recientes de cada una y ponerlas)
 
 Being the traffic flow forecasting a trending topic several surveys exist and they provide a comprehensive idea about the scope \cite{SurveyBolshinsky2012}. The authors, E. Bolshinsky and R. Friedman try to give an added value to their contribution including the used techniques, the system input data for each contribution, and some of the hardware architectures the papers describe. Other previous survey were written like \cite{Survey2004} and \cite{SurveyKumar2007} but Bolshinsky's et Al. one complet the information. There are specific surveys for one of the traffic flow forecasting types, like \cite{Vlahogianni2014} where the focus was not the approaches or the results of the reviewed papers, but the focus or goals and the scope where each paper could be classified. For example if the paper forecast the expected time for one trip or if the paper included the system which collected data as main contribution.
 
-% Al tratarse de un tema muy estudiado, existen tambiï¿½n numerosos resï¿½menes que te dan una idea general sobre este ï¿½mbito como el [SurveyKumar2007] publicado en el 2007 y centrado en la predicciï¿½n del trï¿½fico a corto plazo, o el publicado en 2012 por E. Bolshinsky [SurveyBolshinsky2012] donde se repasan las diferentes tï¿½cnicas utilizadas, los datos de entrada que necesita cada una y algunas arquitecturas de los sistemas utilizados. Tambiï¿½n hay resï¿½menes especï¿½ficos para un tipo de predicciï¿½n como el propio [SurveyKumar2007] o [Vlahogianni2014] que tiene un enfoque un poco mï¿½s generalista clasificando la literatura existente en los objetivos que perseguï¿½a cada trabajo o dentro de quï¿½ ambito estaba emarcado cada artï¿½culo, como por ejemplo si predecï¿½a el trï¿½fico o predecï¿½a el tiempo esperado para un desplazamiento o estaba centrado en la forma de recolecciï¿½n de los datos utilizados.
+% Al tratarse de un tema muy estudiado, existen también numerosos resúmenes que te dan una idea general sobre este ámbito como el [SurveyKumar2007] publicado en el 2007 y centrado en la predicción del tráfico a corto plazo, o el publicado en 2012 por E. Bolshinsky [SurveyBolshinsky2012] donde se repasan las diferentes técnicas utilizadas, los datos de entrada que necesita cada una y algunas arquitecturas de los sistemas utilizados. También hay resúmenes específicos para un tipo de predicción como el propio [SurveyKumar2007] o [Vlahogianni2014] que tiene un enfoque un poco más generalista clasificando la literatura existente en los objetivos que perseguía cada trabajo o dentro de qué ambito estaba emarcado cada artículo, como por ejemplo si predecía el tráfico o predecía el tiempo esperado para un desplazamiento o estaba centrado en la forma de recolección de los datos utilizados.
 
-During the last years, the publications even assimilate new technologies for data analysis like "Big Data" \cite{TrafficFlowPredictionWithBigData2015} or Cloudcomputing approaches \citep{CloudComputing2014}. In \cite{TrafficFlowPredictionWithBigData2015} Yisheng et. al. tackle the traffic flow forecasting problem using temporal and spatial models at the same time using simple forecasting models and assembling them in a global complex system. The results contribute with a time and a spatial place for each prediction. In \citep{CloudComputing2014} Zhaosheng Yang et al. presented traffic flow prediction model for large-scale road network based on cloud computing, which was implemented successfully by introducing genetic algorithm and support vector machine.
+During the last years, the publications even assimilate new technologies for data analysis like "Big Data" \cite{TrafficFlowPredictionWithBigData2015} or Cloudcomputing approaches \citep{CloudComputing2014}. In \cite{TrafficFlowPredictionWithBigData2015} Yisheng et. al. tackle the traffic flow forecasting problem using temporal and spatial models at the same time using simple forecasting models and assembling them in a global complex system. The results contribute with a time and a spatial place for each prediction. In \citep{CloudComputing2014} Zhaosheng Yang et al. presented traffic flow prediction model for large-scale road network based on cloud computing, which was implemented successfully by introducing genetic algorithm and support vector machine. 
 
 
-%Algunos de los trabajos mï¿½s recientes que versan sobre la predicciï¿½n del trï¿½fico intentan ya integrar nuevas tecnologï¿½as como "Big Data" [TrafficFlowPredictionWithBigData2015] donde intentan abarcar nuevos enfoques en la predicciï¿½n incluyendo una predicciï¿½n temporal y espacial simultï¿½neamente utilizando modelos de predicciï¿½n simples como piezas que forman un sistema mucho mï¿½s complejo.
+%Algunos de los trabajos más recientes que versan sobre la predicción del tráfico intentan ya integrar nuevas tecnologías como "Big Data" [TrafficFlowPredictionWithBigData2015] donde intentan abarcar nuevos enfoques en la predicción incluyendo una predicción temporal y espacial simultáneamente utilizando modelos de predicción simples como piezas que forman un sistema mucho más complejo.
 
-Several renowned publications offer to their contributors spacial issues related with the scope, like \cite{Zhang20141}. This publication includes the last advances in traffic forecasting research. Some of them forecast the traffic flows and the trip times \citep{Dong201420}, \cite{Zou201433} or forecast spatial-temporal patterns of the congested and non-congested traffic or papers with new real-time forecasting approaches \cite{Zhang201465} or improved and renowned proposals like \cite{Wang201479} and \cite{Qi201495}.
+Several renowned publications offer to their contributors spacial issues related with the scope, like \cite{Zhang20141}. This publication includes the last advances in traffic forecasting research. Some of them forecast the traffic flows and the trip times \citep{Dong201420}, \cite{Zou201433} or forecast spatial-temporal patterns of the congested and non-congested traffic or papers with new real-time forecasting approaches \cite{Zhang201465} or improved and renowned proposals like \cite{Wang201479} and \cite{Qi201495}. 
 
-%Tambiï¿½n existen numerosas revistas que proponen nï¿½meros especiales que versan sobre este tema [Zhang20141], donde se puede encontrar los ï¿½ltimos avances que intentan ir mï¿½s allï¿½ y predecir no sï¿½lo el estado del trï¿½fico sino el tiempo de los desplazamientos [Dong201420] [Zou201433]  utilizando modelos espacio-temporales del trï¿½fico en diferentes situaciones (spatial?temporal patterns of the congested and non-congested traffic) o trabajos que le dan una vuelta de tuerca mï¿½s a las tï¿½cnicas y proponen nuevos mï¿½todos de predicciï¿½n [Zhang201465] utilizando datos del trï¿½fico en tiempo real o mï¿½todos ya conocidos y mejorados como [Wang201479][Qi201495].
+%También existen numerosas revistas que proponen números especiales que versan sobre este tema [Zhang20141], donde se puede encontrar los últimos avances que intentan ir más allá y predecir no sólo el estado del tráfico sino el tiempo de los desplazamientos [Dong201420] [Zou201433]  utilizando modelos espacio-temporales del tráfico en diferentes situaciones (spatial?temporal patterns of the congested and non-congested traffic) o trabajos que le dan una vuelta de tuerca más a las técnicas y proponen nuevos métodos de predicción [Zhang201465] utilizando datos del tráfico en tiempo real o métodos ya conocidos y mejorados como [Wang201479][Qi201495].
 
 
 
@@ -141,7 +141,7 @@ As it can be seen in that figure, there are six main parts in the software layer
 
 \item \textit{Abdiel}: This component implements a set of services for accessing the devices from `outside' (mainly for activate/deactivate or update them). In addition it performs the storage of gathered data (in blocks) in the server database. It is also implemented in PHP.
 
-\item \textit{Alejandrï¿½a}: This is the database of the system. It is a MySQL instance placed in a local server. It is optimized (using indexes and table partitioning) to provide a close to real-time processing and data service.
+\item \textit{Alejandría}: This is the database of the system. It is a MySQL instance placed in a local server. It is optimized (using indexes and table partitioning) to provide a close to real-time processing and data service.
 Ezequiel: This module is responsible of the publication of data in a cloud-based storage. It includes data mining, machine learning and forecast techniques to process these data in order to publish interesting or useful information about them.
 
 \item \textit{Anan}: This is the cloud-based storage and services. It is based in Google technology so Anan stores and manages the data in a NoSQL format, by means of Google Fusion Tables. It also offers advanced visualization methods to be more usable and attractive for the end-user of the system.
@@ -166,17 +166,17 @@ A total of XXXX devices were detected in one of the busy nights (from a Thursday
 	\begin{center}
 		\includegraphics[width=\textwidth]{imgs/DISCO/time_series-bars.eps}
 		\caption{Detected devices in a night in the Discotheque scenario.}
-		% Antonio - explicar lo que se ve en las grï¿½ficas (histograma y serie). Lo de la serie quizï¿½ no sea necesario
+		% Antonio - explicar lo que se ve en las gráficas (histograma y serie). Lo de la serie quizá no sea necesario
 		\label{fig:disco_data}
 	\end{center}
 \end{figure}
-% Antonio - Antares porfa, genera las grï¿½ficas correctas. ;)
+% Antonio - Antares porfa, genera las gráficas correctas. ;)
 
 
-These data have been processed and several variables have been extracted from them, in order to apply clustering and classification methods.
-% Antonio - si no se aplica clasificaciï¿½n corregir esto.
+These data have been processed and several variables have been extracted from them, in order to apply clustering and classification methods. 
+% Antonio - si no se aplica clasificación corregir esto.
 
-The clustering study has been conducted by means of a Self-Organizing Map (SOM) \cite{Kohonen90}, a feed-forward neural network \cite{NN_Haykin94} that uses an unsupervised training algorithm and nonlinear regression techniques to learn or find unknown relationships among the set of variables that describe a problem. The main property of the SOM is that it makes a nonlinear projection from a high-dimensional data space on a regular, low-dimensional (usually 2D) grid of neurons, called units. This grid can be later processed to obtain the unified distance matrix (U-matrix) \cite{UmatUlts} which uses SOM yielded neurons' codevectors (vectors of variables of the problem) as data source, and generates a matrix where each component is a distance measure between two adjacent neurons. Then, these distances are codified as different color shades in a graph.
+The clustering study has been conducted by means of a Self-Organizing Map (SOM) \cite{Kohonen90}, a feed-forward neural network \cite{NN_Haykin94} that uses an unsupervised training algorithm and nonlinear regression techniques to learn or find unknown relationships among the set of variables that describe a problem. The main property of the SOM is that it makes a nonlinear projection from a high-dimensional data space on a regular, low-dimensional (usually 2D) grid of neurons, called units. This grid can be later processed to obtain the unified distance matrix (U-matrix) \cite{UmatUlts} which uses SOM yielded neurons' codevectors (vectors of variables of the problem) as data source, and generates a matrix where each component is a distance measure between two adjacent neurons. Then, these distances are codified as different color shades in a graph. 
 The U-Matrix graph allows visualize any multi-variable dataset in a two-dimensional display, which helps detecting topological relations among neurons and inferring about the input data structure in a straightforward visual manner. High values in the U-matrix represent a frontier region between clusters, and low values represent a high degree of similarities among neurons on that region, i.e. clusters. MATLAB 2009 along with SOM Toolbox \cite{SOMPAK} was used for the SOM analysis.
 
 %and every neuron (cell in the graph) is labeled according the class of the majority of the most similar input patterns. To this end the distance from every pattern to every neuron is computed considering their respective codevectors, the closest neuron to an input is named the best matching unit (BMU), and it is labeled with the pattern class (stage in this problem). Once the process has finished every neuron with more than one associated class finally displays the label with more occurrences.
@@ -195,7 +195,7 @@ Variable name & Description & Type\\
 \texttt{stay\_time} & Number of seconds the device has been in the disco & Integer\\
 \texttt{abs\_time\_node\_X} & Number of seconds the device has been detected in every node X (from 1 to 5) & Integer\\
 \texttt{relat\_time\_node\_X} & Percentage of time the device has been detected in every node X (from 1 to 5) & Float\\
-\texttt{relat\_night\_time\_node\_X} & Percentage of time the device has been detected in every node X (from 1 to 5) &\\
+\texttt{relat\_night\_time\_node\_X} & Percentage of time the device has been detected in every node X (from 1 to 5) &\\ 
 & regarding the whole timetable of the disco & Float\\
 \texttt{non\_detected\_time} & Number of seconds the device has not been detected (but it still is in the disco) & Integer\\
 \noalign{\smallskip}\hline
@@ -248,11 +248,11 @@ The technology for counting/tracking people has evolve over time. At the beginni
 In this section we will focus on people mobility in a public building, a university in this particular study case. To discover people motion flow devices has been placed in every access as can be seen on figure \ref{fig:etsiit}.
 
 Because devices can capture data from the university staff and the students two of them has been placed very close of the main access trying to distinguish staff (1) from students (2). The back door (3) is also the parking access an can be used only by the staff.
-% Antonio - No recuerdo si en esta ï¿½cpoca podï¿½an entrar/salir estudiantes todavï¿½a... ï¿½Antares de quï¿½ cuï¿½ndo son los datos?
+% Antonio - No recuerdo si en esta écpoca podían entrar/salir estudiantes todavía... ¿Antares de qué cuándo son los datos?
 
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=7cm]{imgs/ETSIIT/etsiit_nodes.eps}
+		\includegraphics[height=3.1cm]{imgs/etsiit.png}
 		\caption{ETSIIT MOBYWIT device location}
 		\label{fig:etsiit}
 	\end{center}
@@ -269,7 +269,7 @@ This section describes the experimental analysis of the data gathered by a diffe
 
 The main difference with respect to the other experimental scenarios are that, in this case, the devices detected are cars that are moving at higher velocities. However, in this scenario we have access to the information collected by Spanish Direcci\'on General de Tr\'afico (DGT) using their loop detectors, so in this section we can use real data to validate our approach and obtain a realistic ratio of real devices and detected ones.
 
-6 nodes have been placed near to different roads in Andalusia. Figure \ref{fig:nodosDGT} shows the identifiers of the devices and their exact location. These locations have been chosen because are the nearest ones to existent loop detectors monitored by the DGT, and also, they count with Internet connection to allow the data transmission to our server.
+6 nodes have been placed near to different roads in Andalusia. Figure \ref{fig:nodosDGT} shows the identifiers of the devices and their exact location. These locations have been chosen because are the nearest ones to existent loop detectors monitored by the DGT, and also, they count with Internet connection to allow the data transmission to our server. 
 
 \begin{figure}[htb]
 	\begin{center}
@@ -296,7 +296,7 @@ The main difference with respect to the other experimental scenarios are that, i
 %\caption{Location of the devices for the highway traffic scenario (K.P. = Kilometric Point).}
 %\label{tab:nodosDGT}
 %\end{table}
-% Antonio - Fergu, no sï¿½ si no serï¿½ mejor poner el mapa con los nodos en lugar de sus posiciones en la tabla. Es mï¿½s comprensible su situaciï¿½n. ;)
+% Antonio - Fergu, no sé si no será mejor poner el mapa con los nodos en lugar de sus posiciones en la tabla. Es más comprensible su situación. ;)
 % FERGU: Hecho
 %DATOS A MOSTRAR:
 %1) El total DGT/total nosotros
@@ -315,8 +315,8 @@ Different metrics will be used to obtain a correct correlation between the numbe
 
 Ventajas e inconvenientes
 
-
 \input{ts_forecasting_tex/ts_forecasting}
+
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%   TRAFFIC in a CITY  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %----------------------------------------------------------------------------
@@ -345,3 +345,4 @@ This paper has been funded in part by...
 \bibliography{mobility}
 
 \end{document}
+
