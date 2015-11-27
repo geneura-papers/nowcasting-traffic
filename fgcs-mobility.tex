@@ -256,16 +256,17 @@ The technology for counting/tracking people has evolve over time. At the beginni
 
 In this section we will focus on people mobility in a public building, a university in this particular study case. To discover people motion flow devices has been placed in every access as can be seen on figure \ref{fig:etsiit}.
 
-Because devices can capture data from the university staff and the students two of them has been placed very close of the main access trying to distinguish staff (1) from students (2). The back door (3) is also the parking access an can be used only by the staff.
-% Antonio - No recuerdo si en esta écpoca podían entrar/salir estudiantes todavía... ¿Antares de qué cuándo son los datos?
-
-\begin{figure}[ht]
+\begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=7cm]{imgs/ETSIIT/etsiit_nodes.eps}
+		\includegraphics[height=4cm]{imgs/etsiit.png}
 		\caption{ETSIIT MOBYWIT device location}
 		\label{fig:etsiit}
 	\end{center}
 \end{figure}
+
+Because devices can capture data from the university staff and the students two of them has been placed very close of the main access trying to distinguish staff (62) from students (52). The parking door (42) can be used only by the staff.
+% Antonio - No recuerdo si en esta écpoca podían entrar/salir estudiantes todavía... ¿Antares de qué cuándo son los datos?
+
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%   TRAFFIC in a HIGHWAY  %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -334,7 +335,6 @@ Different metrics will be used to obtain a correct correlation between the numbe
 \item {\em Time median}: as in the previous metric, this one uses a vector of ratios per hour, but every element is calculated using the median, instead the average.
 \end{itemize}
 
-Ventajas e inconvenientes
 
 Figure \ref{fig:dgtRatios} shows the number of devices of one node, applying the chosen correction ratio.
 
@@ -347,8 +347,12 @@ Figure \ref{fig:dgtRatios} shows the number of devices of one node, applying the
 	\label{fig:dgtRatios}
 	\end{center}
 \end{figure}
-\input{ts_forecasting}
 
+
+
+
+
+\input{ts_forecasting_tex/ts_forecasting}
 
 
 %----------------------------------------------------------------------------
@@ -400,3 +404,4 @@ This paper has been funded in part by...
 \bibliography{mobility}
 
 \end{document}
+
