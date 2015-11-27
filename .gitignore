@@ -45,3 +45,11 @@ Temporary Items
 # png's converted to eps's
 *-eps-converted-to.pdf
 
+# Vrivas, 26-Nov-2015
+*~
+*.bbl
+*.aux
+*.blg
+*.log
+*.dvi
+*.spl
