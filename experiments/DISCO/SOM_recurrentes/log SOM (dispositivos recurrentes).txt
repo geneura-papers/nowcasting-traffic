@@ -1,0 +1,10 @@
+**************************************
+* SOM SOBRE DISPOSITIVOS RECURRENTES *
+**************************************
+
+>> sM=som_make(sDN, 'lattice', 'hexa');
+
+ map size [23, 10]
+
+Final quantization error: 1.629
+Final topographic error:  0.048
