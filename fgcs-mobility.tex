@@ -29,7 +29,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   ABSTRACT   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \begin{abstract}
-The wonderful abstract
+
+This paper presents the possible applications of an own mobility monitoring system to solve problems in a Smart City. 
+This system tracks people and vehicles movement using radio-electric space, specifically, the  WiFi and Bluetooth signals emitted by near personal devices, such as mobile phones and hands-free tools. %It also stores an unique, but anonymous, identifier to allow the tracking.
+
+The study has been conducted in four different real scenarios. Two related with people mobility (a public building and a discotheque); and two focused in traffic tracking (urban and intercity roads).
+
+Different Data-Mining techniques have been applied to extract knowledge, traffic forecasting methods to perform reliable predictions, and statistical analyses using different data sources to validate the system accuracy.
+
+The obtained results shows the viability ¿? of the system and its multiple applications for real Smart Cities issues. 
+
 \end{abstract}
 
 %
@@ -279,29 +288,41 @@ The main difference with respect to the other experimental scenarios are that, i
 	\end{center}
 \end{figure}
 
-%\begin{table}
-%\centering
-%\resizebox{12cm}{!}{
-%\begin{tabular}{|c|c|p{5cm}|c|c|}
-%\hline
-%ID   & Province & Location & Latitude & Longitude \\ \hline
-%1010 & Granada  & A-44 K.P. 118+300 increasing direction (link A-44 K.P. 118+300 with A-92 K.P. 241+000) & 37.241668  & -3.6526 \\ \hline
-%1020 & Granada  & A-92 K.P. 294+300 increasing direction  & 37.318763 & -3.137978 \\ \hline
-%1030 & Granada  & A-92 K.P. 344+950, increasing direction & 37.141298 & -2.710871 \\ \hline
-%1040 & M{\'a}laga  & A-7  K.P. 241+800, decreasing direction (Link A-7 K.P. 241+800 with A-45 K.P. 142+400) &  36.757427 & -4.426879 \\ \hline
-%1050 & M{\'a}laga  & A-45 K.P. 121+700, decreasing direction & 36.910454 & -4.444769 \\ \hline
-%1060 & Granada & A-92 K.P. 177+900, decreasing direction (Link A-92 with A-92M) & 37.136209 & -4.282619 \\ \hline
-%\end{tabular}
-%}
-%\caption{Location of the devices for the highway traffic scenario (K.P. = Kilometric Point).}
-%\label{tab:nodosDGT}
-%\end{table}
+
+
 % Antonio - Fergu, no sé si no será mejor poner el mapa con los nodos en lugar de sus posiciones en la tabla. Es más comprensible su situación. ;)
 % FERGU: Hecho
 %DATOS A MOSTRAR:
 %1) El total DGT/total nosotros
 %2) La media del ratio por 15min
 %3) La mediana del ratio por 15min
+
+\subsection{Speed detection}
+ORDEN
+Matriz de E/S con frecuencia
+Matriz de E/S con tiempos
+Grafica de Velocidades
+
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.4]{imgs/PETRA/matrix/petra_matrix_freq.eps}
+		\caption{Frequency between nodes, detecting the unique vehicle identifiers by our Mobywit devices. Every day is grouped in blocks of 4 hours.}
+	\label{fig:dgtMatrixTime}
+	\end{center}
+\end{figure}
+
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.4]{imgs/PETRA/matrix/petra_matrix_travelDuration.eps}
+		\caption{Average time between nodes, detecting the unique vehicle identifiers by our Mobywit devices. Every day is grouped in blocks of 4 hours.}
+	\label{fig:dgtMatrixTime}
+	\end{center}
+\end{figure}
+
+
+\subsection{Data validation using other sources}
 
 Different metrics will be used to obtain a correct correlation between the number of detected devices and the real number detected by the loop detectors.
 
@@ -315,8 +336,21 @@ Different metrics will be used to obtain a correct correlation between the numbe
 
 Ventajas e inconvenientes
 
+Figure \ref{fig:dgtRatios} shows the number of devices of one node, applying the chosen correction ratio.
 
+
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.4]{imgs/petra_graph_DGT-Mobywit-mended.eps}
+		\caption{Devices detected by DGT and detected by our device applying the correction ratio.}
+	\label{fig:dgtRatios}
+	\end{center}
+\end{figure}
 \input{ts_forecasting}
+
+
+
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%   TRAFFIC in a CITY  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %----------------------------------------------------------------------------
@@ -335,6 +369,27 @@ Study of the traffic with data from the Granada nodes...
 \label{sec:conclusions}
 
 In this work, we have done several things...
+
+\section{Appendix} %FERGU: MOVER ESTA SECCION DONDE CORRESPONDA
+
+In this appendix...
+\begin{table}
+\centering
+\resizebox{12cm}{!}{
+\begin{tabular}{|c|c|p{5cm}|c|c|}
+\hline
+ID   & Province & Location & Latitude & Longitude \\ \hline
+1010 & Granada  & A-44 K.P. 118+300 increasing direction (link A-44 K.P. 118+300 with A-92 K.P. 241+000) & 37.241668  & -3.6526 \\ \hline
+1020 & Granada  & A-92 K.P. 294+300 increasing direction  & 37.318763 & -3.137978 \\ \hline
+1030 & Granada  & A-92 K.P. 344+950, increasing direction & 37.141298 & -2.710871 \\ \hline
+1040 & M{\'a}laga  & A-7  K.P. 241+800, decreasing direction (Link A-7 K.P. 241+800 with A-45 K.P. 142+400) &  36.757427 & -4.426879 \\ \hline
+1050 & M{\'a}laga  & A-45 K.P. 121+700, decreasing direction & 36.910454 & -4.444769 \\ \hline
+1060 & Granada & A-92 K.P. 177+900, decreasing direction (Link A-92 with A-92M) & 37.136209 & -4.282619 \\ \hline
+\end{tabular}
+}
+\caption{Location of the devices for the highway traffic scenario (K.P. = Kilometric Point).}
+\label{tab:nodosDGT}
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  ACKNOWLEDGEMENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
