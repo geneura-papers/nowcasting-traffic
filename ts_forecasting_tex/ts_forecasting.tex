@@ -11,33 +11,33 @@ For this work, four methods (three widely used time series forecasters, and one 
 \item {\em Mean}: This is the control method. The future values are computed as the mean of the previous ones.
 \end{itemize}
 
-The data used for the experiments are the ones provided by the node 1010 from the PETRA project starting on 12-Oct-2015, 00:00 hours, and finishing on 31-Oct-2015, 23:45 hours, i.e., three entire weeks less one day (there exist no data for November, the first).
+The data used for the experiments are the ones provided by the node 1010 from the PETRA project starting on 12-Oct-2015, 00:00 hours, and finishing on 31-Oct-2015, 23:45 hours, i.e., three entire weeks less one day (there exist no data for November, the first). As data is aggregated every 15 minutes, this means the time-series was composed of $20(days)*24(hours)*4(quarters)=1920$ values.
 
-In order to study the performance of every method, 10 error measures have been used:
+In order to study the performance of every method, 9 frequently used error measures have been used:
 Mean Error ({\em ME}),
-Mean Squared Error ({\em MSE}),
-Root Mean Squared Error ({\em RMSE}),
-Mean Absolute Error ({\em MAE}),
-Mean Absolute Percentage Error ({\em MAPE}),
-Mean Absolute Scaled Error ({\em MASE}),
-Median Absolute Error ({\em MdAE}),
-Median Absolute Percentage Error ({\em MdAPE}),
-Symmetric Mean Absolute Percentage Error ({\em sMAPE(\%)}), and
-Symmetric Median Absolute Percentage Error ({\em sMdAPE(\%)}).
+ Mean Squared Error ({\em MSE}),
+ Root Mean Squared Error ({\em RMSE}),
+ Mean Absolute Error ({\em MAE}),
+ Mean Absolute Percentage Error ({\em MAPE}),
+ Mean Absolute Scaled Error ({\em MASE}),
+ Median Absolute Error ({\em MdAE}),
+ Median Absolute Percentage Error ({\em MdAPE}),
+ Symmetric Mean Absolute Percentage Error ({\em sMAPE(\%)}), and
+ Symmetric Median Absolute Percentage Error ({\em sMdAPE(\%)}).
 %\begin{itemize}
 %\item{\em ME}: Mean Error.
 %\item{\em MSE}:  Mean Squared Error.
 %\item{\em RMSE}: Root Mean Squared Error.
 %\item{\em MAE}: Mean Absolute Error.
-%\item{\em MAPE}: Mean Absolute Percentage Error.
 %\item{\em MASE}: Mean Absolute Scaled Error.
 %\item{\em MdAE}: Median Absolute Error.
-%\item{\em MdAPE}: Median Absolute Percentage Error.
+%\item{\em MdAPE(\%)}: Median Absolute Percentage Error.
 %\item{\em sMAPE(\%)}: Symmetric Mean Absolute Percentage Error.
 %\item{\em sMdAPE(\%)}: Symmetric Median Absolute Percentage Error.
 %\end{itemize}
 Their different features as well as their equations can be found in ~\cite{RePEc:eee:intfor:v:22:y:2006:i:4:p:679-688}
 
+Table ~\ref{tab:forecasting} shows the values for the ten used measures computed for $576$ values, the ones corresponding to the last 6 says (i.e., $30\%$ of the data). The horizon was set to 1, so that, in order to forecast any given moment all the previous real known data were used to build and train the models and, after this, the new value was forecasted. This way, the problem has been faced as a simulation of what could happen in a continuous system in which new real data where received every 15 minutes so that forecasting models could be also continuously adapted.
 
 \input{ts_forecasting_tex/table-ts-1.tex}
 
