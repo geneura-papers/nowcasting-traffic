@@ -40,11 +40,14 @@ Table ~\ref{tab:forecasting} shows the values for the ten used measures computed
 
 As results show, ETS, ARIMA and Theta behave clearly better than the control method. The differences between the three considered methods are, almost nonexistent. In any case, ETS yields the lowest values in six of the measures been used so that, a priori, it could be considered the best candidate to be chosen as the preferred method to forecast this kind of time-series. Figure \ref{fig:forecasted-values} depicts the values forecasted by ETS comparing them with the expected ones.
 
-
-
-
 \input{ts_forecasting_tex/table-ts-1.tex}
-
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=14cm]{imgs/PETRA/sorecasting-PETRA-1011.eps}
+		\caption{Expected vs forecasted number of cars in node 1011, according to MOBYWIT's records. Forecasted values are provided by smoothing state space model (ETS). }
+		\label{fig:forecasted-values}
+	\end{center}
+\end{figure}
 
 
 
