@@ -474,17 +474,32 @@ Figure \ref{fig:dgtRatios} shows the number of devices of one node, applying the
 
 % TODO: MARIBEL + ANTARES
 
-Study of the traffic with data from the Granada nodes...
 
-%La utilidad de Mobywit dentro del ámbito urbano es la identificación de rutas y la medición de tiempos de desplazamiento entre diversos puntos de la ciudad. En todas las ciudades hay atascos. Un atasco se puede producir por diversas causas y hay varios estudios que los han analizado en ciudades concretas \cite{CausasAtascos1,CausasAtascos2}. Pero si nos centramos en una sola ciudad quizas el analisis es muy concreto, por lo que deberiamos generalizar. En nuestra opinion, no hay duda de que un atasco se produce cuando la capacidad de la via se ve superada por el flujo de vehiculos, independientemente de cual haya sido la causa de haber superado esa capacidad.
+The information Mobywit device is able to provide for urban scope is amazing but we are mainly interesting in two goals: to mesure the trip time among several points in a city and the path the drivers follow across the city to arrive the closer highway. The reason for these goals is because the local council of our city are interesting on them because they  
 
-%Ante una situacion de atasco, cualquier conductor busca vias alternativas y en muchos casos la informacion de esas vias alternativas es muy importante. Pero dependiendo del destino de cualquier vehiculo, la via alternativa a escoger podrian ser diferentes, por lo que las autoridades, lo que hacen es informar del atasco antes de llegar a el para que sean los conductores los que busquen las vias alternativas de desplazamiento.
+%La utilidad de Mobywit dentro del ámbito urbano es la identificación de rutas y la medición de tiempos de desplazamiento entre diversos puntos de la ciudad. En todas las ciudades hay atascos. Un atasco se puede producir por diversas causas y hay varios estudios que los han analizado en ciudades concretas \cite{CausasAtascos1,CausasAtascos2}. Pero si nos centramos en una sola ciudad quizas el analisis es muy concreto, por lo que debemos abstraer y quedarnos con la idea principal que es que los atascos se producen en cualquier situación en la que la capacidad de una determinada via en un momento concreto se ve superada. Sea cual sea la causa de esta superación, una causa puntual, como un accidente que ha limitado la capacidad, o una causa permanente en el tiempo, como por ejemplo un crecimiento del parking móvil de una determinada zona, se debe evitar la zona del atasco.
 
-%Uno de los grandes problemas de las ciudades son los atascos. Los atascos se producen cuando la capacidad de una via se ve
+%Ante una situacion de atasco, cualquier conductor busca vias alternativas y en muchos casos la informacion de esas vias alternativas es muy importante. Pero dependiendo del destino de cada vehiculo, la via alternativa a escoger podria ser diferente, por lo que las autoridades, lo que hacen es informar del atasco antes de llegar a el para que sean los conductores los que busquen las vias alternativas de desplazamiento. En cualquier caso, la primera acción es determinar en qué momento se empieza a producir el atasco para que los conductores sean informados y puedan tomar una decisión en consecuencia. Y la segunda acción es identificar las rutas que los conductores más utilizan para poder desviar al tráfico de la manera más eficaz.
 
 
-% Antonio - Incluir este texto en la sección. ;)
-These devices cannot detect all the real persons and vehicles moving close to them, since not all of them will be emitting BT or WiFi signals, but after a poll that we did among 600 people we can conclude that we detect around the 22\% of the drivers due to BT detection and around the 70\% of the drivers due to WiFi detection, which are good figures to be considered as representative of the real traffic flows.
+For the first stage, early detection of a traffic jam, we have installed two Mobywit devices in Granada city, Spain. The device's location is   Dr. Ol\'{o}riz street. It is one-way, has four lanes and is placed in a neighbourhood which regularly is collapsed. The map of the devices location is in Figure \ref{fig:mososMapa}. The distance among both nodes is about $168$ metres. These devices cannot detect all the real persons and vehicles moving close to them, since not all of them emit BT or WiFi signals, however after an open poll which $600$ people answered we conclude that around the $22\%$ of the drivers emit BT and around the $70\%$ of the drivers emit WiFi signal. We consider the figure is good and representative of the real traffic flows. For this starting experiment, we measure the taked time to go from the first to the second Mobywit device for each counted people. The results of this experiment are displayed in Figure \ref{fig:mososTiempo}.
+
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.4]{imgs/mososMapa.eps}
+		\caption{Urban nodes location in Granada city.}
+	\label{fig:mososMapa}
+	\end{center}
+\end{figure}
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.4]{imgs/mososMapa.eps}
+		\caption{GRAFICA DE ANTARES DE MOSOS, AUN POR GENERAR}
+	\label{fig:mososTiempo}
+	\end{center}
+\end{figure}
 
 
 
