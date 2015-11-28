@@ -5,23 +5,22 @@ Capturing data about traffic in a highway worth not only for describing its curr
 For this work, four methods (three widely used time series forecasters, and one control method) have been used to, automatically, predict the number of cars that will pass in the next period. These methods are included in the forecast package ~\cite{Hyndman08automatictime} of the R program~\cite{R:Bloomfield:2014}, and are the following:
 
 \begin{itemize}
-\item {\em Exponential smoothing state space model (ETS)~\cite{ETS:2008}}: Represent a set of methods that decompose the time-series in three different characteristics: error, trend and seasonal, modelling each one with a given equation. The forecasted values are obtained joining the previous equations by addition or multiplication. The corresponding function in the forecast package builds the different models included in the ETS set, and select the one with the best according to the Akaike's Information Criterion (AIC)~\cite{Akaike1973}.
-\item {\em ARIMA~\cite{BoxJenk}: This well known method, due to Box and Jenkins } integrates autoregressive (AR) and moving average (MA) models in a three-stage iterative cycle. The phases of every cycle consist of: identifying the time series, estimating of the model's parameters, and verifying the built model. Briefly, every model is defined as a sum of $p+q$ terms. The first $p$  terms are defined by $p$ past values, any of them mulitplied by a coefficient; while the last $q$ terms represent the moving averages, also multiplied by their own coefficients.
+\item {\em Exponential smoothing state space model (ETS)~\cite{ETS:2008}}: Represent a set of methods that decompose the time-series in three different characteristics: error, trend and seasonal, modeling each one with a given equation. The forecasted values are obtained joining the previous equations by addition or multiplication. The corresponding function in the forecast package builds the different models included in the ETS set, and select the one with the best according to the Akaike's Information Criterion (AIC)~\cite{Akaike1973}.
+\item {\em ARIMA~\cite{BoxJenk}: This well known method, due to Box and Jenkins } integrates autoregressive (AR) and moving average (MA) models in a three-stage iterative cycle. The phases of every cycle consist of: identifying the time series, estimating of the model's parameters, and verifying the built model. Briefly, every model is defined as a sum of $p+q$ terms. The first $p$  terms are defined by $p$ past values, any of them multiplied by a coefficient; while the last $q$ terms represent the moving averages, also multiplied by their own coefficients.
 \item {\em Theta~\cite{Assima2000}}: This univariate forecasting method is based on modifying the local curvature of the time-series, after having applied a second difference to the data. It decomposes the original time series into several modified ones, which are separately extrapolated so that they have to be combined in order to provide the forecasting.
 \item {\em Mean}: This is the control method. The future values are computed as the mean of the previous ones.
 \end{itemize}
 
 The data used for the experiments are the ones provided by the node 1010 from the PETRA project starting on 12-Oct-2015, 00:00 hours, and finishing on 31-Oct-2015, 23:45 hours, i.e., three entire weeks less one day (there exist no data for November, the first). As data is aggregated every 15 minutes, this means the time-series was composed of $20(days)*24(hours)*4(quarters)=1920$ values.
 
-In order to study the performance of every method, 9 frequently used error measures have been used:
+In order to study the performance of every method, 9 frequently used error measures are shown:
 Mean Error ({\em ME}),
  Mean Squared Error ({\em MSE}),
  Root Mean Squared Error ({\em RMSE}),
  Mean Absolute Error ({\em MAE}),
- Mean Absolute Percentage Error ({\em MAPE}),
  Mean Absolute Scaled Error ({\em MASE}),
  Median Absolute Error ({\em MdAE}),
- Median Absolute Percentage Error ({\em MdAPE}),
+ Median Absolute Percentage Error ({\em MdAPE(\%)}),
  Symmetric Mean Absolute Percentage Error ({\em sMAPE(\%)}), and
  Symmetric Median Absolute Percentage Error ({\em sMdAPE(\%)}).
 %\begin{itemize}
@@ -35,7 +34,7 @@ Mean Error ({\em ME}),
 %\item{\em sMAPE(\%)}: Symmetric Mean Absolute Percentage Error.
 %\item{\em sMdAPE(\%)}: Symmetric Median Absolute Percentage Error.
 %\end{itemize}
-Their different features as well as their equations can be found in ~\cite{RePEc:eee:intfor:v:22:y:2006:i:4:p:679-688}
+Their different features as well as their equations can be found in Hyndman and Koehler's work ~\cite{RePEc:eee:intfor:v:22:y:2006:i:4:p:679-688}
 
 Table ~\ref{tab:forecasting} shows the values for the ten used measures computed for $576$ values, the ones corresponding to the last 6 says (i.e., $30\%$ of the data). The horizon was set to 1, so that, in order to forecast any given moment all the previous real known data were used to build and train the models and, after this, the new value was forecasted. This way, the problem has been faced as a simulation of what could happen in a continuous system in which new real data where received every 15 minutes so that forecasting models could be also continuously adapted.
 
