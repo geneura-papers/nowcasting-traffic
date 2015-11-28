@@ -32,13 +32,13 @@ $^2$ Departamento de Informática. EPS. Universidad de Jaén, Spain}
 \begin{abstract}
 
 This paper presents a set of applications of an own mobility monitoring system addressing several problems in a Smart City scope.
-This system tracks the movement of people and vehicles analysing the  radioelectric space, specifically, the  WiFi and Bluetooth signals emitted by personal (smartphones) or on-board (hands-free) devices. 
+This system tracks the movement of people and vehicles analysing the  radioelectric space, specifically, the  WiFi and Bluetooth signals emitted by personal (smartphones) or on-board (hands-free) devices.
 
 The study has been conducted in four different real scenarios: two related with people mobility (a public building and a discotheque); and two focused in traffic tracking (urban and intercity roads).
 
 Different Data Mining techniques have been applied to extract useful knowledge, traffic forecasting methods to perform reliable predictions, and statistical analyses to model or validate the system accuracy (using different data sources).
 
-The obtained results show the viability and utility of the system, along with its multiple applications for real Smart Cities issues. 
+The obtained results show the viability and utility of the system, along with its multiple applications for real Smart Cities issues.
 
 \end{abstract}
 
@@ -66,11 +66,11 @@ Traffic information is currently gathered using several kind of devices. The loc
 
 The traffic monitors nowadays include pneumatic tubes, loop detectors, floating vehicles or automatic Optical Character Recognition (OCR) among others, but most of them are not able to identify and follow the same vehicle along the road network. In this paper we present a system able to do this while improving the quality of the gathered information and allowing the easy construction of traffic flow models or mobility graphs. In addition, the proposed system is formed by low-cost devices, which is another advantage over the usual monitoring systems, since the cost is an important factor for authorities which tend to install the simplest and cheapest monitors.
 
-Each device, evolution of the one presented in \cite{castillo2014_book_sipesca}, is based in a single-board computer which monitors the radioelectric space catching Bluetooth (BT) and WiFi signals emitted by other devices. These will be mainly smartphones or hands-free systems on vehicles, which are detected and identified by means of their Media Access Control number (MAC) - which is unique - and stored as a traffic `step'. 
+Each device, evolution of the one presented in \cite{castillo2014_book_sipesca}, is based in a single-board computer which monitors the radioelectric space catching Bluetooth (BT) and WiFi signals emitted by other devices. These will be mainly smartphones or hands-free systems on vehicles, which are detected and identified by means of their Media Access Control number (MAC) - which is unique - and stored as a traffic `step'.
 % Antonio - ¿Se os ocurre un nombre mejor para los 'pasos'?
 Thus, depending on the position of the monitoring device, we could gather information about specific people or vehicles displacements. In order to respect the person's privacy and data protection laws, the MAC is one-direction encrypted before storing it, so, we cannot relate a captured MAC with any person.
 
-In this paper we present, four different scenarios centred in the city of Granada (Spain), in which real traffic/mobility data have been gathered. They are namely: a discotheque, a public building of the University, a highway between Granada and Málaga; and one of the main streets in the city. 
+In this paper we present, four different scenarios centred in the city of Granada (Spain), in which real traffic/mobility data have been gathered. They are namely: a discotheque, a public building of the University, a highway between Granada and Málaga; and one of the main streets in the city.
 Several devices or nodes have been deployed in each scenario.
 The data have been deeply processed in this work, using different techniques, such as time series forecasting, clustering, in/out matrices, and statistical methods.
 The aim is to extract useful information and conclusions in every scenario, proving the value of this monitoring system as a tool to improve different issues inside the city and buildings. Thus, the system would be suitable to be part of a \textit{Smart City}.
@@ -148,11 +148,10 @@ in different cities based on different technologies, such as video cameras and
 BT devices and RFID tags included in the vehicles wanted to be followed.
 \end{itemize}
 
-
 - Talk about traffic modeling and forecast or other analyses on it.\\
 % El estado del arte de la predicción de trafico, voy a poner la idea en español en comentarios para estructurármela yo misma en la cabeza.
 
-The traffic flow forecasting in a dual carriageway, in a road, or in any transport way plays an important role for alleviating urban congestions, or for arranging traffic control systems and traffic guidance systems. The main goal is design intelligent transportation systems (ITS) and it cannot be realized without an ability to anticipate traffic conditions in the short-term (less than one hour into the future) although the medium-term or the large-term would help too. In short-term forecasting the traffic control systems could adapt along the time. For example, a traffic light could adjust its red or green time depending on the short-time forecasting of its close streets. Moreover medium-term or long-term could to be useful if there is special conditions in a medium or long time period although nowadays the results of this research is not outstanding and it is an open question for many research groups, but usually in other subjects like time series in general \cite{ParrasGutierrez2014433} or economic development and political decisions 	\cite{longTermBussines2014}. 
+The traffic flow forecasting in a dual carriageway, in a road, or in any transport way plays an important role for alleviating urban congestions, or for arranging traffic control systems and traffic guidance systems. The main goal is design intelligent transportation systems (ITS) and it cannot be realized without an ability to anticipate traffic conditions in the short-term (less than one hour into the future) although the medium-term or the large-term would help too. In short-term forecasting the traffic control systems could adapt along the time. For example, a traffic light could adjust its red or green time depending on the short-time forecasting of its close streets. Moreover medium-term or long-term could to be useful if there is special conditions in a medium or long time period although nowadays the results of this research is not outstanding and it is an open question for many research groups, but usually in other subjects like time series in general \cite{ParrasGutierrez2014433} or economic development and political decisions 	\cite{longTermBussines2014}.
 
 %La predicción del tráfico en una ciudad, una carretera o en general cualquier vía de transporte es esencial para mejorar el transporte. Los %usuarios de cualquier transporte público estarían más contentos si el flujo de tráfico de una ciudad cumpliera unos tiempos preestablecidos, puesto que así el transporte sería más rápido y eficiente. Sin embargo es un problema totalmente abierto en el que numerosos investigadores de todo el mundo realizan sus aportaciones. (Accurate and real-time traffic flow forecasting is essential to adaptive traffic control system and traffic guidance system, which is of great significance for alleviating urban traffic congestions. Because of the importance of traffic flow prediction results, many traffic engineering researchers began to apply mature prediction models of other areas to short-term traffic flow prediction and developed a variety of forecasting methods at the beginning of the 1960s. )
 
@@ -165,18 +164,18 @@ Being the traffic flow forecasting a trending topic several surveys exist and th
 
 % Al tratarse de un tema muy estudiado, existen también numerosos resúmenes que te dan una idea general sobre este ámbito como el [SurveyKumar2007] publicado en el 2007 y centrado en la predicción del tráfico a corto plazo, o el publicado en 2012 por E. Bolshinsky [SurveyBolshinsky2012] donde se repasan las diferentes técnicas utilizadas, los datos de entrada que necesita cada una y algunas arquitecturas de los sistemas utilizados. También hay resúmenes específicos para un tipo de predicción como el propio [SurveyKumar2007] o [Vlahogianni2014] que tiene un enfoque un poco más generalista clasificando la literatura existente en los objetivos que perseguía cada trabajo o dentro de qué ambito estaba emarcado cada artículo, como por ejemplo si predecía el tráfico o predecía el tiempo esperado para un desplazamiento o estaba centrado en la forma de recolección de los datos utilizados.
 
-During the last years, the publications even assimilate new technologies for data analysis like "Big Data" \cite{TrafficFlowPredictionWithBigData2015} or Cloudcomputing approaches \citep{CloudComputing2014}. In \cite{TrafficFlowPredictionWithBigData2015} Yisheng et. al. tackle the traffic flow forecasting problem using temporal and spatial models at the same time using simple forecasting models and assembling them in a global complex system. The results contribute with a time and a spatial place for each prediction. In \citep{CloudComputing2014} Zhaosheng Yang et al. presented traffic flow prediction model for large-scale road network based on cloud computing, which was implemented successfully by introducing genetic algorithm and support vector machine. 
+During the last years, the publications even assimilate new technologies for data analysis like "Big Data" \cite{TrafficFlowPredictionWithBigData2015} or Cloudcomputing approaches \citep{CloudComputing2014}. In \cite{TrafficFlowPredictionWithBigData2015} Yisheng et. al. tackle the traffic flow forecasting problem using temporal and spatial models at the same time using simple forecasting models and assembling them in a global complex system. The results contribute with a time and a spatial place for each prediction. In \citep{CloudComputing2014} Zhaosheng Yang et al. presented traffic flow prediction model for large-scale road network based on cloud computing, which was implemented successfully by introducing genetic algorithm and support vector machine.
 
 
 %Algunos de los trabajos más recientes que versan sobre la predicción del tráfico intentan ya integrar nuevas tecnologías como "Big Data" [TrafficFlowPredictionWithBigData2015] donde intentan abarcar nuevos enfoques en la predicción incluyendo una predicción temporal y espacial simultáneamente utilizando modelos de predicción simples como piezas que forman un sistema mucho más complejo.
 
-Several renowned publications offer to their contributors spacial issues related with the scope, like \cite{Zhang20141}. This publication includes the last advances in traffic forecasting research. Some of them forecast the traffic flows and the trip times \citep{Dong201420}, \cite{Zou201433} or forecast spatial-temporal patterns of the congested and non-congested traffic or papers with new real-time forecasting approaches \cite{Zhang201465} or improved and renowned proposals like \cite{Wang201479} and \cite{Qi201495}. 
+Several renowned publications offer to their contributors spacial issues related with the scope, like \cite{Zhang20141}. This publication includes the last advances in traffic forecasting research. Some of them forecast the traffic flows and the trip times \citep{Dong201420}, \cite{Zou201433} or forecast spatial-temporal patterns of the congested and non-congested traffic or papers with new real-time forecasting approaches \cite{Zhang201465} or improved and renowned proposals like \cite{Wang201479} and \cite{Qi201495}.
 
 %También existen numerosas revistas que proponen números especiales que versan sobre este tema [Zhang20141], donde se puede encontrar los últimos avances que intentan ir más allá y predecir no sólo el estado del tráfico sino el tiempo de los desplazamientos [Dong201420] [Zou201433]  utilizando modelos espacio-temporales del tráfico en diferentes situaciones (spatial?temporal patterns of the congested and non-congested traffic) o trabajos que le dan una vuelta de tuerca más a las técnicas y proponen nuevos métodos de predicción [Zhang201465] utilizando datos del tráfico en tiempo real o métodos ya conocidos y mejorados como [Wang201479][Qi201495].
 
 % Antonio - he movido este texto que es más de background a esta sección. ;)
 % TODO: GUSTAVO, ¿podrías poner citas a esos temas? ;D
-People's mobility is studied for important reasons. Many of them involve profit: conversion rate, marketing effectiveness or staff planning are some of the best known. 
+People's mobility is studied for important reasons. Many of them involve profit: conversion rate, marketing effectiveness or staff planning are some of the best known.
 
 Conversion rate is the percentage of visitors who effectively make a purchase. It can show you if a shop improvement (or decline) is due to more people visit it or more of the visitors finally buy something. Shopping mall professionals study people behavior in order to know if their marketing techniques are paying off. In the same line, stuff planning is directly related with the amount of visitors, as is the maintenance and cleaning needs.
 
@@ -250,7 +249,7 @@ A total of 2200 different devices were detected in one of the busy nights (from 
 
 These data have been processed and several variables have been extracted from them, in order to apply clustering methods.
 
-The clustering study has been conducted by means of a Self-Organizing Map (SOM) \cite{Kohonen90}, a feed-forward neural network \cite{NN_Haykin94} that uses an unsupervised training algorithm and nonlinear regression techniques to learn or find unknown relationships among the set of variables that describe a problem. The main property of the SOM is that it makes a nonlinear projection from a high-dimensional data space on a regular, low-dimensional (usually 2D) grid of neurons, called units. This grid can be later processed to obtain the unified distance matrix (U-matrix) \cite{UmatUlts} which uses SOM yielded neurons' codevectors (vectors of variables of the problem) as data source, and generates a matrix where each component is a distance measure between two adjacent neurons. Then, these distances are codified as different color shades in a graph. 
+The clustering study has been conducted by means of a Self-Organizing Map (SOM) \cite{Kohonen90}, a feed-forward neural network \cite{NN_Haykin94} that uses an unsupervised training algorithm and nonlinear regression techniques to learn or find unknown relationships among the set of variables that describe a problem. The main property of the SOM is that it makes a nonlinear projection from a high-dimensional data space on a regular, low-dimensional (usually 2D) grid of neurons, called units. This grid can be later processed to obtain the unified distance matrix (U-matrix) \cite{UmatUlts} which uses SOM yielded neurons' codevectors (vectors of variables of the problem) as data source, and generates a matrix where each component is a distance measure between two adjacent neurons. Then, these distances are codified as different color shades in a graph.
 The U-Matrix graph allows visualize any multi-variable dataset in a two-dimensional display, which helps detecting topological relations among neurons and inferring about the input data structure in a straightforward visual manner. High values in the U-matrix represent a frontier region between clusters, and low values represent a high degree of similarities among neurons on that region, i.e. clusters. MATLAB 2009 along with SOM Toolbox \cite{SOMPAK} was used for the SOM analysis.
 
 In order to analyze the data, several features have been extracted (generated) from the gathered `steps', composing a pattern per device of its whole stay in the disco. These are described in Table \ref{tab:features_disco}.
@@ -265,12 +264,12 @@ Variable name & Description & Type\\
 \texttt{entrance\_time} & First date/time when the device was detected & Date\\
 \texttt{out\_time} & Last date/time when the device was detected  & Date\\
 \texttt{stay\_time} & Number of seconds the device has been in the disco & Integer\\
-\texttt{abs\_time\_node\_X} & Number of seconds the device has been detected\\ 
+\texttt{abs\_time\_node\_X} & Number of seconds the device has been detected\\
 & in every node X (from 1 to 5) & Integer\\
-\texttt{relat\_time\_node\_X} & Percentage of time the device has been detected\\ 
+\texttt{relat\_time\_node\_X} & Percentage of time the device has been detected\\
 & in every node X (from 1 to 5) & Float\\
-\texttt{relat\_night\_time\_node\_X} & Percentage of time the device has been detected\\ 
-& in every node X (from 1 to 5) regarding the whole timetable\\ 
+\texttt{relat\_night\_time\_node\_X} & Percentage of time the device has been detected\\
+& in every node X (from 1 to 5) regarding the whole timetable\\
 & of the disco & Float\\
 %\texttt{non\_detected\_time} & Number of seconds the device has not been detected (but it still is in the disco) & Integer\\
 \noalign{\smallskip}\hline
@@ -280,8 +279,8 @@ Variable name & Description & Type\\
 \end{table}
 
 
-The application of SOM + U-Matrix produces the graphs shown in Figure 
-%\ref{fig:som_disco_no_detec_0} and 
+The application of SOM + U-Matrix produces the graphs shown in Figure
+%\ref{fig:som_disco_no_detec_0} and
 \ref{fig:som_disco_sin_no_detec}.
 
 %\begin{figure}[ht]
@@ -455,7 +454,7 @@ Study of the traffic with data from the Granada nodes...
 
 %Ante una situacion de atasco, cualquier conductor busca vias alternativas y en muchos casos la informacion de esas vias alternativas es muy importante. Pero dependiendo del destino de cualquier vehiculo, la via alternativa a escoger podrian ser diferentes, por lo que las autoridades, lo que hacen es informar del atasco antes de llegar a el para que sean los conductores los que busquen las vias alternativas de desplazamiento.
 
-%Uno de los grandes problemas de las ciudades son los atascos. Los atascos se producen cuando la capacidad de una via se ve 
+%Uno de los grandes problemas de las ciudades son los atascos. Los atascos se producen cuando la capacidad de una via se ve
 
 
 % Antonio - Incluir este texto en la sección. ;)
@@ -502,4 +501,3 @@ This paper has been funded in part by...
 \bibliography{mobility}
 
 \end{document}
-
