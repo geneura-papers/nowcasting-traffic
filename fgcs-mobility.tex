@@ -339,18 +339,34 @@ As it can be seen in the U-Matrix every neuron (cell in the graph) has been labe
 \section{Analysis of people's mobility in a building of the University}
 \label{sec:etsiit}
 
-In this section we will focus on people's mobility, as explained in Section \ref{sec:soa}, in a public building: the School of Informatics (ETSIIT) at the University of Granada. The building is studied as a proof of concept for the MOBYWIT sensor described in section \ref{sec:mobywit}. In order to monitor people flow, three devices have been placed in the three accesses to the building, as it can be seen on Figure \ref{fig:etsiit}.
+In this section we will focus on people's mobility, as explained in Section \ref{sec:soa}, in a public building: the School of Informatics (ETSIIT) at the University of Granada. The building is studied as a proof of concept for the MOBYWIT sensor described in section \ref{sec:mobywit}. In order to monitor people flow, three devices have been placed in the three accesses to the building, as it can be seen on Figure \ref{fig:etsiit_map}.
 
 \begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[height=4cm]{imgs/etsiit_nodes.eps}
 		\caption{MOBYWIT devices location in ETSIIT}
-		\label{fig:etsiit}
+		\label{fig:etsiit_map}
 	\end{center}
 \end{figure}
 
-Since the devices can capture data from the university staff and the students, two of them has been placed very close of the main access trying to distinguish staff (62) from students (52). The parking door (42) can be used only by the staff.
+Since the devices can detect BT and WIFI signals from both the university staff and the students, two of them has been placed very close of the main access trying to distinguish staff (62) from students (52). The parking door (42) can only be used by the staff.
 
+% please, ANTARES, help me a bit finishing the following paragraphs
+The devices has been recording data for a few days only. With these data the origin/destination histogram that can be seen in figure \ref{fig:etsiit_io} has been created. A careful examination of this figure let us extract some conclusions.
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=\textwidth]{imgs/ETSIIT/etsiit_graph_origin-destination-histogram.eps}
+		\caption{Origin/Destination histogram of people in ETSIIT}
+		\label{fig:etsiit_io}
+	\end{center}
+\end{figure}
+
+\begin{itemize}
+\item Most people are students and they access the building through the students door (sensor 52 in figure \ref{fig:etsiit_map}). Most people get in and out by this door.
+\item Professors and administrative staff seem to divide their way of getting in and out. They used the parking (sensor 42) as much as the main building door (sensor 62).
+\item Some curious behavior has been discovered: some students who enter by their door (42) exit by the parking (52). The only explanation possible is that the cafeteria and the lunch room are in the basement and they can get out without getting up one floor.
+\end{itemize}
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%   TRAFFIC in a HIGHWAY  %%%%%%%%%%%%%%%%%%%%%%%%%
