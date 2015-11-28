@@ -7,13 +7,36 @@ For this work, four methods (three widely used time series forecasters, and one 
 \begin{itemize}
 \item {\em Exponential smoothing state space model (ETS)~\cite{ETS:2008}}: Represent a set of methods that decompose the time-series in three different characteristics: error, trend and seasonal, modelling each one with a given equation. The forecasted values are obtained joining the previous equations by addition or multiplication. The corresponding function in the forecast package builds the different models included in the ETS set, and select the one with the best according to the Akaike's Information Criterion (AIC)~\cite{Akaike1973}.
 \item {\em ARIMA~\cite{BoxJenk}: This well known method, due to Box and Jenkins } integrates autoregressive (AR) and moving average (MA) models in a three-stage iterative cycle. The phases of every cycle consist of: identifying the time series, estimating of the model's parameters, and verifying the built model. Briefly, every model is defined as a sum of $p+q$ terms. The first $p$  terms are defined by $p$ past values, any of them mulitplied by a coefficient; while the last $q$ terms represent the moving averages, also multiplied by their own coefficients.
-\item {\em Theta~\cite{Assima2000}}: %%This paper presents a new univariate forecasting method. The method is based on the concept of modifying the local curvature of the time-series through a coefficient Theta (the Greek letter ), that is applied directly to the second differences of the data. The resulting series that are created maintain the mean and the slope of the original data but not their curvatures. These new time series are named Theta-lines. Their primary qualitative characteristic is the improvement of the approximation of the long-term behavior of the data or the augmentation of the short-term features, depending on the value of the Theta coefficient. The proposed method decomposes the original time series into two or more different Theta-lines. These are extrapolated separately and the subsequent forecasts are combined. The simple combination of two Theta-lines, the Theta=0 (straight line) and Theta=2 (double local curves) was adopted in order to produce forecasts for the 3003 series of the M3 competition. The method performed well, particularly for monthly series and for microeconomic data.
-\item {\em Mean}: This is the control method. The future values are computed as the mean of the previous ones. Despite being one of the simplest forecaster methods, tends to achieve quite good results for very short horizons.
+\item {\em Theta~\cite{Assima2000}}: This univariate forecasting method is based on modifying the local curvature of the time-series, after having applied a second difference to the data. It decomposes the original time series into several modified ones, which are separately extrapolated so that they have to be combined in order to provide the forecasting.
+\item {\em Mean}: This is the control method. The future values are computed as the mean of the previous ones.
 \end{itemize}
 
-The data used for the experiments is the ones provided by DGT (see table ~\ref{tab:nodosDGT}), except node $1040$, which did not record data for many periods. For every node, the number of cars detected have been accumulated in periods of 15 minutes. This has allowed to create a database of 5 files, any of them with $2016$ rows, starting on 12-Oct-2015, 00:00 hours, and finishing on 01-Nov-2015, 23:45 hours, i.e., three entire weeks.
+The data used for the experiments are the ones provided by the node 1010 from the PETRA project starting on 12-Oct-2015, 00:00 hours, and finishing on 31-Oct-2015, 23:45 hours, i.e., three entire weeks less one day (there exist no data for November, the first).
 
-In order to
+In order to study the performance of every method, 10 error measures have been used:
+Mean Error ({\em ME}),
+Mean Squared Error ({\em MSE}),
+Root Mean Squared Error ({\em RMSE}),
+Mean Absolute Error ({\em MAE}),
+Mean Absolute Percentage Error ({\em MAPE}),
+Mean Absolute Scaled Error ({\em MASE}),
+Median Absolute Error ({\em MdAE}),
+Median Absolute Percentage Error ({\em MdAPE}),
+Symmetric Mean Absolute Percentage Error ({\em sMAPE(\%)}), and
+Symmetric Median Absolute Percentage Error ({\em sMdAPE(\%)}).
+%\begin{itemize}
+%\item{\em ME}: Mean Error.
+%\item{\em MSE}:  Mean Squared Error.
+%\item{\em RMSE}: Root Mean Squared Error.
+%\item{\em MAE}: Mean Absolute Error.
+%\item{\em MAPE}: Mean Absolute Percentage Error.
+%\item{\em MASE}: Mean Absolute Scaled Error.
+%\item{\em MdAE}: Median Absolute Error.
+%\item{\em MdAPE}: Median Absolute Percentage Error.
+%\item{\em sMAPE(\%)}: Symmetric Mean Absolute Percentage Error.
+%\item{\em sMdAPE(\%)}: Symmetric Median Absolute Percentage Error.
+%\end{itemize}
+Their different features as well as their equations can be found in ~\cite{RePEc:eee:intfor:v:22:y:2006:i:4:p:679-688}
 
 
 \input{ts_forecasting_tex/table-ts-1.tex}
@@ -21,4 +44,18 @@ In order to
 
 
 
-%% ---------------------- REFERENCIAS que aún no he copiado a mobility.bib
+%% ---------------------- REFERENCIAS que he de copiar a mobility.bib
+@Article{RePEc:eee:intfor:v:22:y:2006:i:4:p:679-688,
+  author={Hyndman, Rob J. and Koehler, Anne B.},
+  title={{Another look at measures of forecast accuracy}},
+  journal={International Journal of Forecasting},
+  year=2006,
+  volume={22},
+  number={4},
+  pages={679-688},
+  month={},
+  keywords={},
+  doi={},
+  abstract={We discuss and compare measures of accuracy of univariate time series forecasts. The methods used in the M-competition and the M3-competition, and many of the measures recommended by previous authors on this topic, are found to be inadequate, and many of them are degenerate in commonly occurring situations. Instead, we propose that the mean absolute scaled error become the standard measure for comparing forecast accuracy across multiple time series.<P>(This abstract was borrowed from another version of this item.)},
+  url={https://ideas.repec.org/a/eee/intfor/v22y2006i4p679-688.html}
+}

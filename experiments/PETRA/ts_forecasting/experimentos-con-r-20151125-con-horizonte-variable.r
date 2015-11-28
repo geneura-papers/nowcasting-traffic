@@ -200,7 +200,7 @@ bbdd<-function( aBD, horizonte ) {
 #myarg <- commandArgs()
 #myarg <- as.numeric(myarg[length(myarg)])
 
-horizonte <- 1 #myarg;
+horizonte <- 10 #myarg;
 cat ( "Horizonte: (1 para el día siguiente)", horizonte,"\n" );
 
 path="./data_ts_forecasting/";
