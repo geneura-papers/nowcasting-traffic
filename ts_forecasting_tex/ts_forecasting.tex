@@ -2,7 +2,7 @@
 \label{sub:ts_forecasting}
 Capturing data about traffic in a highway worth not only for describing its current situation, but also for forecasting future conditions. In this sense, counting the number of cars that have passed for a given point in a given time can be considered as a time series, allowing the use of automatic tools to perform forecasting.
 
-For this work, 4 methods (3 widely used time series forecasters, and 1 control method) have been used to, automatically, predict the number of cars that will pass in the next period. These methods are included in the forecast package ~\cite{Hyndman08automatictime} of the R program~\cite{R:Bloomfield:2014}, and are the following:
+For this work, four methods (three widely used time series forecasters, and one control method) have been used to, automatically, predict the number of cars that will pass in the next period. These methods are included in the forecast package ~\cite{Hyndman08automatictime} of the R program~\cite{R:Bloomfield:2014}, and are the following:
 
 \begin{itemize}
 \item {\em Exponential smoothing state space model (ETS)~\cite{ETS:2008}}: Represent a set of methods that decompose the time-series in three different characteristics: error, trend and seasonal, modelling each one with a given equation. The forecasted values are obtained joining the previous equations by addition or multiplication. The corresponding function in the forecast package builds the different models included in the ETS set, and select the one with the best according to the Akaike's Information Criterion (AIC)~\cite{Akaike1973}.

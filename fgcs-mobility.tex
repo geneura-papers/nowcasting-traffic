@@ -19,9 +19,10 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   AUTHORS   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\author{author1, author2, author3, author4}
-\ead{\{author1, author2, author3, author4\}@ugr.es}
-\address{Departamento de Arquitectura y Tecnología de Computadores.\\ ETSIIT - CITIC. University of Granada, Spain}
+\author{A.J. Fernández-Ares$^1$, A.M. Mora$^1$, M.G. Arenas$^1$, P. García-Sanchez$^1$, \\ G. Romero$^1$, V. Rivas$^2$, P.A. Castillo$^1$, J.J. Merelo$^1$}
+\ead{\{antares, amorag, mgarenas, pablogarcia, gustavo, pacv, jmerelo\}@ugr.es, vrivas@ujaes.es}
+\address{$^1$ Departamento de Arquitectura y Tecnología de Computadores.\\ ETSIIT - CITIC. University of Granada, Spain\\
+$^2$ Departamento de Informática. EPS. Universidad de Jaén, Spain}
 
 %\maketitle
 
@@ -30,14 +31,14 @@
 %
 \begin{abstract}
 
-This paper presents the possible applications of an own mobility monitoring system to solve problems in a Smart City. 
-This system tracks people and vehicles movement using radio-electric space, specifically, the  WiFi and Bluetooth signals emitted by near personal devices, such as mobile phones and hands-free tools. %It also stores an unique, but anonymous, identifier to allow the tracking.
+This paper presents a set of applications of an own mobility monitoring system addressing several problems in a Smart City scope.
+This system tracks the movement of people and vehicles analysing the  radioelectric space, specifically, the  WiFi and Bluetooth signals emitted by personal (smartphones) or on-board (hands-free) devices. 
 
-The study has been conducted in four different real scenarios. Two related with people mobility (a public building and a discotheque); and two focused in traffic tracking (urban and intercity roads).
+The study has been conducted in four different real scenarios: two related with people mobility (a public building and a discotheque); and two focused in traffic tracking (urban and intercity roads).
 
-Different Data-Mining techniques have been applied to extract knowledge, traffic forecasting methods to perform reliable predictions, and statistical analyses using different data sources to validate the system accuracy.
+Different Data Mining techniques have been applied to extract useful knowledge, traffic forecasting methods to perform reliable predictions, and statistical analyses to model or validate the system accuracy (using different data sources).
 
-The obtained results shows the viability ¿? of the system and its multiple applications for real Smart Cities issues. 
+The obtained results show the viability and utility of the system, along with its multiple applications for real Smart Cities issues. 
 
 \end{abstract}
 
@@ -45,7 +46,7 @@ The obtained results shows the viability ¿? of the system and its multiple appli
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   KEYWORDS   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \begin{keyword}
-Smart traffic \sep Transit indicators \sep Traffic forecast \sep Mobility analysis
+Smart City \sep Smart traffic \sep Transit indicators \sep Traffic forecast \sep Mobility analysis
 \end{keyword}
 % Antonio - A añadir y mejorar
 
@@ -68,10 +69,6 @@ The traffic monitors nowadays include pneumatic tubes, loop detectors, floating 
 Each device, evolution of the one presented in \cite{castillo2014_book_sipesca}, is based in a single-board computer which monitors the radioelectric space catching Bluetooth (BT) and WiFi signals emitted by other devices. These will be mainly smartphones or hands-free systems on vehicles, which are detected and identified by means of their Media Access Control number (MAC) - which is unique - and stored as a traffic `step'. 
 % Antonio - ¿Se os ocurre un nombre mejor para los 'pasos'?
 Thus, depending on the position of the monitoring device, we could gather information about specific people or vehicles displacements. In order to respect the person's privacy and data protection laws, the MAC is one-direction encrypted before storing it, so, we cannot relate a captured MAC with any person.
-
-These devices cannot detect all the real persons and vehicles moving close to them, since not all of them will be emitting BT or WiFi signals, but after a poll that we did among 600 people we can conclude that we detect around the 22\% of the drivers due to BT detection and around the 70\% of the drivers due to WiFi detection, which are good figures to be considered as representative of the real traffic flows.
-These data
-% Antonio - quizá se podría quitar esto, ya que se analizará en el caso del tráfico en carreteras (datos DGT)
 
 In this paper we present, four different scenarios centred in the city of Granada (Spain), in which real traffic/mobility data have been gathered. They are namely: a discotheque, a public building of the University, a highway between Granada and Málaga; and one of the main streets in the city. 
 Several devices or nodes have been deployed in each scenario.
@@ -120,7 +117,19 @@ Several renowned publications offer to their contributors spacial issues related
 
 %También existen numerosas revistas que proponen números especiales que versan sobre este tema [Zhang20141], donde se puede encontrar los últimos avances que intentan ir más allá y predecir no sólo el estado del tráfico sino el tiempo de los desplazamientos [Dong201420] [Zou201433]  utilizando modelos espacio-temporales del tráfico en diferentes situaciones (spatial?temporal patterns of the congested and non-congested traffic) o trabajos que le dan una vuelta de tuerca más a las técnicas y proponen nuevos métodos de predicción [Zhang201465] utilizando datos del tráfico en tiempo real o métodos ya conocidos y mejorados como [Wang201479][Qi201495].
 
+% Antonio - he movido este texto que es más de background a esta sección. ;)
+% TODO: GUSTAVO, ¿podrías poner citas a esos temas? ;D
+People's mobility is studied for important reasons. Many of them involve profit: conversion rate, marketing effectiveness or staff planning are some of the best known. 
 
+Conversion rate is the percentage of visitors who effectively make a purchase. It can show you if a shop improvement (or decline) is due to more people visit it or more of the visitors finally buy something. Shopping mall professionals study people behavior in order to know if their marketing techniques are paying off. In the same line, stuff planning is directly related with the amount of visitors, as is the maintenance and cleaning needs.
+
+Other reasons are more practical than commercial: How many people visit a public building? When? It will help to improve the planning of the services provided, heating or cooling of the building, facility cleaning, staff shifts and so on. In a museum or a sport stadium you can adjust many parameters to help people enjoy from a better experience while raising the profits.
+
+The technology for counting/tracking people has evolved over time. At the beginning infrared beam counters were used. These were cheap but failure prone, like when two persons pass a door together. Thermal counters were used next. Also cheap but with serious limitations like the short distance from the counting device to the people being counted. Latest technology use video cameras and WiFi, or bluetooth, detectors. Video devices are more expensive as is the software in charge of image processing, more expensive in term of resource consumption. On the positive side, now we can do many more this than counting people. We can track their paths and behavior. Radio signal also is a great method for people tracking, as powerful as video but cheaper in terms of hardware price and algorithm cost. The range of detection is wider, 100m approximately.
+
+% TODO: ANTONIO - Meter estado del arte en Smart City y enlazar con lo de movilidad.
+
+*** COMPLETAR ***
 
 %------------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  MOBYWIT  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -169,7 +178,7 @@ In addition, and as it is shown in Figure 1, the device runs an specific Operati
 In the first scenario of this work, a Discotheque has been monitored using five MOBYWIT devices, deployed one in every of the three main rooms (each room devoted to a type of music), one on the main entrance, and one in the terrace.
 % Antonio - JJ, revisa y completa esto, por favor
 
-A total of XXXX devices were detected in one of the busy nights (from a Thursday at 8pm to Friday at 8am), distributed per node as it is shown in Figure \ref{fig:disco_data}.
+A total of 2200 different devices were detected in one of the busy nights (from a Thursday at 8 pm to Friday at 8 am), distributed per node as it is shown in Figure \ref{fig:disco_data}.
 
 \begin{figure}[ht]
 	\begin{center}
@@ -179,16 +188,13 @@ A total of XXXX devices were detected in one of the busy nights (from a Thursday
 		\label{fig:disco_data}
 	\end{center}
 \end{figure}
-% Antonio - Antares porfa, genera las gráficas correctas. ;)
+% Antonio - Antares porfa, genera la gráfica correctas. ;)
+% TODO: ANTARES - Gráfica correcta
 
-
-These data have been processed and several variables have been extracted from them, in order to apply clustering and classification methods. 
-% Antonio - si no se aplica clasificación corregir esto.
+These data have been processed and several variables have been extracted from them, in order to apply clustering methods.
 
 The clustering study has been conducted by means of a Self-Organizing Map (SOM) \cite{Kohonen90}, a feed-forward neural network \cite{NN_Haykin94} that uses an unsupervised training algorithm and nonlinear regression techniques to learn or find unknown relationships among the set of variables that describe a problem. The main property of the SOM is that it makes a nonlinear projection from a high-dimensional data space on a regular, low-dimensional (usually 2D) grid of neurons, called units. This grid can be later processed to obtain the unified distance matrix (U-matrix) \cite{UmatUlts} which uses SOM yielded neurons' codevectors (vectors of variables of the problem) as data source, and generates a matrix where each component is a distance measure between two adjacent neurons. Then, these distances are codified as different color shades in a graph. 
 The U-Matrix graph allows visualize any multi-variable dataset in a two-dimensional display, which helps detecting topological relations among neurons and inferring about the input data structure in a straightforward visual manner. High values in the U-matrix represent a frontier region between clusters, and low values represent a high degree of similarities among neurons on that region, i.e. clusters. MATLAB 2009 along with SOM Toolbox \cite{SOMPAK} was used for the SOM analysis.
-
-%and every neuron (cell in the graph) is labeled according the class of the majority of the most similar input patterns. To this end the distance from every pattern to every neuron is computed considering their respective codevectors, the closest neuron to an input is named the best matching unit (BMU), and it is labeled with the pattern class (stage in this problem). Once the process has finished every neuron with more than one associated class finally displays the label with more occurrences.
 
 In order to analyze the data, several features have been extracted (generated) from the gathered `steps', composing a pattern per device of its whole stay in the disco. These are described in Table \ref{tab:features_disco}.
 
@@ -202,11 +208,14 @@ Variable name & Description & Type\\
 \texttt{entrance\_time} & First date/time when the device was detected & Date\\
 \texttt{out\_time} & Last date/time when the device was detected  & Date\\
 \texttt{stay\_time} & Number of seconds the device has been in the disco & Integer\\
-\texttt{abs\_time\_node\_X} & Number of seconds the device has been detected in every node X (from 1 to 5) & Integer\\
-\texttt{relat\_time\_node\_X} & Percentage of time the device has been detected in every node X (from 1 to 5) & Float\\
-\texttt{relat\_night\_time\_node\_X} & Percentage of time the device has been detected in every node X (from 1 to 5) &\\ 
-& regarding the whole timetable of the disco & Float\\
-\texttt{non\_detected\_time} & Number of seconds the device has not been detected (but it still is in the disco) & Integer\\
+\texttt{abs\_time\_node\_X} & Number of seconds the device has been detected\\ 
+& in every node X (from 1 to 5) & Integer\\
+\texttt{relat\_time\_node\_X} & Percentage of time the device has been detected\\ 
+& in every node X (from 1 to 5) & Float\\
+\texttt{relat\_night\_time\_node\_X} & Percentage of time the device has been detected\\ 
+& in every node X (from 1 to 5) regarding the whole timetable\\ 
+& of the disco & Float\\
+%\texttt{non\_detected\_time} & Number of seconds the device has not been detected (but it still is in the disco) & Integer\\
 \noalign{\smallskip}\hline
 \end{tabular}
  \caption{Extracted features from gathered data in the discotheque. \label{tab:features_disco}}
@@ -214,19 +223,21 @@ Variable name & Description & Type\\
 \end{table}
 
 
-The application of SOM + U-Matrix produces the graphs shown in Figure \ref{fig:som_disco_no_detec_0} and \ref{fig:som_disco_sin_no_detec}.
+The application of SOM + U-Matrix produces the graphs shown in Figure 
+%\ref{fig:som_disco_no_detec_0} and 
+\ref{fig:som_disco_sin_no_detec}.
 
-\begin{figure}[ht]
-	\begin{center}
-		\includegraphics[width=14cm]{imgs/DISCO/som_disco_no_detec_0.eps}
-		\includegraphics[width=8cm]{imgs/DISCO/umatrix_disco_no_detec_0.eps}
-		\caption{Detected devices in a night in the Discotheque scenario. Extracted features}
+%\begin{figure}[ht]
+%	\begin{center}
+%		\includegraphics[width=14cm]{imgs/DISCO/som_disco_no_detec_0.eps}
+%		\includegraphics[width=8cm]{imgs/DISCO/umatrix_disco_no_detec_0.eps}
+%		\caption{Detected devices in a night in the Discotheque scenario. Extracted features}
 % Antonio - Ajustados los no detectados a 0
-		\label{fig:som_disco_no_detec_0}
-	\end{center}
-\end{figure}
+%		\label{fig:som_disco_no_detec_0}
+%	\end{center}
+%\end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[width=14cm]{imgs/DISCO/som_disco_sin_no_detec.eps}
 		\includegraphics[width=8cm]{imgs/DISCO/umatrix_disco_sin_no_detec.eps}
@@ -236,10 +247,33 @@ The application of SOM + U-Matrix produces the graphs shown in Figure \ref{fig:s
 	\end{center}
 \end{figure}
 
-% Antonio - Poner las figuras de los experimentos definitivos
+*** PONER LOS NOMBRES DE LAS VARIABLES CORRECTOS ***
 
 The results show that... *** COMENTARLOS ***
+The problem is that there are no labels on the graph, so the interpretation cannot be as complete as it could... ***
 
+
+In addition, another study has been conducted using SOM and U-MATRIX graphs. This time we want to analyze the \textit{recurrence of devices} to the discotheque, and their overall behaviour in the days they have come back. To this aim a new dataset has been composed, extracting those `steps' of devices detected in more than two nights in two whole months.
+For each device, we have computed a sum of the amounts of diary time per monitoring node. Relative times have been also calculated as another set of features. There are 220000 monitored `steps' and 2100 different devices, so this amount of patterns to cluster.
+
+We have labelled the data using the number of different days every device has been detected (the recurrence rate).
+
+The results on this study are shown in Figure \ref{fig:som_disco_recurrencia}.
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=14cm]{imgs/DISCO/som_recurrentes.eps}
+		\includegraphics[width=8cm]{imgs/DISCO/umatrix_recurrentes.eps}
+		\caption{Recurrence of devices in different days. The label is the recurrence rate of the majority in that neuron/BMU}
+		\label{fig:som_disco_recurrencia}
+	\end{center}
+\end{figure}
+
+*** PONER GRÁFICA CON DATOS Y VARIABLES DEFINITIVAS ***
+
+As it can be seen in the U-Matrix every neuron (cell in the graph) has been labelled according to the class of the majority of the most similar input patterns. To this end the distance from every pattern to every neuron is computed considering their respective codevectors, the closest neuron to an input is named the best matching unit (BMU), and it is labelled with the pattern class (stage in this problem). Once the process has finished every neuron with more than one associated class finally displays the label with more occurrences.
+
+*** COMENTAR RESULTADOS ***
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%  PEOPLE'S MOBILITY IN A BUILDING  %%%%%%%%%%%%%%%%%%%%%%
@@ -248,24 +282,17 @@ The results show that... *** COMENTARLOS ***
 \section{Analysis of people's mobility in a building of the University}
 \label{sec:etsiit}
 
-People mobility is studied for important reasons. Many of them involve profit: conversion rate, marketing effectiveness or staff planning are some of the best known. Conversion rate is the percentage of visitors who effectively make a purchase. It can show you if a shop improve, or decline, is because more people visit it or more of the visitors finally end buying something. Shopping mall professionals study people behavior to know if their marketing techniques are paying off. In the same line, stuff planning is directly related with the amount of visitors, as is the maintenance and cleaning needs.
-
-Other reasons are more practical than commercial. How many people visit a public building? When? It will help to improve the planning of the services provided, heating or cooling of the building, facility cleaning, staff shifts and so on. In a museum or a sport stadium you can adjust many parameters to help people enjoy from a better experience while raising the profits.
-
-The technology for counting/tracking people has evolve over time. At the beginning infrared beam counters were used. These were cheap but failure prone, like when two persons pass a door together. Thermal counters were used next. Also cheap but with serious limitations like the short distance from the counting device to the people being counted. Latest technology use video cameras and wifi, or bluetooth, detectors. Video devices are more expensive as is the software in charge of image processing, more expensive in term of resource consumption. On the positive side, now we can do many more this than counting people. We can track their paths and behavior. Radio signal also is a great method for people tracking, as powerful as video but cheaper in terms of hardware price and algorithm cost. The range of detection is wider, 100m approximately.
-
-In this section we will focus on people mobility in a public building, a university in this particular study case. To discover people motion flow devices has been placed in every access as can be seen on figure \ref{fig:etsiit}.
+In this case of study we will focus on people's mobility (as explained in Section \ref{sec:soa}) in a public building: the School of Informatics (ETSIIT) at the University of Granada. In order to monitor people motion flows, three devices have been placed in the three accesses to the building, as it can be seen on Figure \ref{fig:etsiit}.
 
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[height=4cm]{imgs/etsiit.png}
-		\caption{ETSIIT MOBYWIT device location}
+		\includegraphics[height=4cm]{imgs/etsiit_nodes.eps}
+		\caption{MOBYWIT devices location in ETSIIT}
 		\label{fig:etsiit}
 	\end{center}
 \end{figure}
 
-Because devices can capture data from the university staff and the students two of them has been placed very close of the main access trying to distinguish staff (62) from students (52). The parking door (42) can be used only by the staff.
-% Antonio - No recuerdo si en esta écpoca podían entrar/salir estudiantes todavía... ¿Antares de qué cuándo son los datos?
+Since the devices can capture data from the university staff and the students, two of them has been placed very close of the main access trying aiming to distinguish staff (62) from students (52). The parking door (42) can be used only by the staff.
 
 
 %----------------------------------------------------------------------------
@@ -275,16 +302,16 @@ Because devices can capture data from the university staff and the students two 
 \section{Analysis of the traffic in a highway}
 \label{sec:traffic}
 
-This section describes the experimental analysis of the data gathered by a different number of devices placed in statal highways.
+This section describes the experimental analysis of the data gathered by a different number of devices placed in national highways.
 
-The main difference with respect to the other experimental scenarios are that, in this case, the devices detected are cars that are moving at higher velocities. However, in this scenario we have access to the information collected by Spanish Direcci\'on General de Tr\'afico (DGT) using their loop detectors, so in this section we can use real data to validate our approach and obtain a realistic ratio of real devices and detected ones.
+The main difference with respect to the other experimental scenarios is that, in this case, the detected devices are cars moving at higher speed. However, in this scenario we also count with the information provided by the Spanish traffic management agency, Direcci\'on General de Tr\'afico (DGT), which is collected using loop detectors. So, in this case, we have used real data in order to validate our approach by comparing the real number of vehicles which has passed a point, with the number of devices detected by MOBYWIT. Thus, a realistic \textit{ratio} between both numbers has been computed.
 
-6 nodes have been placed near to different roads in Andalusia. Figure \ref{fig:nodosDGT} shows the identifiers of the devices and their exact location. These locations have been chosen because are the nearest ones to existent loop detectors monitored by the DGT, and also, they count with Internet connection to allow the data transmission to our server. 
+Six nodes have been placed along different roads in Andalusia (south Spain). Figure \ref{fig:nodosDGT} shows the identifiers of these devices and their exact location. These locations have been chosen because are the nearest ones to existent loop detectors monitored by the DGT, and also, they have Internet connection to allow the transmission of data to our server.
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.4]{imgs/nodos_dgt.png}
-		\caption{Location of the devices for the highway traffic scenario.}
+		\includegraphics[scale=0.4]{imgs/nodos_dgt.eps}
+		\caption{Location of MOBYWIT devices for the highway traffic scenario}
 	\label{fig:nodosDGT}
 	\end{center}
 \end{figure}
@@ -298,32 +325,33 @@ The main difference with respect to the other experimental scenarios are that, i
 %2) La media del ratio por 15min
 %3) La mediana del ratio por 15min
 
-\subsection{Speed detection}
+\subsection{Speed computation}
 ORDEN
-Matriz de E/S con frecuencia
-Matriz de E/S con tiempos
-Grafica de Velocidades
-
+\begin{enumerate}
+    \item Matriz de E/S con frecuencia
+    \item Matriz de E/S con tiempos
+    \item Grafica de Velocidades
+\end{enumerate}
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.4]{imgs/PETRA/matrix/petra_matrix_freq.eps}
-		\caption{Frequency between nodes, detecting the unique vehicle identifiers by our Mobywit devices. Every day is grouped in blocks of 4 hours.}
-	\label{fig:dgtMatrixTime}
+		\includegraphics[scale=0.4]{imgs/petra_matrix_freq.eps}
+		\caption{Frequency between nodes, detecting the unique vehicle identifiers by our MOBYWIT devices. Every day is grouped in blocks of 4 hours.}
+	\label{fig:dgtMatrixFrec}
 	\end{center}
 \end{figure}
 
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.4]{imgs/PETRA/matrix/petra_matrix_travelDuration.eps}
-		\caption{Average time between nodes, detecting the unique vehicle identifiers by our Mobywit devices. Every day is grouped in blocks of 4 hours.}
+		\includegraphics[scale=0.4]{imgs/petra_matrix_travelDuration.eps}
+		\caption{Average time between nodes, detecting the unique vehicle identifiers by our MOBYWIT devices. Every day is grouped in blocks of 4 hours.}
 	\label{fig:dgtMatrixTime}
 	\end{center}
 \end{figure}
 
 
-\subsection{Data validation using other sources}
+\subsection{Data validation using other sources of data}
 
 Different metrics will be used to obtain a correct correlation between the number of detected devices and the real number detected by the loop detectors.
 
@@ -359,10 +387,16 @@ Figure \ref{fig:dgtRatios} shows the number of devices of one node, applying the
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%   TRAFFIC in a CITY  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %----------------------------------------------------------------------------
 
-\section{Analysis of the traffic in a city}
+\section{Analysis of the urban traffic in a city}
 \label{sec:city}
 
+% TODO: MARIBEL + ANTARES
+
 Study of the traffic with data from the Granada nodes...
+
+% Antonio - Incluir este texto en la sección. ;)
+These devices cannot detect all the real persons and vehicles moving close to them, since not all of them will be emitting BT or WiFi signals, but after a poll that we did among 600 people we can conclude that we detect around the 22\% of the drivers due to BT detection and around the 70\% of the drivers due to WiFi detection, which are good figures to be considered as representative of the real traffic flows.
+
 
 
 %----------------------------------------------------------------------------
