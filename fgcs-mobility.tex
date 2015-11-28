@@ -90,62 +90,62 @@ Finally, Section \ref{sec:conclusions} plots the conclusions reached in the work
 \section{Background and state of the art}
 \label{sec:soa}
 
-%- Talk about current technologies of monitoring (a couple of paragraphs)\\
+Several technologies are used to collect data and gather information about the 
+state of the roads. Traffic monitoring technologies can be classified as 
+intrusive, installed in the pavement, and not-intrusive, without contact with 
+the road, causing minimal effect on the traffic flow \cite{martin2003detector}.
 
-Several technologies are used to data collection and generation of 
-information on the state of the roads and traffic monitoring, and can be 
-classified as intrusive technologies (installed in the pavement), and 
-not-intrusive technologies (no contact with the road, causing minimal 
-effect on traffic flow) \cite{martin2003detector}.
-
-Main technologies currently used include pneumatic tubes, loop 
-detectors, or automatic recognition systems, among others 
+Main technologies currently used include pneumatic tubes, inductive loop 
+detectors and automatic recognition systems, among others 
 \cite{rodrigue2013geography}.
 
-Pneumatic tubes are placed on top of the lane to detect vehicles by the 
-change in pressure generated when a vehicle passes over the tube, while 
-a loop detector is a wire embedded into the roadway in a square 
-configuration. The main disadvantage of these systems is that they are 
-unable to identify detected vehicles, in order to obtain 
-origin/destination matrixes. Just the number of vehicles and their type 
-can be calculated, but does not allow to obtain traffic flow, nor to 
-determine whether a certain vehicle passes repeatedly. In addition, 
-their high cost makes it unprofitable covering secondary roads with 
-them, so they are often located on major roads.
+Pneumatic tubes are placed on top of the lane to detect vehicles by the change 
+in pressure generated when a vehicle passes over the tube. An inductive loop 
+detector is a wire embedded into the roadway usually in a square configuration. 
+A electric current is sent to the wire and when a metal surface with certain 
+minimum area pass or is stopped above a pulse is triggered and detected. The 
+main drawback of these two systems is that they are unable to identify the 
+vehicle detected by the sensor. This way, the highly desired origin/destination 
+matrices cannot be obtained. Just the number of vehicles and their type can be 
+guessed. This count, although valuable, does not allow us to know many traffic 
+flow characteristics like, for example, repetitive passes of the same vehicle. 
+Because of their relatively high cost of installation and maintenance it is not 
+feasible to install them all over our roads. That's way we can only see them on 
+major roads, cities and points of special interest.
 
-Finally, the automatic recognition technology has experienced an 
-increase in recent years due to its ability to detect individual 
-vehicles without relying on in-vehicle systems. Video image detection is 
-a good example; in this case a trip line and/or tracking are used to 
-record traffic data. Furthermore, they are used for automatic detection 
-of incidents on the road. That is the main advantage over previous 
-information systems. However, system reliability might not be the best, 
-as weather may limit accuracy. Moreover, these systems are very costly 
-compared to the previous \cite{skszek2001state}. Finally, from a privacy 
-point of view, the Spanish Data Protection Agency (Agencia de Protección 
-de Datos) considers the car license plate as a personal data, so that it 
-would require the user consent.
+Finally, the automatic recognition technology has experienced an increase in 
+recent years due to its ability to detect individual vehicles without relying 
+on in-vehicle systems. Video image detection is a good example; in this case a 
+trip line and/or tracking are used to record traffic data. Furthermore, they 
+are used for automatic detection of incidents on the road. That is the main 
+advantage over previous information systems. However, system reliability might 
+not be the best, as weather may limit accuracy. Moreover, these systems are 
+very expensive compared to the previously described \cite{skszek2001state}. 
+Another problem has arisen recently with privacy. The Spanish Data Protection 
+Agency (Agencia de Protección de Datos) considers the car license plate number 
+as personal data. As such, user consent is required for it to be saved.
 
-There are different companies working in the traffic information area 
-using approaches similar to the presented in this work:
+There are many different companies working in the traffic information field 
+using approaches like the previously described in this work. Some of the more 
+relevant are:
 
 \begin{itemize}
-\item Bit Carrier \cite{mendez2011system,BitCarrier}: It offers a 
-traffic management system based in BT to count people and commercial 
-routes (pathsolver). Its technology was deployed in highways managed by 
-Abertis for traffic control and monitoring. Actually it has a 150 
-devices network in Catalonia, so it allows count the traffic times of 
-200.000 persons each day.
-\item Trafficnow \cite{Trafficnow}: Another BT system product. A pilot 
-experience has been deployed in Vigo.
+\item Bit Carrier \cite{mendez2011system,BitCarrier}: It offers a traffic 
+management system based in BT to count people and commercial routes 
+(pathsolver). Its technology was deployed in highways managed by Abertis for 
+traffic flow control and monitoring. Actually it has a network of 150 devices 
+in Catalonia capable of tracking 200000 people every day.
+\item Trafficnow \cite{Trafficnow}: Offers a traffic flow control center for 
+small towns. It requires a net of BT sensors. A pilot experience has been 
+deployed in Vigo.
 \item Traffax Inc \cite{TraffaxInc}: It is a company that also has used 
-BT for calculating origin-destination and transport time matrixes.
+BT for calculating origin-destination and transport time matrices.
 \item Savari Networks \cite{SavariNetworks}: It offers the commercial 
 product StreetWAVE for traffic monitoring to know in real time the 
 traffic status.
-\item TrafficCast \cite{TrafficCast}: They have developed prediction 
-models in different cities based on different technologies, such as 
-cameras, BT and RFID included in the vehicles.
+\item TrafficCast \cite{TrafficCast}: They have developed prediction models 
+in different cities based on different technologies, such as video cameras and 
+BT devices and RFID tags included in the vehicles wanted to be followed.
 \end{itemize}
 
 
