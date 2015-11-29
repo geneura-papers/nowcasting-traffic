@@ -157,7 +157,7 @@ Being the traffic flow forecasting a trending topic several surveys can be found
 
 % Al tratarse de un tema muy estudiado, existen también numerosos resúmenes que te dan una idea general sobre este ámbito como el [SurveyKumar2007] publicado en el 2007 y centrado en la predicción del tráfico a corto plazo, o el publicado en 2012 por E. Bolshinsky [SurveyBolshinsky2012] donde se repasan las diferentes técnicas utilizadas, los datos de entrada que necesita cada una y algunas arquitecturas de los sistemas utilizados. También hay resúmenes específicos para un tipo de predicción como el propio [SurveyKumar2007] o [Vlahogianni2014] que tiene un enfoque un poco más generalista clasificando la literatura existente en los objetivos que perseguía cada trabajo o dentro de qué ambito estaba emarcado cada artículo, como por ejemplo si predecía el tráfico o predecía el tiempo esperado para un desplazamiento o estaba centrado en la forma de recolección de los datos utilizados.
 
-During the last years, the researches even assimilate new technologies for data analysis like "Big Data" \cite{TrafficFlowPredictionWithBigData2015} or Cloud-Computing approaches \citep{CloudComputing2014}. In the first one, Yisheng et. al. face the traffic flow forecasting problem using temporal and spatial models at the same time, using simple forecasting models and assembling them in a global complex system. The results provide a time and a spatial place for each prediction. The second work, by Zhaosheng Yang et al., presents a traffic flow prediction model for large-scale road network using Cloud-Computing techniques. Thus, it implements successfully a Genetic Algorithm (GA) for optimizing a Support Vector Machine (SVM) getting a higher prediction accuracy and a smaller running time. 
+During the last years, the researches even assimilate new technologies for data analysis like ``Big Data'' \cite{TrafficFlowPredictionWithBigData2015} or Cloud-Computing approaches \citep{CloudComputing2014}. In the first one, Yisheng et. al. face the traffic flow forecasting problem using temporal and spatial models at the same time, using simple forecasting models and assembling them in a global complex system. The results provide a time and a spatial place for each prediction. The second work, by Zhaosheng Yang et al., presents a traffic flow prediction model for large-scale road network using Cloud-Computing techniques. Thus, it implements successfully a Genetic Algorithm (GA) for optimizing a Support Vector Machine (SVM) getting a higher prediction accuracy and a smaller running time. 
 
 
 %Algunos de los trabajos más recientes que versan sobre la predicción del tráfico intentan ya integrar nuevas tecnologías como "Big Data" [TrafficFlowPredictionWithBigData2015] donde intentan abarcar nuevos enfoques en la predicción incluyendo una predicción temporal y espacial simultáneamente utilizando modelos de predicción simples como piezas que forman un sistema mucho más complejo.
@@ -394,7 +394,7 @@ This section describes the experimental analysis of the data gathered by a diffe
 
 The main difference with respect to the other experimental scenarios is that, in this case, the detected devices are cars moving at higher speed. However, in this scenario we also count with the information provided by the Spanish traffic management agency, Direcci\'on General de Tr\'afico (DGT), which is collected using loop detectors. So, in this case, we have used real data in order to validate our approach by comparing the real number of vehicles which has passed a point, with the number of devices detected by MOBYWIT. Thus, a realistic \textit{ratio} between both numbers has been computed.
 
-Six nodes have been placed along different roads in Andalusia (south Spain). Figure \ref{fig:nodosDGT} shows the identifiers of these devices and their exact location. These locations have been chosen because are the nearest ones to existent loop detectors monitored by the DGT, and also, they have Internet connection to allow the transmission of data to our server.
+Six nodes have been placed along different roads in Andalusia (south Spain). Figure \ref{fig:nodosDGT} shows the identifiers of these devices and their exact location. These locations have been chosen because are the nearest ones to existent loop detectors monitored by the DGT, and also, they have Internet connection to allow the transmission of data to our server. Two groups of nodes exist: one in the province of Granada area (1010, 1020 and 1030) and the other in the road to M{\'a}laga (1040, 1050 and 1060).
 
 \begin{figure}[htb]
 	\begin{center}
@@ -414,12 +414,15 @@ Six nodes have been placed along different roads in Andalusia (south Spain). Fig
 %3) La mediana del ratio por 15min
 
 \subsection{Speed computation}
-ORDEN
-\begin{enumerate}
-    \item Matriz de E/S con frecuencia
-    \item Matriz de E/S con tiempos
-    \item Grafica de Velocidades
-\end{enumerate}
+
+Using the capability of the unique vehicle detection by MAC, we can calculate the passing frequency between nodes, and also, the travel time between them. Figure \ref{fig:dgtMatrixFrec} shows the frequency matrix between nodes. A time window for detection has been set to 2.5 hours (as it is a little more of the time between 1040 and 1030 according Google Maps). Results show that, patently, there are more repetitions between the nodes of the same continuous road branch. For example, between 1040 and 1050, as there exist a deviation to Seville before node 1060. This is clearer at the end of the week, where people come back to their villages/other cities to spent the weekends, and more repetitions are detected. Some repetitions have not been detected in the more separated nodes (for example, between 1040 and 1030), because shorter intercity routes exist following the coastline, instead the interior.
+
+%\begin{enumerate}
+%    \item Matriz de E/S con frecuencia
+%    \item Matriz de E/S con tiempos
+%    \item Grafica de Velocidades
+%\end{enumerate}
+
 
 \begin{figure}[htb]
 	\begin{center}
@@ -429,6 +432,7 @@ ORDEN
 	\end{center}
 \end{figure}
 
+Using the time when each repetition has been detected we can also calculate average speed velocity during the week. Figure \ref{fig:dgtMatrixTime} shows the detected times between nodes, in blocks of 4 hours, during the week. Largest travel times are detected between more separated nodes. As in previous figure, time between more separated nodes is not tracked because shorter paths between cities exist. HABLAR MAS DE ESTOS DATOS
 
 \begin{figure}[htb]
 	\begin{center}
@@ -445,14 +449,38 @@ Different metrics will be used to obtain a correct correlation between the numbe
 
 \begin{itemize}
 \item {\em Total ratio}: ratio between the total number of vehicles detected by the DGT and the total number of vehicles detected by our device.
-\item {\em Average of ratios}: as the maximum granularity of the data provided by the DGT is 15 minutes, the sum of all ratios between the DGT data and our data in each 15 minutes section has been divided by the total number of sections to calculate the average.
+\item {\em Mean ratio}: as the maximum granularity of the data provided by the DGT is 15 minutes, the sum of all ratios between the DGT data and our data in each 15 minutes section has been divided by the total number of sections to calculate the average.
 \item {\em Median ratio}: instead the average ratio as in previous metric, this one uses the median of all ratios.
-\item {\em Time ratio}: this metric calculate a vector of ratios separated by hour of the day, instead obtaining a global ratio for all data. An average ratio per hour in the vector is calculated taking into account all the ratios of that hour during all the days we have data.
-\item {\em Time median}: as in the previous metric, this one uses a vector of ratios per hour, but every element is calculated using the median, instead the average.
+\item {\em Mean by hour ratio}: this metric calculate a vector of ratios separated by hour of the day, instead obtaining a global ratio for all data. An average ratio per hour in the vector is calculated taking into account all the ratios of that hour during all the days we have data.
+\item {\em Median by hour ratio}: as in the previous metric, this one uses a vector of ratios per hour, but every element is calculated using the median, instead the average.
 \end{itemize}
 
+%FERGU: DUDA, era al final por hora o por cuarto de hora?
 
-Figure \ref{fig:dgtRatios} shows the number of devices of one node, applying the chosen correction ratio.
+Table \ref{tab:ratiosDGT} shows the obtained ratios. COMENTARLOS
+
+\begin{table}[htb]
+\centering
+\resizebox{12cm}{!}{
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+			 &RATIO	  & MAE    &   MAPE   & MSE    & RMSE \\
+ \hline
+Total Ratio  & 17.230 &   60.373 & 36.265 & 7371.579  & 85.857 \\
+Mean Ratio   & 20.792 &   72.323 & 43.443 & 11216.070 & 105.905 \\
+Median Ratio & 18.2 &    62.454  & 37.515 & 8060.136  & 89.778 \\
+Median By Hour Ratio & Depends on the hour  & 58.326 & 35.035 & 7617.613 & 87.278 \\
+Mean By Hour Ratio &   Depends on the hour  & 66.791 & 40.120 & 9890.978 & 99.453 \\
+\hline
+
+\end{tabular}
+}
+\caption{}
+\label{tab:ratiosDGT}
+\end{table}
+
+
+Figure \ref{fig:dgtRatios} shows the number of devices of one node, applying the chosen correction ratio. As can be seen, different peaks can appear, being the responsible of the 
 
 
 
@@ -528,8 +556,8 @@ In this work, we have done several things...
 This work has been supported in part by projects EPHEMECH (TIN2014-56494-C4-3-P, Spanish Ministry of Economy and Competitivity), PETRA (SPIP2014-01437, funded by Dirección General de Tráfico),
 PYR-2014-17 (GENIL project, awarded by CEI-BIOTIC Granada), and 
 MSTR (nº de referencia PRY142/14 que ha sido financiado íntegramente por la Fundación Pública Andaluza Centro de Estudios Andaluces en la IX Convocatoria de Proyectos de Investigación).
-We also thank local council of Granada city, and their staff and researchers for their dedication and professionalism. 
-
+We also thank the DGT and local council of Granada city, and their staff and researchers, for their dedication and professionalism. 
+%FERGU: le meto un poco la pelota a los de la DGT, con vuestro permiso :)
 
 \section{Appendix} %FERGU: MOVER ESTA SECCION DONDE CORRESPONDA
 
