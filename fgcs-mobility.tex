@@ -398,10 +398,22 @@ In addition, and as it is shown in Figure 1, the device runs an specific Operati
 \section{Analysis of people's mobility in a discotheque}
 \label{sec:disco}
 
-In the first scenario of this work, a Discotheque has been monitored using five MOBYWIT devices, deployed one in every of the three main rooms (each room devoted to a type of music), one on the main entrance, and one in the terrace.
-% Antonio - JJ, revisa y completa esto, por favor
+% ¿Por qué analizamos la discoteca?
+Before using the device in other type of environments, we were
+interested in checking its possibilities in an environment where
+change is very fast and it is a priory possible to detect a big amount
+of devices. That is why we decided to test MOBYWIT in a disco, using
+using five MOBYWIT devices, deployed one in every of the three main
+rooms, each one devoted to a different type of music and one on the main
+entrance and the outdoor terrace. This scenario is interesting because
+it is assumed that 100\% of users have a smartphone, thus it would be
+a priori possible to track every single present device. The
+electromagnetic scenario is also quite {\em heavy}, which presented a
+challenge for testing the device.
 
-A total of 2200 different devices were detected in one of the busy nights (from a Thursday at 8 pm to Friday at 8 am), distributed per node as it is shown in Figure \ref{fig:disco_data}.
+A total of 2200 different devices were detected in one of the busy
+nights (from a Thursday at 8 pm to Friday at 8 am), distributed per
+node as it is shown in Figure \ref{fig:disco_data}. 
 
 \begin{figure}[ht]
 	\begin{center}
@@ -414,9 +426,25 @@ A total of 2200 different devices were detected in one of the busy nights (from 
 % Antonio - Antares porfa, genera la gráfica correctas. ;)
 % TODO: ANTARES - Gráfica correcta
 
-These data have been processed and several variables have been extracted from them, in order to apply clustering methods.
+These data have been processed and several variables have been
+extracted from them, in order to apply clustering methods. % ¿Qué
+                                % variables? ¿En qué estabas
+                                % interesado? - JJ
 
-The clustering study has been conducted by means of a Self-Organizing Map (SOM) \cite{Kohonen90}, a feed-forward neural network \cite{NN_Haykin94} that uses an unsupervised training algorithm and nonlinear regression techniques to learn or find unknown relationships among the set of variables that describe a problem. The main property of the SOM is that it makes a nonlinear projection from a high-dimensional data space on a regular, low-dimensional (usually 2D) grid of neurons, called units. This grid can be later processed to obtain the unified distance matrix (U-matrix) \cite{UmatUlts} which uses SOM yielded neurons' codevectors (vectors of variables of the problem) as data source, and generates a matrix where each component is a distance measure between two adjacent neurons. Then, these distances are codified as different color shades in a graph.
+% ¿Por qué haces clustering? 
+The clustering study has been conducted by means of a Self-Organizing
+Map (SOM) \cite{Kohonen90}, a feed-forward neural network
+\cite{NN_Haykin94} that uses an unsupervised training algorithm and
+nonlinear regression techniques to learn or find unknown relationships
+among the set of variables that describe a problem. The main property
+of the SOM is that it makes a nonlinear projection from a
+high-dimensional data space on a regular, low-dimensional (usually 2D)
+grid of neurons, called units. This grid can be later processed to
+obtain the unified distance matrix (U-matrix) \cite{UmatUlts} which
+uses SOM yielded neurons' codevectors (vectors of variables of the
+problem) as data source, and generates a matrix where each component
+is a distance measure between two adjacent neurons. Then, these
+distances are codified as different color shades in a graph. 
 The U-Matrix graph allows visualize any multi-variable dataset in a two-dimensional display, which helps detecting topological relations among neurons and inferring about the input data structure in a straightforward visual manner. High values in the U-matrix represent a frontier region between clusters, and low values represent a high degree of similarities among neurons on that region, i.e. clusters. MATLAB 2009 along with SOM Toolbox \cite{SOMPAK} was used for the SOM analysis.
 
 In order to analyze the data, several features have been extracted (generated) from the gathered `steps', composing a pattern per device of its whole stay in the disco. These are described in Table \ref{tab:features_disco}.
