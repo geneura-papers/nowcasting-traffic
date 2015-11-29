@@ -729,7 +729,29 @@ To illustrate the Mobywit utility for the first stage, early detection of a traf
 \section{Conclusions}
 \label{sec:conclusions}
 
-In this work, we have done several things...
+In this work, MOBYWIT, a novel monitoring and tracking system which gathers mobility data from people and vehicles has been presented. Some of its applications have been shown, using the data collected by the system to address different issues in a city to do it `smarter'.
+Thus, four different scenarios have been studied:
+\begin{itemize}
+    \item a discotheque, which has been used as a `stress test' for the system and also to address issues on marketing, energetic efficiency and security in the building, considering the mobility of people inside it, along different nights. Clustering methods have been applied in order to visualise and extract interesting knowledge about people's movements and recurrences to the disco.
+    \item a public building of the University of Granada, in which students', teachers' and other staff's movements have been analysed using origin/destination matrices with a similar objective than before: security, access improvements and possibly marketing reasons.
+    \item an interurban road, where the traffic flows have been studied and contrasted with real traffic data, using statistical methods. Moreover forecast techniques have been applied with very good results in the short-term.
+% Antonio - VICTOR, revisa que esto sea verdad. ;)
+    \item an urban street, which is one of the main arteries of the city of Granada, so it is usually collapsed. An statistical analysis has been conducted to study the traffic flows in order to improve the light signal synchronisations in that street.
+% Antonio - MARIBEL y ANTARES, ver si esto es cierto.
+\end{itemize}
+
+***Conclusión***\\
+
+***FUTURE WORK:***
+
+- Ahondar en los estudios de cada uno de esos problemas, aplicando más técnicas y sobre todo, considerando más datos capturados\\
+- Aplicar MOBYWIT en otros problemas, como...\\ 
+- Ampliar el número de nodos en la ciudad y el edificio\\
+- Mejorar las detecciones evitando solapes o corrigiéndolos en la medida de lo posible\\
+
+- Usar predicción de series temporales para completar las capturas del dispositivo, 'cubriendo' posibles huecos producidos por caídas del mismo.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  ACKNOWLEDGEMENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Acknowledgements}
 
@@ -739,9 +761,20 @@ MSTR (nº de referencia PRY142/14 que ha sido financiado íntegramente por la Fund
 We also thank the DGT and local council of Granada city, and their staff and researchers, for their dedication and professionalism. 
 %FERGU: le meto un poco la pelota a los de la DGT, con vuestro permiso :)
 
-\section{Appendix} %FERGU: MOVER ESTA SECCION DONDE CORRESPONDA
 
-In this appendix...
+% ---------------------- BIBLIOGRAFÍA -----------------------
+
+\bibliographystyle{elsarticle-num}
+\bibliography{mobility}
+
+
+% ------------------------- APÉNDICE -----------------------
+
+
+\section{Appendix} 
+
+This appendix presents additional information about the scenarios, such as the geographical position of the nodes and a comment about them, or some graphs showing the distribution of the gathered data.
+
 \begin{table}
 \centering
 \resizebox{12cm}{!}{
@@ -760,12 +793,5 @@ ID   & Province & Location & Latitude & Longitude \\ \hline
 \label{tab:nodosDGT}
 \end{table}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  ACKNOWLEDGEMENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Acknowledgements}
-This paper has been funded in part by...
-
-\bibliographystyle{elsarticle-num}
-\bibliography{mobility}
 
 \end{document}
