@@ -30,15 +30,38 @@ $^2$ Departamento de Informática. EPS. Universidad de Jaén, Spain}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   ABSTRACT   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \begin{abstract}
-
-This paper presents a set of applications of an own mobility monitoring system addressing several problems in a Smart City scope.
-This system tracks the movement of people and vehicles analysing the  radioelectric space, specifically, the  WiFi and Bluetooth signals emitted by personal (smartphones) or on-board (hands-free) devices.
-
-The study has been conducted in four different real scenarios, i.e. with real data gathered by the system: two related with people's mobility (a public building and a discotheque); and two focused in traffic tracking (urban and intercity roads).
-
-Different Data Mining techniques have been applied to extract useful knowledge, traffic forecasting methods to perform reliable predictions, and statistical analyses to model and validate the system accuracy (using different data sources).
-
-The obtained results in all the cases show the viability and utility of the system, along with its multiple applications for solving real Smart City issues.
+% Si quieres que el resumen (y el paper) cumpla lo prometido por el
+% título 1. Debes decir cuáles con los "temas reales" de una smart
+% city.
+% 2. Debes examinar el estado del arte en esos problemas. ¿Cómo se
+% resuelven? 
+% 3. Debes presentar la solución y en qué mejora el estado del
+% arte. ¿Precio? ¿Disponibilidad? ¿Problemas que realmente resuelve? 
+% 4. Presentar _solo_ lo que se refiera a smart cities. Pista: las
+% discotecas no tienen nada que ver.  - JJ
+This paper presents a set of applications of mobility
+monitoring system designed by us that addresses several problems in a
+Smart City scope. % ¿Qué es un smart city scope? - JJ 
+This system tracks the movement of people and vehicles analysing the
+radioelectric space,  % no hace eso. Simplemente captura paquetes - JJ
+specifically, the  WiFi and Bluetooth signals emitted by personal
+(smartphones) or on-board (hands-free) devices. 
+The study has been conducted in four different real scenarios,
+i.e. with real data gathered by the system: two related with people's
+mobility (a public building and a discotheque); and two focused in
+traffic tracking (urban and intercity roads). %¿Study de qué? ¿Por qué
+                                %quieres estudiar eso? ¿Por qué
+                                %quieres hacer un estudio? - JJ
+Different data mining techniques have been applied to extract useful
+knowledge, traffic forecasting methods to perform reliable
+predictions, and statistical analyses to model and validate the system
+accuracy (using different data sources). % accuracy ¿con respecto a
+                                % qué? ¿Por qué has capturado esos
+                                % datos y has usado esas técnicas?
+The obtained results in all the cases show the viability and utility
+of the system, along with its multiple applications for solving real
+Smart City issues. % ¿cómo muestran sus aplicaciones? ¿Cuales son los
+                   % "smart city issues"?- JJ
 
 \end{abstract}
 
@@ -59,32 +82,108 @@ Smart traffic \sep Transit indicators \sep Traffic forecast \sep Mobility analys
 \section{Introduction}
 \label{sec:intro}
 
-Nowadays, any system that collect reliable traffic information which is useful for wide population must be in mind for the society because the information increases the ability of improvement of any community. The information in our society is power and everybody tries to get it from any trustworthy source. Moreover, if this information is not available using any other previous commercial system, the innovation, the improvement and the success is guaranteed.
+Nowadays, any system that collect reliable traffic information which
+is useful for wide population must be in mind for the society because
+the information increases the ability of improvement of any
+community. %esta frase no se entiende
+ The information in our society is power and everybody tries
+to get it from any trustworthy source. % esta frase no aporta ninguna información
+Moreover, if this information
+is not available using any other previous commercial system, the
+innovation, the improvement and the success is guaranteed. % esta
+                                % frase está mal escrita y usa juicios
+                                % de valor - JJ
 
-Traffic information is currently gathered using several kind of devices. The local, regional or national governments use these data aiming for improvements in the maintenance of roads and services, for computing useful traffic statistics, or to optimize the traffic light synchronization, among other uses. This information is considered in several ways, from improving the traffic flow inside the city to the end-users, drivers, who can profit by optimally planning their trips according to the current, or future, status of the traffic flow. Thus, gathered traffic information must be reliable and useful both, in real time and also in the near future, by means of forecasting tools, for instance.
+Traffic information is currently gathered using several kind of
+devices.  %¿cuales? Esta podía ser la primera frase de la intro. 
+% ¿Qué es traffic information? Podías definirlo. - JJ
+The local, regional or national governments use these data
+aiming for improvements in the maintenance of roads and services, for
+% improvements con respecto a qué? - JJ
+computing useful traffic statistics, or to optimize the traffic light
+synchronization, among other uses. This information is considered in
+several ways, from improving the traffic flow inside the city to the
+end-users, drivers, who can profit by optimally planning their trips
+according to the current, or future, status of the traffic flow. Thus,
+gathered traffic information must be reliable and useful, in real
+time and also in the near future, by means of forecasting tools, for
+instance. % Esta frase no se entiende y es gramaticalmente incorrecta
+          % - JJ
 
-The traffic monitors nowadays include pneumatic tubes, loop detectors, floating vehicles or automatic Optical Character Recognition (OCR) among others, but most of them are not able to identify and follow the same vehicle along the road network. In this paper we present a system able to do this while improving the quality of the gathered information and allowing the easy construction of traffic flow models or mobility graphs. In addition, the proposed system is formed by low-cost devices, which is another advantage over the usual monitoring systems, since the cost is an important factor for authorities which tend to install the simplest and cheapest monitors.
+The traffic monitors nowadays include pneumatic tubes, loop detectors,
+floating vehicles or automatic Optical Character Recognition (OCR) % citas. 
+among others, but most of them are not able to identify and follow the
+same vehicle along the road network.  % ¿OCR no? - JJ
+In this paper we present a system % ¿presentamos un sistema?
+                                % ¿Resolvemos un problema?
+                                % ¿Presentamos los datos? - JJ
+able to do this while improving the quality of the gathered %improving
+                                %¿con respecto a qué? - JJ
+information and allowing the easy construction of traffic flow models
+or mobility graphs. In addition, the proposed system is formed by
+low-cost devices, which is another advantage over the usual monitoring
+% low cost ¿con respecto a qué? ¿Se estima coste total de los otros? - JJ
+systems, since the cost is an important factor for authorities which
+tend to install the simplest and cheapest monitors. 
 
-The device, a highly improved version of the one presented in \cite{castillo2014_book_sipesca}, is based in a single-board computer which monitors the radioelectric space catching Bluetooth (BT) and WiFi signals emitted by other devices. These will be mainly smartphones or hands-free systems on vehicles, which are detected and identified by means of their Media Access Control number (MAC) - which is unique - and stored as a traffic `step'.
+The device, a highly improved version of the one presented in
+\cite{castillo2014_book_sipesca}, is based in a single-board computer
+which monitors the radioelectric space capturing Bluetooth (BT) and
+WiFi signals emitted by other devices,  mainly
+smartphones or hands-free systems on vehicles, which are detected and
+identified by means of their Media Access Control number (MAC) - which
+is unique - and stored as a traffic `event'. 
 % Antonio - ¿Se os ocurre un nombre mejor para los 'pasos'?
-Thus, depending on the position of the monitoring device, we could gather information about specific people's or vehicles' displacements. In order to respect the person's privacy as well as data protection laws, the MAC is encrypted using a one-direction process before storing it, so, we cannot associate a captured MAC with any person.
+% step desde luego que no. pass-by en todo caso - JJ
+Thus, depending on the position of the monitoring device, we could
+gather information about specific people's or vehicles'
+displacements. In order to respect the person's privacy as well as
+data protection laws, the MAC is encrypted using a one-direction
+process before storing it, so, we cannot associate a captured MAC with
+any person. 
+% habría que asegurar, además, que ese proceso de cifrado no se puede
+% replicar. ¿Qué clave usa? - JJ
 
-The work presents four different scenarios centred in the city of Granada (Spain), in which real traffic/mobility data have been gathered. They are namely: a discotheque, a public building of the University, a highway between Granada and Málaga; and one of the main streets in the city.
+The work presents four different scenarios focused in the city of
+Granada (Spain), in which real traffic/mobility data have been
+gathered. They are namely: a discotheque, a public building of the
+University, a highway between Granada and Málaga; and one of the main
+streets in the city.  % yo dejaría la facu y la discoteca. Son
+                      % totalmente diferentes. Salvo que quieras
+                      % contarlos por temas de carga o lo que sea, no
+                      % tienen nada que ver. 
 Several devices or nodes have been deployed in each scenario.
 The huge amount data produced have been deeply processed using \textit{Big Data} 
-% Antonio - Meto también lo de Big Data que es otra 'palabra clave' del Special Issue. ;D. Antares, esto es Big Data, ¿no? :D
-techniques, transforming or summarizing them, in order to conduct further analyses. Different methods have been applied, such as Data Mining, Time Series Forecasting, In/Out (Origin/Destination) matrices, or statistical procedures.
-The aim was to extract useful information and reach clear conclusions in every scenario, proving the value of this monitoring system as a tool to improve different issues inside the city and buildings. Thus, the system would be suitable to be part of a \textit{Smart City}.
+% Antonio - Meto también lo de Big Data que es otra 'palabra clave'
+% del Special Issue. ;D. Antares, esto es Big Data, ¿no? :D 
+% No es big data. Es mucho data. Y "deeply processed" no sé qué
+% significa - JJ
+techniques, transforming or summarizing them, in order to conduct
+further analyses. Different methods have been applied, such as Data
+Mining, Time Series Forecasting, In/Out (Origin/Destination) matrices,
+or statistical procedures. % pero ¿con qué objetivo? - JJ
+The aim was to extract useful information and reach clear conclusions
+% ¿sobre qué? - JJ
+in every scenario, proving the value of this monitoring system as a
+tool to improve different issues inside the city and buildings. Thus,
+the system would be suitable to be part of a \textit{Smart City}. 
 
 % Antonio - Hay que hacer referencias a Smart City a lo largo del paper. ;)
 
 %%FERGU: la frase de este comentario es literal del paper de IoT, la uso abajo cambiada para justificar que lo nuestro es IoT: Main enabling factor of this promising paradigm is the integration of several technologies and communications solutions. Identification and tracking technologies, wired and wireless sensor and actuator networks, enhanced communication protocols. Abajo, la frase ya wena:
-The use of these devices can be framed in the paradigm of Internet of Things (IoT), as we are integrating communications and technologies for identification and tracking, with the use of wireless sensors and actuator networks \cite{Atzori2010IoTSurvey}.
+The use of these devices can be framed in the paradigm of Internet of
+Things (IoT), as we are integrating communications and technologies
+for identification and tracking, with the use of wireless sensors and
+actuator networks \cite{Atzori2010IoTSurvey}. 
 
-The rest of the work is structured as follows. Section \ref{sec:soa} presents the background and state of the art on the main topics of the work: traffic and mobility monitoring, traffic series forecast, and smart city tools, among others.
+The rest of the work is structured as follows. Section \ref{sec:soa}
+presents the background and state of the art on the main topics of the
+work: traffic and mobility monitoring, traffic series forecast, and
+smart city tools, among others. 
 Then, our monitoring device is introduced in Section \ref{sec:mobywit}.
 After this, there are four sections devoted to describe and analyze the different scenarios, namely: Section \ref{sec:disco} explains the discotheque scenario and the methods applied to its data, Section \ref{sec:etsiit} presents the study on the University building, Section \ref{sec:traffic} shows the analysis on the highway traffic, and Section \ref{sec:city} comments the scenario on the street of Granada.
-Finally, Section \ref{sec:conclusions} plots the conclusions that we have reached in the work.
+Finally, Section \ref{sec:conclusions} plots the conclusions that we
+have reached in the work. 
 
 
 %----------------------------------------------------------------------------
@@ -97,15 +196,29 @@ Finally, Section \ref{sec:conclusions} plots the conclusions that we have reache
 
 Several technologies are used to collect data and gather information about the 
 state of the roads. Traffic monitoring technologies can be classified as 
-\textit{intrusive}, installed in the pavement, and \textit{non-intrusive}, without contact with the road, causing minimal effect on the traffic flow \cite{martin2003detector}.
+\textit{intrusive}, installed in the pavement, and
+\textit{non-intrusive}, without contact with the road, causing minimal
+effect on the traffic flow \cite{martin2003detector}. 
 
 Main technologies currently used include pneumatic tubes, inductive loop 
 detectors and automatic recognition systems (or OCR), among others 
-\cite{rodrigue2013geography}.
+\cite{rodrigue2013geography}. % Repetido de arriba. - JJ
 
 Pneumatic tubes are placed on top of the lane to detect vehicles by the change 
 in pressure generated when a vehicle passes over the tube. 
-An inductive loop detector is a wire embedded into the roadway usually in a square configuration. An electric current is sent to the wire and when a metal surface with certain minimum area pass or is stopped above a pulse is triggered and detected. The main drawback of these two systems is that they are unable to identify the vehicle detected by the sensor. This way, the highly desired origin/destination matrices cannot be obtained. Just the number of vehicles and their type can be guessed. This count, although valuable, does not allow us to know many traffic flow characteristics like, for example, repetitive passes of the same vehicle. Because of their relatively high cost of installation and maintenance it is not feasible to install them all over our roads. That is why we can only see them on major roads, cities and points of special interest.
+An inductive loop detector is a wire embedded into the roadway usually
+in a square configuration. An electric current is sent to the wire and
+when a metal surface with certain minimum area pass or is stopped
+above a pulse is triggered and detected. The main drawback of these
+two systems is that they are unable to identify the vehicle detected
+by the sensor. This way, the highly desired origin/destination
+matrices cannot be obtained. Just the number of vehicles and their
+type can be guessed. This count, although valuable, does not allow us
+to know many traffic flow characteristics like, for example,
+repetitive passes of the same vehicle. Because of their relatively
+high cost of installation and maintenance it is not feasible to
+install them all over our roads. That is why we can only see them on
+major roads, cities and points of special interest. 
 
 Finally, the automatic recognition technology has experienced an increase in 
 recent years due to its ability to detect individual vehicles without relying 
@@ -119,7 +232,8 @@ Another problem has arisen recently with privacy. The Spanish Data Protection
 Agency (Agencia de Protección de Datos) considers the car license plate number 
 as personal data. Thus, user consent is required for it to be saved.
 
-There are many different companies working in the traffic information field. Some of the more relevant are:
+There are many different companies working in the traffic information
+field. Some of the more relevant are: 
 
 \begin{itemize}
 \item Bit Carrier \cite{mendez2011system,BitCarrier}: It offers a traffic 
@@ -157,16 +271,48 @@ Being the traffic flow forecasting a trending topic several surveys can be found
 
 % Al tratarse de un tema muy estudiado, existen también numerosos resúmenes que te dan una idea general sobre este ámbito como el [SurveyKumar2007] publicado en el 2007 y centrado en la predicción del tráfico a corto plazo, o el publicado en 2012 por E. Bolshinsky [SurveyBolshinsky2012] donde se repasan las diferentes técnicas utilizadas, los datos de entrada que necesita cada una y algunas arquitecturas de los sistemas utilizados. También hay resúmenes específicos para un tipo de predicción como el propio [SurveyKumar2007] o [Vlahogianni2014] que tiene un enfoque un poco más generalista clasificando la literatura existente en los objetivos que perseguía cada trabajo o dentro de qué ambito estaba emarcado cada artículo, como por ejemplo si predecía el tráfico o predecía el tiempo esperado para un desplazamiento o estaba centrado en la forma de recolección de los datos utilizados.
 
-During the last years, the researches even assimilate new technologies for data analysis like ``Big Data'' \cite{TrafficFlowPredictionWithBigData2015} or Cloud-Computing approaches \citep{CloudComputing2014}. In the first one, Yisheng et. al. face the traffic flow forecasting problem using temporal and spatial models at the same time, using simple forecasting models and assembling them in a global complex system. The results provide a time and a spatial place for each prediction. The second work, by Zhaosheng Yang et al., presents a traffic flow prediction model for large-scale road network using Cloud-Computing techniques. Thus, it implements successfully a Genetic Algorithm (GA) for optimizing a Support Vector Machine (SVM) getting a higher prediction accuracy and a smaller running time. 
+
+During the last years, the researches even assimilate new technologies
+for data analysis like ``Big Data'' %FERGU: such as? Sé que es para enumerar, pero en este caso enumeramos una sola cosa
+\cite{TrafficFlowPredictionWithBigData2015} or Cloud-Computing
+approaches \citep{CloudComputing2014}. In the first one, Yisheng
+et. al. face the traffic flow forecasting problem using temporal and
+spatial models at the same time, using simple forecasting models and
+assembling them in a global complex system. The results provide a time
+and a spatial place for each prediction. The second work, by Zhaosheng
+Yang et al., presents a traffic flow prediction model for large-scale
+road network using Cloud-Computing techniques. Thus, it implements
+successfully a Genetic Algorithm (GA) for optimizing a Support Vector
+Machine (SVM) getting a higher prediction accuracy and a smaller
+running time.  
+
 
 
 %Algunos de los trabajos más recientes que versan sobre la predicción del tráfico intentan ya integrar nuevas tecnologías como "Big Data" [TrafficFlowPredictionWithBigData2015] donde intentan abarcar nuevos enfoques en la predicción incluyendo una predicción temporal y espacial simultáneamente utilizando modelos de predicción simples como piezas que forman un sistema mucho más complejo.
 
-Several recent publications present spacial issues related with the scope, such as \cite{Zhang20141}, which includes the last advances in traffic forecasting research. 
+Several recent publications present spacial issues related with the
+scope, such as \cite{Zhang20141}, which includes the latest advances in
+traffic forecasting research.  
 % Antonio - ¿como cuáles?
-Other works propose conducting forecast traffic flows and trip times \citep{Dong201420}, \cite{Zou201433} using spatial-temporal patterns of the congested and non-congested traffic. Also papers with new real-time forecasting approaches \cite{Zhang201465} or improved and renewed proposals such as \cite{Wang201479}, which improves the Bayesian combination method (BCM) proposed by Petridis et al. in 2001, or \cite{Qi201495} which improves freeways short-term prediction using a Markov Model.
+Other works propose conducting forecast traffic flows and trip times
+\citep{Dong201420}, \cite{Zou201433} using spatial-temporal patterns
+of the congested and non-congested traffic. Also papers with new
+real-time forecasting approaches \cite{Zhang201465} or improved and
+renewed proposals such as \cite{Wang201479}, which improves the
+Bayesian combination method (BCM) proposed by Petridis et al. in 2001,
+or \cite{Qi201495} which improves freeways short-term prediction using
+a Markov Model. 
 
-%También existen numerosas revistas que proponen números especiales que versan sobre este tema [Zhang20141], donde se puede encontrar los últimos avances que intentan ir más allá y predecir no sólo el estado del tráfico sino el tiempo de los desplazamientos [Dong201420] [Zou201433]  utilizando modelos espacio-temporales del tráfico en diferentes situaciones (spatial?temporal patterns of the congested and non-congested traffic) o trabajos que le dan una vuelta de tuerca más a las técnicas y proponen nuevos métodos de predicción [Zhang201465] utilizando datos del tráfico en tiempo real o métodos ya conocidos y mejorados como [Wang201479][Qi201495].
+%También existen numerosas revistas que proponen números especiales
+%que versan sobre este tema [Zhang20141], donde se puede encontrar los
+%últimos avances que intentan ir más allá y predecir no sólo el estado
+%del tráfico sino el tiempo de los desplazamientos [Dong201420]
+%[Zou201433]  utilizando modelos espacio-temporales del tráfico en
+%diferentes situaciones (spatial?temporal patterns of the congested
+%and non-congested traffic) o trabajos que le dan una vuelta de tuerca
+%más a las técnicas y proponen nuevos métodos de predicción
+%[Zhang201465] utilizando datos del tráfico en tiempo real o métodos
+%ya conocidos y mejorados como [Wang201479][Qi201495]. 
 
 In the present work, a study on traffic forecasting is conducted (in Section \ref{sec:traffic}), however it applies classical methods, because the aim is to show the value of the data gathered by our system in the comparison with the data collected by the Spanish Traffic Agency using an inductive loop detector, which is also studied.
 Thus, our contribution on this line is the use of real traffic Time Series, created from the data extracted from our traffic `steps' (WiFi and BT detections).
@@ -174,7 +320,9 @@ Thus, our contribution on this line is the use of real traffic Time Series, crea
 % Antonio - he movido este texto que es más de background a esta sección. ;)
 % TODO: GUSTAVO, ¿podrías poner citas a esos temas? ;D
 % te perdono pero sólo por esta vez :D
-Another line of study in our paper is the personal tracking or people's mobility. It is studied for many reasons, several of them involve profit: conversion rate, marketing effectiveness or staff planning are some of the best known.
+Another line of study in our paper is the personal tracking or
+people's mobility. It is studied for many reasons, several of them
+involving profit: conversion rate, marketing effectiveness or staff planning are some of the best known.
 % Antonio - Citas, citas everywhere. Plis, Gustavo. :D
 
 Conversion rate is the percentage of visitors 
@@ -206,9 +354,18 @@ or accurate movement models.
 \section{MOBYWIT}
 \label{sec:mobywit}
 
-This device was designed by one of the authors and it is based in a single-board computer, Raspberri Pi\footnote{https://es.wikipedia.org/wiki/Raspberry\_Pi}. It has two USB cards, namely a Bluetooth (BT) and WiFi ones, and it uses their interfaces in monitor mode, scanning the radioelectric space searching for BT devices and beacon frames (for WiFi).
+This device was designed by one of the authors and it is based in a
+single-board computer, Raspberri
+Pi\footnote{https://es.wikipedia.org/wiki/Raspberry\_Pi}. It has two
+USB cards, namely a Bluetooth (BT) and WiFi ones, and it uses their
+interfaces in monitor mode, scanning the radioelectric space searching
+for BT devices and beacon frames (for WiFi). 
 
-Every device, called MOBYWIT (Mobility by Wireless Tracking) is formed by a hardware and a software layer very interconnected. It is part in the whole monitoring system, which also includes Cloud-based storage and computing services. The software architecture of the whole system is shown in Figure \ref{fig:mobywit}.
+Every device, called MOBYWIT (Mobility by Wireless Tracking) is formed
+by a hardware and a software layer very interconnected. It is part in
+the whole monitoring system, which also includes cloud-based storage
+and computing services. The software architecture of the whole system
+is shown in Figure \ref{fig:mobywit}. 
 
 \begin{figure}[ht]
 	\begin{center}
@@ -243,10 +400,22 @@ In addition, and as it is shown in Figure 1, the device runs an specific Operati
 \section{Analysis of people's mobility in a discotheque}
 \label{sec:disco}
 
-In the first scenario of this work, a Discotheque has been monitored using five MOBYWIT devices, deployed one in every of the three main rooms (each room devoted to a type of music), one on the main entrance, and one in the terrace.
-% Antonio - JJ, revisa y completa esto, por favor
+% ¿Por qué analizamos la discoteca?
+Before using the device in other type of environments, we were
+interested in checking its possibilities in an environment where
+change is very fast and it is a priory possible to detect a big amount
+of devices. That is why we decided to test MOBYWIT in a disco, using
+using five MOBYWIT devices, deployed one in every of the three main
+rooms, each one devoted to a different type of music and one on the main
+entrance and the outdoor terrace. This scenario is interesting because
+it is assumed that 100\% of users have a smartphone, thus it would be
+a priori possible to track every single present device. The
+electromagnetic scenario is also quite {\em heavy}, which presented a
+challenge for testing the device.
 
-A total of 2200 different devices were detected in one of the busy nights (from a Thursday at 8 pm to Friday at 8 am), distributed per node as it is shown in Figure \ref{fig:disco_data}.
+A total of 2200 different devices were detected in one of the busy
+nights (from a Thursday at 8 pm to Friday at 8 am), distributed per
+node as it is shown in Figure \ref{fig:disco_data}. 
 
 \begin{figure}[ht]
 	\begin{center}
@@ -259,9 +428,25 @@ A total of 2200 different devices were detected in one of the busy nights (from 
 % Antonio - Antares porfa, genera la gráfica correctas. ;)
 % TODO: ANTARES - Gráfica correcta
 
-These data have been processed and several variables have been extracted from them, in order to apply clustering methods.
+These data have been processed and several variables have been
+extracted from them, in order to apply clustering methods. % ¿Qué
+                                % variables? ¿En qué estabas
+                                % interesado? - JJ
 
-The clustering study has been conducted by means of a Self-Organizing Map (SOM) \cite{Kohonen90}, a feed-forward neural network \cite{NN_Haykin94} that uses an unsupervised training algorithm and nonlinear regression techniques to learn or find unknown relationships among the set of variables that describe a problem. The main property of the SOM is that it makes a nonlinear projection from a high-dimensional data space on a regular, low-dimensional (usually 2D) grid of neurons, called units. This grid can be later processed to obtain the unified distance matrix (U-matrix) \cite{UmatUlts} which uses SOM yielded neurons' codevectors (vectors of variables of the problem) as data source, and generates a matrix where each component is a distance measure between two adjacent neurons. Then, these distances are codified as different color shades in a graph.
+% ¿Por qué haces clustering? 
+The clustering study has been conducted by means of a Self-Organizing
+Map (SOM) \cite{Kohonen90}, a feed-forward neural network
+\cite{NN_Haykin94} that uses an unsupervised training algorithm and
+nonlinear regression techniques to learn or find unknown relationships
+among the set of variables that describe a problem. The main property
+of the SOM is that it makes a nonlinear projection from a
+high-dimensional data space on a regular, low-dimensional (usually 2D)
+grid of neurons, called units. This grid can be later processed to
+obtain the unified distance matrix (U-matrix) \cite{UmatUlts} which
+uses SOM yielded neurons' codevectors (vectors of variables of the
+problem) as data source, and generates a matrix where each component
+is a distance measure between two adjacent neurons. Then, these
+distances are codified as different color shades in a graph. 
 The U-Matrix graph allows visualize any multi-variable dataset in a two-dimensional display, which helps detecting topological relations among neurons and inferring about the input data structure in a straightforward visual manner. High values in the U-matrix represent a frontier region between clusters, and low values represent a high degree of similarities among neurons on that region, i.e. clusters. MATLAB 2009 along with SOM Toolbox \cite{SOMPAK} was used for the SOM analysis.
 
 In order to analyze the data, several features have been extracted (generated) from the gathered `steps', composing a pattern per device of its whole stay in the disco. These are described in Table \ref{tab:features_disco}.
