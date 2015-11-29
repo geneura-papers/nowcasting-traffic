@@ -73,7 +73,7 @@ The work presents four different scenarios centred in the city of Granada (Spain
 Several devices or nodes have been deployed in each scenario.
 The huge amount data produced have been deeply processed using \textit{Big Data} 
 % Antonio - Meto también lo de Big Data que es otra 'palabra clave' del Special Issue. ;D. Antares, esto es Big Data, ¿no? :D
-techniques, transforming or summarizing them, in order to conduct further analyses. Different methods have been applied, such as Data Mining, Time Series Forecasting, In/Out matrices, or statistical procedures.
+techniques, transforming or summarizing them, in order to conduct further analyses. Different methods have been applied, such as Data Mining, Time Series Forecasting, In/Out (Origin/Destination) matrices, or statistical procedures.
 The aim was to extract useful information and reach clear conclusions in every scenario, proving the value of this monitoring system as a tool to improve different issues inside the city and buildings. Thus, the system would be suitable to be part of a \textit{Smart City}.
 
 % Antonio - Hay que hacer referencias a Smart City a lo largo del paper. ;)
@@ -104,89 +104,96 @@ detectors and automatic recognition systems (or OCR), among others
 \cite{rodrigue2013geography}.
 
 Pneumatic tubes are placed on top of the lane to detect vehicles by the change 
-in pressure generated when a vehicle passes over the tube. An inductive loop 
-detector is a wire embedded into the roadway usually in a square configuration. 
-A electric current is sent to the wire and when a metal surface with certain 
-minimum area pass or is stopped above a pulse is triggered and detected. The 
-main drawback of these two systems is that they are unable to identify the 
-vehicle detected by the sensor. This way, the highly desired origin/destination 
-matrices cannot be obtained. Just the number of vehicles and their type can be 
-guessed. This count, although valuable, does not allow us to know many traffic 
-flow characteristics like, for example, repetitive passes of the same vehicle. 
-Because of their relatively high cost of installation and maintenance it is not 
-feasible to install them all over our roads. That's way we can only see them on 
-major roads, cities and points of special interest.
+in pressure generated when a vehicle passes over the tube. 
+An inductive loop detector is a wire embedded into the roadway usually in a square configuration. An electric current is sent to the wire and when a metal surface with certain minimum area pass or is stopped above a pulse is triggered and detected. The main drawback of these two systems is that they are unable to identify the vehicle detected by the sensor. This way, the highly desired origin/destination matrices cannot be obtained. Just the number of vehicles and their type can be guessed. This count, although valuable, does not allow us to know many traffic flow characteristics like, for example, repetitive passes of the same vehicle. Because of their relatively high cost of installation and maintenance it is not feasible to install them all over our roads. That is why we can only see them on major roads, cities and points of special interest.
 
 Finally, the automatic recognition technology has experienced an increase in 
 recent years due to its ability to detect individual vehicles without relying 
 on in-vehicle systems. Video image detection is a good example; in this case a 
-trip line and/or tracking are used to record traffic data. Furthermore, they 
+trip line and/or tracking is used to record traffic data. Furthermore, they 
 are used for automatic detection of incidents on the road. That is the main 
 advantage over previous information systems. However, system reliability might 
 not be the best, as weather may limit accuracy. Moreover, these systems are 
 very expensive compared to the previously described \cite{skszek2001state}. 
 Another problem has arisen recently with privacy. The Spanish Data Protection 
 Agency (Agencia de Protección de Datos) considers the car license plate number 
-as personal data. As such, user consent is required for it to be saved.
+as personal data. Thus, user consent is required for it to be saved.
 
-There are many different companies working in the traffic information field 
-using approaches like the previously described in this work. Some of the more 
-relevant are:
+There are many different companies working in the traffic information field. Some of the more relevant are:
 
 \begin{itemize}
 \item Bit Carrier \cite{mendez2011system,BitCarrier}: It offers a traffic 
 management system based in BT to count people and commercial routes 
 (pathsolver). Its technology was deployed in highways managed by Abertis for 
 traffic flow control and monitoring. Actually it has a network of 150 devices 
-in Catalonia capable of tracking 200000 people every day.
-\item Trafficnow \cite{Trafficnow}: Offers a traffic flow control center for 
-small towns. It requires a net of BT sensors. A pilot experience has been 
-deployed in Vigo.
-\item Traffax Inc \cite{TraffaxInc}: It is a company that also has used 
-BT for calculating origin-destination and transport time matrices.
+in Catalonia (Spain) capable of tracking 200000 people every day.
+\item Trafficnow \cite{Trafficnow}: Offers a traffic flow control centre for 
+small towns. It requires a net of BT sensors. %A pilot experience has been deployed in Vigo.
+\item Traffax Inc \cite{TraffaxInc}: It is a company that has also used 
+BT for calculating origin/destination and transport time matrices.
 \item Savari Networks \cite{SavariNetworks}: It offers the commercial 
-product StreetWAVE for traffic monitoring to know in real time the 
-traffic status.
-\item TrafficCast \cite{TrafficCast}: They have developed prediction models 
-in different cities based on different technologies, such as video cameras and 
-BT devices and RFID tags included in the vehicles wanted to be followed.
+product StreetWAVE for real-time traffic monitoring.
+\item TrafficCast \cite{TrafficCast}: They have developed predictive models 
+in different cities based on different technologies, such as video cameras, BT devices, and RFID tags included in the vehicles wanted to be followed.
 \end{itemize}
 
-- Talk about traffic modeling and forecast or other analyses on it.\\
-% El estado del arte de la predicción de trafico, voy a poner la idea en español en comentarios para estructurármela yo misma en la cabeza.
+% Antonio - Maribel, voy a recortar cosillas, que te enrollas incluso más que yo. No te enfades, porfa. XD
+Traffic has been extremely exploited as a research field, mainly focused on the forecast of future flows considering the current information as a Time Series.
+The forecasting of these flows in any transport system plays an important role for either alleviating urban congestion, or for adjust traffic control and guidance systems. The aim is to create an intelligent transportation system (ITS) which strongly depends on the capability to predict traffic conditions at least in the short-term (less than one hour into the future), since medium- and long-term predictions are barely accurate and reliable. These are nowadays a hard problem to solve in general Time Series \cite{ParrasGutierrez2014433}.
+% Antonio - supongo que el medio y largo plazo no es que ayude, sería estupendo, sino que es muy difícil que sea preciso. ;)
+% Antonio - quito la segunda referencia, ya que va de otras cosas y seguramente nos van a dar un toque por la extensión del artículo. :D
+With a short-term forecasting the traffic control systems could be self-adapted continuously. For example, a traffic light could adjust its red or green time depending on the short-time forecasting of the closer streets. 
 
-The traffic flow forecasting in a dual carriageway, in a road, or in any transport system plays an important role for either alleviating urban congestions, or configuring traffic control systems and traffic guidance systems. The main goal is design intelligent transportation systems (ITS) and it cannot be realized without an ability to anticipate traffic conditions in the short-term (less than one hour into the future) although the medium-term or the large-term would help too. In short-term forecasting the traffic control systems could adapt along the time. For example, a traffic light could adjust its red or green time depending on the short-time forecasting of its close streets. Moreover medium-term or long-term could to be useful if there is special conditions in a medium or long time period although nowadays the results of this research is not outstanding and it is an open question for many research groups, but usually in other subjects like time series in general \cite{ParrasGutierrez2014433} or economic development and political decisions 	\cite{longTermBussines2014}.
+%Medium-term or long-term could to be useful if there are special conditions in a medium or long time period although nowadays the results of this research are not outstanding and it is an open question for many research groups, but usually in other subjects like time series in general \cite{ParrasGutierrez2014433} or economic development and political decisions \cite{longTermBussines2014}.
 
 %La predicción del tráfico en una ciudad, una carretera o en general cualquier vía de transporte es esencial para mejorar el transporte. Los %usuarios de cualquier transporte público estarían más contentos si el flujo de tráfico de una ciudad cumpliera unos tiempos preestablecidos, puesto que así el transporte sería más rápido y eficiente. Sin embargo es un problema totalmente abierto en el que numerosos investigadores de todo el mundo realizan sus aportaciones. (Accurate and real-time traffic flow forecasting is essential to adaptive traffic control system and traffic guidance system, which is of great significance for alleviating urban traffic congestions. Because of the importance of traffic flow prediction results, many traffic engineering researchers began to apply mature prediction models of other areas to short-term traffic flow prediction and developed a variety of forecasting methods at the beginning of the 1960s. )
 
-
-There are many proposals related with traffic flow forecasting, and all of them approaching the problem with different models. All the contribution are important because each of them assists the problem with a particular bit. The diverse solutions provided by the researches include series models, Kalman Filter Theory, Markov Chain models, non-parametric methods, simulation models, local regression models, fuzzy-neural approaches, sequential learning, spectral analysis, Basesian networks, neural networks, diffusion models or Big Data based approaches \cite{SurveyKumar2007}.  %(buscar referencias recientes de cada una y ponerlas si queremos ampliar este párrafo)
-
+There are many works related with traffic flow forecasting, each of them approaching the problem with different models. These include: series models, Kalman Filter Theory, Markov Chain models, non-parametric methods, simulation models, local regression models, fuzzy-neural approaches, sequential learning, spectral analysis, Bayesian networks, neural networks, diffusion models or Big Data based approaches \cite{SurveyKumar2007}.  %(buscar referencias recientes de cada una y ponerlas si queremos ampliar este párrafo)
+% Antonio - pos eso. ;D
+%
 % Existen numerosos trabajos relacionados con la predicción de tráfico y cada uno de ellos enfoca el problema de formas diferentes. Estos enfoques incluyen "series models, Kalman Filter Theory, Markov Chain models, non-parametric methods simulation models, local regression models, fuzzy-neural approaches, sequential learning, spectral analysis, Bayesian networks, neural networks, modelos de difusión o la técnicas de bigdata. (buscar referencias recientes de cada una y ponerlas)
 
-Being the traffic flow forecasting a trending topic several surveys can be found, providing a comprehensive idea about the scope \cite{SurveyBolshinsky2012}. The authors, E. Bolshinsky and R. Friedman try to give an added value to their contribution including the used techniques, the system input data for each contribution, and the hardware architecture when the original papers describe it. Other previous survey were written such as \cite{Survey2004} and \cite{SurveyKumar2007} but the last one, Bolshinsky's et Al. one \cite{SurveyBolshinsky2012}, complets the information the previous ones compile. There are specific surveys for one of the traffic flow forecasting types, like \cite{Vlahogianni2014} where the focus was not the approaches nor the results of the reviewed papers, but the focus or goals and the scope where each paper could be classified, for example if the paper forecasts the expected time for one trip or includes the system which collects data as main contribution.
+Being the traffic flow forecasting a trending topic several surveys can be found, such as \cite{Survey2004} and \cite{SurveyKumar2007} but the best is \cite{SurveyBolshinsky2012}, since Bolshinsky and Friedman complete the information that the previous ones just compile, and give an added value to their work including the used techniques, the input data for each contribution, and the used hardware architecture, whenever the original paper described it. There are also specific surveys for one of the traffic flow forecasting types, like \cite{Vlahogianni2014} where the focus was not the approaches nor the results of the reviewed papers, but the focus or goals and the scope where each paper could be classified, for example if the work is focused on forecasting or presents the collecting data system as main contribution.
 
 % Al tratarse de un tema muy estudiado, existen también numerosos resúmenes que te dan una idea general sobre este ámbito como el [SurveyKumar2007] publicado en el 2007 y centrado en la predicción del tráfico a corto plazo, o el publicado en 2012 por E. Bolshinsky [SurveyBolshinsky2012] donde se repasan las diferentes técnicas utilizadas, los datos de entrada que necesita cada una y algunas arquitecturas de los sistemas utilizados. También hay resúmenes específicos para un tipo de predicción como el propio [SurveyKumar2007] o [Vlahogianni2014] que tiene un enfoque un poco más generalista clasificando la literatura existente en los objetivos que perseguía cada trabajo o dentro de qué ambito estaba emarcado cada artículo, como por ejemplo si predecía el tráfico o predecía el tiempo esperado para un desplazamiento o estaba centrado en la forma de recolección de los datos utilizados.
 
-During the last years, the publications even assimilate new technologies for data analysis like "Big Data" \cite{TrafficFlowPredictionWithBigData2015} or Cloud-Computing approaches \citep{CloudComputing2014}. Yisheng et. al. \cite{TrafficFlowPredictionWithBigData2015} face the traffic flow forecasting problem using temporal and spatial models at the same time using simple forecasting models and assembling them in a global complex system. The results provide a time and a spatial place for each prediction. Zhaosheng Yang et al. \citep{CloudComputing2014} present traffic flow prediction model for large-scale road network using Cloud-Computing, implementing  successfully a Genetic Algorithm (GA) for optimizing Support Vector Machine (SVM) getting highest prediction accuracy and the shortest running time. 
+During the last years, the researches even assimilate new technologies for data analysis like "Big Data" \cite{TrafficFlowPredictionWithBigData2015} or Cloud-Computing approaches \citep{CloudComputing2014}. In the first one, Yisheng et. al. face the traffic flow forecasting problem using temporal and spatial models at the same time, using simple forecasting models and assembling them in a global complex system. The results provide a time and a spatial place for each prediction. The second work, by Zhaosheng Yang et al., presents a traffic flow prediction model for large-scale road network using Cloud-Computing techniques. Thus, it implements successfully a Genetic Algorithm (GA) for optimizing a Support Vector Machine (SVM) getting a higher prediction accuracy and a smaller running time. 
 
 
 %Algunos de los trabajos más recientes que versan sobre la predicción del tráfico intentan ya integrar nuevas tecnologías como "Big Data" [TrafficFlowPredictionWithBigData2015] donde intentan abarcar nuevos enfoques en la predicción incluyendo una predicción temporal y espacial simultáneamente utilizando modelos de predicción simples como piezas que forman un sistema mucho más complejo.
 
-Several renowned publications offer to their contributors spacial issues related with the scope, such as \cite{Zhang20141}. This publication includes the last advances in traffic forecasting research. Other works propose forecasting traffic flows and trip times \citep{Dong201420}, \cite{Zou201433} providing spatial-temporal patterns of the congested and non-congested traffic. Or papers with new real-time forecasting approaches \cite{Zhang201465} or improved and renowned proposals such as \cite{Wang201479} which improve Bayesian combination method (BCM) proposed by Petridis et al. in 2001 and \cite{Qi201495} which improves freeways short-term prediction using Markov Model.
+Several recent publications present spacial issues related with the scope, such as \cite{Zhang20141}, which includes the last advances in traffic forecasting research. 
+% Antonio - ¿como cuáles?
+Other works propose conducting forecast traffic flows and trip times \citep{Dong201420}, \cite{Zou201433} using spatial-temporal patterns of the congested and non-congested traffic. Also papers with new real-time forecasting approaches \cite{Zhang201465} or improved and renewed proposals such as \cite{Wang201479}, which improves the Bayesian combination method (BCM) proposed by Petridis et al. in 2001, or \cite{Qi201495} which improves freeways short-term prediction using a Markov Model.
 
 %También existen numerosas revistas que proponen números especiales que versan sobre este tema [Zhang20141], donde se puede encontrar los últimos avances que intentan ir más allá y predecir no sólo el estado del tráfico sino el tiempo de los desplazamientos [Dong201420] [Zou201433]  utilizando modelos espacio-temporales del tráfico en diferentes situaciones (spatial?temporal patterns of the congested and non-congested traffic) o trabajos que le dan una vuelta de tuerca más a las técnicas y proponen nuevos métodos de predicción [Zhang201465] utilizando datos del tráfico en tiempo real o métodos ya conocidos y mejorados como [Wang201479][Qi201495].
+
+In the present work, a study on traffic forecasting is conducted (in Section \ref{sec:traffic}), however it applies classical methods, because the aim is to show the value of the data gathered by our system in the comparison with the data collected by the Spanish Traffic Agency using an inductive loop detector, which is also studied.
+Thus, our contribution on this line is the use of real traffic Time Series, created from the data extracted from our traffic `steps' (WiFi and BT detections).
 
 % Antonio - he movido este texto que es más de background a esta sección. ;)
 % TODO: GUSTAVO, ¿podrías poner citas a esos temas? ;D
 % te perdono pero sólo por esta vez :D
-People's mobility is studied for important reasons. Many of them involve profit: conversion rate, marketing effectiveness or staff planning are some of the best known.
+Another line of study in our paper is the personal tracking or people's mobility. It is studied for many reasons, several of them involve profit: conversion rate, marketing effectiveness or staff planning are some of the best known.
+% Antonio - Citas, citas everywhere. Plis, Gustavo. :D
 
-Conversion rate is the percentage of visitors who effectively make a purchase. It can show you if a shop improvement (or decline) is due to more people visit it or more of the visitors finally buy something. Shopping mall professionals study people behavior in order to know if their marketing techniques are paying off. In the same line, stuff planning is directly related with the amount of visitors, as is the maintenance and cleaning needs.
+Conversion rate is the percentage of visitors 
+% Antonio - ¿customers?
+who effectively make a purchase. It can show you if a shop improvement (or decline) is due to more people visit it, or more of the visitors finally buy something. Shopping mall professionals study people's behaviour in order to know if their marketing techniques are paying off. In the same line, stuff planning is directly related with the amount of visitors, as well as the maintenance and cleaning needs.
 
-Other reasons are more practical than commercial: How many people visit a public building? When? It will help to improve the planning of the services provided, heating or cooling of the building, facility cleaning, staff shifts and so on. In a museum or a sport stadium you can adjust many parameters to help people enjoy from a better experience while raising the profits.
+Other reasons are more practical than commercial: How many people visit a public building? When? It will help to improve the planning of the provided services, heating or cooling of the building, facility cleaning, staff shifts and so on. In a museum or a sport stadium you can adjust many parameters to help people enjoy from a better experience while raising the profits.
 
-The technology for counting/tracking people has evolved over time. At the beginning infrared beam counters were used. These were cheap but failure prone, like when two persons pass a door together. Thermal counters were used next. Also cheap but with serious limitations like the short distance from the counting device to the people being counted. Latest technology use video cameras and WiFi, or Bluetooth, detectors. Video devices are more expensive as is the software in charge of image processing, more expensive in term of resource consumption. On the positive side, now we can do many more this than counting people. We can track their paths and behavior. Radio signal also is a great method for people tracking, as powerful as video but cheaper in terms of hardware price and algorithm cost. The range of detection is wider, 100m approximately.
+The technology for counting/tracking people has evolved over time. At the beginning infrared beam counters were used. 
+% Antonio - cita o referencia a URL
+These were cheap but prone to failures, like when two persons pass a door together. Thermal counters were used next. 
+% Antonio - cita o eso
+Also cheap but with serious limitations like the short distance from the counting device to the people being counted. Latest technology use video cameras and WiFi, or Bluetooth, detectors. 
+% Antonio - esto es importante, habría que extenderlo y compararlo con lo nuestro, ya que se podría parecer. Aparte de la cita. ;D
+Video devices are more expensive as is the software in charge of image processing, more expensive in term of resource consumption. On the positive side, now we can do many more things than counting people. We can track their paths and behaviour. Radio signal is also a great method for people tracking, as powerful as video but cheaper in terms of hardware price and algorithmic cost. Moreover, the range of detection is wider, 100m approximately.
+
+Our approach is based on WiFi and BT detection, but focused on people's personal devices from which an unique identifier can be extracted and (after anonymisation) stored. This makes it easy to track these people on a building for instance, just deploying a fair number of monitoring devices. With the advantage of the cheaper price than other systems, such as video, and also the possibility of create in/out (origin/destination) matrices 
+% Antonio - Gustavo, una cita, po favó. ;D
+or accurate movement models.
 
 % TODO: ANTONIO - Meter estado del arte en Smart City y enlazar con lo de movilidad.
 
