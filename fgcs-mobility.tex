@@ -329,10 +329,8 @@ Ezequiel: This module is responsible of the publication of data in a cloud-based
 
 \end{itemize}
 
-In addition, and as it is shown in Figure 1, the device runs an specific Operative System, called \textit{Horeb}, which is a modification of the original Raspbian 3.10.24, adapted by MOBYWIT system designer to be more robust (to power fails, for instance) and reliable.
+In addition, and as it is shown in Figure \ref{fig:mobywit}, the device runs an specific Operative System, called \textit{Horeb}, which is a modification of the original Raspbian 3.10.24, adapted by MOBYWIT system designer to be more robust (to power fails, for instance) and reliable.
 
-*** CONTAR CÓMO FUNCIONA AL DETECTAR ***
-% Antonio - TODO: ANTARES, revisa esto porfa. ;)
 There are several configuration parameters in the system, which sets important parts of the functionality, such as the intensity threshold to collect a received WiFi signal, or time limits to consider a device as obsolete or out of the range of the device.
 
 Every detected `pass-by' or mobility `event' is associated to a detection time, obtained by NTP (Network Time Protocol). These `events' are stored initially in the device's memory. After some time (also set in a parameter) the information is sent, in blocks, to the server, to avoid an overuse/saturation of the network.
