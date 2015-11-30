@@ -389,10 +389,10 @@ obtain the unified distance matrix (U-matrix) \cite{UmatUlts} which
 uses SOM yielded neurons' codevectors (vectors of variables of the
 problem) as data source, and generates a matrix where each component
 is a distance measure between two adjacent neurons. Then, these
-distances are codified as different color shades in a graph. 
-The U-Matrix graph allows visualize any multi-variable dataset in a two-dimensional display, which helps detecting topological relations among neurons and inferring about the input data structure in a straightforward visual manner. High values in the U-matrix represent a frontier region between clusters, and low values represent a high degree of similarities among neurons on that region, i.e. clusters. MATLAB 2009 along with SOM Toolbox \cite{SOMPAK} was used for the SOM analysis.
+distances are codified as different colour shades in a graph. 
+The U-Matrix graph allows visualise any multi-variable dataset in a two-dimensional display, which helps detecting topological relations among neurons and inferring about the input data structure in a straightforward visual manner. High values in the U-matrix represent a frontier region between clusters, and low values represent a high degree of similarities among neurons on that region, i.e. clusters. MATLAB 2009 along with SOM Toolbox \cite{SOMPAK} was used for the SOM analysis.
 
-In order to analyze the data, several features have been extracted (generated) from the gathered `events', composing a pattern per device of its whole stay in the disco. These are described in Table \ref{tab:features_disco}.
+In order to analyse the data, several features have been extracted (generated) from the gathered `events', composing a pattern per device of its whole stay in the disco. These are described in Table \ref{tab:extracted_features_disco}.
 
 \begin{table}[htpb]
 \centering
@@ -414,7 +414,7 @@ Variable name & Description & Type\\
 %\texttt{non\_detected\_time} & Number of seconds the device has not been detected (but it still is in the disco) & Integer\\
 \noalign{\smallskip}\hline
 \end{tabular}
- \caption{Extracted features from gathered data in the discotheque. \label{tab:features_disco}}
+ \caption{Extracted features from gathered data in the discotheque. \label{tab:extracted_features_disco}}
 }
 \end{table}
 
@@ -435,39 +435,55 @@ The application of SOM + U-Matrix produces the graphs shown in Figure
 
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=14cm]{imgs/DISCO/som_disco_sin_no_detec.eps}
-		\includegraphics[width=8cm]{imgs/DISCO/umatrix_disco_sin_no_detec.eps}
-		\caption{Detected devices in a night in the Discotheque scenario. Extracted features}
+		\includegraphics[width=12cm]{imgs/DISCO/som_disco_sin_no_detec.eps}
+		\includegraphics[width=6cm]{imgs/DISCO/umatrix_disco_sin_no_detec.eps}
+		\caption{SOM + U-MATRIX Applied to the dataset of detected devices in a night in the Discotheque scenario. SOM Planes analysis (top) shows the extracted features described in Table \ref{tab:extracted_features_disco}}
 % Antonio - Sin no detectados
 		\label{fig:som_disco_sin_no_detec}
 	\end{center}
 \end{figure}
 
-*** PONER LOS NOMBRES DE LAS VARIABLES CORRECTOS ***
-
 The results show that... *** COMENTARLOS ***
 The problem is that there are no labels on the graph, so the interpretation cannot be as complete as it could... ***
 
 
-In addition, another study has been conducted using SOM and U-MATRIX graphs. This time we want to analyze the \textit{recurrence of devices} to the discotheque, and their overall behavior in the days they have come back. To this aim a new data set has been composed, extracting those `events' of devices detected in more than two nights in two whole months.
+In addition, another study has been conducted using SOM and U-MATRIX graphs. This time we want to analyse the \textit{recurrence of devices} to the discotheque, and their overall behaviour in the days they have come back. To this aim a new dataset has been composed, extracting those `events' of devices detected in more than two nights in two whole months.
+Moreover, a similar set of features has been extracted for this experiment, as they are shown in Table \ref{tab:features_recurrence_disco}.
+
+\begin{table}[htpb]
+\centering
+{\scriptsize
+\begin{tabular}{lll}
+\hline\noalign{\smallskip}
+Variable name & Description & Type\\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+\texttt{stay\_time} & Number of seconds the device has been in the disco & Integer\\
+\texttt{abs\_time\_node\_X} & Number of seconds the device has been detected\\
+& in every node X (from 1 to 5) & Integer\\
+\texttt{relat\_time\_node\_X} & Percentage of time the device has been detected\\
+& in every node X (from 1 to 5) & Float\\
+\noalign{\smallskip}\hline
+\end{tabular}
+ \caption{Extracted features from gathered data in the discotheque. \label{tab:features_recurrence_disco}}
+}
+\end{table}
+
 For each device, we have computed a sum of the amounts of diary time per monitoring node. Relative times have been also calculated as another set of features. There are 220000 monitored `events' and 2100 different devices, so this amount of patterns to cluster.
 
-We have labeled the data using the number of different days every device has been detected (the recurrence rate).
+We have labelled the data using the number of different days every device has been detected (the recurrence rate).
 
 The results on this study are shown in Figure \ref{fig:som_disco_recurrencia}.
 
-\begin{figure}[!ht]
+\begin{figure}[!htp]
 	\begin{center}
-		\includegraphics[width=14cm]{imgs/DISCO/som_recurrentes.eps}
-		\includegraphics[width=8cm]{imgs/DISCO/umatrix_recurrentes.eps}
-		\caption{Recurrence of devices in different days. The label is the recurrence rate of the majority in that neuron/BMU}
+		\includegraphics[width=11cm]{imgs/DISCO/som_recurrentes.eps}
+		\includegraphics[width=6cm]{imgs/DISCO/umatrix_recurrentes.eps}
+		\caption{Recurrence of devices in different days. The label is the recurrence rate (number of days the device has returned) of the majority in that neuron/BMU}
 		\label{fig:som_disco_recurrencia}
 	\end{center}
 \end{figure}
 
-*** PONER GRÁFICA CON DATOS Y VARIABLES DEFINITIVAS ***
-
-As it can be seen in the U-Matrix every neuron (cell in the graph) has been labeled according to the class of the majority of the most similar input patterns. To this end the distance from every pattern to every neuron is computed considering their respective codevectors, the closest neuron to an input is named the best matching unit (BMU), and it is labeled with the pattern class (stage in this problem). Once the process has finished every neuron with more than one associated class finally displays the label with more occurrences.
+As it can be seen in the U-Matrix every neuron (cell in the graph) has been labelled according to the class of the majority of the most similar input patterns. To this end the distance from every pattern to every neuron is computed considering their respective codevectors, the closest neuron to an input is named the best matching unit (BMU), and it is labelled with the pattern class (stage in this problem). Once the process has finished every neuron with more than one associated class finally displays the label with more occurrences.
 
 *** COMENTAR RESULTADOS ***
 
@@ -528,7 +544,8 @@ Information gathered can be useful for the management of the building. When must
 \section{Analysing the traffic in a highway}
 \label{sec:traffic}
 
-This section describes the experimental analysis of the data gathered by a different number of devices placed in national highways.
+This section describes the experimental analysis of the data gathered by a 
+different number of devices placed in national highways.
 
 The main difference with respect to the other experimental scenarios is that, 
 in this case, the detected devices are cars moving at higher speed. However, 
@@ -541,7 +558,7 @@ realistic \textit{ratio} between both numbers has been computed.
 
 Six nodes have been placed along different roads in Andalusia (south Spain). 
 Figure \ref{fig:nodosDGT} shows the identifiers of these devices and their 
-exact location. These locations have been chosen because are the nearest   % nearest  or  closest  ???   [pedro]
+exact location. These locations have been chosen because are the nearest   % nearest  or  closest  ???   [pedro] FERGU: el translate dice nearest por defecto, pero vamos, ni idea xD
 ones to existent loop detectors monitored by the DGT, and also, they have 
 Internet connection to allow the transmission of data to our server. 
 There exist two groups of nodes: one in the province of Granada area 
@@ -587,7 +604,7 @@ Using the time when each repetition has been detected we can also calculate aver
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.4]{imgs/petra_matrix_travelDuration.eps}
+		\includegraphics[scale=0.35]{imgs/petra_matrix_travelDuration.eps}
 		\caption{Average time between nodes, detecting the unique vehicle identifiers by our MOBYWIT devices. Every day is grouped in blocks of 4 hours.}
 	\label{fig:dgtMatrixTime}
 	\end{center}
@@ -596,17 +613,16 @@ Using the time when each repetition has been detected we can also calculate aver
 
 \subsection{Data validation using other sources of data}
 
-Different metrics will be used to obtain a correct correlation between the number of detected devices and the real number detected by the loop detectors.
+Different metrics will be used to obtain a correct correlation between the number of detected devices and the real number detected by the loop detectors. To simplify the data analysis and discussion only the data of one node (1010) is shown.
 
 \begin{itemize}
 \item {\em Total ratio}: ratio between the total number of vehicles detected by the DGT and the total number of vehicles detected by our device.
 \item {\em Mean ratio}: as the maximum granularity of the data provided by the DGT is 15 minutes, the sum of all ratios between the DGT data and our data in each 15 minutes section has been divided by the total number of sections to calculate the average.
 \item {\em Median ratio}: instead the average ratio as in previous metric, this one uses the median of all ratios.
-\item {\em Mean by hour ratio}: this metric calculate a vector of ratios separated by hour of the day, instead obtaining a global ratio for all data. An average ratio per hour in the vector is calculated taking into account all the ratios of that hour during all the days we have data.
-\item {\em Median by hour ratio}: as in the previous metric, this one uses a vector of ratios per hour, but every element is calculated using the median, instead the average.
+\item {\em Mean by quarter ratio}: this metric calculate a vector of ratios separated by quarter of hour during the day, instead obtaining a global ratio for all data. An average ratio per quarter per hour in the vector is calculated taking into account all the ratios of that quarter during all the days we have data.
+\item {\em Median by quarter ratio}: as in the previous metric, this one uses a vector of ratios per quarter of hour, but every element is calculated using the median, instead the average.
 \end{itemize}
 
-%FERGU: DUDA, era al final por hora o por cuarto de hora?
 
 Table \ref{tab:ratiosDGT} shows the obtained ratios. *** COMENTARLOS ***
 
@@ -620,25 +636,25 @@ Table \ref{tab:ratiosDGT} shows the obtained ratios. *** COMENTARLOS ***
 Total Ratio  & 17.230 &   60.373 & 36.265 & \textbf{7371.579}  & \textbf{85.857} \\
 Mean Ratio   & 20.792 &   72.323 & 43.443 & 11216.070 & 105.905 \\
 Median Ratio & 18.2 &    62.454  & 37.515 & 8060.136  & 89.778 \\
-Median By Hour Ratio & Depends on the hour  & \textbf{58.326} & \textbf{35.035} & 7617.613 & 87.278 \\
-Mean By Hour Ratio &   Depends on the hour  & 66.791 & 40.120 & 9890.978 & 99.453 \\
+Median By Quarter of Hour Ratio & Depends on the hour  & \textbf{58.326} & \textbf{35.035} & 7617.613 & 87.278 \\
+Mean By Quarter of Hour Ratio &   Depends on the hour  & 66.791 & 40.120 & 9890.978 & 99.453 \\
 \hline
 
 \end{tabular}
 }
-\caption{}
+\caption{Different ratios between the DGT data and the data gathered by MOBIWIT in node 1010.}
 \label{tab:ratiosDGT}
 \end{table}
 
 
-Figure \ref{fig:dgtRatios} shows the number of devices of one node, applying the chosen correction ratio. As can be seen, different peaks can appear, being the responsible of the 
+Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applying the chosen correction ratio. As it can be seen, certain correlation exist. However, different peaks appear in the figure, being those elements the product of detecting few devices in comparison with the DGT.
 
 
 
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale=0.4]{imgs/petra_graph_DGT-Mobywit-mended.eps}
-		\caption{Devices detected by DGT and detected by our device applying the correction ratio.}
+		\caption{Devices detected by DGT and detected by our device (node 1010) applying the correction ratio (median by quarter). Note: no DGT data available during Octuber 14th.}
 	\label{fig:dgtRatios}
 	\end{center}
 \end{figure}
