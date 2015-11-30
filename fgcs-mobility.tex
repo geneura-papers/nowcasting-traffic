@@ -514,20 +514,20 @@ Information gathered can be useful for the management of the building. When must
 \label{sec:traffic}
 
 This section describes the experimental analysis of the data gathered by a 
-different number of devices placed in national highways.
+different number of MOBYWIT devices placed in national highways.
 
 The main difference with respect to the other experimental scenarios is that, 
 in this case, the detected devices are cars moving at higher speed. However, 
-in this scenario we also count with the information provided by the Spanish 
+in this scenario, we also count with the information provided by the Spanish 
 traffic management agency, Direcci\'on General de Tr\'afico (DGT), which is 
 collected using loop detectors. So, in this case, we have used real data in 
 order to validate our approach by comparing the real number of vehicles which 
-has passed a point, with the number of devices detected by MOBYWIT. Thus, a 
+have passed a point, with the number of devices detected by MOBYWIT. Thus, a 
 realistic \textit{ratio} between both numbers has been computed.
 
-Six nodes have been placed along different roads in Andalusia (south Spain). 
+Six nodes were placed along different roads in Andalusia (south Spain). 
 Figure \ref{fig:nodosDGT} shows the identifiers of these devices and their 
-exact location. These locations have been chosen because are the nearest   
+exact location. These locations have been chosen because they are the nearest   
 ones to existent loop detectors monitored by the DGT, and also, they have 
 Internet connection to allow the transmission of data to our server. 
 There exist two groups of nodes: one in the province of Granada area 
@@ -541,13 +541,13 @@ There exist two groups of nodes: one in the province of Granada area
 	\end{center}
 \end{figure}
 
-In this section, several experiment will be conducted. First, an study on the velocity and driving behaviour taking into account the tracking capabilities of MOBYWIT will be presented. Also, different methods to extract a ratio between our gathered data and the real data provided by the DGT will be performed. Finally, a time series forecasting study will be performed. In order to compare the performance of the different methods, 4 frequently used error measures will be used in this section:
+In this section, several experiments will be conducted. First, a study on the velocity and driving behaviour taking into account the tracking capabilities of MOBYWIT will be presented. Also, different methods to extract a ratio between our gathered data and the real data provided by the DGT will be performed. Finally, a time series forecasting study will be performed. In order to compare the performance of the different methods, 4 frequently used error measures will be used in this section:
 Mean Absolute Error ({\em MAE}),
 Mean Absolute Percentage Error ({\em MAPE(\%)}),
 Mean Squared Error ({\em MSE}), and
 Root Mean Squared Error ({\em RMSE}).
 
-Their different features, as well as their equations, can be found in Hyndman and Koehler's work ~\cite{RePEc:eee:intfor:v:22:y:2006:i:4:p:679-688}
+Their different features, as well as their equations, can be found in Hyndman and Koehler's work ~\cite{RePEc:eee:intfor:v:22:y:2006:i:4:p:679-688}.
 
 
 \subsection{Driving behaviour}
@@ -562,7 +562,7 @@ Using the capability of the unique vehicle detection by MAC, we can calculate th
 	\end{center}
 \end{figure}
 
-Using the time when each repetition has been detected we can also calculate average speed velocity during the week. Figure \ref{fig:dgtMatrixTime} shows the detected times between nodes, in blocks of 4 hours, during the week. Largest travel times are detected between more separated nodes. As in previous figure, time between more separated nodes is not tracked because shorter paths between cities exist. ***HABLAR MAS DE ESTOS DATOS***
+Using the time when each repetition has been detected we can also calculate average speed velocity during the week. Figure \ref{fig:dgtMatrixTime} shows the detected times between nodes, in blocks of 4 hours, during the week. Largest travel times are detected between more separated nodes. As in previous figure, time between more separated nodes is not tracked because shorter paths between cities exist. %***HABLAR MAS DE ESTOS DATOS***
 
 \begin{figure}[htb]
 	\begin{center}
@@ -575,7 +575,7 @@ Using the time when each repetition has been detected we can also calculate aver
 
 \subsection{Data validation using other sources of data}
 
-Different metrics will be used to obtain a correct correlation between the number of detected devices and the real number detected by the loop detectors. To simplify the data analysis and discussion only the data of one node (1010) is shown.
+Different metrics will be used to obtain a correct correlation between the number of detected devices and the real number detected by the loop detectors. 
 
 \begin{itemize}
 \item {\em Total ratio}: ratio between the total number of vehicles detected by the DGT and the total number of vehicles detected by our device.
@@ -586,7 +586,7 @@ Different metrics will be used to obtain a correct correlation between the numbe
 \end{itemize}
 
 
-Table \ref{tab:ratiosDGT} shows the obtained ratios. Results show that our device detects one vehicle per approximately 19 detected by the DGT, according Total, Mean and Median ratios. However, best results in MAE and MAPE are attained obtaining ratios dividing by quarter. Therefore, for the rest of the paper this ratio has been chosen, as we need to deal with absolute values to perform forecasting analysis later.
+Table \ref{tab:ratiosDGT} shows the obtained ratios. To simplify the data analysis and discussion only the data of one node (1010) are shown. Results show that our device detects one vehicle per approximately 19 detected by the DGT, according Total, Mean and Median ratios. However, best results in MAE and MAPE are attained obtaining ratios dividing by quarter. Therefore, for the rest of the paper this ratio has been chosen, as we need to deal with absolute values to perform forecasting analysis later.
 
 \begin{table}[htb]
 \centering
@@ -731,7 +731,7 @@ Traffic jams usually are present in every town and it could be produced by diver
 When a driver finds himself in a traffic jam, the natural response is to plan another path to arrive his destination and the information, the competent authority provides, about another available path is appreciated by them. The selection of another path depends on driver destination and it could be different for each case. So, the first stage is to inform about the traffic jam and then the drivers decide to go across or miss it. The second stage is to provide the available paths and to turn off the vehicles but this goal has not been addressed in the paper. 
 
 
-To illustrate the MOBYWIT utility for the first stage, early detection of a traffic jam is essential, and a little experiment has been carried out in Granada city (Spain). We have installed two MOBYWIT devices in the same street. The device's location is Dr. Ol\'{o}riz street. It is one-way, has four lanes and is placed in a neighbourhood which regularly is collapsed. The map of the devices location is in Figure \ref{fig:mososMapa}. The distance among both nodes is about $168$ metres. These devices cannot detect all the real persons and vehicles moving close to them since not all of them emit BT or WiFi signals, however after an open poll which $600$ people answered we conclude that around the $22\%$ of the drivers emit BT and around the $70\%$ of the drivers emit WiFi signal. We consider the sample is good and representative of the real world. For this starting experiment, we measure the taken time to go from the first to the second MOBYWIT device for each monitored device, either vehicle or person. The results of this experiment are displayed in Figure \ref{fig:mososTiempo}. In this figure, we have defined seven terms for the twenty-four hours of one day and they are placed over X axis. We calculate the average of trip time using all the collected data and the result is $85$ seconds. We referee that value as Global Trip Time Average (GTTA). After that, we calculate the boxplot for each term, scale the results to $[0,1]$ interval and represent it using their rate respect to GTTA value placed on the Y axis over $0.50$. That is, if the box is over $0.50$ Y axis value means that all the trips of that term are longer that GTTA value and if the box is below $0.50$ means that all the trips of this term are shorter than GTTA value. As you can see in the Figure, the first four terms are over $0.50$ so all the trips of these terms are longer than GTTA which indicates the trips during these terms are slower. The rest of the terms are below the $0.50$ level, so the trip times during these terms are speeder than the GTTA value.
+To illustrate the MOBYWIT utility for the first stage, early detection of a traffic jam is essential, and a little experiment has been carried out in Granada city (Spain). The goal of this litle experiment is to detect how varies the trip time from node A to node B. We have installed two MOBYWIT devices in the same street. The device's location is Dr. Ol\'{o}riz street. It is one-way, has four lanes and is placed in a neighbourhood which regularly is collapsed. The map of the devices location is in Figure \ref{fig:mososMapa}. The distance among both nodes is about $168$ metres. These devices cannot detect all the real persons and vehicles moving close to them since not all of them emit BT or WiFi signals, however after an open poll which $600$ people answered we conclude that around the $22\%$ of the drivers emit BT and around the $70\%$ of the drivers emit WiFi signal. We consider the sample is good and representative of the real world. For this starting experiment, we measure the taken time to go from the first to the second MOBYWIT device for each monitored device. The results of this experiment are displayed in Figure \ref{fig:mososTiempo}. In this figure, we have defined eight terms for the twenty-four hours of one day and they are placed over X axis. We calculate the average of trip time using all the collected data and the result is $85$ seconds. We referee that value as Global Trip Time Average (GTTA). After that, we calculate the boxplot for each term, scale the results to $[0,1]$ interval and represent it using their rate respect to GTTA value placed on the Y axis over $0.50$. That is, if the box is over $0.50$ value means that all the trips of that term are longer that GTTA value and if the box is below $0.50$ means that all the trips of this term are shorter than GTTA value. As you can see in the Figure, three terms are over $0.50$ so all the trips of these terms are longer than GTTA which indicates the trips during these terms are slower. The rest of the terms are below the $0.50$ level, so the trip times during these terms are speeder than the GTTA value.
 
 \begin{figure}[htb]
 	\begin{center}
@@ -764,14 +764,14 @@ Thus, four different scenarios have been studied:
 \begin{itemize}
     \item A discotheque, which has been used as a `stress test' for the system and also to address issues on marketing, energetic efficiency and security in the building, considering the mobility of people inside it on different nights. Clustering methods have been applied in order to visualise and extract interesting knowledge about people's movements and recurrences to the disco.
     \item A public building of the University of Granada, in which students', teachers' and other staff's movements have been analysed using origin/destination matrices with a similar objective than before: security, access improvements and (possibly) marketing reasons.
-    \item An interurban road, where the traffic flows have been studied and contrasted with real traffic data, using statistical methods. Moreover forecast techniques have been applied with very good results in the short-term.
+    \item An interurban road, where the traffic flows have been studied and contrasted with real traffic data, using statistical methods. Moreover, forecast techniques have been applied with very good results in the short-term.
     \item An urban street, which is one of the main arteries of the city of Granada, so it is usually collapsed. A statistical analysis has been conducted to study the traffic flows, detecting possible jams. This information could be potentially used in order to improve the light signal synchronisations in that street.
 \end{itemize}
 
-The aim of the work was to show that the results of these studies could be the basis for solving the commented issues, as well as to prove the value and reliability of the presented system. Which has been demonstrated.
+The aim of the work was to show that the results of these studies could be the basis for solving the commented issues, as well as to prove the value and reliability of the presented system. %Which has been demonstrated. FERGU: quito esto
 
 Since this paper is a kind of `proof of concept' for MOBYWIT, several future lines of research are open.
-Firstly, a deeper study on every issue addressed in the work can be done, focusing on every scenario, considering bigger amounts of data and applying some other techniques, which would improve the quality of the results. Moreover, we could aim to improve the methods of the state of the art for different problems, such as traffic forecast, for instance, but considering our gathered real data.
+Firstly, a deeper study on every issue addressed in the work can be done, focusing on every scenario, considering bigger amounts of data and applying some other techniques, which would improve the quality of the results. Moreover, we could aim to improve the methods of the state of the art for different problems, such as traffic forecast, for instance, but considering our gathered real data, offering these data as benchmarks for the scientific community.
 
 Also, some other problems in the city could be addressed using MOBYWIT devices, for instance, analysing people's and traffic mobility in the city, in order to improve services (to the tourists, for instance), conduct geo-marketing analyses \cite{Flyers-GeoMarketing,LaMarca-GeoMarketing}, increase the security mechanisms, or improve the public transport system.
 This would require the deployment of several devices around the city, in order to better build mobility graphs, origin/destination matrices and other mobility models.
