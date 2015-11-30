@@ -747,7 +747,7 @@ RMSE  & $83.906$ & $\textbf{58.925}$  &  $59.747$ & $59.309$ \\
 %\hline
 \end{tabular}
 }
-\caption{Error values computed using the differences between DGT real data and the ones forecasted by ETS method, after converting the latest using Median (by Hour) Ratio. Period to be forecasted started on 25-Oct-2015, 00:00 hours and finished on 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
+\caption{Error values computed using the differences between DGT real data and data recorded by MOBYWIT with Median Ratio By Hour conversion. Period to be forecasted started on 25-Oct-2015, 00:00 hours and finished on 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
 \label{tab:errorForecastingRatio}
 \end{table}
 
@@ -845,11 +845,24 @@ This work has been supported in part by projects EPHEMECH (TIN2014-56494-C4-3-P,
 
 This appendix presents additional information about the scenarios, such as the geographical position of the nodes and a comment about them, or some graphs showing the distribution of the gathered data.
 
-\subsection*{Discotheque}
+\begin{table}[H]
+\centering
+\resizebox{12cm}{!}{
+\begin{tabular}{|c|c|p{5cm}|c|c|}
+\hline
+ID   &  Location & Latitude & Longitude \\ \hline
+102	 &  DISCO Terrace & -- & -- \\ \hline
+112	 &  DISCO Main room  & -- & --  \\ \hline
+122	 &  DISCO Minor room 1& -- & -- \\ \hline
+132	 &  DISCO Ticket office & -- & -- \\ \hline
+142	 &  DISCO Minor room 2& -- &  -- \\ \hline
+\end{tabular}
+}
+\caption{Location of the devices for Discotheque scenario.}
+\label{tab:nodosDGT}
+\end{table}
 
-\subsection*{Building of the University}
-
-\begin{table}
+\begin{table}[H]
 \centering
 \resizebox{12cm}{!}{
 \begin{tabular}{|c|c|p{5cm}|c|c|}
@@ -861,13 +874,11 @@ ID   &  Location & Latitude & Longitude \\ \hline
 \end{tabular}
 }
 \caption{Location of the devices for the Building of the University scenario.}
-\label{tab:nodosETSIIT}
+\label{tab:nodosDGT}
 \end{table}
 
 
-\subsection*{Highway}
-
-\begin{table}
+\begin{table}[H]
 \centering
 \resizebox{12cm}{!}{
 \begin{tabular}{|c|c|p{5cm}|c|c|}
@@ -882,13 +893,11 @@ ID   & Province & Location & Latitude & Longitude \\ \hline
 \end{tabular}
 }
 \caption{Location of the devices for the highway traffic scenario (K.P. = Kilometric Point).}
-\label{tab:nodosHighway}
+\label{tab:nodosDGT}
 \end{table}
 
 
-\subsection*{Traffic in a city}
-
-\begin{table}
+\begin{table}[H]
 \centering
 \resizebox{12cm}{!}{
 \begin{tabular}{|c|c|p{5cm}|c|c|}
@@ -897,10 +906,9 @@ A	 & Granada & Dr. Olóriz Street & 37.188187 & -3.607241\\ \hline
 B	 & Granada & Dr. Olóriz Street & 37.186997 & -3.607882\\ \hline
 \end{tabular}
 }
-\caption{Location of the devices for the highway traffic scenario (K.P. = Kilometric Point).}
+\caption{Location of the devices for the city traffic scenario.}
 \label{tab:nodosDGT}
 \end{table}
-
 
 
 \end{document}
