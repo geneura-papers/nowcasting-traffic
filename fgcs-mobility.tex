@@ -49,7 +49,7 @@ $^2$ Departamento de Informática. EPS. Universidad de Jaén, Spain}
 \begin{abstract}
 This paper presents a novel mobility monitoring system and some of its applications to address problems that would be solved in a Smart City, such as the optimization of traffic flows in terms of trip-time and security (Smart Traffic), and the improvement of security or energetic issues inside buildings.
 The system tracks the movement of people and vehicles monitoring the
-radioelectric space, catching the  WiFi and Bluetooth signals emitted by personal (smartphones) or on-board (hands-free) devices. 
+radioelectric space, catching the  WiFi and Bluetooth signals emitted by personal(smartphones) or on-board (hands-free) devices. 
 A study has been conducted in four different real scenarios,
 i.e. with real data gathered by the system: two related with people's
 mobility (a public building and a discotheque); and two focused in
@@ -80,16 +80,17 @@ Smart traffic \sep Transit indicators \sep Traffic forecast \sep Mobility analys
 Nowadays, the transformation of any city into a Smart City, with better values of energy saving, citizen's free time, access to more resources and less cost, is a process that must be supported by powerful and reliable technologies, methods and systems. 
 To this aim, a mobility monitoring system is one of the most useful, since the data which provides can be used to enhance several services in the city, or in specific buildings inside it.
 
-The most common systems gather traffic information (mainly vehicles pass-by) using several kind of devices, such as pneumatic tubes, loop detectors, floating vehicles or automatic Optical Character Recognition (OCR) \cite{rodrigue2013geography}. However most of these systems are not able to identify and follow the same vehicle along the road network. 
+Most traffic information systems gather information about cars using several kind of devices, such as pneumatic tubes, loop detectors, floating vehicles or automatic Optical Character Recognition (OCR) \cite{rodrigue2013geography}. However most of these systems are not able to identify and follow the same vehicle along the road network. 
 % ¿OCR no? - JJ
 % Antonio - Sí, por eso pone most of them.
 Those that can do it are very expensive so they are just placed in very specific points of the roads.
 
 The local, regional or national governments use these data aiming for improvements in the maintenance of roads and services, computing a road deterioration factor based on the affluence of vehicles, for instance. In addition, useful traffic statistics can be obtained, which would help to forecast traffic jams, for example.
-This information can be directly used inside a city in several ways, from improving the traffic flow, by adjusting the synchronisation of traffic lights or defining the best traffic sense on every street, to the end-users, drivers, who can profit by optimally planning their trips according to the current, or future, status of the traffic flow. 
+This information can be directly used inside a city in several ways, from improving the traffic flow (adjusting the synchronisation of traffic lights or defining the best traffic sense on every street), to the end-users (drivers), who can profit by optimally planning their trips according to the current, or future, status of the traffic flow. 
 That's the reason why traffic information must be reliable. 
 
-This paper presents a monitoring system able to collect people's and vehicles mobility data, and also able to track them by means of a grid of devices, or nodes, connected to a central server. This allows the easy construction of traffic flow models or mobility graphs. The proposed system is formed by low-cost devices, around 100\$ each, which is another advantage over the usual monitoring systems, because the cost is an important factor for authorities which tend to install the simplest and cheapest monitors. 
+This paper presents a monitoring system able to collect people's and vehicles mobility data, and also able to track them by means of a grid of devices (nodes) connected to a central server. This allows the easy construction of traffic flow models or mobility graphs. The proposed system is formed by low-cost devices (around 100\$ each one), which is another advantage over the usual monitoring systems, because the cost is an important factor for authorities which
+tend to install the simplest and cheapest monitors. 
 
 The device, a highly improved version of the one presented in
 \cite{castillo2014_book_sipesca}, is based in a single-board computer
@@ -276,7 +277,7 @@ A good starting point to learn about the issue is \cite{6526732} with the additi
 
 Also the idea of tracking people with their personal WiFi devices is not new. As more and more people use it every day it is becoming one of the best method to follow them. This idea has been put to practice recently by several authors. Wei Xi in \cite{6847958} demonstrates how this method can count people with great accuracy. Gabe Fierro in \cite{Fierro:2012:ZOC:2422531.2422572} use it to measure the occupancy level of a building without requiring additional infrastructure.
 
-By joining BT and WiFi we pursue to increase the detection rate further than most people has achieved. Apparently it can seem redundant but the detection likelihood is higher. We need to study more deeply the improvement of the combined detection but on average we detect a 80\% of WiFi devices and a 20\% of BT. BT is specially important for the detection of cars because it is technology include in almost every new car. The same is true for WiFi and smartphones. Even when people disconnect WiFi devices keep on sending signals.
+By joining BT and WiFi we pursue to increase the detection rate further than most people has achieved. Apparently it can seem redundant but the detection likelihood is higher with both systems. We need to study more deeply the improvement of the combined detection but on average a 80\% of WiFi devices and a 20\% of BT are detected. BT is specially important for the detection of cars because it is technology include in almost every new car. The same is true for WiFi and smartphones. Another interesting characteristic is that even when people disconnect WiFi their devices keep on sending signals.
 
 % TODO: ANTONIO - Meter estado del arte en Smart City y enlazar con lo de movilidad.
 
@@ -573,11 +574,16 @@ There exist two groups of nodes: one in the province of Granada area
 	\end{center}
 \end{figure}
 
-In this section, several experiment will be conducted. First, an study on the velocity and driving behaviour taking into account the tracking capabilities of MOBYWIT will be presented. Also, different methods to extract a ratio between our gathered data and the real data provided by the DGT will be performed. Finally, a time series forecasting study will be performed. In order to compare the performance of the different methods, 4 frequently used error measures will be used in this section:
-Mean Absolute Error ({\em MAE}),
- Mean Absolute Percentage Error ({\em MAPE(\%)}),
- Mean Squared Error ({\em MSE}), and
- Root Mean Squared Error ({\em RMSE}).
+In this section, several experiment will be conducted. First, an study on the velocity and driving behaviour taking into account the tracking capabilities of MOBYWIT will be presented. Also, different methods to extract a ratio between our gathered data and the real data provided by the DGT will be performed. Finally, a time series forecasting study will be performed. In order to compare the performance of the different methods, 9 frequently used error measures will be used in this section:
+Mean Error ({\em ME}),
+ Mean Squared Error ({\em MSE}),
+ Root Mean Squared Error ({\em RMSE}),
+ Mean Absolute Error ({\em MAE}),
+ Mean Absolute Scaled Error ({\em MASE}),
+ Median Absolute Error ({\em MdAE}),
+ Median Absolute Percentage Error ({\em MdAPE(\%)}),
+ Symmetric Mean Absolute Percentage Error ({\em sMAPE(\%)}), and
+ Symmetric Median Absolute Percentage Error ({\em sMdAPE(\%)}).
 
 Their different features, as well as their equations, can be found in Hyndman and Koehler's work ~\cite{RePEc:eee:intfor:v:22:y:2006:i:4:p:679-688}
 
@@ -627,7 +633,7 @@ Different metrics will be used to obtain a correct correlation between the numbe
 \end{itemize}
 
 
-Table \ref{tab:ratiosDGT} shows the obtained ratios. Results show that our device detects one vehicle per approximately 19 detected by the DGT, according Total, Mean and Median ratios. However, best results in MAE and MAPE are attained obtaining ratios dividing by quarter.
+Table \ref{tab:ratiosDGT} shows the obtained ratios. *** COMENTARLOS ***
 
 \begin{table}[htb]
 \centering
@@ -639,8 +645,8 @@ Table \ref{tab:ratiosDGT} shows the obtained ratios. Results show that our devic
 Total Ratio  & 17.230 &   60.373 & 36.265 & \textbf{7371.579}  & \textbf{85.857} \\
 Mean Ratio   & 20.792 &   72.323 & 43.443 & 11216.070 & 105.905 \\
 Median Ratio & 18.2 &    62.454  & 37.515 & 8060.136  & 89.778 \\
-Mean By Quarter of Hour Ratio &   Depends on the hour  & 66.791 & 40.120 & 9890.978 & 99.453 \\
 Median By Quarter of Hour Ratio & Depends on the hour  & \textbf{58.326} & \textbf{35.035} & 7617.613 & 87.278 \\
+Mean By Quarter of Hour Ratio &   Depends on the hour  & 66.791 & 40.120 & 9890.978 & 99.453 \\
 \hline
 
 \end{tabular}
@@ -657,7 +663,7 @@ Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applyin
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale=0.4]{imgs/petra_graph_DGT-Mobywit-mended.eps}
-		\caption{Devices detected by DGT and detected by our device (node 1010) applying the correction ratio (median by quarter). Note: no DGT data available during October 14th.}
+		\caption{Devices detected by DGT and detected by our device (node 1010) applying the correction ratio (median by quarter). Note: no DGT data available during Octuber 14th.}
 	\label{fig:dgtRatios}
 	\end{center}
 \end{figure}
@@ -741,17 +747,10 @@ RMSE  & $83.906$ & $\textbf{58.925}$  &  $59.747$ & $59.309$ \\
 %\hline
 \end{tabular}
 }
-\caption{Error values computed using the differences between DGT real data and data recorded by MOBYWIT with Median Ratio By Quarter conversion. Period to be forecasted started on 25-Oct-2015, 00:00 hours and finished on 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
+\caption{Error values computed using the differences between DGT real data and data recorded by MOBYWIT with Median Ratio By Hour conversion. Period to be forecasted started on 25-Oct-2015, 00:00 hours and finished on 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
 \label{tab:errorForecastingRatio}
 \end{table}
 
-\begin{figure}[!ht]
-    \begin{center}
-        \includegraphics[width=14cm]{imgs/PETRA/petra_graph_ts-forecasting.eps}
-        \caption{Real DGT number of cars in node 1011 vs forecasted according to MOBYWIT's records with Median Ratio By Quarter conversion. Forecasted values are provided by Mean, ETS, ARIMA and THETA methods. }
-        \label{fig:forecasted-values}
-    \end{center}
-\end{figure}
 
 Finally, according to the results obtained, performing traffic forecasting using data provided by MOBYWIT seems to be an affordable task for traditional methods (i.e., ETS or ARIMA). Furthermore, ratios computed from data recorded by DGT allows to convert forecasted values to their equivalent representing the number of cars in a given location. Thus, the joint use of this two techniques makes possible to closely approximate the number of cars that will have passed 15 minutes later by the position of the MOBYWIT; and this process can be newly repeated every 15 minutes so that forecasting models can be enhanced and adapted to the new conditions of the road.
 
@@ -775,7 +774,7 @@ Traffic jams usually are present in every town and it could be produced by diver
 When a driver finds himself in a traffic jam, the natural response is to plan another path to arrive his destination and the information, the competent authority provides, about another available path is appreciated by them. The selection of another path depends on driver destination and it could be different for each case. So, the first stage is to inform about the traffic jam and then the drivers decide to go across or miss it. The second stage is to provide the available paths and to turn off the vehicles but this goal has not been addressed in the paper. 
 
 
-To illustrate the Mobywit utility for the first stage, early detection of a traffic jam is essential, and a little experiment has been carried out in Granada city (Spain). We have installed two Mobywit devices in the same street. The device's location is Dr. Ol\'{o}riz street. It is one-way, has four lanes and is placed in a neighbourhood which regularly is collapsed. The map of the devices location is in Figure \ref{fig:mososMapa}. The distance among both nodes is about $168$ metres. These devices cannot detect all the real persons and vehicles moving close to them since not all of them emit BT or WiFi signals, however after an open poll which $600$ people answered we conclude that around the $22\%$ of the drivers emit BT and around the $70\%$ of the drivers emit WiFi signal. We consider the sample is good and representative of the real world. For this starting experiment, we measure the taken time to go from the first to the second Mobywit device for each monitored device, either vehicle or person. The results of this experiment are displayed in Figure \ref{fig:mososTiempo}. In this figure, we have defined seven terms for the twenty-four hours of one day and they are placed over X axis. We calculate the average of trip time using all the collected data and the result is $85$ seconds. We referee that value as Global Trip Time Average (GTTA). After that, we calculate the boxplot for each term, scale the results to $[0,1]$ interval and represent it using their rate respect to GTTA value placed on the Y axis over $0.50$. That is, if the box is over $0.50$ Y axis value means that all the trips of that term are longer that GTTA value and if the box is below $0.50$ means that all the trips of this term are shorter than GTTA value. As you can see in the Figure, the first four terms are over $0.50$ so all the trips of these terms are longer than GTTA which indicates the trips during these terms are slower. The rest of the terms are below the $0.50$ level, so the trip times during these terms are speeder than the GTTA value. 
+To illustrate the Mobywit utility for the first stage, early detection of a traffic jam is essential, and a little experiment has been carried out in Granada city (Spain). We have installed two Mobywit devices in the same street. The device's location is Dr. Ol\'{o}riz street. It is one-way, has four lanes and is placed in a neighbourhood which regularly is collapsed. The map of the devices location is in Figure \ref{fig:mososMapa}. The distance among both nodes is about $168$ metres. These devices cannot detect all the real persons and vehicles moving close to them since not all of them emit BT or WiFi signals, however after an open poll which $600$ people answered we conclude that around the $22\%$ of the drivers emit BT and around the $70\%$ of the drivers emit WiFi signal. We consider the sample is good and representative of the real world. For this starting experiment, we measure the taken time to go from the first to the second Mobywit device for each monitored device, either vehicle or person. The goal of this litle experiment is to detect how varies the trip time from node A to node B. The results of this experiment are displayed in Figure \ref{fig:mososTiempo}. In this figure, we have defined seven terms for the twenty-four hours of one day and they are placed over X axis. We calculate the average of trip time using all the collected data and the result is $85$ seconds. We referee that value as Global Trip Time Average (GTTA). After that, we calculate the boxplot for each term, scale the results to $[0,1]$ interval and represent it using their rate respect to GTTA value placed on the Y axis over $0.50$. That is, if the box is over $0.50$ Y axis value means that all the trips of that term are longer that GTTA value and if the box is below $0.50$ means that all the trips of this term are shorter than GTTA value. As you can see in the Figure, the first four terms are over $0.50$ so all the trips of these terms are longer than GTTA which indicates the trips during these terms are slower. The rest of the terms are below the $0.50$ level, so the trip times during these terms are speeder than the GTTA value. 
 
 \begin{figure}[htb]
 	\begin{center}
