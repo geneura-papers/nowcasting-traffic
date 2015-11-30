@@ -20,7 +20,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   AUTHORS   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \author{A.J. Fernández-Ares$^1$, A.M. Mora$^1$, M.G. Arenas$^1$, P. García-Sanchez$^1$, G. Romero$^1$, V. Rivas$^2$, P.A. Castillo$^1$, J.J. Merelo$^1$}
-\ead{\{antares, amorag, mgarenas, pablogarcia, gustavo, pacv, jmerelo\}@ugr.es, vrivas@ujaen.es}
+\ead{\{antares, amorag, mgarenas, pablogarcia, gustavo, pacv, jmerelo\}@ugr.es, vrivas@ujaes.es}
 \address{$^1$ Departamento de Arquitectura y Tecnología de Computadores.\\ ETSIIT - CITIC. University of Granada, Spain\\
 $^2$ Departamento de Informática. EPS. Universidad de Jaén, Spain}
 
@@ -221,7 +221,7 @@ With a short-term forecasting the traffic control systems could be self-adapted 
 
 %La predicción del tráfico en una ciudad, una carretera o en general cualquier vía de transporte es esencial para mejorar el transporte. Los %usuarios de cualquier transporte público estarían más contentos si el flujo de tráfico de una ciudad cumpliera unos tiempos preestablecidos, puesto que así el transporte sería más rápido y eficiente. Sin embargo es un problema totalmente abierto en el que numerosos investigadores de todo el mundo realizan sus aportaciones. (Accurate and real-time traffic flow forecasting is essential to adaptive traffic control system and traffic guidance system, which is of great significance for alleviating urban traffic congestions. Because of the importance of traffic flow prediction results, many traffic engineering researchers began to apply mature prediction models of other areas to short-term traffic flow prediction and developed a variety of forecasting methods at the beginning of the 1960s. )
 
-There are many works related with traffic flow forecasting, each of them approaching the problem with different models. These include: series models, Kalman Filter Theory \cite{ASJC:ASJC1051}, Markov Chain models, non-parametric methods, simulation models, local regression models, fuzzy-neural approaches, sequential learning, spectral analysis, Bayesian networks, neural networks, diffusion models or Big Data based approaches \cite{SurveyKumar2007}.  %(buscar referencias recientes de cada una y ponerlas si queremos ampliar este párrafo)
+There are many works related with traffic flow forecasting, each of them approaching the problem with different models. These include: series models, Kalman Filter Theory \cite{ASJC:ASJC1051}, Markov Chain models \cite{Qi201495}, non-parametric methods \cite{Noparametrico2014}, simulation models, local regression models, fuzzy-neural approaches, sequential learning, spectral analysis, Bayesian networks, neural networks, diffusion models or Big Data based approaches \cite{SurveyKumar2007}.  %(buscar referencias recientes de cada una y ponerlas si queremos ampliar este párrafo)
 % Antonio - pos eso. ;D
 %
 % Existen numerosos trabajos relacionados con la predicción de tráfico y cada uno de ellos enfoca el problema de formas diferentes. Estos enfoques incluyen "series models, Kalman Filter Theory, Markov Chain models, non-parametric methods simulation models, local regression models, fuzzy-neural approaches, sequential learning, spectral analysis, Bayesian networks, neural networks, modelos de difusión o la técnicas de bigdata. (buscar referencias recientes de cada una y ponerlas)
@@ -689,10 +689,12 @@ To illustrate the Mobywit utility for the first stage, early detection of a traf
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale=0.4]{imgs/MOSOS/mosos_graph_tiempos.eps}
-		\caption{Average time along the day for movements from node A to node B. We group the hours of a day using five terms. The first and sixth terms include the night, the second one includes the rush hour for morning beginning. The third period includes from 11:00 to 14:59, term including the rush hour for jobs, shools, etc. check out. The fourth term include the evening until 18:59. And the last term includes late of the afternoon until 22:59. In the boxplot se can see the percentage of increment (up to 0.50) or decrement (low to 0.50) of the time needed to go from A to B along the day.
+		\caption{Average time along the day for movements from node A to node B. We group the hours of a day using eighth terms. The first and the eighth terms include the night, the second one includes the rush hour for morning beginning is included. The third period includes from 9:00am to 11:59am. The fourth term includes the evening until 2:59pm. The fiveth includes from 3:00pm to 5:59pm, the sixth from 6:00 pm to 9:00pm and the seventh from 9:00pm to 11:59pm. In the boxplot se can see the percentage of increment (up to $0.50$) or decrement (low to $0.50$) of the time needed to go from A to B along the day.}
 	\label{fig:mososTiempo}
 	\end{center}
 \end{figure}
+
+ANADIR CONCLUSIONES
 
 
 %----------------------------------------------------------------------------
