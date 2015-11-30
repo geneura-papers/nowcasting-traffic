@@ -389,10 +389,10 @@ obtain the unified distance matrix (U-matrix) \cite{UmatUlts} which
 uses SOM yielded neurons' codevectors (vectors of variables of the
 problem) as data source, and generates a matrix where each component
 is a distance measure between two adjacent neurons. Then, these
-distances are codified as different color shades in a graph. 
-The U-Matrix graph allows visualize any multi-variable dataset in a two-dimensional display, which helps detecting topological relations among neurons and inferring about the input data structure in a straightforward visual manner. High values in the U-matrix represent a frontier region between clusters, and low values represent a high degree of similarities among neurons on that region, i.e. clusters. MATLAB 2009 along with SOM Toolbox \cite{SOMPAK} was used for the SOM analysis.
+distances are codified as different colour shades in a graph. 
+The U-Matrix graph allows visualise any multi-variable dataset in a two-dimensional display, which helps detecting topological relations among neurons and inferring about the input data structure in a straightforward visual manner. High values in the U-matrix represent a frontier region between clusters, and low values represent a high degree of similarities among neurons on that region, i.e. clusters. MATLAB 2009 along with SOM Toolbox \cite{SOMPAK} was used for the SOM analysis.
 
-In order to analyze the data, several features have been extracted (generated) from the gathered `events', composing a pattern per device of its whole stay in the disco. These are described in Table \ref{tab:features_disco}.
+In order to analyse the data, several features have been extracted (generated) from the gathered `events', composing a pattern per device of its whole stay in the disco. These are described in Table \ref{tab:extracted_features_disco}.
 
 \begin{table}[htpb]
 \centering
@@ -414,7 +414,7 @@ Variable name & Description & Type\\
 %\texttt{non\_detected\_time} & Number of seconds the device has not been detected (but it still is in the disco) & Integer\\
 \noalign{\smallskip}\hline
 \end{tabular}
- \caption{Extracted features from gathered data in the discotheque. \label{tab:features_disco}}
+ \caption{Extracted features from gathered data in the discotheque. \label{tab:extracted_features_disco}}
 }
 \end{table}
 
@@ -435,39 +435,55 @@ The application of SOM + U-Matrix produces the graphs shown in Figure
 
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=14cm]{imgs/DISCO/som_disco_sin_no_detec.eps}
-		\includegraphics[width=8cm]{imgs/DISCO/umatrix_disco_sin_no_detec.eps}
-		\caption{Detected devices in a night in the Discotheque scenario. Extracted features}
+		\includegraphics[width=12cm]{imgs/DISCO/som_disco_sin_no_detec.eps}
+		\includegraphics[width=6cm]{imgs/DISCO/umatrix_disco_sin_no_detec.eps}
+		\caption{SOM + U-MATRIX Applied to the dataset of detected devices in a night in the Discotheque scenario. SOM Planes analysis (top) shows the extracted features described in Table \ref{tab:extracted_features_disco}}
 % Antonio - Sin no detectados
 		\label{fig:som_disco_sin_no_detec}
 	\end{center}
 \end{figure}
 
-*** PONER LOS NOMBRES DE LAS VARIABLES CORRECTOS ***
-
 The results show that... *** COMENTARLOS ***
 The problem is that there are no labels on the graph, so the interpretation cannot be as complete as it could... ***
 
 
-In addition, another study has been conducted using SOM and U-MATRIX graphs. This time we want to analyze the \textit{recurrence of devices} to the discotheque, and their overall behavior in the days they have come back. To this aim a new data set has been composed, extracting those `events' of devices detected in more than two nights in two whole months.
+In addition, another study has been conducted using SOM and U-MATRIX graphs. This time we want to analyse the \textit{recurrence of devices} to the discotheque, and their overall behaviour in the days they have come back. To this aim a new dataset has been composed, extracting those `events' of devices detected in more than two nights in two whole months.
+Moreover, a similar set of features has been extracted for this experiment, as they are shown in Table \ref{tab:features_recurrence_disco}.
+
+\begin{table}[htpb]
+\centering
+{\scriptsize
+\begin{tabular}{lll}
+\hline\noalign{\smallskip}
+Variable name & Description & Type\\
+\noalign{\smallskip}\hline\noalign{\smallskip}
+\texttt{stay\_time} & Number of seconds the device has been in the disco & Integer\\
+\texttt{abs\_time\_node\_X} & Number of seconds the device has been detected\\
+& in every node X (from 1 to 5) & Integer\\
+\texttt{relat\_time\_node\_X} & Percentage of time the device has been detected\\
+& in every node X (from 1 to 5) & Float\\
+\noalign{\smallskip}\hline
+\end{tabular}
+ \caption{Extracted features from gathered data in the discotheque. \label{tab:features_recurrence_disco}}
+}
+\end{table}
+
 For each device, we have computed a sum of the amounts of diary time per monitoring node. Relative times have been also calculated as another set of features. There are 220000 monitored `events' and 2100 different devices, so this amount of patterns to cluster.
 
-We have labeled the data using the number of different days every device has been detected (the recurrence rate).
+We have labelled the data using the number of different days every device has been detected (the recurrence rate).
 
 The results on this study are shown in Figure \ref{fig:som_disco_recurrencia}.
 
-\begin{figure}[!ht]
+\begin{figure}[!htp]
 	\begin{center}
-		\includegraphics[width=14cm]{imgs/DISCO/som_recurrentes.eps}
-		\includegraphics[width=8cm]{imgs/DISCO/umatrix_recurrentes.eps}
+		\includegraphics[width=11cm]{imgs/DISCO/som_recurrentes.eps}
+		\includegraphics[width=6cm]{imgs/DISCO/umatrix_recurrentes.eps}
 		\caption{Recurrence of devices in different days. The label is the recurrence rate (number of days the device has returned) of the majority in that neuron/BMU}
 		\label{fig:som_disco_recurrencia}
 	\end{center}
 \end{figure}
 
-*** PONER GRÁFICA CON DATOS Y VARIABLES DEFINITIVAS ***
-
-As it can be seen in the U-Matrix every neuron (cell in the graph) has been labeled according to the class of the majority of the most similar input patterns. To this end the distance from every pattern to every neuron is computed considering their respective codevectors, the closest neuron to an input is named the best matching unit (BMU), and it is labeled with the pattern class (stage in this problem). Once the process has finished every neuron with more than one associated class finally displays the label with more occurrences.
+As it can be seen in the U-Matrix every neuron (cell in the graph) has been labelled according to the class of the majority of the most similar input patterns. To this end the distance from every pattern to every neuron is computed considering their respective codevectors, the closest neuron to an input is named the best matching unit (BMU), and it is labelled with the pattern class (stage in this problem). Once the process has finished every neuron with more than one associated class finally displays the label with more occurrences.
 
 *** COMENTAR RESULTADOS ***
 
@@ -588,7 +604,7 @@ Using the time when each repetition has been detected we can also calculate aver
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.4]{imgs/petra_matrix_travelDuration.eps}
+		\includegraphics[scale=0.35]{imgs/petra_matrix_travelDuration.eps}
 		\caption{Average time between nodes, detecting the unique vehicle identifiers by our MOBYWIT devices. Every day is grouped in blocks of 4 hours.}
 	\label{fig:dgtMatrixTime}
 	\end{center}
