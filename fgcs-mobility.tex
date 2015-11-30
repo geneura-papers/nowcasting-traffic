@@ -77,7 +77,7 @@ Smart traffic \sep Transit indicators \sep Traffic forecast \sep Mobility analys
 \section{Introduction}
 \label{sec:intro}
 
-Nowadays, the transformation of any city into a Smart City, with better values of energy saving, citizen's free time, access to more resources and less cost, is a process that must be supported by powerful and reliable technologies, methods and systems. 
+Nowadays, the transformation of any city into a Smart City, with better performance (saving energy, citizen's time, resources, costs), is a process that must be supported by powerful and reliable technologies, methods and systems. 
 To this aim, a mobility monitoring system is one of the most useful, since the data which provides can be used to enhance several services in the city, or in specific buildings inside it.
 
 The most common systems gather traffic information (mainly vehicles pass-by) using several kind of devices, such as pneumatic tubes, loop detectors, floating vehicles or automatic Optical Character Recognition (OCR) \cite{rodrigue2013geography}. However most of these systems are not able to identify and follow the same vehicle along the road network. 
@@ -662,7 +662,7 @@ Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applyin
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.4]{imgs/petra_graph_DGT-Mobywit-mended.eps}
+		\includegraphics[scale=0.26]{imgs/petra_graph_DGT-Mobywit-mended.eps}
 		\caption{Devices detected by DGT and detected by our device (node 1010) applying the correction ratio (median by quarter). Note: no DGT data available during Octuber 14th.}
 	\label{fig:dgtRatios}
 	\end{center}
@@ -704,15 +704,16 @@ As results show, ETS, ARIMA and Theta behave clearly better than the control met
 \hline
 Measure vs Method &Mean &ETS &ARIMA &Theta\\
 \hline
-ME &$0.6631$ & $0.0059$ & $0.0043$ & $\textbf{0.0034}$\\
+%ME &$0.6631$ & $0.0059$ & $0.0043$ & $\textbf{0.0034}$\\
+MAE &$4.4611$ & $\textbf{2.7106}$ & $2.7409$ & $2.7126$\\
+MAPE &$4.7226$ & $\textbf{1.0128}$ & $1.0822$ & $1.0599$\\
 MSE &$28.5711$ & $\textbf{13.0194}$ & $13.2775$ & $13.0421$\\
 RMSE &$5.3452$ & $\textbf{3.6082}$ & $3.6438$ & $3.6114$\\
-MAE &$4.4611$ & $\textbf{2.7106}$ & $2.7409$ & $2.7126$\\
-MASE &$4.7226$ & $\textbf{1.0128}$ & $1.0822$ & $1.0599$\\
-MdAE &$1.4009$ & $\textbf{0.8512}$ & $0.8607$ & $0.8519$\\
-MdAPE(\%) &$50.1142$ & $35.0466$ & $\textbf{33.5513}$ & $35.0789$\\
-SMAPE(\%) &$68.3573$ & $49.8147$ & $49.7882$ & $\textbf{49.5471}$\\
-SMdAPE(\%) &$54.3965$ & $36.2454$ & $\textbf{35.2512}$ & $36.2994$\\
+%MASE &$4.7226$ & $\textbf{1.0128}$ & $1.0822$ & $1.0599$\\
+%MdAE &$1.4009$ & $\textbf{0.8512}$ & $0.8607$ & $0.8519$\\
+%MdAPE(\%) &$50.1142$ & $35.0466$ & $\textbf{33.5513}$ & $35.0789$\\
+%SMAPE(\%) &$68.3573$ & $49.8147$ & $49.7882$ & $\textbf{49.5471}$\\
+%SMdAPE(\%) &$54.3965$ & $36.2454$ & $\textbf{35.2512}$ & $36.2994$\\
 \hline
 \end{tabular}
 }
@@ -876,7 +877,6 @@ ID   &  Location & Latitude & Longitude \\ \hline
 \caption{Location of the devices for the Building of the University scenario.}
 \label{tab:nodosDGT}
 \end{table}
-
 
 \begin{table}[H]
 \centering
