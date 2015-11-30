@@ -49,7 +49,7 @@ $^2$ Departamento de Informática. EPS. Universidad de Jaén, Spain}
 \begin{abstract}
 This paper presents a novel mobility monitoring system and some of its applications to address problems that would be solved in a Smart City, such as the optimization of traffic flows in terms of trip-time and security (Smart Traffic), and the improvement of security or energetic issues inside buildings.
 The system tracks the movement of people and vehicles monitoring the
-radioelectric space, catching the  WiFi and Bluetooth signals emitted by personal (smartphones) or on-board (hands-free) devices. 
+radioelectric space, catching the  WiFi and Bluetooth signals emitted by personal(smartphones) or on-board (hands-free) devices. 
 A study has been conducted in four different real scenarios,
 i.e. with real data gathered by the system: two related with people's
 mobility (a public building and a discotheque); and two focused in
@@ -77,7 +77,7 @@ Smart traffic \sep Transit indicators \sep Traffic forecast \sep Mobility analys
 \section{Introduction}
 \label{sec:intro}
 
-Nowadays, the transformation of any city into a Smart City, with better values of energy saving, citizen's free time, access to more resources and less cost, is a process that must be supported by powerful and reliable technologies, methods and systems. 
+Nowadays, the transformation of any city into a Smart City, with better performance (saving energy, citizen's time, resources, costs), is a process that must be supported by powerful and reliable technologies, methods and systems. 
 To this aim, a mobility monitoring system is one of the most useful, since the data which provides can be used to enhance several services in the city, or in specific buildings inside it.
 
 The most common systems gather traffic information (mainly vehicles pass-by) using several kind of devices, such as pneumatic tubes, loop detectors, floating vehicles or automatic Optical Character Recognition (OCR) \cite{rodrigue2013geography}. However most of these systems are not able to identify and follow the same vehicle along the road network. 
@@ -86,10 +86,11 @@ The most common systems gather traffic information (mainly vehicles pass-by) usi
 Those that can do it are very expensive so they are just placed in very specific points of the roads.
 
 The local, regional or national governments use these data aiming for improvements in the maintenance of roads and services, computing a road deterioration factor based on the affluence of vehicles, for instance. In addition, useful traffic statistics can be obtained, which would help to forecast traffic jams, for example.
-This information can be directly used inside a city in several ways, from improving the traffic flow, by adjusting the synchronisation of traffic lights or defining the best traffic sense on every street, to the end-users, drivers, who can profit by optimally planning their trips according to the current, or future, status of the traffic flow. 
+This information can be directly used inside a city in several ways, from improving the traffic flow (adjusting the synchronisation of traffic lights or defining the best traffic sense on every street), to the end-users (drivers), who can profit by optimally planning their trips according to the current, or future, status of the traffic flow. 
 That's the reason why traffic information must be reliable. 
 
-This paper presents a monitoring system able to collect people's and vehicles mobility data, and also able to track them by means of a grid of devices, or nodes, connected to a central server. This allows the easy construction of traffic flow models or mobility graphs. The proposed system is formed by low-cost devices, around 100\$ each, which is another advantage over the usual monitoring systems, because the cost is an important factor for authorities which tend to install the simplest and cheapest monitors. 
+This paper presents a monitoring system able to collect people's and vehicles mobility data, and also able to track them by means of a grid of devices (nodes) connected to a central server. This allows the easy construction of traffic flow models or mobility graphs. The proposed system is formed by low-cost devices (around 100\$ each one), which is another advantage over the usual monitoring systems, because the cost is an important factor for authorities which
+tend to install the simplest and cheapest monitors. 
 
 The device, a highly improved version of the one presented in
 \cite{castillo2014_book_sipesca}, is based in a single-board computer
@@ -573,11 +574,16 @@ There exist two groups of nodes: one in the province of Granada area
 	\end{center}
 \end{figure}
 
-In this section, several experiment will be conducted. First, an study on the velocity and driving behaviour taking into account the tracking capabilities of MOBYWIT will be presented. Also, different methods to extract a ratio between our gathered data and the real data provided by the DGT will be performed. Finally, a time series forecasting study will be performed. In order to compare the performance of the different methods, 4 frequently used error measures will be used in this section:
-Mean Absolute Error ({\em MAE}),
- Mean Absolute Percentage Error ({\em MAPE(\%)}),
- Mean Squared Error ({\em MSE}), and
- Root Mean Squared Error ({\em RMSE}).
+In this section, several experiment will be conducted. First, an study on the velocity and driving behaviour taking into account the tracking capabilities of MOBYWIT will be presented. Also, different methods to extract a ratio between our gathered data and the real data provided by the DGT will be performed. Finally, a time series forecasting study will be performed. In order to compare the performance of the different methods, 9 frequently used error measures will be used in this section:
+Mean Error ({\em ME}),
+ Mean Squared Error ({\em MSE}),
+ Root Mean Squared Error ({\em RMSE}),
+ Mean Absolute Error ({\em MAE}),
+ Mean Absolute Scaled Error ({\em MASE}),
+ Median Absolute Error ({\em MdAE}),
+ Median Absolute Percentage Error ({\em MdAPE(\%)}),
+ Symmetric Mean Absolute Percentage Error ({\em sMAPE(\%)}), and
+ Symmetric Median Absolute Percentage Error ({\em sMdAPE(\%)}).
 
 Their different features, as well as their equations, can be found in Hyndman and Koehler's work ~\cite{RePEc:eee:intfor:v:22:y:2006:i:4:p:679-688}
 
@@ -627,7 +633,7 @@ Different metrics will be used to obtain a correct correlation between the numbe
 \end{itemize}
 
 
-Table \ref{tab:ratiosDGT} shows the obtained ratios. Results show that our device detects one vehicle per approximately 19 detected by the DGT, according Total, Mean and Median ratios. However, best results in MAE and MAPE are attained obtaining ratios dividing by quarter.
+Table \ref{tab:ratiosDGT} shows the obtained ratios. *** COMENTARLOS ***
 
 \begin{table}[htb]
 \centering
@@ -639,8 +645,8 @@ Table \ref{tab:ratiosDGT} shows the obtained ratios. Results show that our devic
 Total Ratio  & 17.230 &   60.373 & 36.265 & \textbf{7371.579}  & \textbf{85.857} \\
 Mean Ratio   & 20.792 &   72.323 & 43.443 & 11216.070 & 105.905 \\
 Median Ratio & 18.2 &    62.454  & 37.515 & 8060.136  & 89.778 \\
-Mean By Quarter of Hour Ratio &   Depends on the hour  & 66.791 & 40.120 & 9890.978 & 99.453 \\
 Median By Quarter of Hour Ratio & Depends on the hour  & \textbf{58.326} & \textbf{35.035} & 7617.613 & 87.278 \\
+Mean By Quarter of Hour Ratio &   Depends on the hour  & 66.791 & 40.120 & 9890.978 & 99.453 \\
 \hline
 
 \end{tabular}
@@ -656,8 +662,8 @@ Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applyin
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.4]{imgs/petra_graph_DGT-Mobywit-mended.eps}
-		\caption{Devices detected by DGT and detected by our device (node 1010) applying the correction ratio (median by quarter). Note: no DGT data available during October 14th.}
+		\includegraphics[scale=0.26]{imgs/petra_graph_DGT-Mobywit-mended.eps}
+		\caption{Devices detected by DGT and detected by our device (node 1010) applying the correction ratio (median by quarter). Note: no DGT data available during Octuber 14th.}
 	\label{fig:dgtRatios}
 	\end{center}
 \end{figure}
@@ -698,15 +704,16 @@ As results show, ETS, ARIMA and Theta behave clearly better than the control met
 \hline
 Measure vs Method &Mean &ETS &ARIMA &Theta\\
 \hline
-ME &$0.6631$ & $0.0059$ & $0.0043$ & $\textbf{0.0034}$\\
+%%%ME &$0.6631$ & $0.0059$ & $0.0043$ & $\textbf{0.0034}$\\
+MAE &$4.4611$ & $\textbf{2.7106}$ & $2.7409$ & $2.7126$\\
+MAPE &$4.7226$ & $\textbf{1.0128}$ & $1.0822$ & $1.0599$\\
 MSE &$28.5711$ & $\textbf{13.0194}$ & $13.2775$ & $13.0421$\\
 RMSE &$5.3452$ & $\textbf{3.6082}$ & $3.6438$ & $3.6114$\\
-MAE &$4.4611$ & $\textbf{2.7106}$ & $2.7409$ & $2.7126$\\
-MASE &$4.7226$ & $\textbf{1.0128}$ & $1.0822$ & $1.0599$\\
-MdAE &$1.4009$ & $\textbf{0.8512}$ & $0.8607$ & $0.8519$\\
-MdAPE(\%) &$50.1142$ & $35.0466$ & $\textbf{33.5513}$ & $35.0789$\\
-SMAPE(\%) &$68.3573$ & $49.8147$ & $49.7882$ & $\textbf{49.5471}$\\
-SMdAPE(\%) &$54.3965$ & $36.2454$ & $\textbf{35.2512}$ & $36.2994$\\
+%%%MASE &$4.7226$ & $\textbf{1.0128}$ & $1.0822$ & $1.0599$\\
+%%%MdAE &$1.4009$ & $\textbf{0.8512}$ & $0.8607$ & $0.8519$\\
+%%%MdAPE(\%) &$50.1142$ & $35.0466$ & $\textbf{33.5513}$ & $35.0789$\\
+%%%SMAPE(\%) &$68.3573$ & $49.8147$ & $49.7882$ & $\textbf{49.5471}$\\
+%%%SMdAPE(\%) &$54.3965$ & $36.2454$ & $\textbf{35.2512}$ & $36.2994$\\
 \hline
 \end{tabular}
 }
@@ -715,7 +722,7 @@ SMdAPE(\%) &$54.3965$ & $36.2454$ & $\textbf{35.2512}$ & $36.2994$\\
 \end{table}
 
 %%%Completar porque no me termino de enterar de que es lo que se ha hecho.
-Finally, once forecasting with MOBYWIT's data has been carried out, the number of cars that would have been detected by the DGT can be estimated by means of the ratios previously calculated (see table \ref{tab:ratiosDGT}). Concretely, table \ref{tab:errorForecastingRatio} shows the error computed when applying the Median Ratio By Hour conversion. As can be seen, newly ETS stands for its capability of yielding the lowest errors.
+Finally, once forecasting with MOBYWIT's data has been carried out, the number of cars that would have been detected by the DGT can be estimated by means of the ratios previously calculated (see table \ref{tab:ratiosDGT}). Concretely, table \ref{tab:errorForecastingRatio} shows the error computed when applying the Median Ratio By Hour conversion. As can be seen, newly ETS stands for its capability of yielding the lowest errors. 
 
 \begin{table}[htb]
 \centering
@@ -749,15 +756,11 @@ RMSE  & $83.906$ & $\textbf{58.925}$  &  $59.747$ & $59.309$ \\
     \begin{center}
         \includegraphics[width=14cm]{imgs/PETRA/petra_graph_ts-forecasting.eps}
         \caption{Real DGT number of cars in node 1011 vs forecasted according to MOBYWIT's records with Median Ratio By Quarter conversion. Forecasted values are provided by Mean, ETS, ARIMA and THETA methods. }
-        \label{fig:forecasted-values}
+        \label{fig:forecasted-values-ratio}
     \end{center}
 \end{figure}
 
 Finally, according to the results obtained, performing traffic forecasting using data provided by MOBYWIT seems to be an affordable task for traditional methods (i.e., ETS or ARIMA). Furthermore, ratios computed from data recorded by DGT allows to convert forecasted values to their equivalent representing the number of cars in a given location. Thus, the joint use of this two techniques makes possible to closely approximate the number of cars that will have passed 15 minutes later by the position of the MOBYWIT; and this process can be newly repeated every 15 minutes so that forecasting models can be enhanced and adapted to the new conditions of the road.
-
-%%Describir y esas cosas
-
-
 
 
 %----------------------------------------------------------------------------
@@ -877,7 +880,6 @@ ID   &  Location & Latitude & Longitude \\ \hline
 \caption{Location of the devices for the Building of the University scenario.}
 \label{tab:nodosDGT}
 \end{table}
-
 
 \begin{table}[H]
 \centering
