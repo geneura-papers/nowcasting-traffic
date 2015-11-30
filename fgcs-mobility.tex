@@ -574,16 +574,23 @@ There exist two groups of nodes: one in the province of Granada area
 	\end{center}
 \end{figure}
 
+In this section, several experiment will be conducted. First, an study on the velocity and driving behaviour taking into account the tracking capabilities of MOBYWIT will be presented. Also, different methods to extract a ratio between our gathered data and the real data provided by the DGT will be performed. Finally, a time series forecasting study will be performed. In order to compare the performance of the different methods, 9 frequently used error measures will be used in this section:
+Mean Error ({\em ME}),
+ Mean Squared Error ({\em MSE}),
+ Root Mean Squared Error ({\em RMSE}),
+ Mean Absolute Error ({\em MAE}),
+ Mean Absolute Scaled Error ({\em MASE}),
+ Median Absolute Error ({\em MdAE}),
+ Median Absolute Percentage Error ({\em MdAPE(\%)}),
+ Symmetric Mean Absolute Percentage Error ({\em sMAPE(\%)}), and
+ Symmetric Median Absolute Percentage Error ({\em sMdAPE(\%)}).
+
+Their different features, as well as their equations, can be found in Hyndman and Koehler's work ~\cite{RePEc:eee:intfor:v:22:y:2006:i:4:p:679-688}
 
 
-% Antonio - Fergu, no sé si no será mejor poner el mapa con los nodos en lugar de sus posiciones en la tabla. Es más comprensible su situación. ;)
-% FERGU: Hecho
-%DATOS A MOSTRAR:
-%1) El total DGT/total nosotros
-%2) La media del ratio por 15min
-%3) La mediana del ratio por 15min
 
-\subsection{Speed computation}
+
+\subsection{Driving behaviour}
 
 Using the capability of the unique vehicle detection by MAC, we can calculate the passing frequency between nodes, and also, the travel time between them. Figure \ref{fig:dgtMatrixFrec} shows the frequency matrix between nodes. A time window for detection has been set to 2.5 hours (as it is a little more of the time between 1040 and 1030 according Google Maps). Results show that, patently, there are more repetitions between the nodes of the same continuous road branch. For example, between 1040 and 1050, as there exist a deviation to Seville before node 1060. This is clearer at the end of the week, where people come back to their villages/other cities to spent the weekends, and more repetitions are detected. Some repetitions have not been detected in the more separated nodes (for example, between 1040 and 1030), because shorter intercity routes exist following the coastline, instead the interior.
 
@@ -674,30 +681,9 @@ For this work, four methods (three widely used time series forecasters, and one 
 \item {\em Mean}: This is the control method. The future values are computed as the mean of the previous ones.
 \end{itemize}
 
-The data used for the experiments are the ones provided by the node 1010 from the PETRA project starting on 12-Oct-2015, 00:00 hours, and finishing on 31-Oct-2015, 23:45 hours, i.e., three entire weeks less one day (there exist no data for November, the first). As data is aggregated every 15 minutes, this means the time-series was composed of $20(days)*24(hours)*4(quarters)=1920$ values.
+The data used for the experiments are the ones provided by the node 1010 starting on 12-Oct-2015, 00:00 hours, and finishing on 31-Oct-2015, 23:45 hours, i.e., three entire weeks less one day (there exist no data for November, the first). As data is aggregated every 15 minutes, this means the time-series was composed of $20(days)*24(hours)*4(quarters)=1920$ values.
 
-In order to study the performance of every method, 9 frequently used error measures are shown:
-Mean Error ({\em ME}),
- Mean Squared Error ({\em MSE}),
- Root Mean Squared Error ({\em RMSE}),
- Mean Absolute Error ({\em MAE}),
- Mean Absolute Scaled Error ({\em MASE}),
- Median Absolute Error ({\em MdAE}),
- Median Absolute Percentage Error ({\em MdAPE(\%)}),
- Symmetric Mean Absolute Percentage Error ({\em sMAPE(\%)}), and
- Symmetric Median Absolute Percentage Error ({\em sMdAPE(\%)}).
-%\begin{itemize}
-%\item{\em ME}: Mean Error.
-%\item{\em MSE}:  Mean Squared Error.
-%\item{\em RMSE}: Root Mean Squared Error.
-%\item{\em MAE}: Mean Absolute Error.
-%\item{\em MASE}: Mean Absolute Scaled Error.
-%\item{\em MdAE}: Median Absolute Error.
-%\item{\em MdAPE(\%)}: Median Absolute Percentage Error.
-%\item{\em sMAPE(\%)}: Symmetric Mean Absolute Percentage Error.
-%\item{\em sMdAPE(\%)}: Symmetric Median Absolute Percentage Error.
-%\end{itemize}
-Their different features as well as their equations can be found in Hyndman and Koehler's work ~\cite{RePEc:eee:intfor:v:22:y:2006:i:4:p:679-688}
+
 
 Table ~\ref{tab:forecasting} shows the values for the ten used measures computed over $576$ values, the ones corresponding to the last 6 days (i.e., $30\%$ of the data). The horizon has been set to 1, so that, in order to forecast any given moment all the previous real known data were used to build and train the models and, after this, the next value was forecasted. This way, the problem has been faced as a simulation of what could happen in a continuous system in which new real data where received every 15 minutes so that forecasting models could be also continuously adapted.
 
@@ -712,9 +698,8 @@ As results show, ETS, ARIMA and Theta behave clearly better than the control met
 \end{figure}
 
 \begin{table}
-{\scriptsize
 \centering
-%\resizebox{10cm}{!}{
+%\resizebox{12cm}{!}{
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 Measure vs Method &Mean &ETS &ARIMA &Theta\\
@@ -731,7 +716,6 @@ MdAPE(\%) &$50,1142$ & $35,0466$ & $\textbf{33,5513}$ & $35,0789$\\
 \hline
 \end{tabular}
 %}
-}
 \caption{Forecasting data recorded by MOBYWIT. Error measures are computed using differences between expected values and yielded ones from 25-Oct-2015, 00:00 hours to 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
 \label{tab:forecasting}
 \end{table}
@@ -764,13 +748,7 @@ THETA & 43.158  & 27.847  & 3517.506  & 59.309 \\
 
 
 %%Describir y esas cosas
-\begin{figure}[!ht]
-	\begin{center}
-		\includegraphics[width=14cm]{imgs/PETRA/petra_graph_ts-forecasting.eps}
-		\caption{Real DGT vs forecasted number of cars in node 1011, according to MOBYWIT's adjusted records.}
-		\label{fig:forecasted-values-fixed}
-	\end{center}
-\end{figure}
+
 
 
 
@@ -801,7 +779,7 @@ To illustrate the Mobywit utility for the first stage, early detection of a traf
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.35]{imgs/MOSOS/mosos_graph_tiempos.eps}
+		\includegraphics[scale=0.4]{imgs/MOSOS/mosos_graph_tiempos.eps}
 		\caption{Average time along the day for movements from node A to node B. We group the hours of a day using eighth terms. The first and the eighth terms include the night, the second one includes the rush hour for morning beginning is included. The third period includes from 9:00am to 11:59am. The fourth term includes the evening until 2:59pm. The fiveth includes from 3:00pm to 5:59pm, the sixth from 6:00 pm to 9:00pm and the seventh from 9:00pm to 11:59pm. In the boxplot se can see the percentage of increment (up to $0.50$) or decrement (low to $0.50$) of the average time needed to go from A to B along the day.}
 	\label{fig:mososTiempo}
 	\end{center}
@@ -860,24 +838,11 @@ This work has been supported in part by projects EPHEMECH (TIN2014-56494-C4-3-P,
 
 This appendix presents additional information about the scenarios, such as the geographical position of the nodes and a comment about them, or some graphs showing the distribution of the gathered data.
 
-\begin{table}[H]
-\centering
-\resizebox{12cm}{!}{
-\begin{tabular}{|c|c|p{5cm}|c|c|}
-\hline
-ID   &  Location & Latitude & Longitude \\ \hline
-102	 &  DISCO Terrace & -- & -- \\ \hline
-112	 &  DISCO Main room  & -- & --  \\ \hline
-122	 &  DISCO Minor room 1& -- & -- \\ \hline
-132	 &  DISCO Ticket office & -- & -- \\ \hline
-142	 &  DISCO Minor room 2& -- &  -- \\ \hline
-\end{tabular}
-}
-\caption{Location of the devices for Discotheque scenario.}
-\label{tab:nodosDGT}
-\end{table}
+\subsection*{Discotheque}
 
-\begin{table}[H]
+\subsection*{Building of the University}
+
+\begin{table}
 \centering
 \resizebox{12cm}{!}{
 \begin{tabular}{|c|c|p{5cm}|c|c|}
@@ -889,11 +854,13 @@ ID   &  Location & Latitude & Longitude \\ \hline
 \end{tabular}
 }
 \caption{Location of the devices for the Building of the University scenario.}
-\label{tab:nodosDGT}
+\label{tab:nodosETSIIT}
 \end{table}
 
 
-\begin{table}[H]
+\subsection*{Highway}
+
+\begin{table}
 \centering
 \resizebox{12cm}{!}{
 \begin{tabular}{|c|c|p{5cm}|c|c|}
@@ -908,11 +875,13 @@ ID   & Province & Location & Latitude & Longitude \\ \hline
 \end{tabular}
 }
 \caption{Location of the devices for the highway traffic scenario (K.P. = Kilometric Point).}
-\label{tab:nodosDGT}
+\label{tab:nodosHighway}
 \end{table}
 
 
-\begin{table}[H]
+\subsection*{Traffic in a city}
+
+\begin{table}
 \centering
 \resizebox{12cm}{!}{
 \begin{tabular}{|c|c|p{5cm}|c|c|}
@@ -921,8 +890,10 @@ A	 & Granada & Dr. Olóriz Street & 37.188187 & -3.607241\\ \hline
 B	 & Granada & Dr. Olóriz Street & 37.186997 & -3.607882\\ \hline
 \end{tabular}
 }
-\caption{Location of the devices for the city traffic scenario.}
+\caption{Location of the devices for the highway traffic scenario (K.P. = Kilometric Point).}
 \label{tab:nodosDGT}
 \end{table}
+
+
 
 \end{document}
