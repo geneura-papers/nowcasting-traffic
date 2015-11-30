@@ -574,16 +574,11 @@ There exist two groups of nodes: one in the province of Granada area
 	\end{center}
 \end{figure}
 
-In this section, several experiment will be conducted. First, an study on the velocity and driving behaviour taking into account the tracking capabilities of MOBYWIT will be presented. Also, different methods to extract a ratio between our gathered data and the real data provided by the DGT will be performed. Finally, a time series forecasting study will be performed. In order to compare the performance of the different methods, 9 frequently used error measures will be used in this section:
-Mean Error ({\em ME}),
- Mean Squared Error ({\em MSE}),
- Root Mean Squared Error ({\em RMSE}),
- Mean Absolute Error ({\em MAE}),
- Mean Absolute Scaled Error ({\em MASE}),
- Median Absolute Error ({\em MdAE}),
- Median Absolute Percentage Error ({\em MdAPE(\%)}),
- Symmetric Mean Absolute Percentage Error ({\em sMAPE(\%)}), and
- Symmetric Median Absolute Percentage Error ({\em sMdAPE(\%)}).
+In this section, several experiment will be conducted. First, an study on the velocity and driving behaviour taking into account the tracking capabilities of MOBYWIT will be presented. Also, different methods to extract a ratio between our gathered data and the real data provided by the DGT will be performed. Finally, a time series forecasting study will be performed. In order to compare the performance of the different methods, 4 frequently used error measures will be used in this section:
+Mean Absolute Error ({\em MAE}),
+ Mean Absolute Percentage Error ({\em MAPE(\%)}),
+ Mean Squared Error ({\em MSE}), and
+ Root Mean Squared Error ({\em RMSE}).
 
 Their different features, as well as their equations, can be found in Hyndman and Koehler's work ~\cite{RePEc:eee:intfor:v:22:y:2006:i:4:p:679-688}
 
@@ -633,7 +628,7 @@ Different metrics will be used to obtain a correct correlation between the numbe
 \end{itemize}
 
 
-Table \ref{tab:ratiosDGT} shows the obtained ratios. *** COMENTARLOS ***
+Table \ref{tab:ratiosDGT} shows the obtained ratios. Results show that our device detects one vehicle per approximately 19 detected by the DGT, according Total, Mean and Median ratios. However, best results in MAE and MAPE are attained obtaining ratios dividing by quarter.
 
 \begin{table}[htb]
 \centering
@@ -645,8 +640,8 @@ Table \ref{tab:ratiosDGT} shows the obtained ratios. *** COMENTARLOS ***
 Total Ratio  & 17.230 &   60.373 & 36.265 & \textbf{7371.579}  & \textbf{85.857} \\
 Mean Ratio   & 20.792 &   72.323 & 43.443 & 11216.070 & 105.905 \\
 Median Ratio & 18.2 &    62.454  & 37.515 & 8060.136  & 89.778 \\
-Median By Quarter of Hour Ratio & Depends on the hour  & \textbf{58.326} & \textbf{35.035} & 7617.613 & 87.278 \\
 Mean By Quarter of Hour Ratio &   Depends on the hour  & 66.791 & 40.120 & 9890.978 & 99.453 \\
+Median By Quarter of Hour Ratio & Depends on the hour  & \textbf{58.326} & \textbf{35.035} & 7617.613 & 87.278 \\
 \hline
 
 \end{tabular}
@@ -663,7 +658,7 @@ Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applyin
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale=0.4]{imgs/petra_graph_DGT-Mobywit-mended.eps}
-		\caption{Devices detected by DGT and detected by our device (node 1010) applying the correction ratio (median by quarter). Note: no DGT data available during Octuber 14th.}
+		\caption{Devices detected by DGT and detected by our device (node 1010) applying the correction ratio (median by quarter). Note: no DGT data available during October 14th.}
 	\label{fig:dgtRatios}
 	\end{center}
 \end{figure}
