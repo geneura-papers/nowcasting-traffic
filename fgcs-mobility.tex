@@ -277,24 +277,11 @@ In the present work, a study on traffic forecasting is conducted (in Section \re
 Thus, our contribution on this line is the use of real traffic Time Series, created from the data extracted from our traffic `events' (WiFi and BT detections).
 
 % Antonio - he movido este texto que es más de background a esta sección. ;)
-% TODO: GUSTAVO, ¿podrías poner citas a esos temas? ;D
-% te perdono pero sólo por esta vez :D
-Another line of study in our paper is the personal tracking or
-people's mobility. It is studied for many reasons, several of them
-involving profit: conversion rate, marketing effectiveness or staff planning are some of the best known.
-% Antonio - Citas, citas everywhere. Plis, Gustavo. :D
-
-Conversion rate is the percentage of visitors 
-% Antonio - ¿customers?
-who effectively make a purchase. It can show you if a shop improvement (or decline) is due to more people visit it, or more of the visitors finally buy something. Shopping mall professionals study people's behaviour in order to know if their marketing techniques are paying off. In the same line, stuff planning is directly related with the amount of visitors, as well as the maintenance and cleaning needs.
+Another line of study in our paper is the personal tracking or people's mobility. It is studied for many reasons, several of them involving profit: conversion rate, marketing effectiveness or staff planning are some of the best known \cite{stanton1967fundamentals}. Conversion rate is the percentage of visitors who effectively make a purchase. It can show you if a shop improvement (or decline) is due to more people visit it, or more of the visitors finally buy something. Shopping mall professionals study people's behaviour in order to know if their marketing techniques are paying off. In the same line, stuff planning is directly related with the amount of visitors, as well as the maintenance and cleaning needs.
 
 Other reasons are more practical than commercial: How many people visit a public building? When? It will help to improve the planning of the provided services, heating or cooling of the building, facility cleaning, staff shifts and so on. In a museum or a sport stadium you can adjust many parameters to help people enjoy from a better experience while raising the profits.
 
-The technology for counting/tracking people has evolved over time. At the beginning infrared beam counters were used. 
-% Antonio - cita o referencia a URL
-These were cheap but prone to failures, like when two persons pass a door together. Thermal counters were used next. 
-% Antonio - cita o eso
-Also cheap but with serious limitations like the short distance from the counting device to the people being counted. Latest technology use video cameras and WiFi, or Bluetooth, detectors. 
+The technology for counting/tracking people has evolved over time. At the beginning infrared beam counters \cite{Hashimoto199850} were used. These were cheap but prone to failures, like when two persons pass a door together. Thermal counters \cite{635472} were used next. Also cheap but with serious limitations like the short distance from the counting device to the people being counted. Latest technology use video cameras \cite{4107051,Schofield19961421} and WiFi \cite{7134066,7130402}, or Bluetooth \cite{6526732,nicolai2007relationship} detectors. 
 % Antonio - esto es importante, habría que extenderlo y compararlo con lo nuestro, ya que se podría parecer. Aparte de la cita. ;D
 Video devices are more expensive as is the software in charge of image processing, more expensive in term of resource consumption. On the positive side, now we can do many more things than counting people. We can track their paths and behaviour. Radio signal is also a great method for people tracking, as powerful as video but cheaper in terms of hardware price and algorithmic cost. Moreover, the range of detection is wider, 100m approximately.
 
@@ -689,10 +676,7 @@ Traffic jams usually are present in every town and it could be produced by diver
 When a driver finds himself in a traffic jam, the natural response is to plan another path to arrive his destination and the information about another available path is appreciated by them. The selection of another path depends on driver destination and it could be different for each case. So, the first stage is to inform about the traffic jam and then the drivers decide to go across or miss it. The second stage is to provide the available paths and to turn off the vehicles but this option is not always possible. 
 
 
-%Ante una situacion de atasco, cualquier conductor busca vias alternativas y en muchos casos la informacion de esas vias alternativas es muy importante. Pero dependiendo del destino de cada vehiculo, la via alternativa a escoger podria ser diferente, por lo que las autoridades, lo que hacen es informar del atasco antes de llegar a el para que sean los conductores los que busquen las vias alternativas de desplazamiento. En cualquier caso, la primera acción es determinar en qué momento se empieza a producir el atasco para que los conductores sean informados y puedan tomar una decisión en consecuencia. Y la segunda acción es identificar las rutas que los conductores más utilizan para poder desviar al tráfico de la manera más eficaz.
-
-
-To illustrate the utility of MOBYWIT for the first stage, early detection of a traffic jam is essential, and a little experiment has been carried out in Granada city (Spain). We have installed two devices in the same street. The device's location is Dr. Ol\'{o}riz street. It is one-way, has four lanes and is placed in a neighbourhood which regularly is collapsed. The map of the devices location is in Figure \ref{fig:mososMapa}. The distance among both nodes is about $168$ metres. These devices cannot detect all the real persons and vehicles moving close to them since not all of them emit BT or WiFi signals, however after an open poll which $600$ people answered we conclude that around the $22\%$ of the drivers emit BT and around the $70\%$ of the drivers emit WiFi signal. We consider the figure is good and representative of the real traffic flows. For this starting experiment, we measure the taken time to go from the first to the second MOBYWIT device for each counted people. The results of this experiment are displayed in Figure \ref{fig:mososTiempo}.
+To illustrate the Mobywit utility for the first stage, early detection of a traffic jam is essential, and a little experiment has been carried out in Granada city (Spain). We have installed two Mobywit devices in the same street. The device's location is Dr. Ol\'{o}riz street. It is one-way, has four lanes and is placed in a neighbourhood which regularly is collapsed. The map of the devices location is in Figure \ref{fig:mososMapa}. The distance among both nodes is about $168$ metres. These devices cannot detect all the real persons and vehicles moving close to them since not all of them emit BT or WiFi signals, however after an open poll which $600$ people answered we conclude that around the $22\%$ of the drivers emit BT and around the $70\%$ of the drivers emit WiFi signal. We consider the figure is good and representative of the real traffic flows. For this starting experiment, we measure the taken time to go from the first to the second Mobywit device for each counted people. The results of this experiment are displayed in Figure \ref{fig:mososTiempo}. In this figure, we have defined six terms for the twenty-four hours of one day. We calculate the average of trip time using all the data and the result is $85$ seconds. We referee this value as global trip time average. After that, we calculate the boxplot for each term and represent it using their rate respect to the global trip time average. That is, if the box is over $0.50$ means that all the trips of that term are longer that $85$ seconds and if the box is below $0.50$ means that all the trips of this term are shorter than the global trip time average. As you can see in the Figure, first, second and third terms are over $0.50$ so all the trips of these terms are longer than the global average which indicates the trips during these terms are slower, increasing the average trip time until $70\%$ in the third term, that is, the trips spent $20\%$ more time.
 
 
 \begin{figure}[htb]
@@ -706,12 +690,10 @@ To illustrate the utility of MOBYWIT for the first stage, early detection of a t
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale=0.4]{imgs/MOSOS/mosos_graph_tiempos.eps}
-		\caption{GRAFICA DE ANTARES DE MOSOS, AUN POR GENERAR}
+		\caption{Average time along the day for movements from node A to node B. We group the hours of a day using five terms. The first and sixth terms include the night, the second one includes the rush hour for morning beginning. The third period includes from 11:00 to 14:59, term including the rush hour for jobs, shools, etc. check out. The fourth term include the evening until 18:59. And the last term includes late of the afternoon until 22:59. In the boxplot se can see the percentage of increment (up to 0.50) or decrement (low to 0.50) of the time needed to go from A to B along the day.
 	\label{fig:mososTiempo}
 	\end{center}
 \end{figure}
-
-
 
 
 %----------------------------------------------------------------------------
@@ -748,8 +730,7 @@ Another point of improvement could be the use of Time Series Forecast techniques
 
 \section*{Acknowledgements}
 
-This work has been supported in part by projects EPHEMECH (TIN2014-56494-C4-3-P, Spanish Ministry of Economy and Competitivity), PETRA (SPIP2014-01437, funded by Dirección General de Tráfico), and MSTR (nº de referencia PRY142/14 que ha sido financiado íntegramente por la Fundación Pública Andaluza Centro de Estudios Andaluces en la IX Convocatoria de Proyectos de Investigación).
-We also thank the DGT and local council of Granada city, and their staff and researchers, for their dedication and professionalism. 
+This work has been supported in part by projects EPHEMECH (TIN2014-56494-C4-3-P, Spanish Ministry of Economy and Competitivity), PETRA (SPIP2014-01437, funded by Dirección General de Tráfico), PYR-2014-17 (GENIL project, awarded by CEI-BIOTIC Granada), and MOSOS (This work has been supported by the project with reference PRY142/14, which has been granted by Fundación Pública Andaluza Centro de Estudios Andaluces in the call 'IX Convocatoria de Proyectos de Investigación). We also thank the DGT and local council of Granada city, and their staff and researchers for their dedication and professionalism. 
 %FERGU: le meto un poco la pelota a los de la DGT, con vuestro permiso :)
 
 
@@ -778,6 +759,8 @@ ID   & Province & Location & Latitude & Longitude \\ \hline
 1040 & M{\'a}laga  & A-7  K.P. 241+800, decreasing direction (Link A-7 K.P. 241+800 with A-45 K.P. 142+400) &  36.757427 & -4.426879 \\ \hline
 1050 & M{\'a}laga  & A-45 K.P. 121+700, decreasing direction & 36.910454 & -4.444769 \\ \hline
 1060 & Granada & A-92 K.P. 177+900, decreasing direction (Link A-92 with A-92M) & 37.136209 & -4.282619 \\ \hline
+A	 & Granada & Dr. Olóriz Street & 37.188187 & -3.607241\\ \hline
+B	 & Granada & Dr. Olóriz Street & 37.186997 & -3.607882\\ \hline
 \end{tabular}
 }
 \caption{Location of the devices for the highway traffic scenario (K.P. = Kilometric Point).}
