@@ -143,7 +143,7 @@ presents the background and state of the art on the main topics of the
 work: traffic and mobility monitoring, traffic series forecast, and
 smart city tools, among others. 
 Then, our monitoring device is introduced in Section \ref{sec:mobywit}.
-After this, there are four sections devoted to describe and analyze the different scenarios, namely: Section \ref{sec:disco} explains the discotheque scenario and the methods applied to its data, Section \ref{sec:etsiit} presents the study on the University building, Section \ref{sec:traffic} shows the analysis on the highway traffic, and Section \ref{sec:city} comments the scenario on the street of Granada.
+After this, there are four sections devoted to describe and analyse the different scenarios, namely: Section \ref{sec:disco} explains the discotheque scenario and the methods applied to its data, Section \ref{sec:etsiit} presents the study on the University building, Section \ref{sec:traffic} shows the analysis on the highway traffic, and Section \ref{sec:city} comments the scenario on the street of Granada.
 Finally, Section \ref{sec:conclusions} plots the conclusions that we
 have reached in the work. 
 
@@ -159,14 +159,14 @@ have reached in the work.
 Several technologies are used to collect data and gather information about the 
 state of the roads. Traffic monitoring technologies can be classified as 
 \textit{intrusive}, installed in the pavement, and
-\textit{non-intrusive}, without contact with the road, causing minimal
+\textit{non-intrusive}, without contact with the road, causing a minimal
 effect on the traffic flow \cite{martin2003detector}. 
 
-As stated in previous section,the main technologies currently used include pneumatic tubes, inductive loop detectors and automatic recognition systems (or OCR), among others \cite{rodrigue2013geography}.
+As stated in the previous section,the main technologies currently used include pneumatic tubes, inductive loop detectors and automatic recognition systems (or OCR), among others \cite{rodrigue2013geography}.
 
 Pneumatic tubes are placed on top of the lane to detect vehicles by the change 
 in pressure generated when a vehicle passes over the tube. 
-An inductive loop detector is a wire embedded into the roadway usually
+An inductive loop detector is a wire embedded into the roadway, usually
 in a square configuration. An electric current is sent to the wire and
 when a metal surface with certain minimum area pass or is stopped
 above a pulse is triggered and detected. The main drawback of these
@@ -186,7 +186,7 @@ on in-vehicle systems. Video image detection is a good example; in this case a
 trip line and/or tracking is used to record traffic data. Furthermore, they 
 are used for automatic detection of incidents on the road. That is the main 
 advantage over previous information systems. However, system reliability might 
-not be the best, as weather may limit accuracy. Moreover, these systems are 
+not be the best, as the weather may limit accuracy. Moreover, these systems are 
 very expensive compared to the previously described \cite{skszek2001state}. 
 Another problem has arisen recently with privacy. The Spanish Data Protection 
 Agency (Agencia de Protección de Datos) considers the car license plate number 
@@ -197,9 +197,9 @@ field. Some of the more relevant are:
 
 \begin{itemize}
 \item Bit Carrier \cite{mendez2011system,BitCarrier}: It offers a traffic 
-management system based in BT to count people and commercial routes 
+management system based on BT to count people and commercial routes 
 (pathsolver). Its technology was deployed in highways managed by Abertis for 
-traffic flow control and monitoring. Actually it has a network of 150 devices 
+traffic flow control and monitoring. Currently, it has a network of 150 devices 
 in Catalonia (Spain) capable of tracking 200000 people every day.
 \item Trafficnow \cite{Trafficnow}: Offers a traffic flow control centre for 
 small towns. It requires a net of BT sensors. %A pilot experience has been deployed in Vigo.
@@ -213,7 +213,7 @@ in different cities based on different technologies, such as video cameras, BT d
 
 % Antonio - Maribel, voy a recortar cosillas, que te enrollas incluso más que yo. No te enfades, porfa. XD
 Traffic has been extremely exploited as a research field, mainly focused on the forecast of future flows considering the current information as a Time Series.
-The forecasting of these flows in any transport system plays an important role for either alleviating urban congestion, or for adjusting traffic control and guidance systems. The aim is to create an intelligent transportation system (ITS) which strongly depends on the capability to predict traffic conditions at least in the short-term (less than one hour into the future), since medium- and long-term predictions are barely accurate and reliable. These are nowadays a hard problem to solve in general Time Series \cite{ParrasGutierrez2014433}.
+The forecasting of these flows in any transport system plays an important role for either alleviating urban congestion, or for adjusting traffic control and guidance systems. The aim is to create an intelligent transportation system (ITS) which strongly depends on the capability to predict traffic conditions, at least in the short-term (less than one hour into the future), since medium- and long-term predictions are barely accurate and reliable. These are nowadays a hard problem to solve in general Time Series \cite{ParrasGutierrez2014433}.
 % Antonio - supongo que el medio y largo plazo no es que ayude, sería estupendo, sino que es muy difícil que sea preciso. ;)
 % Antonio - quito la segunda referencia, ya que va de otras cosas y seguramente nos van a dar un toque por la extensión del artículo. :D
 With a short-term forecasting the traffic control systems could be self-adapted continuously. For example, a traffic light could adjust its red or green time depending on the short-time forecasting of the closer streets. 
@@ -221,7 +221,7 @@ With a short-term forecasting the traffic control systems could be self-adapted 
 %Medium-term or long-term could to be useful if there are special conditions in a medium or long time period although nowadays the results of this research are not outstanding and it is an open question for many research groups, but usually in other subjects like time series in general \cite{ParrasGutierrez2014433} or economic development and political decisions \cite{longTermBussines2014}.
 
 
-There are many works related with traffic flow forecasting, each of them approaching the problem with different models, for instance: Kalman Filter Theory \cite{ASJC:ASJC1051}, Markov Chain models \cite{Qi201495}, non-parametric methods \cite{Noparametrico2014}, simulation models \cite{simulaciontrafico2012} or Big-Data-based approaches \cite{SurveyKumar2007}.  
+There are many works related to traffic flow forecasting, each of them approaching the problem with different models, for instance: Kalman Filter Theory \cite{ASJC:ASJC1051}, Markov Chain models \cite{Qi201495}, non-parametric methods \cite{Noparametrico2014}, simulation models \cite{simulaciontrafico2012} or Big-Data-based approaches \cite{SurveyKumar2007}.  
 %
 Moreover, being the traffic flow forecasting a trending topic, several surveys can be found in the literature, such as \cite{Survey2004} and \cite{SurveyKumar2007}; but the best is the one by Bolshinsky and Friedman \cite{SurveyBolshinsky2012}, since  the authors complete the information that the previous ones just compile, and give an added value to their work including the used techniques, the input data for each contribution, and the used hardware architecture, whenever the original paper described it. There are also specific surveys, like \cite{Vlahogianni2014}, which presents a classification of the revised papers regarding the main contributions of the work, i.e. forecasting techniques, gathering systems, or datasets, among others.
 
@@ -232,7 +232,7 @@ successfully a Genetic Algorithm (GA) for optimizing a Support Vector
 Machine (SVM) getting a higher prediction accuracy and a smaller
 running time.  
 
-Several recent publications present spacial issues related with the
+Several recent publications present spatial issues related to the
 scope, such as \cite{Zhang20141}, which includes the latest advances in
 traffic forecasting research having in mind the time and the space variables.  
 Other works propose conducting forecast traffic flows and trip times
@@ -244,25 +244,25 @@ Bayesian combination method (BCM) proposed by Petridis et al. in 2001,
 or \cite{Qi201495} which improves freeways short-term prediction using
 a Markov Model. 
 
-In the present work, a study on traffic forecasting is conducted (in Section \ref{sec:traffic}), however it applies classical methods, because the aim is to show the value of the data gathered by our system in the comparison with the data collected by the Spanish Traffic Agency using an inductive loop detector.
+In the present work, a study on traffic forecasting is conducted (in Section \ref{sec:traffic}), however, it applies classical methods, because the aim is to show the value of the data gathered by our system in the comparison with the data collected by the Spanish Traffic Agency using an inductive loop detector.
 Thus, our contribution on this line is the use of real traffic Time Series, created from the data extracted from our traffic `events' (WiFi and BT detections).
 
-Another line of study in our paper is the personal tracking or people's mobility. It is studied for many reasons, several of them involving profit: conversion rate, marketing effectiveness or staff planning are some of the best known \cite{stanton1967fundamentals}. Conversion rate is the percentage of visitors who effectively make a purchase. It can show you if a shop improvement (or decline) is due to more people visit it, or more of the visitors finally buy something. Shopping mall professionals study people's behaviour in order to know if their marketing techniques are paying off. In the same line, stuff planning is directly related with the amount of visitors, as well as the maintenance and cleaning needs.
+Another line of study in our paper is the personal tracking or people's mobility. It is studied for many reasons, several of them involving profit: conversion rate, marketing effectiveness or staff planning are some of the best known \cite{stanton1967fundamentals}. Conversion rate is the percentage of visitors who effectively make a purchase. It can show you if a shop improvement (or decline) is due to more people visit it, or more of the visitors finally buy something. Shopping mall professionals study people's behaviour in order to know if their marketing techniques are paying off. In the same line, staff planning is directly related with the amount of visitors, as well as the maintenance and cleaning needs.
 
-Other reasons are more practical than commercial: How many people visit a public building? When? It will help to improve the planning of the provided services, heating or cooling of the building, facility cleaning, staff shifts and so on. In a museum or a sport stadium you can adjust many parameters to help people enjoy from a better experience while raising the profits.
+Other reasons are more practical than commercial: How many people visit a public building? When? It will help to improve the planning of the provided services, heating or cooling of the building, facility cleaning, staff shifts and so on. In a museum or a sports stadium you can adjust many parameters to help people enjoy from a better experience while raising the profits.
 
-The technology for counting/tracking people has evolved over time. At the beginning infrared beam counters \cite{Hashimoto199850} were used. These were cheap but prone to failures, like when two persons pass a door together. Thermal counters \cite{635472} were used next. Also cheap but with serious limitations like the short distance from the counting device to the people being counted. Latest technology use video cameras \cite{4107051,Schofield19961421} and WiFi \cite{7134066,7130402}, or Bluetooth \cite{6526732,nicolai2007relationship} detectors. 
+The technology for counting/tracking people has evolved over time. At the beginning infrared beam counters \cite{Hashimoto199850} were used. These were cheap but prone to failures, like when two persons pass a door together. Thermal counters \cite{635472} were used next. Also cheap, but with serious limitations like the short distance from the counting device to the people being counted. Latest technology uses video cameras \cite{4107051,Schofield19961421} and WiFi \cite{7134066,7130402}, or Bluetooth \cite{6526732,nicolai2007relationship} detectors. 
 % Antonio - esto es importante, habría que extenderlo y compararlo con lo nuestro, ya que se podría parecer. Aparte de la cita. ;D
-Video devices are more expensive as is the software in charge of image processing, more expensive in terms of resource consumption. On the positive side, now we can do many more things than counting people. We can track their paths and behaviour. Radio signal is also a great method to track people, as powerful as video but cheaper in terms of hardware price and algorithmic cost. Moreover, the range of detection is wider, 100m approximately.
+Video devices are more expensive as is the software in charge of image processing, more expensive in terms of resource consumption. On the positive side, now we can do many more things than counting people. We can track their paths and behaviour. Radio signal is also a great method to track people, as powerful as video, but cheaper in terms of hardware price and algorithmic cost. Moreover, the range of detection is wider, 100m approximately.
 
-Our approach is based on WiFi and BT \cite{824570} detection, but focused on people's personal devices from which an unique identifier can be extracted and, after anonymisation, stored. This makes it easy to track these people on a building for instance, just deploying a fair number of monitoring devices. With the advantage of a cheaper price than other systems, such as video ones, and also the possibility of creating origin-destination flow matrices or any other desired movement model.
+Our approach is based on WiFi and BT \cite{824570} detection, but focused on people's personal devices from which a unique identifier can be extracted and, after anonymisation, stored. This makes it easy to track these people on a building for instance, just deploying a fair number of monitoring devices. With the advantage of a cheaper price than other systems, such as video ones, and also the possibility of creating origin-destination flow matrices or any other desired movement model.
 
 The idea of using BT personal devices is not new an has been tested by many previous researchers. In \cite{nicolai2007relationship} Tom Nicolai, like us, used statically placed BT detector to track people. Also in this work from Morrison \cite{morrison2009visualisation} the same procedure is applied to follow spectators' activity on a stadium. Kostakos used this same idea to track people trips in public transportation buses \cite{kostakos2008using}.
 A good starting point to learn about the issue is \cite{6526732} with the additional originality of mixing stationary detectors with dynamic ones to estimate crowd density in a soccer stadium during a championship.
 
-Also the idea of tracking people with their personal WiFi devices has been exploited. As more and more people use it every day it is becoming one of the best methods to follow them. This idea has been put in practise recently by several authors, for instance: Wei Xi in \cite{6847958} demonstrates how this method can count people with great accuracy, and Gabe Fierro in \cite{Fierro:2012:ZOC:2422531.2422572} uses it to measure the occupancy level of a building without requiring additional infrastructure.
+Also the idea of tracking people with their personal WiFi devices has been exploited. As more and more people use it every day it is becoming one of the best methods to follow them. This idea has been put into practise recently by several authors, for instance: Wei Xi in \cite{6847958} demonstrates how this method can count people with great accuracy, and Gabe Fierro in \cite{Fierro:2012:ZOC:2422531.2422572} uses it to measure the occupancy level of a building without requiring additional infrastructure.
 
-However, by joining BT and WiFi we pursue to increase the detection rate further than most people has achieved. Apparently it can seem redundant but the detection likelihood is higher. We need to study more deeply the improvement of the combined detections but on average we detect a 80\% of WiFi devices and a 20\% of BT. BT is specially important for the detection of cars because it is technology included in almost every new car. The same fact is true for WiFi in  smartphones. Even when people disconnect WiFi devices keep on sending signals.
+However, by joining BT and WiFi we pursue to increase the detection rate further than most people has achieved. Apparently it can seem redundant, but the detection likelihood is higher. We need to study more deeply the improvement of the combined detections but on average we detect a 80\% of WiFi devices and a 20\% of BT. BT is specially important for the detection of cars because it is a technology included in almost every new car. The same fact is true for WiFi in  smartphones. Even when people disconnect WiFi devices keep on sending signals.
 
 % TODO: ANTONIO - Meter estado del arte en Smart City y enlazar con lo de movilidad.
 
