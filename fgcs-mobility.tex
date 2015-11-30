@@ -354,6 +354,14 @@ Ezequiel: This module is responsible of the publication of data in a cloud-based
 
 In addition, and as it is shown in Figure 1, the device runs an specific Operative System, called \textit{Horeb}, which is a modification of the original Raspbian 3.10.24, adapted by MOBYWIT system designer to be more robust (to power fails, for instance) and reliable.
 
+*** CONTAR CÓMO FUNCIONA AL DETECTAR ***
+% Antonio - TODO: ANTARES, revisa esto porfa. ;)
+There are several configuration parameters in the system, which sets important parts of the functionality, such as the intensity threshold to collect a received WiFi signal, or time limits to consider a device as obsolete or out of the range of the device.
+
+Every detected `pass-by' or mobility `event' is associated to a detection time, obtained by NTP (Network Time Protocol). These `events' are stored initially in the device's memory. After some time (also set in a parameter) the information is sent, in blocks, to the server, to avoid an overuse/saturation of the network.
+
+*** ALGO MÁS? ***
+
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%   PEOPLE'S MOBILITY IN A DISCO  %%%%%%%%%%%%%%%%%%%%
 %----------------------------------------------------------------------------
@@ -727,25 +735,20 @@ Thus, four different scenarios have been studied:
 The aim of the work was to show that the results of these studies could be the basis for solving the commented issues, as well as to prove the value and reliability of the presented system. Which has been demonstrated.
 
 Since this paper is a kind of `proof of concept' for MOBYWIT, several future lines of research are open.
-Firstly, a deeper study on every issue addressed in the work can be done, focusing on every scenario and considering bigger amounts of data and applying some other techniques, which would improve the quality of the results. Moreover, we could aim to improve the methods of the state of the art for different problems, such as traffic forecast, for instance.
+Firstly, a deeper study on every issue addressed in the work can be done, focusing on every scenario, considering bigger amounts of data and applying some other techniques, which would improve the quality of the results. Moreover, we could aim to improve the methods of the state of the art for different problems, such as traffic forecast, for instance, but considering our gathered real data.
 
-Also, some other problems in the city could be addressed using MOBYWIT devices, for instance, analysing people's and traffic mobility in the city, in order to improve services (to the tourists, for instance), conduct geo-marketing analyses, increase the security mechanisms, or improve the public transport system.
+Also, some other problems in the city could be addressed using MOBYWIT devices, for instance, analysing people's and traffic mobility in the city, in order to improve services (to the tourists, for instance), conduct geo-marketing analyses \cite{Flyers-GeoMarketing,LaMarca-GeoMarketing}, increase the security mechanisms, or improve the public transport system.
 This would require the deployment of several devices around the city, in order to better build mobility graphs, origin/destination matrices and other mobility models.
 
+The system itself has some flaws or weak points that could be improved, such as avoiding the overlapping between detections in two different nodes (using unidirectional antennas or some kind of filters or blocking panels).
 
-- Aplicar MOBYWIT en otros problemas, como...\\ 
-- Ampliar el número de nodos en la ciudad y el edificio\\
-- Mejorar las detecciones evitando solapes o corrigiéndolos en la medida de lo posible\\
-
-- Usar predicción de series temporales para completar las capturas del dispositivo, 'cubriendo' posibles huecos producidos por caídas del mismo.
+Another point of improvement could be the use of Time Series Forecast techniques in order to complete `holes' in the detected `events' when there is a power cutoff on a device.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  ACKNOWLEDGEMENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Acknowledgements}
 
-This work has been supported in part by projects EPHEMECH (TIN2014-56494-C4-3-P, Spanish Ministry of Economy and Competitivity), PETRA (SPIP2014-01437, funded by Dirección General de Tráfico),
-PYR-2014-17 (GENIL project, awarded by CEI-BIOTIC Granada), and 
-MSTR (nº de referencia PRY142/14 que ha sido financiado íntegramente por la Fundación Pública Andaluza Centro de Estudios Andaluces en la IX Convocatoria de Proyectos de Investigación).
+This work has been supported in part by projects EPHEMECH (TIN2014-56494-C4-3-P, Spanish Ministry of Economy and Competitivity), PETRA (SPIP2014-01437, funded by Dirección General de Tráfico), and MSTR (nº de referencia PRY142/14 que ha sido financiado íntegramente por la Fundación Pública Andaluza Centro de Estudios Andaluces en la IX Convocatoria de Proyectos de Investigación).
 We also thank the DGT and local council of Granada city, and their staff and researchers, for their dedication and professionalism. 
 %FERGU: le meto un poco la pelota a los de la DGT, con vuestro permiso :)
 
