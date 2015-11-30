@@ -111,6 +111,7 @@ any person.
 % habría que asegurar, además, que ese proceso de cifrado no se puede
 % replicar. ¿Qué clave usa? - JJ
 % Antonio - No se puede replicar, pero que lo aclare Antares.
+% Antares: Se parte de los 48bits de la MAC a 160 bits de SHA-1, por lo que el riesgo de colisión es imposible. Pero, no creo que sea relevante.
 
 To prove the reliability and utility of this system are also objectives of this work, so, four different real scenarios are presented and the collected data analysed in order to demonstrate its value for solving different problems in a city. These scenarios are focused in the city of Granada (Spain), in which real traffic/mobility data have been gathered. They are namely: a discotheque, a public building of the University, a highway between Granada and Málaga; and one of the main streets in the city.  
 % yo dejaría la facu y la discoteca. Son totalmente diferentes. Salvo que quieras contarlos por temas de carga o lo que sea, no tienen nada que ver. 
@@ -362,7 +363,7 @@ node as it is shown in Figure \ref{fig:disco_data}.
 
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{imgs/DISCO/time_series-bars.eps}
+		\includegraphics[width=\textwidth]{imgs/DISCO/time_series-linesPoints.eps}
 		\caption{Detected devices in a night in the Discotheque scenario.}
 		% Antonio - explicar lo que se ve en las gráficas (histograma y serie). Lo de la serie quizá no sea necesario
 		\label{fig:disco_data}
@@ -643,11 +644,112 @@ Figure \ref{fig:dgtRatios} shows the number of devices of one node, applying the
 	\end{center}
 \end{figure}
 
+\subsection{Traffic forecasting}
+\label{sub:ts_forecasting}
+Capturing data about traffic in a highway worth not only for describing its current situation, but also for forecasting future conditions. In this sense, counting the number of cars that have passed for a given point in a given time can be considered as a time series, allowing the use of automatic tools to perform forecasting.
+
+For this work, four methods (three widely used time series forecasters, and one control method) have been used to, automatically, predict the number of cars that will pass in the next period. These methods are included in the forecast package ~\cite{Hyndman08automatictime} of the R program~\cite{R:Bloomfield:2014}, and are the following:
+
+\begin{itemize}
+\item {\em Exponential smoothing state space model (ETS)~\cite{ETS:2008}}: Represent a set of methods that decompose the time-series in three different characteristics: error, trend and seasonal, modeling each one with a given equation. The forecasted values are obtained joining the previous equations by addition or multiplication. The corresponding function in the forecast package builds the different models included in the ETS set, and select the one with the best according to the Akaike's Information Criterion (AIC)~\cite{Akaike1973}.
+\item {\em ARIMA~\cite{BoxJenk}: This well known method, due to Box and Jenkins } integrates autoregressive (AR) and moving average (MA) models in a three-stage iterative cycle. The phases of every cycle consist of: identifying the time series, estimating of the model's parameters, and verifying the built model. Briefly, every model is defined as a sum of $p+q$ terms. The first $p$  terms are defined by $p$ past values, any of them multiplied by a coefficient; while the last $q$ terms represent the moving averages, also multiplied by their own coefficients.
+\item {\em Theta~\cite{Assima2000}}: This univariate forecasting method is based on modifying the local curvature of the time-series, after having applied a second difference to the data. It decomposes the original time series into several modified ones, which are separately extrapolated so that they have to be combined in order to provide the forecasting.
+\item {\em Mean}: This is the control method. The future values are computed as the mean of the previous ones.
+\end{itemize}
+
+The data used for the experiments are the ones provided by the node 1010 from the PETRA project starting on 12-Oct-2015, 00:00 hours, and finishing on 31-Oct-2015, 23:45 hours, i.e., three entire weeks less one day (there exist no data for November, the first). As data is aggregated every 15 minutes, this means the time-series was composed of $20(days)*24(hours)*4(quarters)=1920$ values.
+
+In order to study the performance of every method, 9 frequently used error measures are shown:
+Mean Error ({\em ME}),
+ Mean Squared Error ({\em MSE}),
+ Root Mean Squared Error ({\em RMSE}),
+ Mean Absolute Error ({\em MAE}),
+ Mean Absolute Scaled Error ({\em MASE}),
+ Median Absolute Error ({\em MdAE}),
+ Median Absolute Percentage Error ({\em MdAPE(\%)}),
+ Symmetric Mean Absolute Percentage Error ({\em sMAPE(\%)}), and
+ Symmetric Median Absolute Percentage Error ({\em sMdAPE(\%)}).
+%\begin{itemize}
+%\item{\em ME}: Mean Error.
+%\item{\em MSE}:  Mean Squared Error.
+%\item{\em RMSE}: Root Mean Squared Error.
+%\item{\em MAE}: Mean Absolute Error.
+%\item{\em MASE}: Mean Absolute Scaled Error.
+%\item{\em MdAE}: Median Absolute Error.
+%\item{\em MdAPE(\%)}: Median Absolute Percentage Error.
+%\item{\em sMAPE(\%)}: Symmetric Mean Absolute Percentage Error.
+%\item{\em sMdAPE(\%)}: Symmetric Median Absolute Percentage Error.
+%\end{itemize}
+Their different features as well as their equations can be found in Hyndman and Koehler's work ~\cite{RePEc:eee:intfor:v:22:y:2006:i:4:p:679-688}
+
+Table ~\ref{tab:forecasting} shows the values for the ten used measures computed over $576$ values, the ones corresponding to the last 6 days (i.e., $30\%$ of the data). The horizon has been set to 1, so that, in order to forecast any given moment all the previous real known data were used to build and train the models and, after this, the next value was forecasted. This way, the problem has been faced as a simulation of what could happen in a continuous system in which new real data where received every 15 minutes so that forecasting models could be also continuously adapted.
+
+As results show, ETS, ARIMA and Theta behave clearly better than the control method. The differences between the three considered methods are, almost nonexistent. In any case, ETS yields the lowest values in six of the measures been used so that, a priori, it could be considered the best candidate to be chosen as the preferred method to forecast this kind of time-series. Figure \ref{fig:forecasted-values} depicts the values forecasted by ETS comparing them with the expected ones.
+
+\input{ts_forecasting_tex/table-ts-1.tex}
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=14cm]{imgs/PETRA/forecasting-PETRA-1011.eps}
+		\caption{Expected vs forecasted number of cars in node 1011, according to MOBYWIT's records. Forecasted values are provided by smoothing state space model (ETS). }
+		\label{fig:forecasted-values}
+	\end{center}
+\end{figure}
+
+\begin{table}
+{\scriptsize
+\centering
+%\resizebox{10cm}{!}{
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Measure vs Method &Mean &ETS &ARIMA &Theta\\
+\hline
+ME &$0,6631$ & $0,0059$ & $0,0043$ & $\textbf{0,0034}$\\
+MSE &$28,5711$ & $\textbf{13,0194}$ & $13,2775$ & $13,0421$\\
+RMSE &$5,3452$ & $\textbf{3,6082}$ & $3,6438$ & $3,6114$\\
+MAE &$4,4611$ & $\textbf{2,7106}$ & $2,7409$ & $2,7126$\\
+MASE &$4,7226$ & $\textbf{1,0128}$ & $1,0822$ & $1,0599$\\
+MdAE &$1,4009$ & $\textbf{0,8512}$ & $0,8607$ & $0,8519$\\
+MdAPE(\%) &$50,1142$ & $35,0466$ & $\textbf{33,5513}$ & $35,0789$\\
+ SMAPE(\%) &$68,3573$ & $49,8147$ & $49,7882$ & $\textbf{49,5471}$\\
+ SMdAPE(\%) &$54,3965$ & $36,2454$ & $\textbf{35,2512}$ & $36,2994$\\
+\hline
+\end{tabular}
+%}
+}
+\caption{Forecasting data recorded by MOBYWIT. Error measures are computed using differences between expected values and yielded ones from 25-Oct-2015, 00:00 hours to 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
+\label{tab:forecasting}
+\end{table}
+
+%%%Completar porque no me termino de enterar de que es lo que se ha hecho.
+With the use of the correlation between the number of detected devices and the real number of devices, can be forecast the real number of vehicles.
+
+Table \ref{fig:dgtRatios} shows the 
+
+
+\begin{table}[htb]
+\centering
+\resizebox{8cm}{!}{
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+			 & MAE    &   MAPE   & MSE    & RMSE \\
+ \hline
+ME  & 72.162   &  27.961 & 7040.303  & 83.906 \\
+ETS   & \textbf{42.789}  & \textbf{27.609}  & \textbf{3472.145}  & \textbf{58.925}  \\
+ARIMA & 43.335 & 27.961  & 3569.706  &  59.747 \\
+THETA & 43.158  & 27.847  & 3517.506  & 59.309 \\
+\hline
+
+\end{tabular}
+}
+\caption{Forecasting data recorded by MOBYWIT with Median Ratio By Hour conversion. Error measures are computed using differences between expected values and yielded by DGT from 25-Oct-2015, 00:00 hours to 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
+\label{tab:errorForecastingRatio}
+\end{table}
 
 
 
+%%Describir y esas cosas
 
-\input{ts_forecasting_tex/ts_forecasting}
+
 
 
 %----------------------------------------------------------------------------
