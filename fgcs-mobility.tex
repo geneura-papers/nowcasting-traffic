@@ -345,7 +345,6 @@ Every detected `pass-by' or mobility `event' is associated to a detection time, 
 \section{Analysing people's mobility in a discotheque}
 \label{sec:disco}
 
-% ¿Por qué analizamos la discoteca?
 Before using the device in other type of environments, we were
 interested in checking its possibilities in an environment where
 change is very fast and it is a priory possible to detect a big amount
@@ -365,20 +364,14 @@ node as it is shown in Figure \ref{fig:disco_data}.
 \begin{figure}[ht]
 	\begin{center}
 		\includegraphics[width=\textwidth]{imgs/DISCO/time_series-linesPoints.eps}
-		\caption{Detected devices in a night in the Discotheque scenario.}
-		% Antonio - explicar lo que se ve en las gráficas (histograma y serie). Lo de la serie quizá no sea necesario
+		\caption{Detected devices in a night in the Discotheque scenario by room.}
 		\label{fig:disco_data}
 	\end{center}
 \end{figure}
-% Antonio - Antares porfa, genera la gráfica correctas. ;)
-% TODO: ANTARES - Gráfica correcta
+
 
 These data have been processed and several variables have been
-extracted from them, in order to apply clustering methods. % ¿Qué
-                                % variables? ¿En qué estabas
-                                % interesado? - JJ
-
-% ¿Por qué haces clustering? 
+extracted from them, in order to apply clustering methods. 
 The clustering study has been conducted by means of a Self-Organizing
 Map (SOM) \cite{Kohonen90}, a feed-forward neural network
 \cite{NN_Haykin94} that uses an unsupervised training algorithm and
@@ -440,7 +433,6 @@ The application of SOM + U-Matrix produces the graphs shown in Figure
 		\includegraphics[width=12cm]{imgs/DISCO/som_disco_sin_no_detec.eps}
 		\includegraphics[width=6cm]{imgs/DISCO/umatrix_disco_sin_no_detec.eps}
 		\caption{SOM + U-MATRIX Applied to the dataset of detected devices in a night in the Discotheque scenario. SOM Planes analysis (top) shows the extracted features described in Table \ref{tab:extracted_features_disco}}
-% Antonio - Sin no detectados
 		\label{fig:som_disco_sin_no_detec}
 	\end{center}
 \end{figure}
