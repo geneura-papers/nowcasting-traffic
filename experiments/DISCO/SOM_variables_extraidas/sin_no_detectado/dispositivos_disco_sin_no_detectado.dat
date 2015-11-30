@@ -1,5 +1,5 @@
 19
-#n ent_time	out_time	stay_time	total_time	abs_time_n102	abs_time_n112	abs_time_n122	abs_time_n132	abs_time_n142	rel_time_vic_n102	rel_time_vic_n112	rel_time_vic_n122	rel_time_vic_n132	rel_time_vic_n142	rel_time_nig_n102	rel_time_nig_n112	rel_time_nig_n122	rel_time_nig_n132	rel_time_nig_n142
+#n ent_time	out_time	stay_time	total_time	abs_time_n102	abs_time_n112	abs_time_n122	abs_time_n132	abs_time_n142	rel_time_n102	rel_time_n112	rel_time_n122	rel_time_n132	rel_time_n142	rel_time_nig_n102	rel_time_nig_n112	rel_time_nig_n122	rel_time_nig_n132	rel_time_nig_n142
 26639.27339	37303.26755	10663.99416	5687	2488	2033	692	177	297	0.43748901	0.357481976	0.121681027	0.031123615	0.052224371	0.053162393	0.043440171	0.014786325	0.003782051	0.006346154
 26059.27372	28142.27258	2082.998858	243	0	243	0	0	0	0	1	0	0	0	0	0.005192308	0	0	0
 19922.27708	19957.27706	34.99998083	35	35	0	0	0	0	1	0	0	0	0	0.000747863	0	0	0	0
