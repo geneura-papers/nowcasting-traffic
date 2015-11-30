@@ -113,7 +113,7 @@ any person.
 % Antonio - No se puede replicar, pero que lo aclare Antares.
 % Antares: Se parte de los 48bits de la MAC a 160 bits de SHA-1, por lo que el riesgo de colisión es imposible. Pero, no creo que sea relevante.
 
-To prove the reliability and utility of this system are also objectives of this work, so, four different real scenarios are presented and the collected data analysed in order to demonstrate its value for solving different problems in a city. These scenarios are focused in the city of Granada (Spain), in which real traffic/mobility data have been gathered. They are namely: a discotheque, a public building of the University, a highway between Granada and Málaga; and one of the main streets in the city.  
+To prove the reliability and utility of this system are also objectives of this work, so, four different real scenarios are presented and the collected data analysed in order to demonstrate its value for solving different problems in a city. These scenarios are focused in the city of Granada (Spain), in which real traffic/mobility data have been gathered. They are namely: a discotheque, a public building of the University, a highway between Granada and Málaga cities; and one of the main streets in the city.  
 % yo dejaría la facu y la discoteca. Son totalmente diferentes. Salvo que quieras contarlos por temas de carga o lo que sea, no tienen nada que ver. 
 % Antonio - son estudios sobre movilidad de personas. Si se consiguen mejorar cuestiones de seguridad, por ejemplo, yo los considero parte de una Smart City.
 Several devices or nodes have been deployed in each scenario.
@@ -213,7 +213,7 @@ in different cities based on different technologies, such as video cameras, BT d
 
 % Antonio - Maribel, voy a recortar cosillas, que te enrollas incluso más que yo. No te enfades, porfa. XD
 Traffic has been extremely exploited as a research field, mainly focused on the forecast of future flows considering the current information as a Time Series.
-The forecasting of these flows in any transport system plays an important role for either alleviating urban congestion, or for adjust traffic control and guidance systems. The aim is to create an intelligent transportation system (ITS) which strongly depends on the capability to predict traffic conditions at least in the short-term (less than one hour into the future), since medium- and long-term predictions are barely accurate and reliable. These are nowadays a hard problem to solve in general Time Series \cite{ParrasGutierrez2014433}.
+The forecasting of these flows in any transport system plays an important role for either alleviating urban congestion, or for adjusting traffic control and guidance systems. The aim is to create an intelligent transportation system (ITS) which strongly depends on the capability to predict traffic conditions at least in the short-term (less than one hour into the future), since medium- and long-term predictions are barely accurate and reliable. These are nowadays a hard problem to solve in general Time Series \cite{ParrasGutierrez2014433}.
 % Antonio - supongo que el medio y largo plazo no es que ayude, sería estupendo, sino que es muy difícil que sea preciso. ;)
 % Antonio - quito la segunda referencia, ya que va de otras cosas y seguramente nos van a dar un toque por la extensión del artículo. :D
 With a short-term forecasting the traffic control systems could be self-adapted continuously. For example, a traffic light could adjust its red or green time depending on the short-time forecasting of the closer streets. 
@@ -221,33 +221,20 @@ With a short-term forecasting the traffic control systems could be self-adapted 
 %Medium-term or long-term could to be useful if there are special conditions in a medium or long time period although nowadays the results of this research are not outstanding and it is an open question for many research groups, but usually in other subjects like time series in general \cite{ParrasGutierrez2014433} or economic development and political decisions \cite{longTermBussines2014}.
 
 
-There are many works related with traffic flow forecasting, each of them approaching the problem with different models \cite{SurveyKumar2007} such as Kalman Filter Theory \cite{ASJC:ASJC1051}, Markov Chain models \cite{Qi201495}, non-parametric methods \cite{Noparametrico2014}, simulation models \cite{simulaciontrafico2012} or ``Big Data'' based approaches \cite{SurveyKumar2007}.  %(buscar referencias recientes de cada una y ponerlas si queremos ampliar este párrafo)
-% Antonio - pos eso. ;D
+There are many works related with traffic flow forecasting, each of them approaching the problem with different models, for instance: Kalman Filter Theory \cite{ASJC:ASJC1051}, Markov Chain models \cite{Qi201495}, non-parametric methods \cite{Noparametrico2014}, simulation models \cite{simulaciontrafico2012} or Big-Data-based approaches \cite{SurveyKumar2007}.  
 %
-
-Being the traffic flow forecasting a trending topic several surveys can be found, such as \cite{Survey2004} and \cite{SurveyKumar2007} but the best is \cite{SurveyBolshinsky2012}, since Bolshinsky and Friedman complete the information that the previous ones just compile, and give an added value to their work including the used techniques, the input data for each contribution, and the used hardware architecture, whenever the original paper described it. There are also specific surveys for one of the traffic flow forecasting types, like \cite{Vlahogianni2014} where the focus was not the approaches nor the results of the reviewed papers, but the focus or goals and the scope where each paper could be classified, for example if the work is focused on forecasting or presents the collecting data system as main contribution.
-
+Moreover, being the traffic flow forecasting a trending topic, several surveys can be found in the literature, such as \cite{Survey2004} and \cite{SurveyKumar2007}; but the best is the one by Bolshinsky and Friedman \cite{SurveyBolshinsky2012}, since  the authors complete the information that the previous ones just compile, and give an added value to their work including the used techniques, the input data for each contribution, and the used hardware architecture, whenever the original paper described it. There are also specific surveys, like \cite{Vlahogianni2014}, which presents a classification of the revised papers regarding the main contributions of the work, i.e. forecasting techniques, gathering systems, or datasets, among others.
 
 
-During the last years, the researches even assimilate new technologies
-for data analysis like ``Big Data'' \cite{TrafficFlowPredictionWithBigData2015} or Cloud-Computing
-approaches \citep{CloudComputing2014}. In the first one, Yisheng
-et. al. face the traffic flow forecasting problem using temporal and
-spatial models at the same time, using simple forecasting models and
-assembling them in a global complex system. The results provide a time
-and a spatial place for each prediction. The second work, by Zhaosheng
-Yang et al., presents a traffic flow prediction model for large-scale
-road network using Cloud-Computing techniques. Thus, it implements
+In the last years the researches even assimilate new technologies
+for data analysis in this scope, such as Big Data \cite{TrafficFlowPredictionWithBigData2015} or Cloud-Computing approaches \cite{CloudComputing2014}. In the first one, Yisheng et al. face the traffic flow forecasting problem using temporal and spatial models at the same time, using simple forecasting models and assembling them in a global complex system. The results provide a time and a spatial place for each prediction. The second work, by Zhaosheng Yang et al., presents a traffic flow prediction model for large-scale road network using Cloud-Computing techniques. Thus, it implements
 successfully a Genetic Algorithm (GA) for optimizing a Support Vector
 Machine (SVM) getting a higher prediction accuracy and a smaller
 running time.  
 
-
-
 Several recent publications present spacial issues related with the
 scope, such as \cite{Zhang20141}, which includes the latest advances in
 traffic forecasting research having in mind the time and the space variables.  
-% Antonio - ¿como cuáles?
 Other works propose conducting forecast traffic flows and trip times
 \citep{Dong201420}, \cite{Zou201433} using spatial-temporal patterns
 of the congested and non-congested traffic. Also papers with new
@@ -257,31 +244,29 @@ Bayesian combination method (BCM) proposed by Petridis et al. in 2001,
 or \cite{Qi201495} which improves freeways short-term prediction using
 a Markov Model. 
 
-
-In the present work, a study on traffic forecasting is conducted (in Section \ref{sec:traffic}), however it applies classical methods, because the aim is to show the value of the data gathered by our system in the comparison with the data collected by the Spanish Traffic Agency using an inductive loop detector, which is also studied.
+In the present work, a study on traffic forecasting is conducted (in Section \ref{sec:traffic}), however it applies classical methods, because the aim is to show the value of the data gathered by our system in the comparison with the data collected by the Spanish Traffic Agency using an inductive loop detector.
 Thus, our contribution on this line is the use of real traffic Time Series, created from the data extracted from our traffic `events' (WiFi and BT detections).
 
-% Antonio - he movido este texto que es más de background a esta sección. ;)
 Another line of study in our paper is the personal tracking or people's mobility. It is studied for many reasons, several of them involving profit: conversion rate, marketing effectiveness or staff planning are some of the best known \cite{stanton1967fundamentals}. Conversion rate is the percentage of visitors who effectively make a purchase. It can show you if a shop improvement (or decline) is due to more people visit it, or more of the visitors finally buy something. Shopping mall professionals study people's behaviour in order to know if their marketing techniques are paying off. In the same line, stuff planning is directly related with the amount of visitors, as well as the maintenance and cleaning needs.
 
 Other reasons are more practical than commercial: How many people visit a public building? When? It will help to improve the planning of the provided services, heating or cooling of the building, facility cleaning, staff shifts and so on. In a museum or a sport stadium you can adjust many parameters to help people enjoy from a better experience while raising the profits.
 
 The technology for counting/tracking people has evolved over time. At the beginning infrared beam counters \cite{Hashimoto199850} were used. These were cheap but prone to failures, like when two persons pass a door together. Thermal counters \cite{635472} were used next. Also cheap but with serious limitations like the short distance from the counting device to the people being counted. Latest technology use video cameras \cite{4107051,Schofield19961421} and WiFi \cite{7134066,7130402}, or Bluetooth \cite{6526732,nicolai2007relationship} detectors. 
 % Antonio - esto es importante, habría que extenderlo y compararlo con lo nuestro, ya que se podría parecer. Aparte de la cita. ;D
-Video devices are more expensive as is the software in charge of image processing, more expensive in terms of resource consumption. On the positive side, now we can do many more things than counting people. We can track their paths and behavior. Radio signal is also a great method to track people, as powerful as video but cheaper in terms of hardware price and algorithmic cost. Moreover, the range of detection is wider, 100m approximately.
+Video devices are more expensive as is the software in charge of image processing, more expensive in terms of resource consumption. On the positive side, now we can do many more things than counting people. We can track their paths and behaviour. Radio signal is also a great method to track people, as powerful as video but cheaper in terms of hardware price and algorithmic cost. Moreover, the range of detection is wider, 100m approximately.
 
 Our approach is based on WiFi and BT \cite{824570} detection, but focused on people's personal devices from which an unique identifier can be extracted and, after anonymisation, stored. This makes it easy to track these people on a building for instance, just deploying a fair number of monitoring devices. With the advantage of a cheaper price than other systems, such as video ones, and also the possibility of creating origin-destination flow matrices or any other desired movement model.
 
-The idea of using BT personal devices is not new an has been tested by many previous researchers. In \cite{nicolai2007relationship} Tom Nicolai, like us, used statically placed BT detector to track people. Also in this work from Morrison \cite{morrison2009visualisation} the same procedure is followed to follow spectators activity on a stadium. Kostakos used this same idea to follow people trips in public transportation buses \cite{kostakos2008using}.
+The idea of using BT personal devices is not new an has been tested by many previous researchers. In \cite{nicolai2007relationship} Tom Nicolai, like us, used statically placed BT detector to track people. Also in this work from Morrison \cite{morrison2009visualisation} the same procedure is applied to follow spectators' activity on a stadium. Kostakos used this same idea to track people trips in public transportation buses \cite{kostakos2008using}.
 A good starting point to learn about the issue is \cite{6526732} with the additional originality of mixing stationary detectors with dynamic ones to estimate crowd density in a soccer stadium during a championship.
 
-Also the idea of tracking people with their personal WiFi devices is not new. As more and more people use it every day it is becoming one of the best method to follow them. This idea has been put to practice recently by several authors. Wei Xi in \cite{6847958} demonstrates how this method can count people with great accuracy. Gabe Fierro in \cite{Fierro:2012:ZOC:2422531.2422572} use it to measure the occupancy level of a building without requiring additional infrastructure.
+Also the idea of tracking people with their personal WiFi devices has been exploited. As more and more people use it every day it is becoming one of the best methods to follow them. This idea has been put in practise recently by several authors, for instance: Wei Xi in \cite{6847958} demonstrates how this method can count people with great accuracy, and Gabe Fierro in \cite{Fierro:2012:ZOC:2422531.2422572} uses it to measure the occupancy level of a building without requiring additional infrastructure.
 
-By joining BT and WiFi we pursue to increase the detection rate further than most people has achieved. Apparently it can seem redundant but the detection likelihood is higher. We need to study more deeply the improvement of the combined detection but on average we detect a 80\% of WiFi devices and a 20\% of BT. BT is specially important for the detection of cars because it is technology include in almost every new car. The same is true for WiFi and smartphones. Even when people disconnect WiFi devices keep on sending signals.
+However, by joining BT and WiFi we pursue to increase the detection rate further than most people has achieved. Apparently it can seem redundant but the detection likelihood is higher. We need to study more deeply the improvement of the combined detections but on average we detect a 80\% of WiFi devices and a 20\% of BT. BT is specially important for the detection of cars because it is technology included in almost every new car. The same fact is true for WiFi in  smartphones. Even when people disconnect WiFi devices keep on sending signals.
 
 % TODO: ANTONIO - Meter estado del arte en Smart City y enlazar con lo de movilidad.
 
-*** COMPLETAR ***
+%*** COMPLETAR ***
 
 %------------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  MOBYWIT  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -290,20 +275,11 @@ By joining BT and WiFi we pursue to increase the detection rate further than mos
 \section{MOBYWIT}
 \label{sec:mobywit}
 
-% en estos dos párrafos modificaría un poco la redacción como os comenté  [pedro]
-% Antonio - No tengo las propuestas...
-This device was designed by one of the authors and it is based in a
-single-board computer, Raspberri
-Pi\footnote{https://es.wikipedia.org/wiki/Raspberry\_Pi}. It has two
-USB cards, namely a Bluetooth (BT) and WiFi ones, and it uses their
-interfaces in monitor mode, scanning the radioelectric space searching
-for BT devices and beacon frames (for WiFi). 
+Proposed device is a single-board computer, based on the Raspberri
+Pi\footnote{https://es.wikipedia.org/wiki/Raspberry\_Pi} board. It includes two
+USB cards, namely BT and WiFi ones, both configured in monitor mode, to scan the radioelectric space searching for BT devices and beacon frames (for WiFi). 
 
-Every device, called MOBYWIT (Mobility by Wireless Tracking) is formed
-by a hardware and a software layer very interconnected. It is part in
-the whole monitoring system, which also includes cloud-based storage
-and computing services. The software architecture of the whole system
-is shown in Figure \ref{fig:mobywit}. 
+In each device, called MOBYWIT (Mobility by Wireless Tracking) the monitoring system is formed by a hardware and a software layer very interconnected. It also includes Cloud-based storage and computing services. The software architecture of the system is shown in Figure \ref{fig:mobywit}. 
 
 \begin{figure}[ht]
 	\begin{center}
@@ -313,19 +289,20 @@ is shown in Figure \ref{fig:mobywit}.
 	\end{center}
 \end{figure}
 
-As it can be seen in that figure, there are six main parts in the software layer of the system, which are unidirectionally connected by a strict data flow. They are have been named as:
+As it can be seen in that figure, there are six main parts in the software layer of the system, which are unidirectionally connected by a strict data flow. Those parts have been named as:
 \begin{itemize}
 
-\item \textit{Raziel}: This module is in charge of the detection of BT and WiFi devices as well as of their identification (extracting and encrypting the MAC) and the periodic submission of this information to the server. It is run in the device and implemented in Java.
+\item \textit{Raziel}: This module is in charge of the detection of BT and WiFi devices as well as of their identification (extracting and encrypting the MAC) and the periodic submission of this information to the server. It runs in the device and has been implemented in Java.
 
 \item \textit{Lilith}: This module acts as a gateway between the network of devices and the server. It allows the communications between nodes and between them and external networks. This component is also run in every device and implemented in PHP.
 
 \item \textit{Abdiel}: This component implements a set of services for accessing the devices from `outside' (mainly for activate/deactivate or update them). In addition it performs the storage of gathered data (in blocks) in the server database. It is also implemented in PHP.
 
-\item \textit{Alejandría}: This is the database of the system. It is a MySQL instance placed in a local server. It is optimized (using indexes and table partitioning) to provide a close to real-time processing and data service.
-Ezequiel: This module is responsible of the publication of data in a cloud-based storage. It includes data mining, machine learning and forecast techniques to process these data in order to publish interesting or useful information about them.
+\item \textit{Alejandría}: This is the system database. It is a MySQL instance placed in a local server. It is optimised (using indexes and table partitioning) to provide a close to real-time processing and data service.
 
-\item \textit{Anan}: This is the cloud-based storage and services. It is based in Google technology so Anan stores and manages the data in a NoSQL format, by means of Google Fusion Tables. It also offers advanced visualization methods to be more usable and attractive for the end-user of the system.
+\item \textit{Ezequiel}: This module is responsible of the publication of data in a cloud-based storage. It includes data mining, machine learning and forecast techniques to process these data in order to publish interesting or useful information about them.
+
+\item \textit{Anan}: This is the cloud-based storage and services. It is based in Google technology so Anan stores and manages the data in a NoSQL format, by means of Google Fusion Tables. It also offers advanced visualisation methods to be more usable and attractive for the end-user of the system.
 
 \end{itemize}
 
@@ -609,7 +586,7 @@ Using the capability of the unique vehicle detection by MAC, we can calculate th
 	\end{center}
 \end{figure}
 
-Using the time when each repetition has been detected we can also calculate average speed velocity during the week. Figure \ref{fig:dgtMatrixTime} shows the detected times between nodes, in blocks of 4 hours, during the week. Largest travel times are detected between more separated nodes. As in previous figure, time between more separated nodes is not tracked because shorter paths between cities exist. HABLAR MAS DE ESTOS DATOS
+Using the time when each repetition has been detected we can also calculate average speed velocity during the week. Figure \ref{fig:dgtMatrixTime} shows the detected times between nodes, in blocks of 4 hours, during the week. Largest travel times are detected between more separated nodes. As in previous figure, time between more separated nodes is not tracked because shorter paths between cities exist. ***HABLAR MAS DE ESTOS DATOS***
 
 \begin{figure}[htb]
 	\begin{center}
@@ -651,7 +628,7 @@ Mean By Quarter of Hour Ratio &   Depends on the hour  & 66.791 & 40.120 & 9890.
 
 \end{tabular}
 }
-\caption{Different ratios between the DGT data and the data gathered by MOBIWIT in node 1010.}
+\caption{Different ratios between the DGT data and the data gathered by MOBYWIT in node 1010.}
 \label{tab:ratiosDGT}
 \end{table}
 
@@ -663,7 +640,7 @@ Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applyin
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale=0.4]{imgs/petra_graph_DGT-Mobywit-mended.eps}
-		\caption{Devices detected by DGT and detected by our device (node 1010) applying the correction ratio (median by quarter). Note: no DGT data available during Octuber 14th.}
+		\caption{Devices detected by DGT and detected by our device (node 1010) applying the correction ratio (median by quarter). Note: no DGT data available during October 14th.}
 	\label{fig:dgtRatios}
 	\end{center}
 \end{figure}
@@ -774,7 +751,7 @@ Traffic jams usually are present in every town and it could be produced by diver
 When a driver finds himself in a traffic jam, the natural response is to plan another path to arrive his destination and the information, the competent authority provides, about another available path is appreciated by them. The selection of another path depends on driver destination and it could be different for each case. So, the first stage is to inform about the traffic jam and then the drivers decide to go across or miss it. The second stage is to provide the available paths and to turn off the vehicles but this goal has not been addressed in the paper. 
 
 
-To illustrate the Mobywit utility for the first stage, early detection of a traffic jam is essential, and a little experiment has been carried out in Granada city (Spain). We have installed two Mobywit devices in the same street. The device's location is Dr. Ol\'{o}riz street. It is one-way, has four lanes and is placed in a neighbourhood which regularly is collapsed. The map of the devices location is in Figure \ref{fig:mososMapa}. The distance among both nodes is about $168$ metres. These devices cannot detect all the real persons and vehicles moving close to them since not all of them emit BT or WiFi signals, however after an open poll which $600$ people answered we conclude that around the $22\%$ of the drivers emit BT and around the $70\%$ of the drivers emit WiFi signal. We consider the sample is good and representative of the real world. For this starting experiment, we measure the taken time to go from the first to the second Mobywit device for each counted device. The results of this experiment are displayed in Figure \ref{fig:mososTiempo}. In this figure, we have defined seven terms for the twenty-four hours of one day and they are placed over X axis. We calculate the average of trip time using all the collected data and the result is $85$ seconds. We referee that value as Global Trip Time Average (GTTA). After that, we calculate the boxplot for each term, scale the results to $[0,1]$ interval and represent it using their rate respect to GTTA value placed on the Y axis over $0.50$. That is, if the box is over $0.50$ Y axis value means that all the trips of that term are longer that GTTA value and if the box is below $0.50$ means that all the trips of this term are shorter than GTTA value. As you can see in the Figure, the first four terms are over $0.50$ so all the trips of these terms are longer than GTTA which indicates the trips during these terms are slower. The rest of the terms are below the $0.50$ level, so the trip times during these terms are speeder than the GTTA value. 
+To illustrate the MOBYWIT utility for the first stage, early detection of a traffic jam is essential, and a little experiment has been carried out in Granada city (Spain). We have installed two MOBYWIT devices in the same street. The device's location is Dr. Ol\'{o}riz street. It is one-way, has four lanes and is placed in a neighbourhood which regularly is collapsed. The map of the devices location is in Figure \ref{fig:mososMapa}. The distance among both nodes is about $168$ metres. These devices cannot detect all the real persons and vehicles moving close to them since not all of them emit BT or WiFi signals, however after an open poll which $600$ people answered we conclude that around the $22\%$ of the drivers emit BT and around the $70\%$ of the drivers emit WiFi signal. We consider the sample is good and representative of the real world. For this starting experiment, we measure the taken time to go from the first to the second MOBYWIT device for each counted device. The results of this experiment are displayed in Figure \ref{fig:mososTiempo}. In this figure, we have defined seven terms for the twenty-four hours of one day and they are placed over X axis. We calculate the average of trip time using all the collected data and the result is $85$ seconds. We referee that value as Global Trip Time Average (GTTA). After that, we calculate the boxplot for each term, scale the results to $[0,1]$ interval and represent it using their rate respect to GTTA value placed on the Y axis over $0.50$. That is, if the box is over $0.50$ Y axis value means that all the trips of that term are longer that GTTA value and if the box is below $0.50$ means that all the trips of this term are shorter than GTTA value. As you can see in the Figure, the first four terms are over $0.50$ so all the trips of these terms are longer than GTTA which indicates the trips during these terms are slower. The rest of the terms are below the $0.50$ level, so the trip times during these terms are speeder than the GTTA value. 
 
 \begin{figure}[htb]
 	\begin{center}
@@ -787,12 +764,12 @@ To illustrate the Mobywit utility for the first stage, early detection of a traf
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale=0.4]{imgs/MOSOS/mosos_graph_tiempos.eps}
-		\caption{Average time along the day for movements from node A to node B. We group the hours of a day using eighth terms. The first and the eighth terms include the night, the second one includes the rush hour for morning beginning is included. The third period includes from 9:00am to 11:59am. The fourth term includes the evening until 2:59pm. The fiveth includes from 3:00pm to 5:59pm, the sixth from 6:00 pm to 9:00pm and the seventh from 9:00pm to 11:59pm. In the boxplot se can see the percentage of increment (up to $0.50$) or decrement (low to $0.50$) of the average time needed to go from A to B along the day.}
+		\caption{Average time along the day for movements from node A to node B. We group the hours of a day using eighth terms. The first and the eighth terms include the night, the second one includes the rush hour for morning beginning is included. The third period includes from 9:00am to 11:59am. The fourth term includes the evening until 2:59pm. The fifth includes from 3:00pm to 5:59pm, the sixth from 6:00 pm to 9:00pm and the seventh from 9:00pm to 11:59pm. The boxplot shows the percentage of increment (up to $0.50$) or decrement (low to $0.50$) of the average time needed to go from A to B along the day.}
 	\label{fig:mososTiempo}
 	\end{center}
 \end{figure}
 
-In short, we demonstrate that only using Mobywit, without any additional data it is easy to know if the trip times are increasing or decreasing along the day. The utility that any council is able to give to this information could be rich and diverse. For example, if any council wants to monitor the streets and links the Mobywit output to the traffic light network, the traffic light regulation could be autonomous depending on the time that a monitored device spends to go from one checkpoint to another. 
+In short, we demonstrate that only using MOBYWIT, without any additional data it is easy to know if the trip times are increasing or decreasing along the day. The utility that any council is able to give to this information could be rich and diverse. For example, if any council wants to monitor the streets and links the MOBYWIT output to the traffic light network, the traffic light regulation could be autonomous depending on the time that a monitored device spends to go from one checkpoint to another. 
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   CONCLUSIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
