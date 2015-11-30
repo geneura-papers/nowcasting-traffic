@@ -623,7 +623,7 @@ Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applyin
 
 \subsection{Traffic forecasting}
 \label{sub:ts_forecasting}
-Capturing data about traffic in a highway worth not only for describing its current situation, but also for forecasting future conditions. In this sense, counting the number of cars that have passed for a given point in a given time can be considered as a time series, allowing the use of automatic tools to perform forecasting.
+Capturing data about traffic on a highway worth not only for describing its current situation, but also for forecasting future conditions. In this sense, counting the number of cars that have passed for a given point in a given time can be considered as a time series, allowing the use of automatic tools to perform forecasting.
 
 For this work, four methods (three widely used time series forecasters, and one control method) have been used to, automatically, predict the number of cars that will pass in the next period. These methods are included in the forecast package ~\cite{Hyndman08automatictime} of the R program~\cite{R:Bloomfield:2014}, and are the following:
 
@@ -640,7 +640,7 @@ The data used for the experiments are the ones provided by the node 1010 startin
 
 Table ~\ref{tab:forecasting} shows the values for the ten used measures computed over $576$ values, the ones corresponding to the last 6 days (i.e., $30\%$ of the data). The horizon has been set to 1, so that, in order to forecast any given moment all the previous real known data were used to build and train the models and, after this, the next value was forecasted. This way, the problem has been faced as a simulation of what could happen in a continuous system in which new real data where received every 15 minutes so that forecasting models could be also continuously adapted.
 
-As results show, ETS, ARIMA and Theta behave clearly better than the control method. The differences between the three considered methods are, almost nonexistent. In any case, ETS yields the lowest values in six of the measures been used. For these reason, it could be probably considered the best candidate to be chosen as the preferred method to forecast this kind of time-series. Figure \ref{fig:forecasted-values} depicts the values forecasted by ETS comparing them with the expected ones.
+As results show, ETS, ARIMA and Theta behave clearly better than the control method. The differences between the three considered methods are, almost nonexistent. In any case, ETS yields the lowest values in four of the measures been used. For these reason, it could be probably considered the best candidate to be chosen as the preferred method to forecast this kind of time-series. Figure \ref{fig:forecasted-values} depicts the values forecasted by ETS comparing them with the expected ones.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -675,7 +675,7 @@ RMSE &$5.3452$ & $\textbf{3.6082}$ & $3.6438$ & $3.6114$\\
 \end{table}
 
 %%%Completar porque no me termino de enterar de que es lo que se ha hecho.
-Finally, once forecasting with MOBYWIT's data has been carried out, the number of cars that would have been detected by the DGT can be estimated by means of the ratios previously calculated (see table \ref{tab:ratiosDGT}). Concretely, table \ref{tab:errorForecastingRatio} shows the error computed when applying the Median Ratio By Hour conversion. As can be seen, newly ETS stands for its capability of yielding the lowest errors. 
+Finally, once forecasting with MOBYWIT's data has been carried out, the number of cars that would have been detected by the DGT can be estimated by the ratios previously calculated (see table \ref{tab:ratiosDGT}). Concretely, table \ref{tab:errorForecastingRatio} shows the error computed when applying the Median Ratio By Quarter conversion. As can be seen, newly ETS stands for its capability of yielding the lowest errors. 
 
 \begin{table}[htb]
 \centering
