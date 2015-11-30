@@ -80,7 +80,7 @@ Smart traffic \sep Transit indicators \sep Traffic forecast \sep Mobility analys
 Nowadays, the transformation of any city into a Smart City, with better performance (saving energy, citizen's time, resources, costs), is a process that must be supported by powerful and reliable technologies, methods and systems. 
 To this aim, a mobility monitoring system is one of the most useful, since the data which provides can be used to enhance several services in the city, or in specific buildings inside it.
 
-Most traffic information systems gather information about cars using several kind of devices, such as pneumatic tubes, loop detectors, floating vehicles or automatic Optical Character Recognition (OCR) \cite{rodrigue2013geography}. However most of these systems are not able to identify and follow the same vehicle along the road network. 
+The most common systems gather traffic information (mainly vehicles pass-by) using several kind of devices, such as pneumatic tubes, loop detectors, floating vehicles or automatic Optical Character Recognition (OCR) \cite{rodrigue2013geography}. However most of these systems are not able to identify and follow the same vehicle along the road network. 
 % ¿OCR no? - JJ
 % Antonio - Sí, por eso pone most of them.
 Those that can do it are very expensive so they are just placed in very specific points of the roads.
@@ -277,7 +277,7 @@ A good starting point to learn about the issue is \cite{6526732} with the additi
 
 Also the idea of tracking people with their personal WiFi devices is not new. As more and more people use it every day it is becoming one of the best method to follow them. This idea has been put to practice recently by several authors. Wei Xi in \cite{6847958} demonstrates how this method can count people with great accuracy. Gabe Fierro in \cite{Fierro:2012:ZOC:2422531.2422572} use it to measure the occupancy level of a building without requiring additional infrastructure.
 
-By joining BT and WiFi we pursue to increase the detection rate further than most people has achieved. Apparently it can seem redundant but the detection likelihood is higher with both systems. We need to study more deeply the improvement of the combined detection but on average a 80\% of WiFi devices and a 20\% of BT are detected. BT is specially important for the detection of cars because it is technology include in almost every new car. The same is true for WiFi and smartphones. Another interesting characteristic is that even when people disconnect WiFi their devices keep on sending signals.
+By joining BT and WiFi we pursue to increase the detection rate further than most people has achieved. Apparently it can seem redundant but the detection likelihood is higher. We need to study more deeply the improvement of the combined detection but on average we detect a 80\% of WiFi devices and a 20\% of BT. BT is specially important for the detection of cars because it is technology include in almost every new car. The same is true for WiFi and smartphones. Even when people disconnect WiFi devices keep on sending signals.
 
 % TODO: ANTONIO - Meter estado del arte en Smart City y enlazar con lo de movilidad.
 
@@ -748,10 +748,17 @@ RMSE  & $83.906$ & $\textbf{58.925}$  &  $59.747$ & $59.309$ \\
 %\hline
 \end{tabular}
 }
-\caption{Error values computed using the differences between DGT real data and data recorded by MOBYWIT with Median Ratio By Hour conversion. Period to be forecasted started on 25-Oct-2015, 00:00 hours and finished on 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
+\caption{Error values computed using the differences between DGT real data and data recorded by MOBYWIT with Median Ratio By Quarter conversion. Period to be forecasted started on 25-Oct-2015, 00:00 hours and finished on 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
 \label{tab:errorForecastingRatio}
 \end{table}
 
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=14cm]{imgs/PETRA/petra_graph_ts-forecasting.eps}
+        \caption{Real DGT number of cars in node 1011 vs forecasted according to MOBYWIT's records with Median Ratio By Quarter conversion. Forecasted values are provided by Mean, ETS, ARIMA and THETA methods. }
+        \label{fig:forecasted-values}
+    \end{center}
+\end{figure}
 
 Finally, according to the results obtained, performing traffic forecasting using data provided by MOBYWIT seems to be an affordable task for traditional methods (i.e., ETS or ARIMA). Furthermore, ratios computed from data recorded by DGT allows to convert forecasted values to their equivalent representing the number of cars in a given location. Thus, the joint use of this two techniques makes possible to closely approximate the number of cars that will have passed 15 minutes later by the position of the MOBYWIT; and this process can be newly repeated every 15 minutes so that forecasting models can be enhanced and adapted to the new conditions of the road.
 
