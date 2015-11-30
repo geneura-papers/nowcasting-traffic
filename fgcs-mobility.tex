@@ -313,7 +313,7 @@ is shown in Figure \ref{fig:mobywit}.
 As it can be seen in that figure, there are six main parts in the software layer of the system, which are unidirectionally connected by a strict data flow. They are have been named as:
 \begin{itemize}
 
-\item \textit{Raziel}: This module is in charge of the detections of BT and WiFi devices as well as of their identification (extracting and encrypting the MAC) and the periodic submission of this information to the server. It is run in the device and implemented in Java.
+\item \textit{Raziel}: This module is in charge of the detection of BT and WiFi devices as well as of their identification (extracting and encrypting the MAC) and the periodic submission of this information to the server. It is run in the device and implemented in Java.
 
 \item \textit{Lilith}: This module acts as a gateway between the network of devices and the server. It allows the communications between nodes and between them and external networks. This component is also run in every device and implemented in PHP.
 
@@ -498,7 +498,7 @@ In this section we will focus on people's mobility, as explained in Section \ref
 Since the devices can detect BT and WIFI signals from both the university staff and the students, two of them has been placed very close of the main access trying to distinguish staff (62) from students (52). The parking door (42) can only be used by the staff.
 
 % please, ANTARES, help me a bit finishing the following paragraphs
-The devices has been recording data for a few days only. With these data the origin/destination histogram that can be seen in figure \ref{fig:etsiit_io} has been created. A careful examination of this figure let us extract some conclusions.
+The devices has been recording data for a few days only. With these data the origin-destination histogram that can be seen in figure \ref{fig:etsiit_io} has been created. A careful examination of this figure let us extract some conclusions.
 
 \begin{figure}[!ht]
 	\begin{center}
@@ -512,11 +512,14 @@ The devices has been recording data for a few days only. With these data the ori
 \item Most people are students and they access the building through the students door (sensor 52 in figure \ref{fig:etsiit_map}). Most people get in and out by this door.
 \item Professors and administrative staff seem to divide their way of getting in and out. They used the parking (sensor 42) as much as the main building door (sensor 62).
 \item Many students go out by the main building (62) after a supposedly visit to a professor or an administrative.
-\item Some curious behavior has been discovered: some students who enter by their door (42) exit by the parking (52). The only explanation possible is that the cafeteria and the lunch room are in the basement and they can get out without getting up one floor.
+\item Some curious behavior has been discovered: some people who enter by door 42 exit by the parking (52). The only explanation possible is that the cafeteria and the lunch room are in the basement and they can get out without getting up one floor.
 \item Why people getting in by main door (62) almost never go out by the same door? Most of them are students and go out by their door (52) at the end of the classes.
+\item We have failed to explain why not as many people who enter by the parking (42) leave the place by the same door. Cars can't be left there overnight.
 \end{itemize}
 
 With some additional sensors the people flow could be studied in a better way. Because with the three used many people can not be correctly interpreted as the right kind of visitor. The most interesting place for a new sensor is in the door of the classroom building at the north in the map.
+
+Information gathered can be useful for the management of the building. When must heating be started? How many students are in class or just studying inside? Are there enough sits in the library? Are the doors in the right place? Many of this questions need a little more time to save enough data and answer them correctly.
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%   TRAFFIC in a HIGHWAY  %%%%%%%%%%%%%%%%%%%%%%%%%
