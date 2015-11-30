@@ -483,7 +483,7 @@ In this section we will focus on people's mobility, as explained in Section \ref
 
 Since the devices can detect BT and WIFI signals from both the university staff and the students, two of them has been placed very close of the main access trying to distinguish staff (62) from students (52). The parking door (42) can only be used by the staff.
 
-The devices has been recording data for a few days only. With these data the origin-destination histogram that can be seen in figure \ref{fig:etsiit_io} has been created. A careful examination of this figure let us extract some conclusions.
+The devices have been recording data for a few days only. With these data the origin-destination histogram that can be seen in figure \ref{fig:etsiit_io} has been created. A careful examination of this figure lets us extract some conclusions.
 
 \begin{figure}[!ht]
 	\begin{center}
@@ -498,13 +498,13 @@ The devices has been recording data for a few days only. With these data the ori
 \item Professors and administrative staff seem to divide their way of getting in and out. They used the parking (sensor 42) as much as the main building door (sensor 62).
 \item Many students go out by the main building (62) after a supposedly visit to a professor or an administrative.
 %\item Some curious behavior has been discovered: some people who enter by door 42 exit by the parking (52). The only explanation possible is that the cafeteria and the lunch room are in the basement and they can get out without getting up one floor. %Antares - El sensor 52 es el de la puerta del aulario, no el del parking.
-\item Why people getting in by main door (62) almost never go out by the same door? Most of them are students and go out by their door (52) at the end of the classes.
+\item Why people getting in by the main door (62) almost never go out by the same door? Most of them are students and go out by their door (52) at the end of the classes.
 %\item We have failed to explain why not as many people who enter by the parking (42) leave the place by the same door. Cars can't be left there overnight.
 \end{itemize}
 
-With some additional sensors the people flow could be studied in a better way. Because with the three used many people can not be correctly interpreted as the right kind of visitor. The most interesting place for a new sensor is in the door of the classroom building at the north in the map.
+With some additional sensors the people flow could be studied in a better way. Because with the three used many people can not be correctly interpreted as the right kind of visitor. The most interesting place for a new sensor is at the door of the classroom building at the north on the map.
 
-Information gathered can be useful for the management of the building. When must heating be started? How many students are in class or just studying inside? Are there enough sits in the library? Are the doors in the right place? Many of this questions need a little more time to save enough data and answer them correctly.
+The information gathered can be useful for the management of the building. When must heating be started? How many students are in class or just studying inside? Are there enough seats in the library? Are the doors in the right place? Many of these questions need a little more time to save enough data and answer them correctly.
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%   TRAFFIC in a HIGHWAY  %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -525,13 +525,13 @@ order to validate our approach by comparing the real number of vehicles which
 have passed a point, with the number of devices detected by MOBYWIT. Thus, a 
 realistic \textit{ratio} between both numbers has been computed.
 
-Six nodes were placed along different roads in Andalusia (south Spain). 
+Six nodes were placed along different roads in Andalusia (southern Spain). 
 Figure \ref{fig:nodosDGT} shows the identifiers of these devices and their 
 exact location. These locations have been chosen because they are the nearest   
-ones to existent loop detectors monitored by the DGT, and also, they have 
+ones to existent loop detectors monitored by the DGT, and also, they have an
 Internet connection to allow the transmission of data to our server. 
 There exist two groups of nodes: one in the province of Granada area 
-(1010, 1020 and 1030) and the other in the road to M{\'a}laga (1040, 1050 and 1060).
+(1010, 1020 and 1030) and the other on the road to M{\'a}laga (1040, 1050 and 1060).
 
 \begin{figure}[htb]
 	\begin{center}
@@ -552,7 +552,7 @@ Their different features, as well as their equations, can be found in Hyndman an
 
 \subsection{Driving behaviour}
 
-Using the capability of the unique vehicle detection by MAC, we can calculate the passing frequency between nodes, and also, the travel time between them. Figure \ref{fig:dgtMatrixFrec} shows the frequency matrix between nodes. A time window for detection has been set to 2.5 hours (as it is a little more of the time between 1040 and 1030 according Google Maps). Results show that, patently, there are more repetitions between the nodes of the same continuous road branch. For example, between 1040 and 1050, as there exist a deviation to Seville before node 1060. This is clearer at the end of the week, where people come back to their villages/other cities to spent the weekends, and more repetitions are detected. Some repetitions have not been detected in the more separated nodes (for example, between 1040 and 1030), because shorter intercity routes exist following the coastline, instead the interior.
+Using the capability of the unique vehicle detection by MAC, we can calculate the passing frequency between nodes, and also, the travel time between them. Figure \ref{fig:dgtMatrixFrec} shows the frequency matrix between nodes. A time window for detection has been set to 2.5 hours (as it is a little more of the time between 1040 and 1030 according Google Maps). Results show that, patently, there are more repetitions between the nodes of the same continuous road branch. For example, between 1040 and 1050, as there exists a deviation to Seville before node 1060. This is clearer at the end of the week, where people come back to their villages/other cities to spend the weekends, and more repetitions are detected. Some repetitions have not been detected in the more separated nodes (for example, between 1040 and 1030), because shorter intercity routes exist following the coastline, instead the interior.
 
 \begin{figure}[htb]
 	\begin{center}
@@ -562,7 +562,7 @@ Using the capability of the unique vehicle detection by MAC, we can calculate th
 	\end{center}
 \end{figure}
 
-Using the time when each repetition has been detected we can also calculate average speed velocity during the week. Figure \ref{fig:dgtMatrixTime} shows the detected times between nodes, in blocks of 4 hours, during the week. Largest travel times are detected between more separated nodes. As in previous figure, time between more separated nodes is not tracked because shorter paths between cities exist. %***HABLAR MAS DE ESTOS DATOS***
+Using the time when each repetition has been detected, we can also calculate average speed velocity during the week. Figure \ref{fig:dgtMatrixTime} shows the detected times between nodes, in blocks of 4 hours, during the week. Largest travel times are detected between more separated nodes. As in previous figure, time between more separated nodes is not tracked because shorter paths between cities exist. %***HABLAR MAS DE ESTOS DATOS***
 
 \begin{figure}[htb]
 	\begin{center}
@@ -579,9 +579,9 @@ Different metrics will be used to obtain a correct correlation between the numbe
 
 \begin{itemize}
 \item {\em Total ratio}: ratio between the total number of vehicles detected by the DGT and the total number of vehicles detected by our device.
-\item {\em Mean ratio}: as the maximum granularity of the data provided by the DGT is 15 minutes, the sum of all ratios between the DGT data and our data in each 15 minutes section has been divided by the total number of sections to calculate the average.
+\item {\em Mean ratio}: as the maximum granularity of the data provided by the DGT is 15 minutes, the sum of all ratios between the DGT data and our data in each 15 minute section has been divided by the total number of sections to calculate the average.
 \item {\em Median ratio}: instead the average ratio as in previous metric, this one uses the median of all ratios.
-\item {\em Mean by quarter ratio}: this metric calculate a vector of ratios separated by quarter of hour during the day, instead obtaining a global ratio for all data. An average ratio per quarter per hour in the vector is calculated taking into account all the ratios of that quarter during all the days we have data.
+\item {\em Mean by quarter ratio}: this metric calculates a vector of ratios separated by quarter of hour during the day, instead obtaining a global ratio for all data. An average ratio per quarter per hour in the vector is calculated taking into account all the ratios of that quarter during all the days we have data.
 \item {\em Median by quarter ratio}: as in the previous metric, this one uses a vector of ratios per quarter of hour, but every element is calculated using the median, instead the average.
 \end{itemize}
 
@@ -609,7 +609,7 @@ Median By Quarter of Hour Ratio & Depends on the hour  & \textbf{58.326} & \text
 \end{table}
 
 
-Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applying the chosen correction ratio. As it can be seen, certain correlation exist. However, different peaks appear in the figure, being those elements the product of detecting few devices in comparison with the DGT.
+Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applying the chosen correction ratio. As it can be seen, certain correlation exists. However, different peaks appear in the figure, being those elements the product of detecting few devices in comparison with the DGT.
 
 
 
