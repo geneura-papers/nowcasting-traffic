@@ -49,7 +49,7 @@ $^2$ Departamento de Informática. EPS. Universidad de Jaén, Spain}
 \begin{abstract}
 This paper presents a novel mobility monitoring system and some of its applications to address problems that would be solved in a Smart City, such as the optimization of traffic flows in terms of trip-time and security (Smart Traffic), and the improvement of security or energetic issues inside buildings.
 The system tracks the movement of people and vehicles monitoring the
-radioelectric space, catching the  WiFi and Bluetooth signals emitted by personal(smartphones) or on-board (hands-free) devices. 
+radioelectric space, catching the  WiFi and Bluetooth signals emitted by personal (smartphones) or on-board (hands-free) devices. 
 A study has been conducted in four different real scenarios,
 i.e. with real data gathered by the system: two related with people's
 mobility (a public building and a discotheque); and two focused in
@@ -77,20 +77,19 @@ Smart traffic \sep Transit indicators \sep Traffic forecast \sep Mobility analys
 \section{Introduction}
 \label{sec:intro}
 
-Nowadays, the transformation of any city into a Smart City, with better performance (saving energy, citizen's time, resources, costs), is a process that must be supported by powerful and reliable technologies, methods and systems. 
+Nowadays, the transformation of any city into a Smart City, with better values of energy saving, citizen's free time, access to more resources and less cost, is a process that must be supported by powerful and reliable technologies, methods and systems. 
 To this aim, a mobility monitoring system is one of the most useful, since the data which provides can be used to enhance several services in the city, or in specific buildings inside it.
 
-The most common systems gather traffic information (mainly vehicles pass-by) using several kind of devices, such as pneumatic tubes, loop detectors, floating vehicles or automatic Optical Character Recognition (OCR) \cite{rodrigue2013geography}. However most of these systems are not able to identify and follow the same vehicle along the road network. 
+Most traffic information systems gather information about cars using several kind of devices, such as pneumatic tubes, loop detectors, floating vehicles or automatic Optical Character Recognition (OCR) \cite{rodrigue2013geography}. However most of these systems are not able to identify and follow the same vehicle along the road network. 
 % ¿OCR no? - JJ
 % Antonio - Sí, por eso pone most of them.
 Those that can do it are very expensive so they are just placed in very specific points of the roads.
 
 The local, regional or national governments use these data aiming for improvements in the maintenance of roads and services, computing a road deterioration factor based on the affluence of vehicles, for instance. In addition, useful traffic statistics can be obtained, which would help to forecast traffic jams, for example.
-This information can be directly used inside a city in several ways, from improving the traffic flow (adjusting the synchronisation of traffic lights or defining the best traffic sense on every street), to the end-users (drivers), who can profit by optimally planning their trips according to the current, or future, status of the traffic flow. 
+This information can be directly used inside a city in several ways, from improving the traffic flow, by adjusting the synchronisation of traffic lights or defining the best traffic sense on every street, to the end-users, drivers, who can profit by optimally planning their trips according to the current, or future, status of the traffic flow. 
 That's the reason why traffic information must be reliable. 
 
-This paper presents a monitoring system able to collect people's and vehicles mobility data, and also able to track them by means of a grid of devices (nodes) connected to a central server. This allows the easy construction of traffic flow models or mobility graphs. The proposed system is formed by low-cost devices (around 100\$ each one), which is another advantage over the usual monitoring systems, because the cost is an important factor for authorities which
-tend to install the simplest and cheapest monitors. 
+This paper presents a monitoring system able to collect people's and vehicles mobility data, and also able to track them by means of a grid of devices, or nodes, connected to a central server. This allows the easy construction of traffic flow models or mobility graphs. The proposed system is formed by low-cost devices, around 100\$ each, which is another advantage over the usual monitoring systems, because the cost is an important factor for authorities which tend to install the simplest and cheapest monitors. 
 
 The device, a highly improved version of the one presented in
 \cite{castillo2014_book_sipesca}, is based in a single-board computer
@@ -277,7 +276,7 @@ A good starting point to learn about the issue is \cite{6526732} with the additi
 
 Also the idea of tracking people with their personal WiFi devices is not new. As more and more people use it every day it is becoming one of the best method to follow them. This idea has been put to practice recently by several authors. Wei Xi in \cite{6847958} demonstrates how this method can count people with great accuracy. Gabe Fierro in \cite{Fierro:2012:ZOC:2422531.2422572} use it to measure the occupancy level of a building without requiring additional infrastructure.
 
-By joining BT and WiFi we pursue to increase the detection rate further than most people has achieved. Apparently it can seem redundant but the detection likelihood is higher. We need to study more deeply the improvement of the combined detection but on average we detect a 80\% of WiFi devices and a 20\% of BT. BT is specially important for the detection of cars because it is technology include in almost every new car. The same is true for WiFi and smartphones. Even when people disconnect WiFi devices keep on sending signals.
+By joining BT and WiFi we pursue to increase the detection rate further than most people has achieved. Apparently it can seem redundant but the detection likelihood is higher with both systems. We need to study more deeply the improvement of the combined detection but on average a 80\% of WiFi devices and a 20\% of BT are detected. BT is specially important for the detection of cars because it is technology include in almost every new car. The same is true for WiFi and smartphones. Another interesting characteristic is that even when people disconnect WiFi their devices keep on sending signals.
 
 % TODO: ANTONIO - Meter estado del arte en Smart City y enlazar con lo de movilidad.
 
@@ -742,7 +741,7 @@ RMSE  & $83.906$ & $\textbf{58.925}$  &  $59.747$ & $59.309$ \\
 %\hline
 \end{tabular}
 }
-\caption{Error values computed using the differences between DGT real data and the ones forecasted by ETS method, after converting the latest using Median (by Hour) Ratio. Period to be forecasted started on 25-Oct-2015, 00:00 hours and finished on 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
+\caption{Error values computed using the differences between DGT real data and data recorded by MOBYWIT with Median Ratio By Hour conversion. Period to be forecasted started on 25-Oct-2015, 00:00 hours and finished on 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
 \label{tab:errorForecastingRatio}
 \end{table}
 
@@ -840,11 +839,24 @@ This work has been supported in part by projects EPHEMECH (TIN2014-56494-C4-3-P,
 
 This appendix presents additional information about the scenarios, such as the geographical position of the nodes and a comment about them, or some graphs showing the distribution of the gathered data.
 
-\subsection*{Discotheque}
+\begin{table}[H]
+\centering
+\resizebox{12cm}{!}{
+\begin{tabular}{|c|c|p{5cm}|c|c|}
+\hline
+ID   &  Location & Latitude & Longitude \\ \hline
+102	 &  DISCO Terrace & -- & -- \\ \hline
+112	 &  DISCO Main room  & -- & --  \\ \hline
+122	 &  DISCO Minor room 1& -- & -- \\ \hline
+132	 &  DISCO Ticket office & -- & -- \\ \hline
+142	 &  DISCO Minor room 2& -- &  -- \\ \hline
+\end{tabular}
+}
+\caption{Location of the devices for Discotheque scenario.}
+\label{tab:nodosDGT}
+\end{table}
 
-\subsection*{Building of the University}
-
-\begin{table}
+\begin{table}[H]
 \centering
 \resizebox{12cm}{!}{
 \begin{tabular}{|c|c|p{5cm}|c|c|}
@@ -856,13 +868,11 @@ ID   &  Location & Latitude & Longitude \\ \hline
 \end{tabular}
 }
 \caption{Location of the devices for the Building of the University scenario.}
-\label{tab:nodosETSIIT}
+\label{tab:nodosDGT}
 \end{table}
 
 
-\subsection*{Highway}
-
-\begin{table}
+\begin{table}[H]
 \centering
 \resizebox{12cm}{!}{
 \begin{tabular}{|c|c|p{5cm}|c|c|}
@@ -877,13 +887,11 @@ ID   & Province & Location & Latitude & Longitude \\ \hline
 \end{tabular}
 }
 \caption{Location of the devices for the highway traffic scenario (K.P. = Kilometric Point).}
-\label{tab:nodosHighway}
+\label{tab:nodosDGT}
 \end{table}
 
 
-\subsection*{Traffic in a city}
-
-\begin{table}
+\begin{table}[H]
 \centering
 \resizebox{12cm}{!}{
 \begin{tabular}{|c|c|p{5cm}|c|c|}
@@ -892,10 +900,9 @@ A	 & Granada & Dr. Olóriz Street & 37.188187 & -3.607241\\ \hline
 B	 & Granada & Dr. Olóriz Street & 37.186997 & -3.607882\\ \hline
 \end{tabular}
 }
-\caption{Location of the devices for the highway traffic scenario (K.P. = Kilometric Point).}
+\caption{Location of the devices for the city traffic scenario.}
 \label{tab:nodosDGT}
 \end{table}
-
 
 
 \end{document}
