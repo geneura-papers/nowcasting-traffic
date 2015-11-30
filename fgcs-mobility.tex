@@ -20,7 +20,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   AUTHORS   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \author{A.J. Fernández-Ares$^1$, A.M. Mora$^1$, M.G. Arenas$^1$, P. García-Sanchez$^1$, G. Romero$^1$, V. Rivas$^2$, P.A. Castillo$^1$, J.J. Merelo$^1$}
-\ead{\{antares, amorag, mgarenas, pablogarcia, gustavo, pacv, jmerelo\}@ugr.es, vrivas@ujaes.es}
+\ead{\{antares, amorag, mgarenas, pablogarcia, gustavo, pacv, jmerelo\}@ugr.es, vrivas@ujaen.es}
 \address{$^1$ Departamento de Arquitectura y Tecnología de Computadores.\\ ETSIIT - CITIC. University of Granada, Spain\\
 $^2$ Departamento de Informática. EPS. Universidad de Jaén, Spain}
 
@@ -111,6 +111,7 @@ any person.
 % habría que asegurar, además, que ese proceso de cifrado no se puede
 % replicar. ¿Qué clave usa? - JJ
 % Antonio - No se puede replicar, pero que lo aclare Antares.
+% Antares: Se parte de los 48bits de la MAC a 160 bits de SHA-1, por lo que el riesgo de colisión es imposible. Pero, no creo que sea relevante.
 
 To prove the reliability and utility of this system are also objectives of this work, so, four different real scenarios are presented and the collected data analysed in order to demonstrate its value for solving different problems in a city. These scenarios are focused in the city of Granada (Spain), in which real traffic/mobility data have been gathered. They are namely: a discotheque, a public building of the University, a highway between Granada and Málaga; and one of the main streets in the city.  
 % yo dejaría la facu y la discoteca. Son totalmente diferentes. Salvo que quieras contarlos por temas de carga o lo que sea, no tienen nada que ver. 
@@ -123,7 +124,7 @@ The huge amount of data produced have been processed using \textit{Big Data}
 % significa - JJ
 techniques, transforming or summarizing them, in order to conduct
 further analyses. Different methods have been applied, such as Data
-Mining, Time Series Forecasting, In/Out (Origin/Destination) matrices,
+Mining, Time Series Forecasting, Origin/Destination matrices,
 or statistical procedures. % pero ¿con qué objetivo? - JJ
 The aim was to extract useful information and reach clear conclusions
 which can lead to enhance the performance of different aspects in every scenario, proving the value of this monitoring system as a
@@ -313,7 +314,7 @@ is shown in Figure \ref{fig:mobywit}.
 As it can be seen in that figure, there are six main parts in the software layer of the system, which are unidirectionally connected by a strict data flow. They are have been named as:
 \begin{itemize}
 
-\item \textit{Raziel}: This module is in charge of the detections of BT and WiFi devices as well as of their identification (extracting and encrypting the MAC) and the periodic submission of this information to the server. It is run in the device and implemented in Java.
+\item \textit{Raziel}: This module is in charge of the detection of BT and WiFi devices as well as of their identification (extracting and encrypting the MAC) and the periodic submission of this information to the server. It is run in the device and implemented in Java.
 
 \item \textit{Lilith}: This module acts as a gateway between the network of devices and the server. It allows the communications between nodes and between them and external networks. This component is also run in every device and implemented in PHP.
 
@@ -334,7 +335,6 @@ There are several configuration parameters in the system, which sets important p
 
 Every detected `pass-by' or mobility `event' is associated to a detection time, obtained by NTP (Network Time Protocol). These `events' are stored initially in the device's memory. After some time (also set in a parameter) the information is sent, in blocks, to the server, to avoid an overuse/saturation of the network.
 
-*** ALGO MÁS? ***
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%   PEOPLE'S MOBILITY IN A DISCO  %%%%%%%%%%%%%%%%%%%%
@@ -362,7 +362,7 @@ node as it is shown in Figure \ref{fig:disco_data}.
 
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{imgs/DISCO/time_series-bars.eps}
+		\includegraphics[width=\textwidth]{imgs/DISCO/time_series-linesPoints.eps}
 		\caption{Detected devices in a night in the Discotheque scenario.}
 		% Antonio - explicar lo que se ve en las gráficas (histograma y serie). Lo de la serie quizá no sea necesario
 		\label{fig:disco_data}
@@ -460,7 +460,7 @@ The results on this study are shown in Figure \ref{fig:som_disco_recurrencia}.
 	\begin{center}
 		\includegraphics[width=14cm]{imgs/DISCO/som_recurrentes.eps}
 		\includegraphics[width=8cm]{imgs/DISCO/umatrix_recurrentes.eps}
-		\caption{Recurrence of devices in different days. The label is the recurrence rate of the majority in that neuron/BMU}
+		\caption{Recurrence of devices in different days. The label is the recurrence rate (number of days the device has returned) of the majority in that neuron/BMU}
 		\label{fig:som_disco_recurrencia}
 	\end{center}
 \end{figure}
@@ -498,7 +498,7 @@ In this section we will focus on people's mobility, as explained in Section \ref
 Since the devices can detect BT and WIFI signals from both the university staff and the students, two of them has been placed very close of the main access trying to distinguish staff (62) from students (52). The parking door (42) can only be used by the staff.
 
 % please, ANTARES, help me a bit finishing the following paragraphs
-The devices has been recording data for a few days only. With these data the origin/destination histogram that can be seen in figure \ref{fig:etsiit_io} has been created. A careful examination of this figure let us extract some conclusions.
+The devices has been recording data for a few days only. With these data the origin-destination histogram that can be seen in figure \ref{fig:etsiit_io} has been created. A careful examination of this figure let us extract some conclusions.
 
 \begin{figure}[!ht]
 	\begin{center}
@@ -512,11 +512,14 @@ The devices has been recording data for a few days only. With these data the ori
 \item Most people are students and they access the building through the students door (sensor 52 in figure \ref{fig:etsiit_map}). Most people get in and out by this door.
 \item Professors and administrative staff seem to divide their way of getting in and out. They used the parking (sensor 42) as much as the main building door (sensor 62).
 \item Many students go out by the main building (62) after a supposedly visit to a professor or an administrative.
-\item Some curious behavior has been discovered: some students who enter by their door (42) exit by the parking (52). The only explanation possible is that the cafeteria and the lunch room are in the basement and they can get out without getting up one floor.
+%\item Some curious behavior has been discovered: some people who enter by door 42 exit by the parking (52). The only explanation possible is that the cafeteria and the lunch room are in the basement and they can get out without getting up one floor. %Antares - El sensor 52 es el de la puerta del aulario, no el del parking.
 \item Why people getting in by main door (62) almost never go out by the same door? Most of them are students and go out by their door (52) at the end of the classes.
+%\item We have failed to explain why not as many people who enter by the parking (42) leave the place by the same door. Cars can't be left there overnight.
 \end{itemize}
 
 With some additional sensors the people flow could be studied in a better way. Because with the three used many people can not be correctly interpreted as the right kind of visitor. The most interesting place for a new sensor is in the door of the classroom building at the north in the map.
+
+Information gathered can be useful for the management of the building. When must heating be started? How many students are in class or just studying inside? Are there enough sits in the library? Are the doors in the right place? Many of this questions need a little more time to save enough data and answer them correctly.
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%   TRAFFIC in a HIGHWAY  %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -581,7 +584,7 @@ Using the capability of the unique vehicle detection by MAC, we can calculate th
 	\end{center}
 \end{figure}
 
-Using the time when each repetition has been detected we can also calculate average speed velocity during the week. Figure \ref{fig:dgtMatrixTime} shows the detected times between nodes, in blocks of 4 hours, during the week. Largest travel times are detected between more separated nodes. As in previous figure, time between more separated nodes is not tracked because shorter paths between cities exist. HABLAR MAS DE ESTOS DATOS
+Using the time when each repetition has been detected we can also calculate average speed velocity during the week. Figure \ref{fig:dgtMatrixTime} shows the detected times between nodes, in blocks of 4 hours, during the week. Largest travel times are detected between more separated nodes. As in previous figure, time between more separated nodes is not tracked because shorter paths between cities exist. *** HABLAR MAS DE ESTOS DATOS ***
 
 \begin{figure}[htb]
 	\begin{center}
@@ -614,11 +617,11 @@ Table \ref{tab:ratiosDGT} shows the obtained ratios. *** COMENTARLOS ***
 \hline
 			 &RATIO	  & MAE    &   MAPE   & MSE    & RMSE \\
  \hline
-Total Ratio  & 17.230 &   60.373 & 36.265 & 7371.579  & 85.857 \\
+Total Ratio  & 17.230 &   60.373 & 36.265 & \textbf{7371.579}  & \textbf{85.857} \\
 Mean Ratio   & 20.792 &   72.323 & 43.443 & 11216.070 & 105.905 \\
 Median Ratio & 18.2 &    62.454  & 37.515 & 8060.136  & 89.778 \\
-Median By Quarter Ratio & Depends on the hour  & 58.326 & 35.035 & 7617.613 & 87.278 \\
-Mean By Quarter Ratio &   Depends on the hour  & 66.791 & 40.120 & 9890.978 & 99.453 \\
+Median By Quarter of Hour Ratio & Depends on the hour  & \textbf{58.326} & \textbf{35.035} & 7617.613 & 87.278 \\
+Mean By Quarter of Hour Ratio &   Depends on the hour  & 66.791 & 40.120 & 9890.978 & 99.453 \\
 \hline
 
 \end{tabular}
@@ -640,11 +643,111 @@ Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applyin
 	\end{center}
 \end{figure}
 
+\subsection{Traffic forecasting}
+\label{sub:ts_forecasting}
+Capturing data about traffic in a highway worth not only for describing its current situation, but also for forecasting future conditions. In this sense, counting the number of cars that have passed for a given point in a given time can be considered as a time series, allowing the use of automatic tools to perform forecasting.
+
+For this work, four methods (three widely used time series forecasters, and one control method) have been used to, automatically, predict the number of cars that will pass in the next period. These methods are included in the forecast package ~\cite{Hyndman08automatictime} of the R program~\cite{R:Bloomfield:2014}, and are the following:
+
+\begin{itemize}
+\item {\em Exponential smoothing state space model (ETS)~\cite{ETS:2008}}: Represent a set of methods that decompose the time-series in three different characteristics: error, trend and seasonal, modeling each one with a given equation. The forecasted values are obtained joining the previous equations by addition or multiplication. The corresponding function in the forecast package builds the different models included in the ETS set, and select the one with the best according to the Akaike's Information Criterion (AIC)~\cite{Akaike1973}.
+\item {\em ARIMA~\cite{BoxJenk}: This well known method, due to Box and Jenkins } integrates autoregressive (AR) and moving average (MA) models in a three-stage iterative cycle. The phases of every cycle consist of: identifying the time series, estimating of the model's parameters, and verifying the built model. Briefly, every model is defined as a sum of $p+q$ terms. The first $p$  terms are defined by $p$ past values, any of them multiplied by a coefficient; while the last $q$ terms represent the moving averages, also multiplied by their own coefficients.
+\item {\em Theta~\cite{Assima2000}}: This univariate forecasting method is based on modifying the local curvature of the time-series, after having applied a second difference to the data. It decomposes the original time series into several modified ones, which are separately extrapolated so that they have to be combined in order to provide the forecasting.
+\item {\em Mean}: This is the control method. The future values are computed as the mean of the previous ones.
+\end{itemize}
+
+The data used for the experiments are the ones provided by the node 1010 from the PETRA project starting on 12-Oct-2015, 00:00 hours, and finishing on 31-Oct-2015, 23:45 hours, i.e., three entire weeks less one day (there exist no data for November, the first). As data is aggregated every 15 minutes, this means the time-series was composed of $20(days)*24(hours)*4(quarters)=1920$ values.
+
+In order to study the performance of every method, 9 frequently used error measures are shown:
+Mean Error ({\em ME}),
+ Mean Squared Error ({\em MSE}),
+ Root Mean Squared Error ({\em RMSE}),
+ Mean Absolute Error ({\em MAE}),
+ Mean Absolute Scaled Error ({\em MASE}),
+ Median Absolute Error ({\em MdAE}),
+ Median Absolute Percentage Error ({\em MdAPE(\%)}),
+ Symmetric Mean Absolute Percentage Error ({\em sMAPE(\%)}), and
+ Symmetric Median Absolute Percentage Error ({\em sMdAPE(\%)}).
+%\begin{itemize}
+%\item{\em ME}: Mean Error.
+%\item{\em MSE}:  Mean Squared Error.
+%\item{\em RMSE}: Root Mean Squared Error.
+%\item{\em MAE}: Mean Absolute Error.
+%\item{\em MASE}: Mean Absolute Scaled Error.
+%\item{\em MdAE}: Median Absolute Error.
+%\item{\em MdAPE(\%)}: Median Absolute Percentage Error.
+%\item{\em sMAPE(\%)}: Symmetric Mean Absolute Percentage Error.
+%\item{\em sMdAPE(\%)}: Symmetric Median Absolute Percentage Error.
+%\end{itemize}
+Their different features as well as their equations can be found in Hyndman and Koehler's work ~\cite{RePEc:eee:intfor:v:22:y:2006:i:4:p:679-688}
+
+Table ~\ref{tab:forecasting} shows the values for the ten used measures computed over $576$ values, the ones corresponding to the last 6 days (i.e., $30\%$ of the data). The horizon has been set to 1, so that, in order to forecast any given moment all the previous real known data were used to build and train the models and, after this, the next value was forecasted. This way, the problem has been faced as a simulation of what could happen in a continuous system in which new real data where received every 15 minutes so that forecasting models could be also continuously adapted.
+
+As results show, ETS, ARIMA and Theta behave clearly better than the control method. The differences between the three considered methods are, almost nonexistent. In any case, ETS yields the lowest values in six of the measures been used so that, a priori, it could be considered the best candidate to be chosen as the preferred method to forecast this kind of time-series. Figure \ref{fig:forecasted-values} depicts the values forecasted by ETS comparing them with the expected ones.
+
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=14cm]{imgs/PETRA/forecasting-PETRA-1011.eps}
+		\caption{Expected vs forecasted number of cars in node 1011, according to MOBYWIT's records. Forecasted values are provided by smoothing state space model (ETS). }
+		\label{fig:forecasted-values}
+	\end{center}
+\end{figure}
+
+\begin{table}
+{\scriptsize
+\centering
+%\resizebox{10cm}{!}{
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Measure vs Method &Mean &ETS &ARIMA &Theta\\
+\hline
+ME &$0,6631$ & $0,0059$ & $0,0043$ & $\textbf{0,0034}$\\
+MSE &$28,5711$ & $\textbf{13,0194}$ & $13,2775$ & $13,0421$\\
+RMSE &$5,3452$ & $\textbf{3,6082}$ & $3,6438$ & $3,6114$\\
+MAE &$4,4611$ & $\textbf{2,7106}$ & $2,7409$ & $2,7126$\\
+MASE &$4,7226$ & $\textbf{1,0128}$ & $1,0822$ & $1,0599$\\
+MdAE &$1,4009$ & $\textbf{0,8512}$ & $0,8607$ & $0,8519$\\
+MdAPE(\%) &$50,1142$ & $35,0466$ & $\textbf{33,5513}$ & $35,0789$\\
+ SMAPE(\%) &$68,3573$ & $49,8147$ & $49,7882$ & $\textbf{49,5471}$\\
+ SMdAPE(\%) &$54,3965$ & $36,2454$ & $\textbf{35,2512}$ & $36,2994$\\
+\hline
+\end{tabular}
+%}
+}
+\caption{Forecasting data recorded by MOBYWIT. Error measures are computed using differences between expected values and yielded ones from 25-Oct-2015, 00:00 hours to 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
+\label{tab:forecasting}
+\end{table}
+
+%%%Completar porque no me termino de enterar de que es lo que se ha hecho.
+With the use of the correlation between the number of detected devices and the real number of devices, can be forecast the real number of vehicles.
+
+Table \ref{fig:dgtRatios} shows the 
+
+
+\begin{table}[htb]
+\centering
+\resizebox{8cm}{!}{
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+			 & MAE    &   MAPE   & MSE    & RMSE \\
+ \hline
+ME  & 72.162   &  27.961 & 7040.303  & 83.906 \\
+ETS   & \textbf{42.789}  & \textbf{27.609}  & \textbf{3472.145}  & \textbf{58.925}  \\
+ARIMA & 43.335 & 27.961  & 3569.706  &  59.747 \\
+THETA & 43.158  & 27.847  & 3517.506  & 59.309 \\
+\hline
+
+\end{tabular}
+}
+\caption{Forecasting data recorded by MOBYWIT with Median Ratio By Hour conversion. Error measures are computed using differences between expected values and yielded by DGT from 25-Oct-2015, 00:00 hours to 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
+\label{tab:errorForecastingRatio}
+\end{table}
 
 
 
+%%Describir y esas cosas
 
-\input{ts_forecasting_tex/ts_forecasting}
+
 
 
 %----------------------------------------------------------------------------
@@ -662,10 +765,7 @@ Traffic jams usually are present in every town and it could be produced by diver
 When a driver finds himself in a traffic jam, the natural response is to plan another path to arrive his destination and the information, the competent authority provides, about another available path is appreciated by them. The selection of another path depends on driver destination and it could be different for each case. So, the first stage is to inform about the traffic jam and then the drivers decide to go across or miss it. The second stage is to provide the available paths and to turn off the vehicles but this goal has not been addressed in the paper. 
 
 
-To illustrate the Mobywit utility for the first stage, early detection of a traffic jam is essential, and a little experiment has been carried out in Granada city (Spain). We have installed two Mobywit devices in the same street. The device's location is Dr. Ol\'{o}riz street. It is one-way, has four lanes and is placed in a neighbourhood which regularly is collapsed. The map of the devices location is in Figure \ref{fig:mososMapa}. The distance among both nodes is about $168$ metres. These devices cannot detect all the real persons and vehicles moving close to them since not all of them emit BT or WiFi signals, however after an open poll which $600$ people answered we conclude that around the $22\%$ of the drivers emit BT and around the $70\%$ of the drivers emit WiFi signal. We consider the sample is good and representative of the real world. For this starting experiment, we measure the taken time to go from the first to the second Mobywit device for each counted device. The results of this experiment are displayed in Figure \ref{fig:mososTiempo}. In this figure, we have defined seven terms for the twenty-four hours of one day and they are placed over X axis. We calculate the average of trip time using all the collected data and the result is $85$ seconds. We referee that value as Global Trip Time Average (GTTA). After that, we calculate the boxplot for each term, scale the results to $\[0,1]$ interval and represent it using their rate respect to GTTA value placed on the Y axis over $0.50$. That is, if the box is over $0.50$ Y axis value means that all the trips of that term are longer that GTTA value and if the box is below $0.50$ means that all the trips of this term are shorter than GTTA value. As you can see in the Figure, the first four terms are over $0.50$ so all the trips of these terms are longer than GTTA which indicates the trips during these terms are slower. The rest of the terms are below the $0.50$ level, so the trip times during these terms are speeder than the GTTA value. 
-
-
-
+To illustrate the MOBYWIT utility for the first stage, early detection of a traffic jam is essential, and a little experiment has been carried out in Granada city (Spain). We have installed two MOBYWIT devices in the same street. The device's location is Dr. Ol\'{o}riz street. It is one-way, has four lanes and is placed in a neighbourhood which regularly is collapsed. The map of the devices location is in Figure \ref{fig:mososMapa}. The distance among both nodes is about $168$ metres. These devices cannot detect all the real persons and vehicles moving close to them since not all of them emit BT or WiFi signals, however after an open poll which $600$ people answered we conclude that around the $22\%$ of the drivers emit BT and around the $70\%$ of the drivers emit WiFi signal. We consider the sample is good and representative of the real world. For this starting experiment, we measure the taken time to go from the first to the second MOBYWIT device for each counted device. The results of this experiment are displayed in Figure \ref{fig:mososTiempo}. In this figure, we have defined seven terms for the twenty-four hours of one day and they are placed over X axis. We calculate the average of trip time using all the collected data and the result is $85$ seconds. We referee that value as Global Trip Time Average (GTTA). After that, we calculate the boxplot for each term, scale the results to $[0,1]$ interval and represent it using their rate respect to GTTA value placed on the Y axis over $0.50$. That is, if the box is over $0.50$ Y axis value means that all the trips of that term are longer that GTTA value and if the box is below $0.50$ means that all the trips of this term are shorter than GTTA value. As you can see in the Figure, the first four terms are over $0.50$ so all the trips of these terms are longer than GTTA which indicates the trips during these terms are slower. The rest of the terms are below the $0.50$ level, so the trip times during these terms are speeder than the GTTA value. 
 
 \begin{figure}[htb]
 	\begin{center}
@@ -678,12 +778,14 @@ To illustrate the Mobywit utility for the first stage, early detection of a traf
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale=0.4]{imgs/MOSOS/mosos_graph_tiempos.eps}
-		\caption{Average time along the day for movements from node A to node B. We group the hours of a day using eighth terms. The first and the eighth terms include the night, the second one includes the rush hour for morning beginning is included. The third period includes from 9:00am to 11:59am. The fourth term includes the evening until 2:59pm. The fiveth includes from 3:00pm to 5:59pm, the sixth from 6:00 pm to 9:00pm and the seventh from 9:00pm to 11:59pm. In the boxplot se can see the percentage of increment (up to $0.50$) or decrement (low to $0.50$) of the average time needed to go from A to B along the day.}
+		\caption{Average time along the day for movements from node A to node B. We group the hours of a day using eighth terms. The first and the eighth terms include the night, the second one includes the rush hour for morning beginning is included. The third period includes from 9:00am to 11:59am. The fourth term includes the evening until 2:59pm. The fifth includes from 3:00pm to 5:59pm, the sixth from 6:00 pm to 9:00pm and the seventh from 9:00pm to 11:59pm. The boxplot shows the percentage of increment (up to $0.50$) or decrement (low to $0.50$) of the average time needed to go from A to B along the day.}
 	\label{fig:mososTiempo}
 	\end{center}
 \end{figure}
 
-In short, we demonstrate that only using Mobywit, without any additional data it is easy to know if the trip times are increasing or decreasing along the day. The utility that any council is able to give to this information could be rich and diverse. For example, if any council wants to monitor the streets and links the Mobywit output to the traffic light network, the traffic light regulation could be autonomous depending on the time that a monitored device spends to go from one checkpoint to another. 
+In summary, we demonstrate that only using MOBYWIT, without any additional data it is easy to know if the trip times are being increased or decreased along the day. The utility that any council is able to give to this information could be rich and diverse. For example, if any council wants to monitor the streets and links the MOBYWIT output to the traffic light network, the traffic light regulation could be autonomous depending on the time that a monitored device spends to go from one checkpoint to another. 
+
+*** PONER POSIBLES COSAS A HACER A FUTURO (CON MEJORES DATOS) ***
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   CONCLUSIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
