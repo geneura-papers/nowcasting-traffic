@@ -15,33 +15,33 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   TITLE   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{Studying Real Traffic and Mobility Scenarios for a Smart City Using a New Monitoring and Tracking System}
-% Antonio - A ver qu√© os parece el t√≠tulo. ;D
+% Antonio - A ver quÈ os parece el tÌtulo. ;D
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   AUTHORS   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\author{A.J. Fern√°ndez-Ares$^1$, A.M. Mora$^1$, M.G. Arenas$^1$, P. Garc√≠a-Sanchez$^1$, G. Romero$^1$, V. Rivas$^2$, P.A. Castillo$^1$, J.J. Merelo$^1$}
+\author{A.J. Fern·ndez-Ares$^1$, A.M. Mora$^1$, M.G. Arenas$^1$, P. GarcÌa-Sanchez$^1$, G. Romero$^1$, V. Rivas$^2$, P.A. Castillo$^1$, J.J. Merelo$^1$}
 \ead{\{antares, amorag, mgarenas, pablogarcia, gustavo, pacv, jmerelo\}@ugr.es, vrivas@ujaes.es}
-\address{$^1$ Departamento de Arquitectura y Tecnolog√≠a de Computadores.\\ ETSIIT - CITIC. University of Granada, Spain\\
-$^2$ Departamento de Inform√°tica. EPS. Universidad de Ja√©n, Spain}
+\address{$^1$ Departamento de Arquitectura y TecnologÌa de Computadores.\\ ETSIIT - CITIC. University of Granada, Spain\\
+$^2$ Departamento de Inform·tica. EPS. Universidad de JaÈn, Spain}
 
 %\maketitle
 
 % Si quieres que el resumen (y el paper) cumpla lo prometido por el
-% t√≠tulo 1. Debes decir cu√°les con los "temas reales" de una smart
+% tÌtulo 1. Debes decir cu·les con los "temas reales" de una smart
 % city.
-% 2. Debes examinar el estado del arte en esos problemas. ¬øC√≥mo se
+% 2. Debes examinar el estado del arte en esos problemas. øCÛmo se
 % resuelven? 
-% 3. Debes presentar la soluci√≥n y en qu√© mejora el estado del
-% arte. ¬øPrecio? ¬øDisponibilidad? ¬øProblemas que realmente resuelve? 
+% 3. Debes presentar la soluciÛn y en quÈ mejora el estado del
+% arte. øPrecio? øDisponibilidad? øProblemas que realmente resuelve? 
 % 4. Presentar _solo_ lo que se refiera a smart cities. Pista: las
 % discotecas no tienen nada que ver.  - JJ
 
-% Antonio - ya est√° mejor definido el t√≠tulo.
-% Esto es una prueba de concepto de MOBYWIT, no pretendemos mejorar el estado del arte en cada problema, los cuales ya han sido profundamente estudiados por otros autores, sino mejorar el estado del arte en los dispositivos que hay de detecci√≥n y monitorizaci√≥n de tr√°fico y personas, ofreciendo una soluci√≥n que sirve en varios escenarios diferentes y favorece la obtenci√≥n de informaci√≥n √∫til en cada uno de ellos, para solucionar problemas de la ciudad que ayudar√≠an a que √©sta fuese una Smart City.
-% Lo explicar√© mejor a lo largo del paper.
-% Adem√°s, el estado del arte tengo que completarlo con esa parte.
-% Respecto a la disco, se puede considerar parte de una Smart City por dos cosas: por marketing y siendo un 'Smart Building', que pueda optimizarse energ√©ticamente y en cuestiones de seguridad.
-% Lo aclarar√© tambi√©n.
+% Antonio - ya est· mejor definido el tÌtulo.
+% Esto es una prueba de concepto de MOBYWIT, no pretendemos mejorar el estado del arte en cada problema, los cuales ya han sido profundamente estudiados por otros autores, sino mejorar el estado del arte en los dispositivos que hay de detecciÛn y monitorizaciÛn de tr·fico y personas, ofreciendo una soluciÛn que sirve en varios escenarios diferentes y favorece la obtenciÛn de informaciÛn ˙til en cada uno de ellos, para solucionar problemas de la ciudad que ayudarÌan a que Èsta fuese una Smart City.
+% Lo explicarÈ mejor a lo largo del paper.
+% Adem·s, el estado del arte tengo que completarlo con esa parte.
+% Respecto a la disco, se puede considerar parte de una Smart City por dos cosas: por marketing y siendo un 'Smart Building', que pueda optimizarse energÈticamente y en cuestiones de seguridad.
+% Lo aclararÈ tambiÈn.
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   ABSTRACT   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -81,8 +81,8 @@ Nowadays, the transformation of any city into a Smart City, with better performa
 To this aim, a mobility monitoring system is one of the most useful, since the data which provides can be used to enhance several services in the city, or in specific buildings inside it.
 
 The most common systems gather traffic information (mainly vehicles pass-by) using several kind of devices, such as pneumatic tubes, loop detectors, floating vehicles or automatic Optical Character Recognition (OCR) \cite{rodrigue2013geography}. However most of these systems are not able to identify and follow the same vehicle along the road network. 
-% ¬øOCR no? - JJ
-% Antonio - S√≠, por eso pone most of them.
+% øOCR no? - JJ
+% Antonio - SÌ, por eso pone most of them.
 Those that can do it are very expensive so they are just placed in very specific points of the roads.
 
 The local, regional or national governments use these data aiming for improvements in the maintenance of roads and services, computing a road deterioration factor based on the affluence of vehicles, for instance. In addition, useful traffic statistics can be obtained, which would help to forecast traffic jams, for example.
@@ -99,7 +99,7 @@ WiFi signals emitted by other devices,  mainly
 smartphones or hands-free systems on vehicles, which are detected and
 identified by means of their Media Access Control number (MAC) - which
 is unique - and stored as a traffic `event' (pass-by). 
-% Antonio - ¬øSe os ocurre un nombre mejor para los 'pasos'?
+% Antonio - øSe os ocurre un nombre mejor para los 'pasos'?
 % step desde luego que no. pass-by en todo caso - JJ
 % Antonio - me quedo con 'event'
 Thus, depending on the position of the monitoring device (node), we could
@@ -108,24 +108,24 @@ displacements. In order to respect the person's privacy as well as
 data protection laws, the MAC is encrypted using a one-direction
 process before storing it, so, we cannot associate a captured MAC with
 any person. 
-% habr√≠a que asegurar, adem√°s, que ese proceso de cifrado no se puede
-% replicar. ¬øQu√© clave usa? - JJ
+% habrÌa que asegurar, adem·s, que ese proceso de cifrado no se puede
+% replicar. øQuÈ clave usa? - JJ
 % Antonio - No se puede replicar, pero que lo aclare Antares.
-% Antares: Se parte de los 48bits de la MAC a 160 bits de SHA-1, por lo que el riesgo de colisi√≥n es imposible. Pero, no creo que sea relevante.
+% Antares: Se parte de los 48bits de la MAC a 160 bits de SHA-1, por lo que el riesgo de colisiÛn es imposible. Pero, no creo que sea relevante.
 
-To prove the reliability and utility of this system are also objectives of this work, so, four different real scenarios are presented and the collected data analysed in order to demonstrate its value for solving different problems in a city. These scenarios are focused in the city of Granada (Spain), in which real traffic/mobility data have been gathered. They are namely: a discotheque, a public building of the University, a highway between Granada and M√°laga; and one of the main streets in the city.  
-% yo dejar√≠a la facu y la discoteca. Son totalmente diferentes. Salvo que quieras contarlos por temas de carga o lo que sea, no tienen nada que ver. 
+To prove the reliability and utility of this system are also objectives of this work, so, four different real scenarios are presented and the collected data analysed in order to demonstrate its value for solving different problems in a city. These scenarios are focused in the city of Granada (Spain), in which real traffic/mobility data have been gathered. They are namely: a discotheque, a public building of the University, a highway between Granada and M·laga; and one of the main streets in the city.  
+% yo dejarÌa la facu y la discoteca. Son totalmente diferentes. Salvo que quieras contarlos por temas de carga o lo que sea, no tienen nada que ver. 
 % Antonio - son estudios sobre movilidad de personas. Si se consiguen mejorar cuestiones de seguridad, por ejemplo, yo los considero parte de una Smart City.
 Several devices or nodes have been deployed in each scenario.
 The huge amount of data produced have been processed using \textit{Big Data} 
-% Antonio - Meto tambi√©n lo de Big Data que es otra 'palabra clave'
-% del Special Issue. ;D. Antares, esto es Big Data, ¬øno? :D 
-% No es big data. Es mucho data. Y "deeply processed" no s√© qu√©
+% Antonio - Meto tambiÈn lo de Big Data que es otra 'palabra clave'
+% del Special Issue. ;D. Antares, esto es Big Data, øno? :D 
+% No es big data. Es mucho data. Y "deeply processed" no sÈ quÈ
 % significa - JJ
 techniques, transforming or summarizing them, in order to conduct
 further analyses. Different methods have been applied, such as Data
 Mining, Time Series Forecasting, In/Out (Origin/Destination) matrices,
-or statistical procedures. % pero ¬øcon qu√© objetivo? - JJ
+or statistical procedures. % pero øcon quÈ objetivo? - JJ
 The aim was to extract useful information and reach clear conclusions
 which can lead to enhance the performance of different aspects in every scenario, proving the value of this monitoring system as a
 tool to improve different issues inside the city and buildings. Thus,
@@ -189,7 +189,7 @@ advantage over previous information systems. However, system reliability might
 not be the best, as weather may limit accuracy. Moreover, these systems are 
 very expensive compared to the previously described \cite{skszek2001state}. 
 Another problem has arisen recently with privacy. The Spanish Data Protection 
-Agency (Agencia de Protecci√≥n de Datos) considers the car license plate number 
+Agency (Agencia de ProtecciÛn de Datos) considers the car license plate number 
 as personal data. Thus, user consent is required for it to be saved.
 
 There are many different companies working in the traffic information
@@ -211,17 +211,17 @@ product StreetWAVE for real-time traffic monitoring.
 in different cities based on different technologies, such as video cameras, BT devices, and RFID tags included in the vehicles wanted to be followed.
 \end{itemize}
 
-% Antonio - Maribel, voy a recortar cosillas, que te enrollas incluso m√°s que yo. No te enfades, porfa. XD
+% Antonio - Maribel, voy a recortar cosillas, que te enrollas incluso m·s que yo. No te enfades, porfa. XD
 Traffic has been extremely exploited as a research field, mainly focused on the forecast of future flows considering the current information as a Time Series.
 The forecasting of these flows in any transport system plays an important role for either alleviating urban congestion, or for adjust traffic control and guidance systems. The aim is to create an intelligent transportation system (ITS) which strongly depends on the capability to predict traffic conditions at least in the short-term (less than one hour into the future), since medium- and long-term predictions are barely accurate and reliable. These are nowadays a hard problem to solve in general Time Series \cite{ParrasGutierrez2014433}.
-% Antonio - supongo que el medio y largo plazo no es que ayude, ser√≠a estupendo, sino que es muy dif√≠cil que sea preciso. ;)
-% Antonio - quito la segunda referencia, ya que va de otras cosas y seguramente nos van a dar un toque por la extensi√≥n del art√≠culo. :D
+% Antonio - supongo que el medio y largo plazo no es que ayude, serÌa estupendo, sino que es muy difÌcil que sea preciso. ;)
+% Antonio - quito la segunda referencia, ya que va de otras cosas y seguramente nos van a dar un toque por la extensiÛn del artÌculo. :D
 With a short-term forecasting the traffic control systems could be self-adapted continuously. For example, a traffic light could adjust its red or green time depending on the short-time forecasting of the closer streets. 
 
 %Medium-term or long-term could to be useful if there are special conditions in a medium or long time period although nowadays the results of this research are not outstanding and it is an open question for many research groups, but usually in other subjects like time series in general \cite{ParrasGutierrez2014433} or economic development and political decisions \cite{longTermBussines2014}.
 
 
-There are many works related with traffic flow forecasting, each of them approaching the problem with different models \cite{SurveyKumar2007} such as Kalman Filter Theory \cite{ASJC:ASJC1051}, Markov Chain models \cite{Qi201495}, non-parametric methods \cite{Noparametrico2014}, simulation models \cite{simulaciontrafico2012} or ``Big Data'' based approaches \cite{SurveyKumar2007}.  %(buscar referencias recientes de cada una y ponerlas si queremos ampliar este p√°rrafo)
+There are many works related with traffic flow forecasting, each of them approaching the problem with different models \cite{SurveyKumar2007} such as Kalman Filter Theory \cite{ASJC:ASJC1051}, Markov Chain models \cite{Qi201495}, non-parametric methods \cite{Noparametrico2014}, simulation models \cite{simulaciontrafico2012} or ``Big Data'' based approaches \cite{SurveyKumar2007}.  %(buscar referencias recientes de cada una y ponerlas si queremos ampliar este p·rrafo)
 % Antonio - pos eso. ;D
 %
 
@@ -247,7 +247,7 @@ running time.
 Several recent publications present spacial issues related with the
 scope, such as \cite{Zhang20141}, which includes the latest advances in
 traffic forecasting research having in mind the time and the space variables.  
-% Antonio - ¬øcomo cu√°les?
+% Antonio - øcomo cu·les?
 Other works propose conducting forecast traffic flows and trip times
 \citep{Dong201420}, \cite{Zou201433} using spatial-temporal patterns
 of the congested and non-congested traffic. Also papers with new
@@ -261,13 +261,13 @@ a Markov Model.
 In the present work, a study on traffic forecasting is conducted (in Section \ref{sec:traffic}), however it applies classical methods, because the aim is to show the value of the data gathered by our system in the comparison with the data collected by the Spanish Traffic Agency using an inductive loop detector, which is also studied.
 Thus, our contribution on this line is the use of real traffic Time Series, created from the data extracted from our traffic `events' (WiFi and BT detections).
 
-% Antonio - he movido este texto que es m√°s de background a esta secci√≥n. ;)
+% Antonio - he movido este texto que es m·s de background a esta secciÛn. ;)
 Another line of study in our paper is the personal tracking or people's mobility. It is studied for many reasons, several of them involving profit: conversion rate, marketing effectiveness or staff planning are some of the best known \cite{stanton1967fundamentals}. Conversion rate is the percentage of visitors who effectively make a purchase. It can show you if a shop improvement (or decline) is due to more people visit it, or more of the visitors finally buy something. Shopping mall professionals study people's behaviour in order to know if their marketing techniques are paying off. In the same line, stuff planning is directly related with the amount of visitors, as well as the maintenance and cleaning needs.
 
 Other reasons are more practical than commercial: How many people visit a public building? When? It will help to improve the planning of the provided services, heating or cooling of the building, facility cleaning, staff shifts and so on. In a museum or a sport stadium you can adjust many parameters to help people enjoy from a better experience while raising the profits.
 
 The technology for counting/tracking people has evolved over time. At the beginning infrared beam counters \cite{Hashimoto199850} were used. These were cheap but prone to failures, like when two persons pass a door together. Thermal counters \cite{635472} were used next. Also cheap but with serious limitations like the short distance from the counting device to the people being counted. Latest technology use video cameras \cite{4107051,Schofield19961421} and WiFi \cite{7134066,7130402}, or Bluetooth \cite{6526732,nicolai2007relationship} detectors. 
-% Antonio - esto es importante, habr√≠a que extenderlo y compararlo con lo nuestro, ya que se podr√≠a parecer. Aparte de la cita. ;D
+% Antonio - esto es importante, habrÌa que extenderlo y compararlo con lo nuestro, ya que se podrÌa parecer. Aparte de la cita. ;D
 Video devices are more expensive as is the software in charge of image processing, more expensive in terms of resource consumption. On the positive side, now we can do many more things than counting people. We can track their paths and behavior. Radio signal is also a great method to track people, as powerful as video but cheaper in terms of hardware price and algorithmic cost. Moreover, the range of detection is wider, 100m approximately.
 
 Our approach is based on WiFi and BT \cite{824570} detection, but focused on people's personal devices from which an unique identifier can be extracted and, after anonymisation, stored. This makes it easy to track these people on a building for instance, just deploying a fair number of monitoring devices. With the advantage of a cheaper price than other systems, such as video ones, and also the possibility of creating origin-destination flow matrices or any other desired movement model.
@@ -290,7 +290,7 @@ By joining BT and WiFi we pursue to increase the detection rate further than mos
 \section{MOBYWIT}
 \label{sec:mobywit}
 
-% en estos dos p√°rrafos modificar√≠a un poco la redacci√≥n como os coment√©  [pedro]
+% en estos dos p·rrafos modificarÌa un poco la redacciÛn como os comentÈ  [pedro]
 % Antonio - No tengo las propuestas...
 This device was designed by one of the authors and it is based in a
 single-board computer, Raspberri
@@ -322,7 +322,7 @@ As it can be seen in that figure, there are six main parts in the software layer
 
 \item \textit{Abdiel}: This component implements a set of services for accessing the devices from `outside' (mainly for activate/deactivate or update them). In addition it performs the storage of gathered data (in blocks) in the server database. It is also implemented in PHP.
 
-\item \textit{Alejandr√≠a}: This is the database of the system. It is a MySQL instance placed in a local server. It is optimized (using indexes and table partitioning) to provide a close to real-time processing and data service.
+\item \textit{AlejandrÌa}: This is the database of the system. It is a MySQL instance placed in a local server. It is optimized (using indexes and table partitioning) to provide a close to real-time processing and data service.
 Ezequiel: This module is responsible of the publication of data in a cloud-based storage. It includes data mining, machine learning and forecast techniques to process these data in order to publish interesting or useful information about them.
 
 \item \textit{Anan}: This is the cloud-based storage and services. It is based in Google technology so Anan stores and manages the data in a NoSQL format, by means of Google Fusion Tables. It also offers advanced visualization methods to be more usable and attractive for the end-user of the system.
@@ -331,7 +331,7 @@ Ezequiel: This module is responsible of the publication of data in a cloud-based
 
 In addition, and as it is shown in Figure 1, the device runs an specific Operative System, called \textit{Horeb}, which is a modification of the original Raspbian 3.10.24, adapted by MOBYWIT system designer to be more robust (to power fails, for instance) and reliable.
 
-*** CONTAR C√ìMO FUNCIONA AL DETECTAR ***
+*** CONTAR C”MO FUNCIONA AL DETECTAR ***
 % Antonio - TODO: ANTARES, revisa esto porfa. ;)
 There are several configuration parameters in the system, which sets important parts of the functionality, such as the intensity threshold to collect a received WiFi signal, or time limits to consider a device as obsolete or out of the range of the device.
 
@@ -345,7 +345,7 @@ Every detected `pass-by' or mobility `event' is associated to a detection time, 
 \section{Analysing people's mobility in a discotheque}
 \label{sec:disco}
 
-% ¬øPor qu√© analizamos la discoteca?
+% øPor quÈ analizamos la discoteca?
 Before using the device in other type of environments, we were
 interested in checking its possibilities in an environment where
 change is very fast and it is a priory possible to detect a big amount
@@ -366,19 +366,19 @@ node as it is shown in Figure \ref{fig:disco_data}.
 	\begin{center}
 		\includegraphics[width=\textwidth]{imgs/DISCO/time_series-linesPoints.eps}
 		\caption{Detected devices in a night in the Discotheque scenario.}
-		% Antonio - explicar lo que se ve en las gr√°ficas (histograma y serie). Lo de la serie quiz√° no sea necesario
+		% Antonio - explicar lo que se ve en las gr·ficas (histograma y serie). Lo de la serie quiz· no sea necesario
 		\label{fig:disco_data}
 	\end{center}
 \end{figure}
-% Antonio - Antares porfa, genera la gr√°fica correctas. ;)
-% TODO: ANTARES - Gr√°fica correcta
+% Antonio - Antares porfa, genera la gr·fica correctas. ;)
+% TODO: ANTARES - Gr·fica correcta
 
 These data have been processed and several variables have been
-extracted from them, in order to apply clustering methods. % ¬øQu√©
-                                % variables? ¬øEn qu√© estabas
+extracted from them, in order to apply clustering methods. % øQuÈ
+                                % variables? øEn quÈ estabas
                                 % interesado? - JJ
 
-% ¬øPor qu√© haces clustering? 
+% øPor quÈ haces clustering? 
 The clustering study has been conducted by means of a Self-Organizing
 Map (SOM) \cite{Kohonen90}, a feed-forward neural network
 \cite{NN_Haykin94} that uses an unsupervised training algorithm and
@@ -491,7 +491,7 @@ As it can be seen in the U-Matrix every neuron (cell in the graph) has been labe
 
 - Comprobar aforo\\
 - Aumentar seguridad\\
-- Eficiencia energ√©tica y de personal o servicios (m√°s medios en las salas m√°s masificadas)\\
+- Eficiencia energÈtica y de personal o servicios (m·s medios en las salas m·s masificadas)\\
 - Estudiar eventos particulares\\
 - Estudios con objetivos de salud => gente que sale a la terraza (a fumar, supuestamente)
 
@@ -821,17 +821,17 @@ Another point of improvement could be the use of Time Series Forecast techniques
 
 \section*{Acknowledgements}
 
-This work has been supported in part by projects EPHEMECH (TIN2014-56494-C4-3-P, Spanish Ministry of Economy and Competitivity), PETRA (SPIP2014-01437, funded by Direcci√≥n General de Tr√°fico), PYR-2014-17 (GENIL project, awarded by CEI-BIOTIC Granada), and MOSOS (This work has been supported by the project with reference PRY142/14, which has been granted by Fundaci√≥n P√∫blica Andaluza Centro de Estudios Andaluces in the call 'IX Convocatoria de Proyectos de Investigaci√≥n). We also thank the DGT and local council of Granada city, and their staff and researchers for their dedication and professionalism. 
+This work has been supported in part by projects EPHEMECH (TIN2014-56494-C4-3-P, Spanish Ministry of Economy and Competitivity), PETRA (SPIP2014-01437, funded by DirecciÛn General de Tr·fico), PYR-2014-17 (GENIL project, awarded by CEI-BIOTIC Granada), and MOSOS (This work has been supported by the project with reference PRY142/14, which has been granted by FundaciÛn P˙blica Andaluza Centro de Estudios Andaluces in the call 'IX Convocatoria de Proyectos de InvestigaciÛn). We also thank the DGT and local council of Granada city, and their staff and researchers for their dedication and professionalism. 
 %FERGU: le meto un poco la pelota a los de la DGT, con vuestro permiso :)
 
 
-% ---------------------- BIBLIOGRAF√çA -----------------------
+% ---------------------- BIBLIOGRAFÕA -----------------------
 
 \bibliographystyle{elsarticle-num}
 \bibliography{mobility}
 
 
-% ------------------------- AP√âNDICE -----------------------
+% ------------------------- AP…NDICE -----------------------
 
 
 \section{Appendix} 
@@ -886,8 +886,8 @@ ID   & Province & Location & Latitude & Longitude \\ \hline
 \resizebox{12cm}{!}{
 \begin{tabular}{|c|c|p{5cm}|c|c|}
 \hline
-A	 & Granada & Dr. Ol√≥riz Street & 37.188187 & -3.607241\\ \hline
-B	 & Granada & Dr. Ol√≥riz Street & 37.186997 & -3.607882\\ \hline
+A	 & Granada & Dr. OlÛriz Street & 37.188187 & -3.607241\\ \hline
+B	 & Granada & Dr. OlÛriz Street & 37.186997 & -3.607882\\ \hline
 \end{tabular}
 }
 \caption{Location of the devices for the highway traffic scenario (K.P. = Kilometric Point).}
