@@ -525,7 +525,8 @@ With some additional sensors the people flow could be studied in a better way. B
 \section{Analysing the traffic in a highway}
 \label{sec:traffic}
 
-This section describes the experimental analysis of the data gathered by a different number of devices placed in national highways.
+This section describes the experimental analysis of the data gathered by a 
+different number of devices placed in national highways.
 
 The main difference with respect to the other experimental scenarios is that, 
 in this case, the detected devices are cars moving at higher speed. However, 
@@ -538,7 +539,7 @@ realistic \textit{ratio} between both numbers has been computed.
 
 Six nodes have been placed along different roads in Andalusia (south Spain). 
 Figure \ref{fig:nodosDGT} shows the identifiers of these devices and their 
-exact location. These locations have been chosen because are the nearest   % nearest  or  closest  ???   [pedro]
+exact location. These locations have been chosen because are the nearest   % nearest  or  closest  ???   [pedro] FERGU: el translate dice nearest por defecto, pero vamos, ni idea xD
 ones to existent loop detectors monitored by the DGT, and also, they have 
 Internet connection to allow the transmission of data to our server. 
 There exist two groups of nodes: one in the province of Granada area 
@@ -593,17 +594,16 @@ Using the time when each repetition has been detected we can also calculate aver
 
 \subsection{Data validation using other sources of data}
 
-Different metrics will be used to obtain a correct correlation between the number of detected devices and the real number detected by the loop detectors.
+Different metrics will be used to obtain a correct correlation between the number of detected devices and the real number detected by the loop detectors. To simplify the data analysis and discussion only the data of one node (1010) is shown.
 
 \begin{itemize}
 \item {\em Total ratio}: ratio between the total number of vehicles detected by the DGT and the total number of vehicles detected by our device.
 \item {\em Mean ratio}: as the maximum granularity of the data provided by the DGT is 15 minutes, the sum of all ratios between the DGT data and our data in each 15 minutes section has been divided by the total number of sections to calculate the average.
 \item {\em Median ratio}: instead the average ratio as in previous metric, this one uses the median of all ratios.
-\item {\em Mean by hour ratio}: this metric calculate a vector of ratios separated by hour of the day, instead obtaining a global ratio for all data. An average ratio per hour in the vector is calculated taking into account all the ratios of that hour during all the days we have data.
-\item {\em Median by hour ratio}: as in the previous metric, this one uses a vector of ratios per hour, but every element is calculated using the median, instead the average.
+\item {\em Mean by quarter ratio}: this metric calculate a vector of ratios separated by quarter of hour during the day, instead obtaining a global ratio for all data. An average ratio per quarter per hour in the vector is calculated taking into account all the ratios of that quarter during all the days we have data.
+\item {\em Median by quarter ratio}: as in the previous metric, this one uses a vector of ratios per quarter of hour, but every element is calculated using the median, instead the average.
 \end{itemize}
 
-%FERGU: DUDA, era al final por hora o por cuarto de hora?
 
 Table \ref{tab:ratiosDGT} shows the obtained ratios. *** COMENTARLOS ***
 
@@ -617,25 +617,25 @@ Table \ref{tab:ratiosDGT} shows the obtained ratios. *** COMENTARLOS ***
 Total Ratio  & 17.230 &   60.373 & 36.265 & 7371.579  & 85.857 \\
 Mean Ratio   & 20.792 &   72.323 & 43.443 & 11216.070 & 105.905 \\
 Median Ratio & 18.2 &    62.454  & 37.515 & 8060.136  & 89.778 \\
-Median By Hour Ratio & Depends on the hour  & 58.326 & 35.035 & 7617.613 & 87.278 \\
-Mean By Hour Ratio &   Depends on the hour  & 66.791 & 40.120 & 9890.978 & 99.453 \\
+Median By Quarter Ratio & Depends on the hour  & 58.326 & 35.035 & 7617.613 & 87.278 \\
+Mean By Quarter Ratio &   Depends on the hour  & 66.791 & 40.120 & 9890.978 & 99.453 \\
 \hline
 
 \end{tabular}
 }
-\caption{}
+\caption{Different ratios between the DGT data and the data gathered by MOBIWIT in node 1010.}
 \label{tab:ratiosDGT}
 \end{table}
 
 
-Figure \ref{fig:dgtRatios} shows the number of devices of one node, applying the chosen correction ratio. As can be seen, different peaks can appear, being the responsible of the 
+Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applying the chosen correction ratio. As it can be seen, certain correlation exist. However, different peaks appear in the figure, being those elements the product of detecting few devices in comparison with the DGT.
 
 
 
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale=0.4]{imgs/petra_graph_DGT-Mobywit-mended.eps}
-		\caption{Devices detected by DGT and detected by our device applying the correction ratio.}
+		\caption{Devices detected by DGT and detected by our device (node 1010) applying the correction ratio (median by quarter). Note: no DGT data available during Octuber 14th.}
 	\label{fig:dgtRatios}
 	\end{center}
 \end{figure}
