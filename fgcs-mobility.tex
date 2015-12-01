@@ -306,8 +306,11 @@ As it can be seen in that figure, there are six main parts in the software layer
 
 \end{itemize}
 
+
 In addition, and as it is shown in Figure \ref{fig:mobywit}, the device runs a specific Operative System, called \textit{Horeb}, which is a modification of the original Raspbian 3.10.24, adapted by MOBYWIT system designer to be more robust (to power fails, for instance) and reliable.
 
+*** CONTAR CÓMO FUNCIONA AL DETECTAR ***
+% Antonio - TODO: ANTARES, revisa esto porfa. ;)
 There are several configuration parameters in the system, which sets important parts of the functionality, such as the intensity threshold to collect a received WiFi signal, or time limits to consider a device as obsolete or out of the range of the device.
 
 Every detected `pass-by' or mobility `event' is associated with a detection time, obtained by NTP (Network Time Protocol). These `events' are stored initially in the device's memory. After some time (also set in a parameter) the information is sent, in blocks, to the server, to avoid an overuse/saturation of the network.
@@ -321,33 +324,23 @@ MOBYWIT's system is tested in four different scenarios, described in the followi
 \section{Analysing people's mobility in a discotheque}
 \label{sec:disco}
 
-Before using the device in other type of environments, we were
-interested in checking its possibilities in an environment where
-change is very fast and it is a priory possible to detect a big amount
-of devices. That is why we decided to test MOBYWIT in a disco, using
-using five MOBYWIT devices, deployed one in every of the three main
-rooms, each one devoted to a different type of music and one on the main
-entrance and the outdoor terrace. This scenario is interesting because
-it is assumed that 100\% of users have a smartphone, thus it would be
-a priori possible to track every single present device. The
-electromagnetic scenario is also quite {\em heavy}, which presented a
-challenge for testing the device.
+Firstly, we were interested in checking the possibilities of the system in an environment where change is very fast and it is, a priory, possible to detect a big amount of devices. Thus we decided to test MOBYWIT in a disco, using it also as a test for its utility inside buildings.
+Five devices have been deployed, one in every of the three main
+rooms, each one devoted to a different type of music, one on the main
+entrance, and one on the outdoor terrace (See the Appendix for more details). This scenario is interesting because it is assumed that 100\% of users have a smartphone, thus it would be a priori possible to track every single present device. The electromagnetic scenario is also quite {\em heavy}, which presented a challenge for testing the device.
 
-A total of 2200 different devices were detected in one of the busy
-nights (from a Thursday at 8 pm to Friday at 8 am), distributed per
-node as it is shown in Figure \ref{fig:disco_data}. 
+After processing and summarising data, a total of 2200 different devices were detected in one of the busy nights in September (from a Thursday at 8 pm to Friday at 8 am), following the distribution per node shown in Figure \ref{fig:disco_data}. 
 
 \begin{figure}[ht]
 	\begin{center}
 		\includegraphics[width=\textwidth]{imgs/DISCO/time_series-linesPoints.eps}
-		\caption{Detected devices in a night in the Discotheque scenario by room.}
+		\caption{Detected devices distribution in a night in the Discotheque scenario by room.}
 		\label{fig:disco_data}
 	\end{center}
 \end{figure}
 
+These data have been processed extracting several variables from them, in order to apply clustering methods. The aim is to find group behavioural patterns in the data, which could aid to make decisions about marketing or security in the building, for instance.
 
-These data have been processed and several variables have been
-extracted from them, in order to apply clustering methods. 
 The clustering study has been conducted by means of a Self-Organizing
 Map (SOM) \cite{Kohonen90}, a feed-forward neural network
 \cite{NN_Haykin94} that uses an unsupervised training algorithm and
@@ -361,9 +354,9 @@ uses SOM yielded neurons' codevectors (vectors of variables of the
 problem) as data source, and generates a matrix where each component
 is a distance measure between two adjacent neurons. Then, these
 distances are codified as different colour shades in a graph. 
-The U-Matrix graph allows visualise any multi-variable dataset in a two-dimensional display, which helps detecting topological relations among neurons and inferring about the input data structure in a straightforward visual manner. High values in the U-matrix represent a frontier region between clusters, and low values represent a high degree of similarities among neurons on that region, i.e. clusters. MATLAB 2009 along with SOM Toolbox \cite{SOMPAK} was used for the SOM analysis.
+The U-MATRIX graph allows visualise any multi-variable dataset in a two-dimensional display, which helps detecting topological relations among neurons and inferring about the input data structure in a straightforward visual manner. High values in the U-matrix represent a frontier region between clusters, and low values represent a high degree of similarities among neurons on that region, i.e. clusters. MATLAB 2009 along with SOM Toolbox \cite{SOMPAK} was used for the SOM analysis.
 
-In order to analyse the data, several features have been extracted (generated) from the gathered `events', composing a pattern per device of its whole stay in the disco. These are described in Table \ref{tab:extracted_features_disco}.
+The features have been extracted from the gathered `events', composing a pattern per device of its whole stay in the disco (for one night). These are described in Table \ref{tab:extracted_features_disco}.
 
 \begin{table}[htpb]
 \centering
@@ -385,12 +378,12 @@ Variable name & Description & Type\\
 %\texttt{non\_detected\_time} & Number of seconds the device has not been detected (but it still is in the disco) & Integer\\
 \noalign{\smallskip}\hline
 \end{tabular}
- \caption{Extracted features from gathered data in the discotheque. \label{tab:extracted_features_disco}}
+ \caption{Extracted features from gathered data in the discotheque for one night. \label{tab:extracted_features_disco}}
 }
 \end{table}
 
 
-The application of SOM + U-Matrix produces the graphs shown in Figure
+The application of SOM + U-MATRIX produces the graphs shown in Figure
 %\ref{fig:som_disco_no_detec_0} and
 \ref{fig:som_disco_sin_no_detec}.
 
@@ -408,17 +401,23 @@ The application of SOM + U-Matrix produces the graphs shown in Figure
 	\begin{center}
 		\includegraphics[width=12cm]{imgs/DISCO/som_disco_sin_no_detec.eps}
 		\includegraphics[width=6cm]{imgs/DISCO/umatrix_disco_sin_no_detec.eps}
-		\caption{SOM + U-MATRIX Applied to the dataset of detected devices in a night in the Discotheque scenario. SOM Planes analysis (top) shows the extracted features described in Table \ref{tab:extracted_features_disco}}
+		\caption{Planes Analysis (top) and U-MATRIX Graph (bottom) obtained from applying SOM to the dataset of detected devices in a night in the Discotheque scenario. The planes show a projection of the values of the extracted features described in Table \ref{tab:extracted_features_disco}}
 		\label{fig:som_disco_sin_no_detec}
 	\end{center}
 \end{figure}
 
-The results show that... *** COMENTARLOS ***
-The problem is that there are no labels on the graph, so the interpretation cannot be as complete as it could... ***
+Several clusters (blue areas surrounded by other colours) arise in U-MATRIX graph. Looking at them, it can be seen that the central cluster is strongly related with high values of features of node 102 (see SOM Planes Analysis on the top of the figure): 'abs\_time\_n102', 'rel\_time\_n102',  and 'rel\_time\_nig\_n102' which is on the Terrace. Thus, having in mind the dates and the good temperature, they are probably people staying there, not just going out for smoking as would be usual in other seasons.
 
+Top-right cluster corresponds to people with an early entrance and out ('ent\_time', 'out\_time') and little stay time ('stay\_time') as plotted in the Plane Analysis. This could correspond to people just staying for a beer or coffee, before the `hard music' starts.
 
-In addition, another study has been conducted using SOM and U-MATRIX graphs. This time we want to analyse the \textit{recurrence of devices} to the discotheque, and their overall behaviour in the days they have come back. To this aim a new dataset has been composed, extracting those `events' of devices detected in more than two nights in two whole months.
-Moreover, a similar set of features has been extracted for this experiment, as they are shown in Table \ref{tab:features_recurrence_disco}.
+The absence of labels in the U-MATRIX graph limits the possible interpretation and conclusions that we can reach from it. SOM Planes Analysis is more useful this time.
+
+They display, for instance, that relative time with regard to the whole opening time of the disco shows obvious information, such as that this value is small for node 132, placed in the ticket office. But also, useful knowledge, like that room of node 112, the Main Room, is the most successful (more devices remain there during more time), followed by the Minor room 1 (node 122).
+
+Another interesting result is that people (their devices) tend to be just in one or two rooms, that's why there are several 0 values in the time features per node. 
+
+This study has been complemented with another one using again SOM and U-MATRIX methods. This time we want to analyse the \textit{recurrence of devices} to the discotheque, and their overall behaviour in the days they have come back. To this aim a new dataset has been composed, extracting those `events' of devices detected in more than two nights in two whole months.
+A similar set of features has been extracted for this experiment, as they are shown in Table \ref{tab:features_recurrence_disco}.
 
 \begin{table}[htpb]
 \centering
@@ -434,13 +433,12 @@ Variable name & Description & Type\\
 & in every node X (from 1 to 5) & Float\\
 \noalign{\smallskip}\hline
 \end{tabular}
- \caption{Extracted features from gathered data in the discotheque. \label{tab:features_recurrence_disco}}
+ \caption{Extracted features from gathered data in the discotheque for returning devices. \label{tab:features_recurrence_disco}}
 }
 \end{table}
 
-For each device, we have computed a sum of the amounts of diary time per monitoring node. Relative times have been also calculated as another set of features. There are 220000 monitored `events' and 2100 different devices, so this amount of patterns to cluster.
-
-We have labelled the data using the number of different days every device has been detected (the recurrence rate).
+For each device, we have computed a sum of the amounts of diary time per monitoring node. Relative times have been also calculated as another set of features. There are around 220000 monitored `events' and 2100 different devices, so this is the amount of patterns to cluster.
+However, this time the data have been labelled using the number of different days every device has been detected (the recurrence rate).
 
 The results on this study are shown in Figure \ref{fig:som_disco_recurrencia}.
 
@@ -448,20 +446,23 @@ The results on this study are shown in Figure \ref{fig:som_disco_recurrencia}.
 	\begin{center}
 		\includegraphics[width=11cm]{imgs/DISCO/som_recurrentes.eps}
 		\includegraphics[width=6cm]{imgs/DISCO/umatrix_recurrentes.eps}
-		\caption{Recurrence of devices in different days. The label is the recurrence rate (number of days the device has returned) of the majority in that neuron/BMU}
+		\caption{SOM Planes (top) and U-MATRIX (bottom) application on the recurrence of devices in different days. The label is the recurrence rate (number of days the device has returned) of the majority in that neuron/BMU}
 		\label{fig:som_disco_recurrencia}
 	\end{center}
 \end{figure}
 
-As it can be seen in the U-Matrix every neuron (cell in the graph) has been labelled according to the class of the majority of the most similar input patterns. To this end the distance from every pattern to every neuron is computed considering their respective codevectors, the closest neuron to an input is named the best matching unit (BMU), and it is labelled with the pattern class (stage in this problem). Once the process has finished every neuron with more than one associated class finally displays the label with more occurrences.
+As it can be seen in the U-MATRIX, every neuron (cell in the graph) has been labelled according to the class of the majority of the most similar input patterns. To this end the distance from every pattern to every neuron is computed considering their respective codevectors, the closest neuron to an input is named the best matching unit (BMU), and it is labelled with the pattern class (stage in this problem). Once the process has finished every neuron with more than one associated class finally displays the label with more occurrences.
 
-*** COMENTAR RESULTADOS ***
+U-MATRIX graph shows three big clusters (blue areas), corresponding the bottom one to very frequent devices (they have returned more than 30 times). This lead us to think in staff going to work. Most of them are related with high stay times in the Terrace (node 102), as it is displayed in the Plane Analysis.
+The top cluster represents the amount of recurrences of people just going to the Ticket Office, since it corresponds to an area of high values for the variable 'rel\_time\_n132', but apparently, most of these people seem cannot access the rooms, as they spend a high percentage of their time close to that node.
 
-- Comprobar aforo\\
-- Aumentar seguridad\\
-- Eficiencia energética y de personal o servicios (más medios en las salas más masificadas)\\
-- Estudiar eventos particulares\\
-- Estudios con objetivos de salud => gente que sale a la terraza (a fumar, supuestamente)
+Moreover, in the Plane Analysis, relative times in rooms of nodes 122 and 142 (Minor 1 and 2 respectively) seem to be complementary, meaning that recurrent people `strictly' choose between one room or another (depending on their musical taste).
+
+The knowledge extracted in this two analyses could be of interest for many issues, apart from the direct testing of the occupation with regard to the disco legal capacity. 
+Knowing the behaviour of people could help to improve the security in the building, making the entrance and out easier in the most populated rooms.
+This system would be very useful also to analyse specific events and their development according to the behaviour of people.
+MOBYWIT also provides real data about the success of any of the rooms, giving data per hour that could be of interest for improving the energy consumption (one room could open or close earlier depending on the rush hours), for instance.
+The location of a node in the Terrace could be also interesting to study the habits of smokers during the cold seasons, when there is no music outside.
 
 
 %----------------------------------------------------------------------------
@@ -541,7 +542,9 @@ There exist two groups of nodes: one in the province of Granada area
 	\end{center}
 \end{figure}
 
+
 In this section, several experiments will be conducted. First, a study on the velocity and driving behaviour taking into account the tracking capabilities of MOBYWIT will be presented. Also, different methods to extract a ratio between our gathered data and the real data provided by the DGT will be performed. Finally, a time series forecasting study will be performed. In order to compare the performance of the different methods, 4 frequently used error measures will be used in this section:
+
 Mean Absolute Error ({\em MAE}),
 Mean Absolute Percentage Error ({\em MAPE(\%)}),
 Mean Squared Error ({\em MSE}), and
@@ -615,7 +618,7 @@ Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applyin
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.26]{imgs/petra_graph_DGT-Mobywit-mended.eps}
+		\includegraphics[scale=0.4]{imgs/petra_graph_DGT-Mobywit-mended.eps}
 		\caption{Devices detected by DGT and detected by our device (node 1010) applying the correction ratio (median by quarter). Note: no DGT data available during October 14th.}
 	\label{fig:dgtRatios}
 	\end{center}
@@ -701,7 +704,9 @@ RMSE  & $83.906$ & $\textbf{58.925}$  &  $59.747$ & $59.309$ \\
 %\hline
 \end{tabular}
 }
+
 \caption{Error values computed using the differences between DGT real data and data recorded by MOBYWIT with Median Ratio By Quarter Hour conversion. The period to be forecasted started on 25-Oct-2015, 00:00 hours and finished on 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
+
 \label{tab:errorForecastingRatio}
 \end{table}
 
@@ -713,7 +718,7 @@ RMSE  & $83.906$ & $\textbf{58.925}$  &  $59.747$ & $59.309$ \\
     \end{center}
 \end{figure}
 
-Finally, according to the results obtained, performing traffic forecasting using data provided by MOBYWIT seems to be an affordable task for traditional methods (i.e., ETS or ARIMA). Furthermore, ratios computed from data recorded by DGT allows to convert forecasted values to their equivalent representing the number of cars in a given location. Thus, the joint use of this two techniques makes possible to closely approximate the number of cars that will have passed 15 minutes later by the position of the MOBYWIT; and this process can be newly repeated every 15 minutes so that forecasting models can be enhanced and adapted to the new conditions of the road.
+Finally, according to the results obtained, performing traffic forecasting using data provided by MOBYWIT seems to be an affordable task for traditional methods (i.e., ETS or ARIMA). Furthermore, ratios computed from data recorded by DGT allow to convert forecasted values to their equivalent representing the number of cars in a given location. Thus, the joint use of this two techniques makes possible to closely approximate the number of cars that will have passed 15 minutes later by the position of the MOBYWIT; and this process can be newly repeated every 15 minutes so that forecasting models can be enhanced and adapted to the new conditions of the road.
 
 
 %----------------------------------------------------------------------------
@@ -723,15 +728,18 @@ Finally, according to the results obtained, performing traffic forecasting using
 \section{Analysis of the urban traffic in a city}
 \label{sec:city}
 
-The information MOBYWIT device is able to provide for urban scope is amazing, but we are mainly interesting in two goals: to measure the trip time among several points in a city and the path the drivers follow across the city to arrive the closer highway. Both goals are the interest area of the local city council, so we start to monitoring the city for achieving them. 
+The information MOBYWIT device is able to provide for urban scope is wide, but we are mainly interested in two goals: to measure the trip time between several points in a city and the path the drivers follow across the city to arrive the closer highway. Both goals are the interest area of the local city council, so we start to monitoring the city for achieving them. 
 
-Traffic jams usually are present in every town and it could be produced by diverse reasons. There are several papers which classify the traffic jam causes, \cite{CausasAtascos1}\cite{CausasAtascos2}, but they have been studied in particular cities. Therefore we can not apply the solutions provided by the authors of these papers to any city, we can solve the problem for a particular city taken the previous studies as starting point for our case and getting the good ideas for our case. A traffic jam is produced when the way or the street capacity is overflow for any reason during some time. Whatever the cause of the overflow, whether an unusual reason as a traffic accident, or a cause that remains over time as vehicle increasing around a new city area, drivers should avoid the area of the jam.
-
-
-When a driver finds himself in a traffic jam, the natural response is to plan another path to arrive his destination and the information, the competent authority provides, about another available path is appreciated by them. The selection of another path depends on driver destination and it could be different for each case. So, the first stage is to inform about the traffic jam and then the drivers decide to go across or miss it. The second stage is to provide the available paths and to turn off the vehicles but this goal has not been addressed in the paper. 
+Traffic jams usually are present in every town and it could be produced by diverse reasons. There are several papers which classify the traffic jam causes, \cite{CausasAtascos1}\cite{CausasAtascos2}, but they have been studied in particular cities. Therefore, we can not apply the solutions provided by the authors of these papers to any city, we can solve the problem for a particular city taken the previous studies as starting point for our case and getting the good ideas for our case. A traffic jam is produced when the way or the street capacity is overflow for any reason during some time. Whatever the cause of the overflow, whether an unusual reason as a traffic accident, or a cause that remains over time as vehicles increasing around a new city area, drivers should avoid the area of the jam.
 
 
-To illustrate the MOBYWIT utility for the first stage, early detection of a traffic jam is essential, and a little experiment has been carried out in Granada city (Spain). We have installed two MOBYWIT devices in the same street. The device's location is Dr. Ol\'{o}riz street. It is one-way, has four lanes and is placed in a neighbourhood which regularly is collapsed. The map of the devices location is in Figure \ref{fig:mososMapa}. The distance among both nodes is about $168$ metres. These devices cannot detect all the real persons and vehicles moving close to them since not all of them emit BT or WiFi signals, however after an open poll which $600$ people answered we conclude that around the $22\%$ of the drivers emit BT and around the $70\%$ of the drivers emit WiFi signal. We consider the sample is good and representative of the real world. For this starting experiment, we measure the taken time to go from the first to the second MOBYWIT device for each monitored device, either vehicle or person. The results of this experiment are displayed in Figure \ref{fig:mososTiempo}. In this figure, we have defined seven terms for the twenty-four hours of one day and they are placed over X axis. We calculate the average of trip time using all the collected data and the result is $85$ seconds. We referee that value as Global Trip Time Average (GTTA). After that, we calculate the boxplot for each term, scale the results to $[0,1]$ interval and represent it using their rate respect to GTTA value placed on the Y axis over $0.50$. That is, if the box is over $0.50$ Y axis value means that all the trips of that term are longer that GTTA value and if the box is below $0.50$ means that all the trips of this term are shorter than GTTA value. As you can see in the Figure, the first four terms are over $0.50$ so all the trips of these terms are longer than GTTA which indicates the trips during these terms are slower. The rest of the terms are below the $0.50$ level, so the trip times during these terms are speeder than the GTTA value.
+When a driver finds himself in a traffic jam, the natural response is to plan another path to arrive his destination and the information, the competent authority provides, about other available path is appreciated by them. The selection of another path depends on driver destination and it could be different for each case. So, the first stage is to inform about the traffic jam and then the drivers decide to go across or miss it. The second stage is to provide the available paths and to turn off the vehicles, but this goal has not been addressed in the paper. 
+
+
+To illustrate the MOBYWIT utility for the first stage, early detection of a traffic jam is essential, and a little experiment has been carried out in Granada city (Spain). The goal of this experiment is to detect how varies in time the trip time from node A to node B. We have installed two MOBYWIT devices in the same street. It is one-way, has four lanes and is placed in a neighbourhood which regularly is collapsed. The map of the devices location is in Figure \ref{fig:mososMapa}. The distance between both nodes is about $168$ metres. These devices cannot detect all the real persons and vehicles moving close to them since not all of them emit BT or WiFi signals, however, after an open poll, which $600$ people answered, we conclude that around the $22\%$ of the drivers emit BT and around the $70\%$ of the drivers emit WiFi signal. We consider the sample is good and representative of the real world. 
+
+For this starting experiment, we measure the  time taken to go from the first to the second MOBYWIT device for each monitored device. The results of this experiment are displayed in Figure \ref{fig:mososTiempo}. In this figure, we have defined eight terms for the twenty-four hours of one day and they are placed over X axis. We calculate the average trip time, using all the collected data, being this value $85$ seconds. We referee that value as Global Trip Time Average (GTTA). After that, we calculate the boxplot for each term, scale the results to $[0,1]$ interval and represent it using their rate respect to GTTA value placed on the Y axis over $0.50$. That is, if the box is
+over $0.50$ value means that all the trips of that term are longer that GTTA value and if the box is below $0.50$ means that all the trips of this term are shorter than GTTA value. As you can see in the Figure, three terms are over $0.50$ so all the trips of these terms are longer than GTTA which indicates the trips during these terms are slower. The rest of the terms are below the $0.50$ level, so the trip times during these terms are faster than the GTTA value.
 
 \begin{figure}[htb]
 	\begin{center}
@@ -744,7 +752,7 @@ To illustrate the MOBYWIT utility for the first stage, early detection of a traf
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale=0.4]{imgs/MOSOS/mosos_graph_tiempos.eps}
-		\caption{Average time along the day for movements from node A to node B. We group the hours of a day using eighth terms. The first and the eighth terms include the night, the second one includes the rush hour for morning beginning is included. The third period includes from 9:00am to 11:59am. The fourth term includes the evening until 2:59pm. The fifth includes from 3:00pm to 5:59pm, the sixth from 6:00 pm to 9:00pm and the seventh from 9:00pm to 11:59pm. The boxplot shows the percentage of increment (up to $0.50$) or decrement (low to $0.50$) of the average time needed to go from A to B along the day.}
+		\caption{Average time along the day for movements from node A to node B. We have grouped the hours of a day using eight terms. The first and the eighth terms include the night, in the second one the rush hour for morning beginning is included. The third period includes from 9:00am to 11:59am. The fourth term includes the evening until 2:59pm. The fifth includes from 3:00pm to 5:59pm, the sixth from 6:00 pm to 8:59pm and the seventh from 9:00pm to 11:59pm. The boxplot represents descriptive statistics for each term scaled to $[0,1]$ interval. The global trip time average is placed on $0.5$.}
 	\label{fig:mososTiempo}
 	\end{center}
 \end{figure}
@@ -758,7 +766,7 @@ In short, we demonstrate that only using MOBYWIT, without any additional data it
 \section{Conclusions}
 \label{sec:conclusions}
 
-In this work, MOBYWIT, a novel monitoring and tracking system which gathers mobility data from people and vehicles has been presented. Some of its applications have been shown, using the data collected by the system to address different issues in a city in order to do it `smarter'.
+In this work, MOBYWIT, a novel monitoring and tracking system which gathers mobility data from people and vehicles has been presented. Some of its applications have been shown, using the data collected by the system to address different issues in a city in order to make it `smarter'.
 Thus, four different scenarios have been studied:
 
 \begin{itemize}
@@ -797,6 +805,7 @@ This work has been supported in part by projects EPHEMECH (TIN2014-56494-C4-3-P,
 
 
 \section{Appendix} 
+\label{appendix}
 
 This appendix presents additional information about the scenarios, such as the geographical position of the nodes and a comment about them, or some graphs showing the distribution of the gathered data.
 
@@ -814,7 +823,7 @@ ID   &  Location & Latitude & Longitude \\ \hline
 \end{tabular}
 }
 \caption{Location of the devices for Discotheque scenario.}
-\label{tab:nodosDGT}
+\label{tab:nodosDisco}
 \end{table}
 
 \begin{table}[H]
@@ -829,7 +838,7 @@ ID   &  Location & Latitude & Longitude \\ \hline
 \end{tabular}
 }
 \caption{Location of the devices for the Building of the University scenario.}
-\label{tab:nodosDGT}
+\label{tab:nodosETSIIT}
 \end{table}
 
 \begin{table}[H]
@@ -861,7 +870,7 @@ B	 & Granada & Dr. Olóriz Street & 37.186997 & -3.607882\\ \hline
 \end{tabular}
 }
 \caption{Location of the devices for the city traffic scenario.}
-\label{tab:nodosDGT}
+\label{tab:nodosCity}
 \end{table}
 
 
