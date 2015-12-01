@@ -565,7 +565,7 @@ Using the capability of the unique vehicle detection by MAC, we can calculate th
 	\end{center}
 \end{figure}
 
-Using the time when each repetition has been detected, we can also calculate average speed velocity during the week. Figure \ref{fig:dgtMatrixTime} shows the detected times between nodes, in blocks of 4 hours, during the week. Largest travel times are detected between more separated nodes. As in previous figure, time between more separated nodes is not tracked because shorter paths between cities exist. %***HABLAR MAS DE ESTOS DATOS***
+Using the time when each repetition has been detected, we can also calculate average speed velocity during the week. Figure \ref{fig:dgtMatrixTime} shows the detected times between nodes and Figure \ref{fig:dgtMatrixSpeed} the average speed, in blocks of 4 hours, during the week. Largest travel times are detected between more separated nodes. As in previous figure, time between more separated nodes is not tracked because shorter paths between the important cities exist. %***HABLAR MAS DE ESTOS DATOS***
 
 \begin{figure}[htb]
 	\begin{center}
@@ -574,6 +574,17 @@ Using the time when each repetition has been detected, we can also calculate ave
 	\label{fig:dgtMatrixTime}
 	\end{center}
 \end{figure}
+
+
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.35]{imgs/PETRA/Speed/petra_graph_speed.eps}
+		\caption{Average speen between nodes, detecting the unique vehicle identifiers by our MOBYWIT devices. Every day is grouped in blocks of 4 hours.}
+	\label{fig:dgtMatrixSpeed}
+	\end{center}
+\end{figure}
+
 
 
 \subsection{Data validation using other sources of data}
