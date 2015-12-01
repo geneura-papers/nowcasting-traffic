@@ -527,7 +527,7 @@ realistic \textit{ratio} between both numbers has been computed.
 
 Six nodes were placed along different roads in Andalusia (southern Spain). 
 Figure \ref{fig:nodosDGT} shows the identifiers of these devices and their 
-exact location. These locations have been chosen because they are the nearest   
+ placement. Exact locations is described in Appendix section. These locations have been chosen because they are the nearest   
 ones to existent loop detectors monitored by the DGT, and also, they have an
 Internet connection to allow the transmission of data to our server. 
 There exist two groups of nodes: one in the province of Granada area 
@@ -638,9 +638,9 @@ The data used for the experiments are the ones provided by the node 1010 startin
 
 
 
-Table ~\ref{tab:forecasting} shows the values for the ten used measures computed over $576$ values, the ones corresponding to the last 6 days (i.e., $30\%$ of the data). The horizon has been set to 1, so that, in order to forecast any given moment all the previous real known data were used to build and train the models and, after this, the next value was forecasted. This way, the problem has been faced as a simulation of what could happen in a continuous system in which new real data where received every 15 minutes so that forecasting models could be also continuously adapted.
+Table ~\ref{tab:forecasting} shows the values for the ten used measures computed over $576$ values, the ones corresponding to the last 6 days (i.e., $30\%$ of the data). The horizon has been set to 1, so that, in order to forecast any given moment all the previous real known data were used to build and train the models and, after this, the next value was forecasted. This way, the problem has been faced as a simulation of what could happen in a continuous system in which new real data were received every 15 minutes so that forecasting models could be also continuously adapted.
 
-As results show, ETS, ARIMA and Theta behave clearly better than the control method. The differences between the three considered methods are, almost nonexistent. In any case, ETS yields the lowest values in four of the measures been used. For these reason, it could be probably considered the best candidate to be chosen as the preferred method to forecast this kind of time-series. Figure \ref{fig:forecasted-values} depicts the values forecasted by ETS comparing them with the expected ones.
+As the results show, ETS, ARIMA and Theta behave clearly better than the control method. The differences between the three considered methods are, almost nonexistent. In any case, ETS yields the lowest values in four of the measures being used. For these reasons, it could be probably considered the best candidate to be chosen as the preferred method to forecast this kind of time-series. Figure \ref{fig:forecasted-values} depicts the values forecasted by ETS comparing them with the expected ones.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -670,7 +670,7 @@ RMSE &$5.3452$ & $\textbf{3.6082}$ & $3.6438$ & $3.6114$\\
 \hline
 \end{tabular}
 }
-\caption{Error values yielding when forecasting data recorded by MOBYWIT. Measures are computed using differences between expected values and yielded ones from 25-Oct-2015, 00:00 hours to 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
+\caption{Error values yielded when forecasting data recorded by MOBYWIT. Measures are computed using differences between expected values and yielded ones from 25-Oct-2015, 00:00 hours to 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
 \label{tab:forecasting}
 \end{table}
 
@@ -701,7 +701,7 @@ RMSE  & $83.906$ & $\textbf{58.925}$  &  $59.747$ & $59.309$ \\
 %\hline
 \end{tabular}
 }
-\caption{Error values computed using the differences between DGT real data and data recorded by MOBYWIT with Median Ratio By Quarter Hour conversion. Period to be forecasted started on 25-Oct-2015, 00:00 hours and finished on 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
+\caption{Error values computed using the differences between DGT real data and data recorded by MOBYWIT with Median Ratio By Quarter Hour conversion. The period to be forecasted started on 25-Oct-2015, 00:00 hours and finished on 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
 \label{tab:errorForecastingRatio}
 \end{table}
 
