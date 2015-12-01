@@ -306,8 +306,10 @@ As it can be seen in that figure, there are six main parts in the software layer
 
 \end{itemize}
 
-In addition, and as it is shown in Figure \ref{fig:mobywit}, the device runs an specific Operative System, called \textit{Horeb}, which is a modification of the original Raspbian 3.10.24, adapted by MOBYWIT system designer to be more robust (to power fails, for instance) and reliable.
+In addition, and as it is shown in Figure 1, the device runs an specific Operative System, called \textit{Horeb}, which is a modification of the original Raspbian 3.10.24, adapted by MOBYWIT system designer to be more robust (to power fails, for instance) and reliable.
 
+*** CONTAR CÓMO FUNCIONA AL DETECTAR ***
+% Antonio - TODO: ANTARES, revisa esto porfa. ;)
 There are several configuration parameters in the system, which sets important parts of the functionality, such as the intensity threshold to collect a received WiFi signal, or time limits to consider a device as obsolete or out of the range of the device.
 
 Every detected `pass-by' or mobility `event' is associated to a detection time, obtained by NTP (Network Time Protocol). These `events' are stored initially in the device's memory. After some time (also set in a parameter) the information is sent, in blocks, to the server, to avoid an overuse/saturation of the network.
@@ -321,33 +323,23 @@ MOBYWIT's system is tested in four different scenarios, described in the nest se
 \section{Analysing people's mobility in a discotheque}
 \label{sec:disco}
 
-Before using the device in other type of environments, we were
-interested in checking its possibilities in an environment where
-change is very fast and it is a priory possible to detect a big amount
-of devices. That is why we decided to test MOBYWIT in a disco, using
-using five MOBYWIT devices, deployed one in every of the three main
-rooms, each one devoted to a different type of music and one on the main
-entrance and the outdoor terrace. This scenario is interesting because
-it is assumed that 100\% of users have a smartphone, thus it would be
-a priori possible to track every single present device. The
-electromagnetic scenario is also quite {\em heavy}, which presented a
-challenge for testing the device.
+Firstly, we were interested in checking the possibilities of the system in an environment where change is very fast and it is, a priory, possible to detect a big amount of devices. Thus we decided to test MOBYWIT in a disco, using it also as a test for its utility inside buildings.
+Five devices have been deployed, one in every of the three main
+rooms, each one devoted to a different type of music, one on the main
+entrance, and one on the outdoor terrace (See the Appendix for more details). This scenario is interesting because it is assumed that 100\% of users have a smartphone, thus it would be a priori possible to track every single present device. The electromagnetic scenario is also quite {\em heavy}, which presented a challenge for testing the device.
 
-A total of 2200 different devices were detected in one of the busy
-nights (from a Thursday at 8 pm to Friday at 8 am), distributed per
-node as it is shown in Figure \ref{fig:disco_data}. 
+After processing and summarising data, a total of 2200 different devices were detected in one of the busy nights in September (from a Thursday at 8 pm to Friday at 8 am), following the distribution per node shown in Figure \ref{fig:disco_data}. 
 
 \begin{figure}[ht]
 	\begin{center}
 		\includegraphics[width=\textwidth]{imgs/DISCO/time_series-linesPoints.eps}
-		\caption{Detected devices in a night in the Discotheque scenario by room.}
+		\caption{Detected devices distribution in a night in the Discotheque scenario by room.}
 		\label{fig:disco_data}
 	\end{center}
 \end{figure}
 
+These data have been processed extracting several variables from them, in order to apply clustering methods. The aim is to find group behavioural patterns in the data, which could aid to make decisions about marketing or security in the building, for instance.
 
-These data have been processed and several variables have been
-extracted from them, in order to apply clustering methods. 
 The clustering study has been conducted by means of a Self-Organizing
 Map (SOM) \cite{Kohonen90}, a feed-forward neural network
 \cite{NN_Haykin94} that uses an unsupervised training algorithm and
@@ -361,9 +353,9 @@ uses SOM yielded neurons' codevectors (vectors of variables of the
 problem) as data source, and generates a matrix where each component
 is a distance measure between two adjacent neurons. Then, these
 distances are codified as different colour shades in a graph. 
-The U-Matrix graph allows visualise any multi-variable dataset in a two-dimensional display, which helps detecting topological relations among neurons and inferring about the input data structure in a straightforward visual manner. High values in the U-matrix represent a frontier region between clusters, and low values represent a high degree of similarities among neurons on that region, i.e. clusters. MATLAB 2009 along with SOM Toolbox \cite{SOMPAK} was used for the SOM analysis.
+The U-MATRIX graph allows visualise any multi-variable dataset in a two-dimensional display, which helps detecting topological relations among neurons and inferring about the input data structure in a straightforward visual manner. High values in the U-matrix represent a frontier region between clusters, and low values represent a high degree of similarities among neurons on that region, i.e. clusters. MATLAB 2009 along with SOM Toolbox \cite{SOMPAK} was used for the SOM analysis.
 
-In order to analyse the data, several features have been extracted (generated) from the gathered `events', composing a pattern per device of its whole stay in the disco. These are described in Table \ref{tab:extracted_features_disco}.
+The features have been extracted from the gathered `events', composing a pattern per device of its whole stay in the disco (for one night). These are described in Table \ref{tab:extracted_features_disco}.
 
 \begin{table}[htpb]
 \centering
@@ -385,12 +377,12 @@ Variable name & Description & Type\\
 %\texttt{non\_detected\_time} & Number of seconds the device has not been detected (but it still is in the disco) & Integer\\
 \noalign{\smallskip}\hline
 \end{tabular}
- \caption{Extracted features from gathered data in the discotheque. \label{tab:extracted_features_disco}}
+ \caption{Extracted features from gathered data in the discotheque for one night. \label{tab:extracted_features_disco}}
 }
 \end{table}
 
 
-The application of SOM + U-Matrix produces the graphs shown in Figure
+The application of SOM + U-MATRIX produces the graphs shown in Figure
 %\ref{fig:som_disco_no_detec_0} and
 \ref{fig:som_disco_sin_no_detec}.
 
@@ -408,17 +400,23 @@ The application of SOM + U-Matrix produces the graphs shown in Figure
 	\begin{center}
 		\includegraphics[width=12cm]{imgs/DISCO/som_disco_sin_no_detec.eps}
 		\includegraphics[width=6cm]{imgs/DISCO/umatrix_disco_sin_no_detec.eps}
-		\caption{SOM + U-MATRIX Applied to the dataset of detected devices in a night in the Discotheque scenario. SOM Planes analysis (top) shows the extracted features described in Table \ref{tab:extracted_features_disco}}
+		\caption{Planes Analysis (top) and U-MATRIX Graph (bottom) obtained from applying SOM to the dataset of detected devices in a night in the Discotheque scenario. The planes show a projection of the values of the extracted features described in Table \ref{tab:extracted_features_disco}}
 		\label{fig:som_disco_sin_no_detec}
 	\end{center}
 \end{figure}
 
-The results show that... *** COMENTARLOS ***
-The problem is that there are no labels on the graph, so the interpretation cannot be as complete as it could... ***
+Several clusters (blue areas surrounded by other colours) arise in U-MATRIX graph. Looking at them, it can be seen that the central cluster is strongly related with high values of features of node 102 (see SOM Planes Analysis on the top of the figure): 'abs\_time\_n102', 'rel\_time\_n102',  and 'rel\_time\_nig\_n102' which is on the Terrace. Thus, having in mind the dates and the good temperature, they are probably people staying there, not just going out for smoking as would be usual in other seasons.
 
+Top-right cluster corresponds to people with an early entrance and out ('ent\_time', 'out\_time') and little stay time ('stay\_time') as plotted in the Plane Analysis. This could correspond to people just staying for a beer or coffee, before the `hard music' starts.
 
-In addition, another study has been conducted using SOM and U-MATRIX graphs. This time we want to analyse the \textit{recurrence of devices} to the discotheque, and their overall behaviour in the days they have come back. To this aim a new dataset has been composed, extracting those `events' of devices detected in more than two nights in two whole months.
-Moreover, a similar set of features has been extracted for this experiment, as they are shown in Table \ref{tab:features_recurrence_disco}.
+The absence of labels in the U-MATRIX graph limits the possible interpretation and conclusions that we can reach from it. SOM Planes Analysis is more useful this time.
+
+They display, for instance, that relative time with regard to the whole opening time of the disco shows obvious information, such as that this value is small for node 132, placed in the ticket office. But also, useful knowledge, like that room of node 112, the Main Room, is the most successful (more devices remain there during more time), followed by the Minor room 1 (node 122).
+
+Another interesting result is that people (their devices) tend to be just in one or two rooms, that's why there are several 0 values in the time features per node. 
+
+This study has been complemented with another one using again SOM and U-MATRIX methods. This time we want to analyse the \textit{recurrence of devices} to the discotheque, and their overall behaviour in the days they have come back. To this aim a new dataset has been composed, extracting those `events' of devices detected in more than two nights in two whole months.
+A similar set of features has been extracted for this experiment, as they are shown in Table \ref{tab:features_recurrence_disco}.
 
 \begin{table}[htpb]
 \centering
@@ -434,13 +432,12 @@ Variable name & Description & Type\\
 & in every node X (from 1 to 5) & Float\\
 \noalign{\smallskip}\hline
 \end{tabular}
- \caption{Extracted features from gathered data in the discotheque. \label{tab:features_recurrence_disco}}
+ \caption{Extracted features from gathered data in the discotheque for returning devices. \label{tab:features_recurrence_disco}}
 }
 \end{table}
 
-For each device, we have computed a sum of the amounts of diary time per monitoring node. Relative times have been also calculated as another set of features. There are 220000 monitored `events' and 2100 different devices, so this amount of patterns to cluster.
-
-We have labelled the data using the number of different days every device has been detected (the recurrence rate).
+For each device, we have computed a sum of the amounts of diary time per monitoring node. Relative times have been also calculated as another set of features. There are around 220000 monitored `events' and 2100 different devices, so this is the amount of patterns to cluster.
+However, this time the data have been labelled using the number of different days every device has been detected (the recurrence rate).
 
 The results on this study are shown in Figure \ref{fig:som_disco_recurrencia}.
 
@@ -448,20 +445,23 @@ The results on this study are shown in Figure \ref{fig:som_disco_recurrencia}.
 	\begin{center}
 		\includegraphics[width=11cm]{imgs/DISCO/som_recurrentes.eps}
 		\includegraphics[width=6cm]{imgs/DISCO/umatrix_recurrentes.eps}
-		\caption{Recurrence of devices in different days. The label is the recurrence rate (number of days the device has returned) of the majority in that neuron/BMU}
+		\caption{SOM Planes (top) and U-MATRIX (bottom) application on the recurrence of devices in different days. The label is the recurrence rate (number of days the device has returned) of the majority in that neuron/BMU}
 		\label{fig:som_disco_recurrencia}
 	\end{center}
 \end{figure}
 
-As it can be seen in the U-Matrix every neuron (cell in the graph) has been labelled according to the class of the majority of the most similar input patterns. To this end the distance from every pattern to every neuron is computed considering their respective codevectors, the closest neuron to an input is named the best matching unit (BMU), and it is labelled with the pattern class (stage in this problem). Once the process has finished every neuron with more than one associated class finally displays the label with more occurrences.
+As it can be seen in the U-MATRIX, every neuron (cell in the graph) has been labelled according to the class of the majority of the most similar input patterns. To this end the distance from every pattern to every neuron is computed considering their respective codevectors, the closest neuron to an input is named the best matching unit (BMU), and it is labelled with the pattern class (stage in this problem). Once the process has finished every neuron with more than one associated class finally displays the label with more occurrences.
 
-*** COMENTAR RESULTADOS ***
+U-MATRIX graph shows three big clusters (blue areas), corresponding the bottom one to very frequent devices (they have returned more than 30 times). This lead us to think in staff going to work. Most of them are related with high stay times in the Terrace (node 102), as it is displayed in the Plane Analysis.
+The top cluster represents the amount of recurrences of people just going to the Ticket Office, since it corresponds to an area of high values for the variable 'rel\_time\_n132', but apparently, most of these people seem cannot access the rooms, as they spend a high percentage of their time close to that node.
 
-- Comprobar aforo\\
-- Aumentar seguridad\\
-- Eficiencia energética y de personal o servicios (más medios en las salas más masificadas)\\
-- Estudiar eventos particulares\\
-- Estudios con objetivos de salud => gente que sale a la terraza (a fumar, supuestamente)
+Moreover, in the Plane Analysis, relative times in rooms of nodes 122 and 142 (Minor 1 and 2 respectively) seem to be complementary, meaning that recurrent people `strictly' choose between one room or another (depending on their musical taste).
+
+The knowledge extracted in this two analyses could be of interest for many issues, apart from the direct testing of the occupation with regard to the disco legal capacity. 
+Knowing the behaviour of people could help to improve the security in the building, making the entrance and out easier in the most populated rooms.
+This system would be very useful also to analyse specific events and their development according to the behaviour of people.
+MOBYWIT also provides real data about the success of any of the rooms, giving data per hour that could be of interest for improving the energy consumption (one room could open or close earlier depending on the rush hours), for instance.
+The location of a node in the Terrace could be also interesting to study the habits of smokers during the cold seasons, when there is no music outside.
 
 
 %----------------------------------------------------------------------------
@@ -541,13 +541,13 @@ There exist two groups of nodes: one in the province of Granada area
 	\end{center}
 \end{figure}
 
-In this section, several experiment will be conducted. First, an study on the velocity and driving behaviour taking into account the tracking capabilities of MOBYWIT will be presented. Also, different methods to extract a ratio between our gathered data and the real data provided by the DGT will be performed. Finally, a time series forecasting study will be performed. In order to compare the performance of the different methods, 4 frequently used error measures will be used in this section:
+In this section, several experiment will be conducted. First, a study on the velocity and driving behaviour taking into account the tracking capabilities of MOBYWIT will be presented. Also, different methods to extract a ratio between our gathered data and the real data provided by the DGT will be performed. Finally, a time series forecasting study will be performed. In order to compare the performance of the different methods, 4 frequently used error measures will be used in this section:
 Mean Absolute Error ({\em MAE}),
 Mean Absolute Percentage Error ({\em MAPE(\%)}),
 Mean Squared Error ({\em MSE}), and
 Root Mean Squared Error ({\em RMSE}).
 
-Their different features, as well as their equations, can be found in Hyndman and Koehler's work ~\cite{RePEc:eee:intfor:v:22:y:2006:i:4:p:679-688}
+Their different features, as well as their equations, can be found in Hyndman and Koehler's work ~\cite{RePEc:eee:intfor:v:22:y:2006:i:4:p:679-688}.
 
 
 \subsection{Driving behaviour}
@@ -586,7 +586,7 @@ Different metrics will be used to obtain a correct correlation between the numbe
 \end{itemize}
 
 
-Table \ref{tab:ratiosDGT} shows the obtained ratios. Results show that our device detects one vehicle per approximately 19 detected by the DGT, according Total, Mean and Median ratios. However, best results in MAE and MAPE are attained obtaining ratios dividing by quarter. Therefore, for the rest of the paper this ratio has been chosen, as we need to deal with absolute values to perform forecasting analysis later.
+Table \ref{tab:ratiosDGT} shows the obtained ratios. Results show that our device detects one vehicle per approximately 19 detected by the DGT, according Total, Mean and Median ratios. However, best results in MAE and MAPE are attained obtaining ratios dividing by quarter.
 
 \begin{table}[htb]
 \centering
@@ -615,7 +615,7 @@ Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applyin
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.26]{imgs/petra_graph_DGT-Mobywit-mended.eps}
+		\includegraphics[scale=0.4]{imgs/petra_graph_DGT-Mobywit-mended.eps}
 		\caption{Devices detected by DGT and detected by our device (node 1010) applying the correction ratio (median by quarter). Note: no DGT data available during October 14th.}
 	\label{fig:dgtRatios}
 	\end{center}
@@ -701,7 +701,7 @@ RMSE  & $83.906$ & $\textbf{58.925}$  &  $59.747$ & $59.309$ \\
 %\hline
 \end{tabular}
 }
-\caption{Error values computed using the differences between DGT real data and data recorded by MOBYWIT with Median Ratio By Quarter Hour conversion. Period to be forecasted started on 25-Oct-2015, 00:00 hours and finished on 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
+\caption{Error values computed using the differences between DGT real data and data recorded by MOBYWIT with Median Ratio By Hour conversion. Period to be forecasted started on 25-Oct-2015, 00:00 hours and finished on 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
 \label{tab:errorForecastingRatio}
 \end{table}
 
@@ -797,6 +797,7 @@ This work has been supported in part by projects EPHEMECH (TIN2014-56494-C4-3-P,
 
 
 \section{Appendix} 
+\label{appendix}
 
 This appendix presents additional information about the scenarios, such as the geographical position of the nodes and a comment about them, or some graphs showing the distribution of the gathered data.
 
@@ -814,7 +815,7 @@ ID   &  Location & Latitude & Longitude \\ \hline
 \end{tabular}
 }
 \caption{Location of the devices for Discotheque scenario.}
-\label{tab:nodosDGT}
+\label{tab:nodosDisco}
 \end{table}
 
 \begin{table}[H]
@@ -829,7 +830,7 @@ ID   &  Location & Latitude & Longitude \\ \hline
 \end{tabular}
 }
 \caption{Location of the devices for the Building of the University scenario.}
-\label{tab:nodosDGT}
+\label{tab:nodosETSIIT}
 \end{table}
 
 \begin{table}[H]
@@ -861,7 +862,7 @@ B	 & Granada & Dr. Olóriz Street & 37.186997 & -3.607882\\ \hline
 \end{tabular}
 }
 \caption{Location of the devices for the city traffic scenario.}
-\label{tab:nodosDGT}
+\label{tab:nodosCity}
 \end{table}
 
 
