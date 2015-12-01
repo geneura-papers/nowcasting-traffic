@@ -80,10 +80,10 @@ Smart traffic \sep Transit indicators \sep Traffic forecast \sep Mobility analys
 Nowadays, the transformation of any city into a Smart City, with better performance (saving energy, citizen's time, resources, costs), is a process that must be supported by powerful and reliable technologies, methods and systems. 
 To this aim, a mobility monitoring system is one of the most useful, since the data which provides can be used to enhance several services in the city, or in specific buildings inside it.
 
-The most common systems gather traffic information (mainly vehicles pass-by)  using several kind of devices, such as pneumatic tubes, loop detectors, floating vehicles or automatic Optical Character Recognition (OCR) \cite{rodrigue2013geography}. However most of these systems are not able to identify and follow the same vehicle along the road network. 
+The most common systems gather traffic information (mainly vehicles pass-by)  using several kinds of devices, such as pneumatic tubes, loop detectors, floating vehicles or automatic Optical Character Recognition (OCR) \cite{rodrigue2013geography}. However, most of these systems are not able to identify and follow the same vehicle along the road network. 
 % ¿OCR no? - JJ
 % Antonio - Sí, por eso pone most of them.
-Those that can do it are very expensive so they are just placed in very specific points of the roads.
+Those that can do it are very expensive, so they are just placed in very specific points of the roads.
 
 The local, regional or national governments use these data aiming for improvements in the maintenance of roads and services, computing a road deterioration factor based on the affluence of vehicles, for instance. In addition, useful traffic statistics can be obtained, which would help to forecast traffic jams, for example.
 This information can be directly used inside a city in several ways, from improving the traffic flow, by adjusting the synchronisation of traffic lights or defining the best traffic sense on every street, to the end-users (drivers), who can profit by optimally planning their trips according to the current, or future, status of the traffic flow. 
@@ -93,10 +93,10 @@ This paper presents a monitoring system able to collect people's and vehicles mo
 tend to install the simplest and cheapest monitors. 
 
 The device, a highly improved version of the one presented in
-\cite{castillo2014_book_sipesca}, is based in a single-board computer
-which monitors the radioelectric space capturing Bluetooth (BT) and
+\cite{castillo2014_book_sipesca}, is based on a single-board computer
+which monitors the radioelectric space, capturing Bluetooth (BT) and
 WiFi signals emitted by other devices,  mainly
-smartphones or hands-free systems on vehicles, which are detected and
+smartphones or hands-free systems on vehicles. These devices are detected and
 identified by means of their Media Access Control number (MAC) - which
 is unique - and stored as a traffic `event' (pass-by). 
 % Antonio - ¿Se os ocurre un nombre mejor para los 'pasos'?
@@ -113,7 +113,7 @@ any person.
 % Antonio - No se puede replicar, pero que lo aclare Antares.
 % Antares: Se parte de los 48bits de la MAC a 160 bits de SHA-1, por lo que el riesgo de colisión es imposible. Pero, no creo que sea relevante.
 
-To prove the reliability and utility of this system are also objectives of this work, so, four different real scenarios are presented and the collected data analysed in order to demonstrate its value for solving different problems in a city. These scenarios are focused in the city of Granada (Spain), in which real traffic/mobility data have been gathered. They are namely: a discotheque, a public building of the University, a highway between Granada and Málaga cities; and one of the main streets in the city.  
+To prove the reliability and utility of this system are also objectives of this work, so, four different real scenarios are presented and the collected data analysed in order to demonstrate its value for solving different problems in a city. These scenarios are focused on the city of Granada (Spain), in which real traffic/mobility data have been gathered. They are namely: a discotheque, a public building of the University, a highway between Granada and Málaga cities; and one of the main streets in the city.  
 % yo dejaría la facu y la discoteca. Son totalmente diferentes. Salvo que quieras contarlos por temas de carga o lo que sea, no tienen nada que ver. 
 % Antonio - son estudios sobre movilidad de personas. Si se consiguen mejorar cuestiones de seguridad, por ejemplo, yo los considero parte de una Smart City.
 Several devices or nodes have been deployed in each scenario.
@@ -143,7 +143,7 @@ presents the background and state of the art on the main topics of the
 work: traffic and mobility monitoring, traffic series forecast, and
 smart city tools, among others. 
 Then, our monitoring device is introduced in Section \ref{sec:mobywit}.
-After this, there are four sections devoted to describe and analyze the different scenarios, namely: Section \ref{sec:disco} explains the discotheque scenario and the methods applied to its data, Section \ref{sec:etsiit} presents the study on the University building, Section \ref{sec:traffic} shows the analysis on the highway traffic, and Section \ref{sec:city} comments the scenario on the street of Granada.
+After this, there are four sections devoted to describe and analyse the different scenarios, namely: Section \ref{sec:disco} explains the discotheque scenario and the methods applied to its data, Section \ref{sec:etsiit} presents the study on the University building, Section \ref{sec:traffic} shows the analysis on the highway traffic, and Section \ref{sec:city} comments the scenario on the street of Granada.
 Finally, Section \ref{sec:conclusions} plots the conclusions that we
 have reached in the work. 
 
@@ -159,14 +159,14 @@ have reached in the work.
 Several technologies are used to collect data and gather information about the 
 state of the roads. Traffic monitoring technologies can be classified as 
 \textit{intrusive}, installed in the pavement, and
-\textit{non-intrusive}, without contact with the road, causing minimal
+\textit{non-intrusive}, without contact with the road, causing a minimal
 effect on the traffic flow \cite{martin2003detector}. 
 
-As stated in previous section,the main technologies currently used include pneumatic tubes, inductive loop detectors and automatic recognition systems (or OCR), among others \cite{rodrigue2013geography}.
+As stated in the previous section,the main technologies currently used include pneumatic tubes, inductive loop detectors and automatic recognition systems (or OCR), among others \cite{rodrigue2013geography}.
 
 Pneumatic tubes are placed on top of the lane to detect vehicles by the change 
 in pressure generated when a vehicle passes over the tube. 
-An inductive loop detector is a wire embedded into the roadway usually
+An inductive loop detector is a wire embedded into the roadway, usually
 in a square configuration. An electric current is sent to the wire and
 when a metal surface with certain minimum area pass or is stopped
 above a pulse is triggered and detected. The main drawback of these
@@ -186,7 +186,7 @@ on in-vehicle systems. Video image detection is a good example; in this case a
 trip line and/or tracking is used to record traffic data. Furthermore, they 
 are used for automatic detection of incidents on the road. That is the main 
 advantage over previous information systems. However, system reliability might 
-not be the best, as weather may limit accuracy. Moreover, these systems are 
+not be the best, as the weather may limit accuracy. Moreover, these systems are 
 very expensive compared to the previously described \cite{skszek2001state}. 
 Another problem has arisen recently with privacy. The Spanish Data Protection 
 Agency (Agencia de Protección de Datos) considers the car license plate number 
@@ -197,9 +197,9 @@ field. Some of the more relevant are:
 
 \begin{itemize}
 \item Bit Carrier \cite{mendez2011system,BitCarrier}: It offers a traffic 
-management system based in BT to count people and commercial routes 
+management system based on BT to count people and commercial routes 
 (pathsolver). Its technology was deployed in highways managed by Abertis for 
-traffic flow control and monitoring. Actually it has a network of 150 devices 
+traffic flow control and monitoring. Currently, it has a network of 150 devices 
 in Catalonia (Spain) capable of tracking 200000 people every day.
 \item Trafficnow \cite{Trafficnow}: Offers a traffic flow control centre for 
 small towns. It requires a net of BT sensors. %A pilot experience has been deployed in Vigo.
@@ -213,7 +213,7 @@ in different cities based on different technologies, such as video cameras, BT d
 
 % Antonio - Maribel, voy a recortar cosillas, que te enrollas incluso más que yo. No te enfades, porfa. XD
 Traffic has been extremely exploited as a research field, mainly focused on the forecast of future flows considering the current information as a Time Series.
-The forecasting of these flows in any transport system plays an important role for either alleviating urban congestion, or for adjusting traffic control and guidance systems. The aim is to create an intelligent transportation system (ITS) which strongly depends on the capability to predict traffic conditions at least in the short-term (less than one hour into the future), since medium- and long-term predictions are barely accurate and reliable. These are nowadays a hard problem to solve in general Time Series \cite{ParrasGutierrez2014433}.
+The forecasting of these flows in any transport system plays an important role for either alleviating urban congestion, or for adjusting traffic control and guidance systems. The aim is to create an intelligent transportation system (ITS) which strongly depends on the capability to predict traffic conditions, at least in the short-term (less than one hour into the future), since medium- and long-term predictions are barely accurate and reliable. These are nowadays a hard problem to solve in general Time Series \cite{ParrasGutierrez2014433}.
 % Antonio - supongo que el medio y largo plazo no es que ayude, sería estupendo, sino que es muy difícil que sea preciso. ;)
 % Antonio - quito la segunda referencia, ya que va de otras cosas y seguramente nos van a dar un toque por la extensión del artículo. :D
 With a short-term forecasting the traffic control systems could be self-adapted continuously. For example, a traffic light could adjust its red or green time depending on the short-time forecasting of the closer streets. 
@@ -221,7 +221,7 @@ With a short-term forecasting the traffic control systems could be self-adapted 
 %Medium-term or long-term could to be useful if there are special conditions in a medium or long time period although nowadays the results of this research are not outstanding and it is an open question for many research groups, but usually in other subjects like time series in general \cite{ParrasGutierrez2014433} or economic development and political decisions \cite{longTermBussines2014}.
 
 
-There are many works related with traffic flow forecasting, each of them approaching the problem with different models, for instance: Kalman Filter Theory \cite{ASJC:ASJC1051}, Markov Chain models \cite{Qi201495}, non-parametric methods \cite{Noparametrico2014}, simulation models \cite{simulaciontrafico2012} or Big-Data-based approaches \cite{SurveyKumar2007}.  
+There are many works related to traffic flow forecasting, each of them approaching the problem with different models, for instance: Kalman Filter Theory \cite{ASJC:ASJC1051}, Markov Chain models \cite{Qi201495}, non-parametric methods \cite{Noparametrico2014}, simulation models \cite{simulaciontrafico2012} or Big-Data-based approaches \cite{SurveyKumar2007}.  
 %
 Moreover, being the traffic flow forecasting a trending topic, several surveys can be found in the literature, such as \cite{Survey2004} and \cite{SurveyKumar2007}; but the best is the one by Bolshinsky and Friedman \cite{SurveyBolshinsky2012}, since  the authors complete the information that the previous ones just compile, and give an added value to their work including the used techniques, the input data for each contribution, and the used hardware architecture, whenever the original paper described it. There are also specific surveys, like \cite{Vlahogianni2014}, which presents a classification of the revised papers regarding the main contributions of the work, i.e. forecasting techniques, gathering systems, or datasets, among others.
 
@@ -232,7 +232,7 @@ successfully a Genetic Algorithm (GA) for optimizing a Support Vector
 Machine (SVM) getting a higher prediction accuracy and a smaller
 running time.  
 
-Several recent publications present spacial issues related with the
+Several recent publications present spatial issues related to the
 scope, such as \cite{Zhang20141}, which includes the latest advances in
 traffic forecasting research having in mind the time and the space variables.  
 Other works propose conducting forecast traffic flows and trip times
@@ -244,25 +244,25 @@ Bayesian combination method (BCM) proposed by Petridis et al. in 2001,
 or \cite{Qi201495} which improves freeways short-term prediction using
 a Markov Model. 
 
-In the present work, a study on traffic forecasting is conducted (in Section \ref{sec:traffic}), however it applies classical methods, because the aim is to show the value of the data gathered by our system in the comparison with the data collected by the Spanish Traffic Agency using an inductive loop detector.
+In the present work, a study on traffic forecasting is conducted (in Section \ref{sec:traffic}), however, it applies classical methods, because the aim is to show the value of the data gathered by our system in the comparison with the data collected by the Spanish Traffic Agency using an inductive loop detector.
 Thus, our contribution on this line is the use of real traffic Time Series, created from the data extracted from our traffic `events' (WiFi and BT detections).
 
-Another line of study in our paper is the personal tracking or people's mobility. It is studied for many reasons, several of them involving profit: conversion rate, marketing effectiveness or staff planning are some of the best known \cite{stanton1967fundamentals}. Conversion rate is the percentage of visitors who effectively make a purchase. It can show you if a shop improvement (or decline) is due to more people visit it, or more of the visitors finally buy something. Shopping mall professionals study people's behaviour in order to know if their marketing techniques are paying off. In the same line, stuff planning is directly related with the amount of visitors, as well as the maintenance and cleaning needs.
+Another line of study in our paper is the personal tracking or people's mobility. It is studied for many reasons, several of them involving profit: conversion rate, marketing effectiveness or staff planning are some of the best known \cite{stanton1967fundamentals}. Conversion rate is the percentage of visitors who effectively make a purchase. It can show you if a shop improvement (or decline) is due to more people visit it, or more of the visitors finally buy something. Shopping mall professionals study people's behaviour in order to know if their marketing techniques are paying off. In the same line, staff planning is directly related with the amount of visitors, as well as the maintenance and cleaning needs.
 
-Other reasons are more practical than commercial: How many people visit a public building? When? It will help to improve the planning of the provided services, heating or cooling of the building, facility cleaning, staff shifts and so on. In a museum or a sport stadium you can adjust many parameters to help people enjoy from a better experience while raising the profits.
+Other reasons are more practical than commercial: How many people visit a public building? When? It will help to improve the planning of the provided services, heating or cooling of the building, facility cleaning, staff shifts and so on. In a museum or a sports stadium you can adjust many parameters to help people enjoy from a better experience while raising the profits.
 
-The technology for counting/tracking people has evolved over time. At the beginning infrared beam counters \cite{Hashimoto199850} were used. These were cheap but prone to failures, like when two persons pass a door together. Thermal counters \cite{635472} were used next. Also cheap but with serious limitations like the short distance from the counting device to the people being counted. Latest technology use video cameras \cite{4107051,Schofield19961421} and WiFi \cite{7134066,7130402}, or Bluetooth \cite{6526732,nicolai2007relationship} detectors. 
+The technology for counting/tracking people has evolved over time. At the beginning infrared beam counters \cite{Hashimoto199850} were used. These were cheap but prone to failures, like when two persons pass a door together. Thermal counters \cite{635472} were used next. Also cheap, but with serious limitations like the short distance from the counting device to the people being counted. Latest technology uses video cameras \cite{4107051,Schofield19961421} and WiFi \cite{7134066,7130402}, or Bluetooth \cite{6526732,nicolai2007relationship} detectors. 
 % Antonio - esto es importante, habría que extenderlo y compararlo con lo nuestro, ya que se podría parecer. Aparte de la cita. ;D
-Video devices are more expensive as is the software in charge of image processing, more expensive in terms of resource consumption. On the positive side, now we can do many more things than counting people. We can track their paths and behaviour. Radio signal is also a great method to track people, as powerful as video but cheaper in terms of hardware price and algorithmic cost. Moreover, the range of detection is wider, 100m approximately.
+Video devices are more expensive as is the software in charge of image processing, more expensive in terms of resource consumption. On the positive side, now we can do many more things than counting people. We can track their paths and behaviour. Radio signal is also a great method to track people, as powerful as video, but cheaper in terms of hardware price and algorithmic cost. Moreover, the range of detection is wider, 100m approximately.
 
-Our approach is based on WiFi and BT \cite{824570} detection, but focused on people's personal devices from which an unique identifier can be extracted and, after anonymisation, stored. This makes it easy to track these people on a building for instance, just deploying a fair number of monitoring devices. With the advantage of a cheaper price than other systems, such as video ones, and also the possibility of creating origin-destination flow matrices or any other desired movement model.
+Our approach is based on WiFi and BT \cite{824570} detection, but focused on people's personal devices from which a unique identifier can be extracted and, after anonymisation, stored. This makes it easy to track these people on a building for instance, just deploying a fair number of monitoring devices. With the advantage of a cheaper price than other systems, such as video ones, and also the possibility of creating origin-destination flow matrices or any other desired movement model.
 
 The idea of using BT personal devices is not new an has been tested by many previous researchers. In \cite{nicolai2007relationship} Tom Nicolai, like us, used statically placed BT detector to track people. Also in this work from Morrison \cite{morrison2009visualisation} the same procedure is applied to follow spectators' activity on a stadium. Kostakos used this same idea to track people trips in public transportation buses \cite{kostakos2008using}.
 A good starting point to learn about the issue is \cite{6526732} with the additional originality of mixing stationary detectors with dynamic ones to estimate crowd density in a soccer stadium during a championship.
 
-Also the idea of tracking people with their personal WiFi devices has been exploited. As more and more people use it every day it is becoming one of the best methods to follow them. This idea has been put in practise recently by several authors, for instance: Wei Xi in \cite{6847958} demonstrates how this method can count people with great accuracy, and Gabe Fierro in \cite{Fierro:2012:ZOC:2422531.2422572} uses it to measure the occupancy level of a building without requiring additional infrastructure.
+Also the idea of tracking people with their personal WiFi devices has been exploited. As more and more people use it every day it is becoming one of the best methods to follow them. This idea has been put into practise recently by several authors, for instance: Wei Xi in \cite{6847958} demonstrates how this method can count people with great accuracy, and Gabe Fierro in \cite{Fierro:2012:ZOC:2422531.2422572} uses it to measure the occupancy level of a building without requiring additional infrastructure.
 
-However, by joining BT and WiFi we pursue to increase the detection rate further than most people has achieved. Apparently it can seem redundant but the detection likelihood is higher. We need to study more deeply the improvement of the combined detections but on average we detect a 80\% of WiFi devices and a 20\% of BT. BT is specially important for the detection of cars because it is technology included in almost every new car. The same fact is true for WiFi in  smartphones. Even when people disconnect WiFi devices keep on sending signals.
+However, by joining BT and WiFi we pursue to increase the detection rate further than most people has achieved. Apparently it can seem redundant, but the detection likelihood is higher. We need to study more deeply the improvement of the combined detections but on average we detect a 80\% of WiFi devices and a 20\% of BT. BT is specially important for the detection of cars because it is a technology included in almost every new car. The same fact is true for WiFi in  smartphones. Even when people disconnect WiFi devices keep on sending signals.
 
 % TODO: ANTONIO - Meter estado del arte en Smart City y enlazar con lo de movilidad.
 
@@ -292,29 +292,30 @@ In each device, called MOBYWIT (Mobility by Wireless Tracking) the monitoring sy
 As it can be seen in that figure, there are six main parts in the software layer of the system, which are unidirectionally connected by a strict data flow. Those parts have been named as:
 \begin{itemize}
 
-\item \textit{Raziel}: This module is in charge of the detection of BT and WiFi devices as well as of their identification (extracting and encrypting the MAC) and the periodic submission of this information to the server. It runs in the device and has been implemented in Java.
+\item \textit{Raziel}: This module is in charge of the detection of BT and WiFi devices as well as of their identification (extracting and encrypting the MAC) and the periodic submission of this information to the server. It runs on the device and has been implemented in Java.
 
-\item \textit{Lilith}: This module acts as a gateway between the network of devices and the server. It allows the communications between nodes and between them and external networks. This component is also run in every device and implemented in PHP.
+\item \textit{Lilith}: This module acts as a gateway between the network of devices and the server. It allows the communications between nodes and between them and external networks. This component is also run on every device and implemented in PHP.
 
-\item \textit{Abdiel}: This component implements a set of services for accessing the devices from `outside' (mainly for activate/deactivate or update them). In addition it performs the storage of gathered data (in blocks) in the server database. It is also implemented in PHP.
+\item \textit{Abdiel}: This component implements a set of services for accessing the devices from `outside' (mainly for activate/deactivate or update them). In addition, it performs the storage of gathered data (in blocks) in the server database. It is also implemented in PHP.
 
 \item \textit{Alejandría}: This is the system database. It is a MySQL instance placed in a local server. It is optimised (using indexes and table partitioning) to provide a close to real-time processing and data service.
 
-\item \textit{Ezequiel}: This module is responsible of the publication of data in a cloud-based storage. It includes data mining, machine learning and forecast techniques to process these data in order to publish interesting or useful information about them.
+\item \textit{Ezequiel}: This module is responsible for the publication of data in a cloud-based storage. It includes data mining, machine learning and forecast techniques to process these data in order to publish interesting or useful information about them.
 
-\item \textit{Anan}: This is the cloud-based storage and services. It is based in Google technology so Anan stores and manages the data in a NoSQL format, by means of Google Fusion Tables. It also offers advanced visualisation methods to be more usable and attractive for the end-user of the system.
+\item \textit{Anan}: This is the cloud-based storage and services. It is based on Google technology so Anan stores and manages the data in a NoSQL format, by means of Google Fusion Tables. It also offers advanced visualisation methods to be more usable and attractive to the end-user of the system.
 
 \end{itemize}
 
-In addition, and as it is shown in Figure 1, the device runs an specific Operative System, called \textit{Horeb}, which is a modification of the original Raspbian 3.10.24, adapted by MOBYWIT system designer to be more robust (to power fails, for instance) and reliable.
+
+In addition, and as it is shown in Figure \ref{fig:mobywit}, the device runs a specific Operative System, called \textit{Horeb}, which is a modification of the original Raspbian 3.10.24, adapted by MOBYWIT system designer to be more robust (to power fails, for instance) and reliable.
 
 *** CONTAR CÓMO FUNCIONA AL DETECTAR ***
 % Antonio - TODO: ANTARES, revisa esto porfa. ;)
 There are several configuration parameters in the system, which sets important parts of the functionality, such as the intensity threshold to collect a received WiFi signal, or time limits to consider a device as obsolete or out of the range of the device.
 
-Every detected `pass-by' or mobility `event' is associated to a detection time, obtained by NTP (Network Time Protocol). These `events' are stored initially in the device's memory. After some time (also set in a parameter) the information is sent, in blocks, to the server, to avoid an overuse/saturation of the network.
+Every detected `pass-by' or mobility `event' is associated with a detection time, obtained by NTP (Network Time Protocol). These `events' are stored initially in the device's memory. After some time (also set in a parameter) the information is sent, in blocks, to the server, to avoid an overuse/saturation of the network.
 
-MOBYWIT's system is tested in four different scenarios, described in the nest sections, in order to prove its value in different urban problems.
+MOBYWIT's system is tested in four different scenarios, described in the following sections, in order to prove its value in different urban problems.
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%   PEOPLE'S MOBILITY IN A DISCO  %%%%%%%%%%%%%%%%%%%%
@@ -483,7 +484,7 @@ In this section we will focus on people's mobility, as explained in Section \ref
 
 Since the devices can detect BT and WIFI signals from both the university staff and the students, two of them has been placed very close of the main access trying to distinguish staff (62) from students (52). The parking door (42) can only be used by the staff.
 
-The devices has been recording data for a few days only. With these data the origin-destination histogram that can be seen in figure \ref{fig:etsiit_io} has been created. A careful examination of this figure let us extract some conclusions.
+The devices have been recording data for a few days only. With these data the origin-destination histogram that can be seen in figure \ref{fig:etsiit_io} has been created. A careful examination of this figure lets us extract some conclusions.
 
 \begin{figure}[!ht]
 	\begin{center}
@@ -498,13 +499,13 @@ The devices has been recording data for a few days only. With these data the ori
 \item Professors and administrative staff seem to divide their way of getting in and out. They used the parking (sensor 42) as much as the main building door (sensor 62).
 \item Many students go out by the main building (62) after a supposedly visit to a professor or an administrative.
 %\item Some curious behavior has been discovered: some people who enter by door 42 exit by the parking (52). The only explanation possible is that the cafeteria and the lunch room are in the basement and they can get out without getting up one floor. %Antares - El sensor 52 es el de la puerta del aulario, no el del parking.
-\item Why people getting in by main door (62) almost never go out by the same door? Most of them are students and go out by their door (52) at the end of the classes.
+\item Why people getting in by the main door (62) almost never go out by the same door? Most of them are students and go out by their door (52) at the end of the classes.
 %\item We have failed to explain why not as many people who enter by the parking (42) leave the place by the same door. Cars can't be left there overnight.
 \end{itemize}
 
-With some additional sensors the people flow could be studied in a better way. Because with the three used many people can not be correctly interpreted as the right kind of visitor. The most interesting place for a new sensor is in the door of the classroom building at the north in the map.
+With some additional sensors the people flow could be studied in a better way. Because with the three used many people can not be correctly interpreted as the right kind of visitor. The most interesting place for a new sensor is at the door of the classroom building at the north on the map.
 
-Information gathered can be useful for the management of the building. When must heating be started? How many students are in class or just studying inside? Are there enough sits in the library? Are the doors in the right place? Many of this questions need a little more time to save enough data and answer them correctly.
+The information gathered can be useful for the management of the building. When must heating be started? How many students are in class or just studying inside? Are there enough seats in the library? Are the doors in the right place? Many of these questions need a little more time to save enough data and answer them correctly.
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%   TRAFFIC in a HIGHWAY  %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -514,24 +515,24 @@ Information gathered can be useful for the management of the building. When must
 \label{sec:traffic}
 
 This section describes the experimental analysis of the data gathered by a 
-different number of devices placed in national highways.
+different number of MOBYWIT devices placed in national highways.
 
 The main difference with respect to the other experimental scenarios is that, 
 in this case, the detected devices are cars moving at higher speed. However, 
-in this scenario we also count with the information provided by the Spanish 
+in this scenario, we also count with the information provided by the Spanish 
 traffic management agency, Direcci\'on General de Tr\'afico (DGT), which is 
 collected using loop detectors. So, in this case, we have used real data in 
 order to validate our approach by comparing the real number of vehicles which 
-has passed a point, with the number of devices detected by MOBYWIT. Thus, a 
+have passed a point, with the number of devices detected by MOBYWIT. Thus, a 
 realistic \textit{ratio} between both numbers has been computed.
 
-Six nodes have been placed along different roads in Andalusia (south Spain). 
+Six nodes were placed along different roads in Andalusia (southern Spain). 
 Figure \ref{fig:nodosDGT} shows the identifiers of these devices and their 
-exact location. These locations have been chosen because are the nearest   
-ones to existent loop detectors monitored by the DGT, and also, they have 
+ placement. Exact locations is described in Appendix section. These locations have been chosen because they are the nearest   
+ones to existent loop detectors monitored by the DGT, and also, they have an
 Internet connection to allow the transmission of data to our server. 
 There exist two groups of nodes: one in the province of Granada area 
-(1010, 1020 and 1030) and the other in the road to M{\'a}laga (1040, 1050 and 1060).
+(1010, 1020 and 1030) and the other on the road to M{\'a}laga (1040, 1050 and 1060).
 
 \begin{figure}[htb]
 	\begin{center}
@@ -541,7 +542,9 @@ There exist two groups of nodes: one in the province of Granada area
 	\end{center}
 \end{figure}
 
-In this section, several experiment will be conducted. First, a study on the velocity and driving behaviour taking into account the tracking capabilities of MOBYWIT will be presented. Also, different methods to extract a ratio between our gathered data and the real data provided by the DGT will be performed. Finally, a time series forecasting study will be performed. In order to compare the performance of the different methods, 4 frequently used error measures will be used in this section:
+
+In this section, several experiments will be conducted. First, a study on the velocity and driving behaviour taking into account the tracking capabilities of MOBYWIT will be presented. Also, different methods to extract a ratio between our gathered data and the real data provided by the DGT will be performed. Finally, a time series forecasting study will be performed. In order to compare the performance of the different methods, 4 frequently used error measures will be used in this section:
+
 Mean Absolute Error ({\em MAE}),
 Mean Absolute Percentage Error ({\em MAPE(\%)}),
 Mean Squared Error ({\em MSE}), and
@@ -552,7 +555,7 @@ Their different features, as well as their equations, can be found in Hyndman an
 
 \subsection{Driving behaviour}
 
-Using the capability of the unique vehicle detection by MAC, we can calculate the passing frequency between nodes, and also, the travel time between them. Figure \ref{fig:dgtMatrixFrec} shows the frequency matrix between nodes. A time window for detection has been set to 2.5 hours (as it is a little more of the time between 1040 and 1030 according Google Maps). Results show that, patently, there are more repetitions between the nodes of the same continuous road branch. For example, between 1040 and 1050, as there exist a deviation to Seville before node 1060. This is clearer at the end of the week, where people come back to their villages/other cities to spent the weekends, and more repetitions are detected. Some repetitions have not been detected in the more separated nodes (for example, between 1040 and 1030), because shorter intercity routes exist following the coastline, instead the interior.
+Using the capability of the unique vehicle detection by MAC, we can calculate the passing frequency between nodes, and also, the travel time between them. Figure \ref{fig:dgtMatrixFrec} shows the frequency matrix between nodes. A time window for detection has been set to 2.5 hours (as it is a little more of the time between 1040 and 1030 according Google Maps). Results show that, patently, there are more repetitions between the nodes of the same continuous road branch. For example, between 1040 and 1050, as there exists a deviation to Seville before node 1060. This is clearer at the end of the week, where people come back to their villages/other cities to spend the weekends, and more repetitions are detected. Some repetitions have not been detected in the more separated nodes (for example, between 1040 and 1030), because shorter intercity routes exist following the coastline, instead the interior.
 
 \begin{figure}[htb]
 	\begin{center}
@@ -562,7 +565,7 @@ Using the capability of the unique vehicle detection by MAC, we can calculate th
 	\end{center}
 \end{figure}
 
-Using the time when each repetition has been detected we can also calculate average speed velocity during the week. Figure \ref{fig:dgtMatrixTime} shows the detected times between nodes, in blocks of 4 hours, during the week. Largest travel times are detected between more separated nodes. As in previous figure, time between more separated nodes is not tracked because shorter paths between cities exist. ***HABLAR MAS DE ESTOS DATOS***
+Using the time when each repetition has been detected, we can also calculate average speed velocity during the week. Figure \ref{fig:dgtMatrixTime} shows the detected times between nodes, in blocks of 4 hours, during the week. Largest travel times are detected between more separated nodes. As in previous figure, time between more separated nodes is not tracked because shorter paths between cities exist. %***HABLAR MAS DE ESTOS DATOS***
 
 \begin{figure}[htb]
 	\begin{center}
@@ -575,18 +578,18 @@ Using the time when each repetition has been detected we can also calculate aver
 
 \subsection{Data validation using other sources of data}
 
-Different metrics will be used to obtain a correct correlation between the number of detected devices and the real number detected by the loop detectors. To simplify the data analysis and discussion only the data of one node (1010) is shown.
+Different metrics will be used to obtain a correct correlation between the number of detected devices and the real number detected by the loop detectors. 
 
 \begin{itemize}
 \item {\em Total ratio}: ratio between the total number of vehicles detected by the DGT and the total number of vehicles detected by our device.
-\item {\em Mean ratio}: as the maximum granularity of the data provided by the DGT is 15 minutes, the sum of all ratios between the DGT data and our data in each 15 minutes section has been divided by the total number of sections to calculate the average.
+\item {\em Mean ratio}: as the maximum granularity of the data provided by the DGT is 15 minutes, the sum of all ratios between the DGT data and our data in each 15 minute section has been divided by the total number of sections to calculate the average.
 \item {\em Median ratio}: instead the average ratio as in previous metric, this one uses the median of all ratios.
-\item {\em Mean by quarter ratio}: this metric calculate a vector of ratios separated by quarter of hour during the day, instead obtaining a global ratio for all data. An average ratio per quarter per hour in the vector is calculated taking into account all the ratios of that quarter during all the days we have data.
+\item {\em Mean by quarter ratio}: this metric calculates a vector of ratios separated by quarter of hour during the day, instead obtaining a global ratio for all data. An average ratio per quarter per hour in the vector is calculated taking into account all the ratios of that quarter during all the days we have data.
 \item {\em Median by quarter ratio}: as in the previous metric, this one uses a vector of ratios per quarter of hour, but every element is calculated using the median, instead the average.
 \end{itemize}
 
 
-Table \ref{tab:ratiosDGT} shows the obtained ratios. Results show that our device detects one vehicle per approximately 19 detected by the DGT, according Total, Mean and Median ratios. However, best results in MAE and MAPE are attained obtaining ratios dividing by quarter.
+Table \ref{tab:ratiosDGT} shows the obtained ratios. To simplify the data analysis and discussion only the data of one node (1010) are shown. Results show that our device detects one vehicle per approximately 19 detected by the DGT, according Total, Mean and Median ratios. However, best results in MAE and MAPE are attained obtaining ratios dividing by quarter. Therefore, for the rest of the paper this ratio has been chosen, as we need to deal with absolute values to perform forecasting analysis later.
 
 \begin{table}[htb]
 \centering
@@ -609,7 +612,7 @@ Median By Quarter of Hour Ratio & Depends on the hour  & \textbf{58.326} & \text
 \end{table}
 
 
-Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applying the chosen correction ratio. As it can be seen, certain correlation exist. However, different peaks appear in the figure, being those elements the product of detecting few devices in comparison with the DGT.
+Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applying the chosen correction ratio. As it can be seen, certain correlation exists. However, different peaks appear in the figure, being those elements the product of detecting few devices in comparison with the DGT.
 
 
 
@@ -623,7 +626,7 @@ Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applyin
 
 \subsection{Traffic forecasting}
 \label{sub:ts_forecasting}
-Capturing data about traffic in a highway worth not only for describing its current situation, but also for forecasting future conditions. In this sense, counting the number of cars that have passed for a given point in a given time can be considered as a time series, allowing the use of automatic tools to perform forecasting.
+Capturing data about traffic on a highway worth not only for describing its current situation, but also for forecasting future conditions. In this sense, counting the number of cars that have passed for a given point in a given time can be considered as a time series, allowing the use of automatic tools to perform forecasting.
 
 For this work, four methods (three widely used time series forecasters, and one control method) have been used to, automatically, predict the number of cars that will pass in the next period. These methods are included in the forecast package ~\cite{Hyndman08automatictime} of the R program~\cite{R:Bloomfield:2014}, and are the following:
 
@@ -638,9 +641,9 @@ The data used for the experiments are the ones provided by the node 1010 startin
 
 
 
-Table ~\ref{tab:forecasting} shows the values for the ten used measures computed over $576$ values, the ones corresponding to the last 6 days (i.e., $30\%$ of the data). The horizon has been set to 1, so that, in order to forecast any given moment all the previous real known data were used to build and train the models and, after this, the next value was forecasted. This way, the problem has been faced as a simulation of what could happen in a continuous system in which new real data where received every 15 minutes so that forecasting models could be also continuously adapted.
+Table ~\ref{tab:forecasting} shows the values for the ten used measures computed over $576$ values, the ones corresponding to the last 6 days (i.e., $30\%$ of the data). The horizon has been set to 1, so that, in order to forecast any given moment all the previous real known data were used to build and train the models and, after this, the next value was forecasted. This way, the problem has been faced as a simulation of what could happen in a continuous system in which new real data were received every 15 minutes so that forecasting models could be also continuously adapted.
 
-As results show, ETS, ARIMA and Theta behave clearly better than the control method. The differences between the three considered methods are, almost nonexistent. In any case, ETS yields the lowest values in six of the measures been used. For these reason, it could be probably considered the best candidate to be chosen as the preferred method to forecast this kind of time-series. Figure \ref{fig:forecasted-values} depicts the values forecasted by ETS comparing them with the expected ones.
+As the results show, ETS, ARIMA and Theta behave clearly better than the control method. The differences between the three considered methods are, almost nonexistent. In any case, ETS yields the lowest values in four of the measures being used. For these reasons, it could be probably considered the best candidate to be chosen as the preferred method to forecast this kind of time-series. Figure \ref{fig:forecasted-values} depicts the values forecasted by ETS comparing them with the expected ones.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -670,12 +673,12 @@ RMSE &$5.3452$ & $\textbf{3.6082}$ & $3.6438$ & $3.6114$\\
 \hline
 \end{tabular}
 }
-\caption{Error values yielding when forecasting data recorded by MOBYWIT. Measures are computed using differences between expected values and yielded ones from 25-Oct-2015, 00:00 hours to 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
+\caption{Error values yielded when forecasting data recorded by MOBYWIT. Measures are computed using differences between expected values and yielded ones from 25-Oct-2015, 00:00 hours to 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
 \label{tab:forecasting}
 \end{table}
 
 %%%Completar porque no me termino de enterar de que es lo que se ha hecho.
-Finally, once forecasting with MOBYWIT's data has been carried out, the number of cars that would have been detected by the DGT can be estimated by means of the ratios previously calculated (see table \ref{tab:ratiosDGT}). Concretely, table \ref{tab:errorForecastingRatio} shows the error computed when applying the Median Ratio By Hour conversion. As can be seen, newly ETS stands for its capability of yielding the lowest errors. 
+Finally, once forecasting with MOBYWIT's data has been carried out, the number of cars that would have been detected by the DGT can be estimated by the ratios previously calculated (see table \ref{tab:ratiosDGT}). Concretely, table \ref{tab:errorForecastingRatio} shows the error computed when applying the Median Ratio By Quarter conversion. As can be seen, newly ETS stands for its capability of yielding the lowest errors. 
 
 \begin{table}[htb]
 \centering
@@ -701,7 +704,9 @@ RMSE  & $83.906$ & $\textbf{58.925}$  &  $59.747$ & $59.309$ \\
 %\hline
 \end{tabular}
 }
-\caption{Error values computed using the differences between DGT real data and data recorded by MOBYWIT with Median Ratio By Hour conversion. Period to be forecasted started on 25-Oct-2015, 00:00 hours and finished on 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
+
+\caption{Error values computed using the differences between DGT real data and data recorded by MOBYWIT with Median Ratio By Quarter Hour conversion. The period to be forecasted started on 25-Oct-2015, 00:00 hours and finished on 31-Oct-2105, 23:45 hours, establishing the horizon to 1. Best (=lowest) values are highlighted in bold.}
+
 \label{tab:errorForecastingRatio}
 \end{table}
 
@@ -713,7 +718,7 @@ RMSE  & $83.906$ & $\textbf{58.925}$  &  $59.747$ & $59.309$ \\
     \end{center}
 \end{figure}
 
-Finally, according to the results obtained, performing traffic forecasting using data provided by MOBYWIT seems to be an affordable task for traditional methods (i.e., ETS or ARIMA). Furthermore, ratios computed from data recorded by DGT allows to convert forecasted values to their equivalent representing the number of cars in a given location. Thus, the joint use of this two techniques makes possible to closely approximate the number of cars that will have passed 15 minutes later by the position of the MOBYWIT; and this process can be newly repeated every 15 minutes so that forecasting models can be enhanced and adapted to the new conditions of the road.
+Finally, according to the results obtained, performing traffic forecasting using data provided by MOBYWIT seems to be an affordable task for traditional methods (i.e., ETS or ARIMA). Furthermore, ratios computed from data recorded by DGT allow to convert forecasted values to their equivalent representing the number of cars in a given location. Thus, the joint use of this two techniques makes possible to closely approximate the number of cars that will have passed 15 minutes later by the position of the MOBYWIT; and this process can be newly repeated every 15 minutes so that forecasting models can be enhanced and adapted to the new conditions of the road.
 
 
 %----------------------------------------------------------------------------
@@ -723,15 +728,18 @@ Finally, according to the results obtained, performing traffic forecasting using
 \section{Analysis of the urban traffic in a city}
 \label{sec:city}
 
-The information MOBYWIT device is able to provide for urban scope is amazing, but we are mainly interesting in two goals: to measure the trip time among several points in a city and the path the drivers follow across the city to arrive the closer highway. Both goals are the interest area of the local city council, so we start to monitoring the city for achieving them. 
+The information MOBYWIT device is able to provide for urban scope is wide, but we are mainly interested in two goals: to measure the trip time between several points in a city and the path the drivers follow across the city to arrive the closer highway. Both goals are the interest area of the local city council, so we start to monitoring the city for achieving them. 
 
-Traffic jams usually are present in every town and it could be produced by diverse reasons. There are several papers which classify the traffic jam causes, \cite{CausasAtascos1}\cite{CausasAtascos2}, but they have been studied in particular cities. Therefore we can not apply the solutions provided by the authors of these papers to any city, we can solve the problem for a particular city taken the previous studies as starting point for our case and getting the good ideas for our case. A traffic jam is produced when the way or the street capacity is overflow for any reason during some time. Whatever the cause of the overflow, whether an unusual reason as a traffic accident, or a cause that remains over time as vehicle increasing around a new city area, drivers should avoid the area of the jam.
-
-
-When a driver finds himself in a traffic jam, the natural response is to plan another path to arrive his destination and the information, the competent authority provides, about another available path is appreciated by them. The selection of another path depends on driver destination and it could be different for each case. So, the first stage is to inform about the traffic jam and then the drivers decide to go across or miss it. The second stage is to provide the available paths and to turn off the vehicles but this goal has not been addressed in the paper. 
+Traffic jams usually are present in every town and it could be produced by diverse reasons. There are several papers which classify the traffic jam causes, \cite{CausasAtascos1}\cite{CausasAtascos2}, but they have been studied in particular cities. Therefore, we can not apply the solutions provided by the authors of these papers to any city, we can solve the problem for a particular city taken the previous studies as starting point for our case and getting the good ideas for our case. A traffic jam is produced when the way or the street capacity is overflow for any reason during some time. Whatever the cause of the overflow, whether an unusual reason as a traffic accident, or a cause that remains over time as vehicles increasing around a new city area, drivers should avoid the area of the jam.
 
 
-To illustrate the MOBYWIT utility for the first stage, early detection of a traffic jam is essential, and a little experiment has been carried out in Granada city (Spain). We have installed two MOBYWIT devices in the same street. The device's location is Dr. Ol\'{o}riz street. It is one-way, has four lanes and is placed in a neighbourhood which regularly is collapsed. The map of the devices location is in Figure \ref{fig:mososMapa}. The distance among both nodes is about $168$ metres. These devices cannot detect all the real persons and vehicles moving close to them since not all of them emit BT or WiFi signals, however after an open poll which $600$ people answered we conclude that around the $22\%$ of the drivers emit BT and around the $70\%$ of the drivers emit WiFi signal. We consider the sample is good and representative of the real world. For this starting experiment, we measure the taken time to go from the first to the second MOBYWIT device for each monitored device, either vehicle or person. The results of this experiment are displayed in Figure \ref{fig:mososTiempo}. In this figure, we have defined seven terms for the twenty-four hours of one day and they are placed over X axis. We calculate the average of trip time using all the collected data and the result is $85$ seconds. We referee that value as Global Trip Time Average (GTTA). After that, we calculate the boxplot for each term, scale the results to $[0,1]$ interval and represent it using their rate respect to GTTA value placed on the Y axis over $0.50$. That is, if the box is over $0.50$ Y axis value means that all the trips of that term are longer that GTTA value and if the box is below $0.50$ means that all the trips of this term are shorter than GTTA value. As you can see in the Figure, the first four terms are over $0.50$ so all the trips of these terms are longer than GTTA which indicates the trips during these terms are slower. The rest of the terms are below the $0.50$ level, so the trip times during these terms are speeder than the GTTA value.
+When a driver finds himself in a traffic jam, the natural response is to plan another path to arrive his destination and the information, the competent authority provides, about other available path is appreciated by them. The selection of another path depends on driver destination and it could be different for each case. So, the first stage is to inform about the traffic jam and then the drivers decide to go across or miss it. The second stage is to provide the available paths and to turn off the vehicles, but this goal has not been addressed in the paper. 
+
+
+To illustrate the MOBYWIT utility for the first stage, early detection of a traffic jam is essential, and a little experiment has been carried out in Granada city (Spain). The goal of this experiment is to detect how varies in time the trip time from node A to node B. We have installed two MOBYWIT devices in the same street. It is one-way, has four lanes and is placed in a neighbourhood which regularly is collapsed. The map of the devices location is in Figure \ref{fig:mososMapa}. The distance between both nodes is about $168$ metres. These devices cannot detect all the real persons and vehicles moving close to them since not all of them emit BT or WiFi signals, however, after an open poll, which $600$ people answered, we conclude that around the $22\%$ of the drivers emit BT and around the $70\%$ of the drivers emit WiFi signal. We consider the sample is good and representative of the real world. 
+
+For this starting experiment, we measure the  time taken to go from the first to the second MOBYWIT device for each monitored device. The results of this experiment are displayed in Figure \ref{fig:mososTiempo}. In this figure, we have defined eight terms for the twenty-four hours of one day and they are placed over X axis. We calculate the average trip time, using all the collected data, being this value $85$ seconds. We referee that value as Global Trip Time Average (GTTA). After that, we calculate the boxplot for each term, scale the results to $[0,1]$ interval and represent it using their rate respect to GTTA value placed on the Y axis over $0.50$. That is, if the box is
+over $0.50$ value means that all the trips of that term are longer that GTTA value and if the box is below $0.50$ means that all the trips of this term are shorter than GTTA value. As you can see in the Figure, three terms are over $0.50$ so all the trips of these terms are longer than GTTA which indicates the trips during these terms are slower. The rest of the terms are below the $0.50$ level, so the trip times during these terms are faster than the GTTA value.
 
 \begin{figure}[htb]
 	\begin{center}
@@ -744,7 +752,7 @@ To illustrate the MOBYWIT utility for the first stage, early detection of a traf
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale=0.4]{imgs/MOSOS/mosos_graph_tiempos.eps}
-		\caption{Average time along the day for movements from node A to node B. We group the hours of a day using eighth terms. The first and the eighth terms include the night, the second one includes the rush hour for morning beginning is included. The third period includes from 9:00am to 11:59am. The fourth term includes the evening until 2:59pm. The fifth includes from 3:00pm to 5:59pm, the sixth from 6:00 pm to 9:00pm and the seventh from 9:00pm to 11:59pm. The boxplot shows the percentage of increment (up to $0.50$) or decrement (low to $0.50$) of the average time needed to go from A to B along the day.}
+		\caption{Average time along the day for movements from node A to node B. We have grouped the hours of a day using eight terms. The first and the eighth terms include the night, in the second one the rush hour for morning beginning is included. The third period includes from 9:00am to 11:59am. The fourth term includes the evening until 2:59pm. The fifth includes from 3:00pm to 5:59pm, the sixth from 6:00 pm to 8:59pm and the seventh from 9:00pm to 11:59pm. The boxplot represents descriptive statistics for each term scaled to $[0,1]$ interval. The global trip time average is placed on $0.5$.}
 	\label{fig:mososTiempo}
 	\end{center}
 \end{figure}
@@ -758,20 +766,20 @@ In short, we demonstrate that only using MOBYWIT, without any additional data it
 \section{Conclusions}
 \label{sec:conclusions}
 
-In this work, MOBYWIT, a novel monitoring and tracking system which gathers mobility data from people and vehicles has been presented. Some of its applications have been shown, using the data collected by the system to address different issues in a city in order to do it `smarter'.
+In this work, MOBYWIT, a novel monitoring and tracking system which gathers mobility data from people and vehicles has been presented. Some of its applications have been shown, using the data collected by the system to address different issues in a city in order to make it `smarter'.
 Thus, four different scenarios have been studied:
 
 \begin{itemize}
     \item A discotheque, which has been used as a `stress test' for the system and also to address issues on marketing, energetic efficiency and security in the building, considering the mobility of people inside it on different nights. Clustering methods have been applied in order to visualise and extract interesting knowledge about people's movements and recurrences to the disco.
     \item A public building of the University of Granada, in which students', teachers' and other staff's movements have been analysed using origin/destination matrices with a similar objective than before: security, access improvements and (possibly) marketing reasons.
-    \item An interurban road, where the traffic flows have been studied and contrasted with real traffic data, using statistical methods. Moreover forecast techniques have been applied with very good results in the short-term.
+    \item An interurban road, where the traffic flows have been studied and contrasted with real traffic data, using statistical methods. Moreover, forecast techniques have been applied with very good results in the short-term.
     \item An urban street, which is one of the main arteries of the city of Granada, so it is usually collapsed. A statistical analysis has been conducted to study the traffic flows, detecting possible jams. This information could be potentially used in order to improve the light signal synchronisations in that street.
 \end{itemize}
 
-The aim of the work was to show that the results of these studies could be the basis for solving the commented issues, as well as to prove the value and reliability of the presented system. Which has been demonstrated.
+The aim of the work was to show that the results of these studies could be the basis for solving the commented issues, as well as to prove the value and reliability of the presented system. %Which has been demonstrated. FERGU: quito esto
 
 Since this paper is a kind of `proof of concept' for MOBYWIT, several future lines of research are open.
-Firstly, a deeper study on every issue addressed in the work can be done, focusing on every scenario, considering bigger amounts of data and applying some other techniques, which would improve the quality of the results. Moreover, we could aim to improve the methods of the state of the art for different problems, such as traffic forecast, for instance, but considering our gathered real data.
+Firstly, a deeper study on every issue addressed in the work can be done, focusing on every scenario, considering bigger amounts of data and applying some other techniques, which would improve the quality of the results. Moreover, we could aim to improve the methods of the state of the art for different problems, such as traffic forecast, for instance, but considering our gathered real data, offering these data as benchmarks for the scientific community.
 
 Also, some other problems in the city could be addressed using MOBYWIT devices, for instance, analysing people's and traffic mobility in the city, in order to improve services (to the tourists, for instance), conduct geo-marketing analyses \cite{Flyers-GeoMarketing,LaMarca-GeoMarketing}, increase the security mechanisms, or improve the public transport system.
 This would require the deployment of several devices around the city, in order to better build mobility graphs, origin/destination matrices and other mobility models.
