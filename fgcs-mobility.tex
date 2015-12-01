@@ -329,7 +329,7 @@ Five devices have been deployed, one in every of the three main
 rooms, each one devoted to a different type of music, one on the main
 entrance, and one on the outdoor terrace (See the Appendix for more details). This scenario is interesting because it is assumed that 100\% of users have a smartphone, thus it would be a priori possible to track every single present device. The electromagnetic scenario is also quite {\em heavy}, which presented a challenge for testing the device.
 
-After processing and summarising data, a total of 2200 different devices were detected in one of the busy nights in September (from a Thursday at 8 pm to Friday at 8 am), following the distribution per node shown in Figure \ref{fig:disco_data}. 
+After processing and summarising data, a total of 2200 different devices were detected in one of the busiest nights in September (from a Thursday at 8 pm to Friday at 8 am), following the distribution per node shown in Figure \ref{fig:disco_data}. 
 
 \begin{figure}[ht]
 	\begin{center}
@@ -406,9 +406,9 @@ The application of SOM + U-MATRIX produces the graphs shown in Figure
 	\end{center}
 \end{figure}
 
-Several clusters (blue areas surrounded by other colours) arise in U-MATRIX graph. Looking at them, it can be seen that the central cluster is strongly related with high values of features of node 102 (see SOM Planes Analysis on the top of the figure): 'abs\_time\_n102', 'rel\_time\_n102',  and 'rel\_time\_nig\_n102' which is on the Terrace. Thus, having in mind the dates and the good temperature, they are probably people staying there, not just going out for smoking as would be usual in other seasons.
+Several clusters (blue areas surrounded by other colours) arise in U-MATRIX graph. Looking at them, it can be seen that the central cluster is strongly related to high values of features of node 102 (see SOM Planes Analysis on the top of the figure): `abs\_time\_n102', `rel\_time\_n102',  and `rel\_time\_nig\_n102' which is on the Terrace. Thus, having in mind the dates and the good temperature, they are probably people staying there, not just going out for smoking as would be usual in other seasons.
 
-Top-right cluster corresponds to people with an early entrance and out ('ent\_time', 'out\_time') and little stay time ('stay\_time') as plotted in the Plane Analysis. This could correspond to people just staying for a beer or coffee, before the `hard music' starts.
+Top-right cluster corresponds to people with an early entrance and out (`ent\_time', `out\_time') and little stay time ('stay\_time') as plotted in the Plane Analysis. This could correspond to people just staying for a beer or coffee, before the `hard music' starts.
 
 The absence of labels in the U-MATRIX graph limits the possible interpretation and conclusions that we can reach from it. SOM Planes Analysis is more useful this time.
 
@@ -440,7 +440,7 @@ Variable name & Description & Type\\
 For each device, we have computed a sum of the amounts of diary time per monitoring node. Relative times have been also calculated as another set of features. There are around 220000 monitored `events' and 2100 different devices, so this is the amount of patterns to cluster.
 However, this time the data have been labelled using the number of different days every device has been detected (the recurrence rate).
 
-The results on this study are shown in Figure \ref{fig:som_disco_recurrencia}.
+The results of this study are shown in Figure \ref{fig:som_disco_recurrencia}.
 
 \begin{figure}[!htp]
 	\begin{center}
@@ -453,12 +453,12 @@ The results on this study are shown in Figure \ref{fig:som_disco_recurrencia}.
 
 As it can be seen in the U-MATRIX, every neuron (cell in the graph) has been labelled according to the class of the majority of the most similar input patterns. To this end the distance from every pattern to every neuron is computed considering their respective codevectors, the closest neuron to an input is named the best matching unit (BMU), and it is labelled with the pattern class (stage in this problem). Once the process has finished every neuron with more than one associated class finally displays the label with more occurrences.
 
-U-MATRIX graph shows three big clusters (blue areas), corresponding the bottom one to very frequent devices (they have returned more than 30 times). This lead us to think in staff going to work. Most of them are related with high stay times in the Terrace (node 102), as it is displayed in the Plane Analysis.
-The top cluster represents the amount of recurrences of people just going to the Ticket Office, since it corresponds to an area of high values for the variable 'rel\_time\_n132', but apparently, most of these people seem cannot access the rooms, as they spend a high percentage of their time close to that node.
+U-MATRIX graph shows three big clusters (blue areas), corresponding the bottom one to very frequent devices (they have returned more than 30 times). This leads us to think in staff going to work. Most of them are related to high stay times in the Terrace (node 102), as it is displayed in the Plane Analysis.
+The top cluster represents the amount of recurrences of people just going to the Ticket Office, since it corresponds to an area of high values for the variable `rel\_time\_n132', but apparently, most of these people seem cannot access the rooms, as they spend a high percentage of their time close to that node.
 
 Moreover, in the Plane Analysis, relative times in rooms of nodes 122 and 142 (Minor 1 and 2 respectively) seem to be complementary, meaning that recurrent people `strictly' choose between one room or another (depending on their musical taste).
 
-The knowledge extracted in this two analyses could be of interest for many issues, apart from the direct testing of the occupation with regard to the disco legal capacity. 
+The knowledge extracted in these two analyses could be of interest for many issues, apart from the direct testing of the occupation with regard to the disco legal capacity. 
 Knowing the behaviour of people could help to improve the security in the building, making the entrance and out easier in the most populated rooms.
 This system would be very useful also to analyse specific events and their development according to the behaviour of people.
 MOBYWIT also provides real data about the success of any of the rooms, giving data per hour that could be of interest for improving the energy consumption (one room could open or close earlier depending on the rush hours), for instance.
