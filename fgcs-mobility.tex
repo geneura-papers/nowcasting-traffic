@@ -484,7 +484,7 @@ In this section we will focus on people's mobility, as explained in Section \ref
 
 Since the devices can detect BT and WIFI signals from both the university staff and the students, two of them has been placed very close of the main access trying to distinguish staff (62) from students (52). The parking door (42) can only be used by the staff.
 
-The devices have been recording data for a few days only. With these data the origin-destination histogram that can be seen in figure \ref{fig:etsiit_io} has been created. A careful examination of this figure lets us extract some conclusions.
+The devices have been recording data for a few days only. With these data the origin-destination histogram that can be seen in Figure \ref{fig:etsiit_io} has been created. A careful examination of this figure lets us extract some conclusions.
 
 \begin{figure}[!ht]
 	\begin{center}
@@ -495,7 +495,7 @@ The devices have been recording data for a few days only. With these data the or
 \end{figure}
 
 \begin{itemize}
-\item Most people are students and they access the building through the students door (sensor 52 in figure \ref{fig:etsiit_map}). Most people get in and out by this door.
+\item Most people are students and they access the building through the students door (sensor 52 in Figure \ref{fig:etsiit_map}). Most people get in and out by this door.
 \item Professors and administrative staff seem to divide their way of getting in and out. They used the parking (sensor 42) as much as the main building door (sensor 62).
 \item Many students go out by the main building (62) after a supposedly visit to a professor or an administrative.
 %\item Some curious behavior has been discovered: some people who enter by door 42 exit by the parking (52). The only explanation possible is that the cafeteria and the lunch room are in the basement and they can get out without getting up one floor. %Antares - El sensor 52 es el de la puerta del aulario, no el del parking.
@@ -739,20 +739,16 @@ Finally, according to the results obtained, performing traffic forecasting using
 \section{Analysis of the urban traffic in a city}
 \label{sec:city}
 
-The information MOBYWIT device is able to provide for urban scope is wide, but we are mainly interested in two goals: to measure the trip time between several points in a city and the path the drivers follow across the city to arrive the closer highway. Both goals are the interest area of the local city council, so we start to monitoring the city for achieving them. 
+The information MOBYWIT is able to provide for urban scope is wide, but we are mainly interested in two goals: to measure the trip time between several points in a city and the path the drivers follow across the city to get to the closest highway. Both goals are the main area of interest of the local city council. However, in this work we have focused on the first issue as a test for our system.
 
-Traffic jams usually are present in every town and it could be produced by diverse reasons. There are several papers which classify the traffic jam causes, \cite{CausasAtascos1}\cite{CausasAtascos2}, but they have been studied in particular cities. Therefore, we can not apply the solutions provided by the authors of these papers to any city, we can solve the problem for a particular city taken the previous studies as starting point for our case and getting the good ideas for our case. A traffic jam is produced when the way or the street capacity is overflow for any reason during some time. Whatever the cause of the overflow, whether an unusual reason as a traffic accident, or a cause that remains over time as vehicles increasing around a new city area, drivers should avoid the area of the jam.
+Traffic jams are present in every town, produced when the street/road capacity is overflowed, due to usual (rush hours) or punctual reasons (accidents). Some authors have classified the traffic jam causes \cite{CausasAtascos1,CausasAtascos2}, but they have been studied in particular cities. 
 
+%When a driver finds himself in a traffic jam, the natural response is to plan another path to arrive his destination and the information, the competent authority provides, about other available path is appreciated by them. The selection of another path depends on driver destination and it could be different for each case. So, the first stage is to inform about the traffic jam and then the drivers decide to go across or miss it. The second stage is to provide the available paths and to turn off the vehicles, but this goal has not been addressed in the paper. 
 
-When a driver finds himself in a traffic jam, the natural response is to plan another path to arrive his destination and the information, the competent authority provides, about other available path is appreciated by them. The selection of another path depends on driver destination and it could be different for each case. So, the first stage is to inform about the traffic jam and then the drivers decide to go across or miss it. The second stage is to provide the available paths and to turn off the vehicles, but this goal has not been addressed in the paper. 
+To illustrate MOBYWIT's utility for early detection of traffic jams a small experiment has been carried out in Granada city (Spain). The goal of this experiment is to detect how the trip time varies between two nodes, A and B, in one of the main streets of the town, which is one-way, has four lanes, and it is regularly collapsed several hours a day. Figure \ref{fig:mososMapa} shows a map of this street and the location of the nodes. 
+The distance between both nodes is $168$ metres. 
 
-
-To illustrate the MOBYWIT utility for the first stage, early detection of a traffic jam is essential, and a little experiment has been carried out in Granada city (Spain). The goal of this experiment is to detect how varies in time the trip time from node A to node B. We have installed two MOBYWIT devices in the same street. It is one-way, has four lanes and is placed in a neighbourhood which regularly is collapsed. The map of the devices location is in Figure \ref{fig:mososMapa}. The distance between both nodes is about $168$ metres. These devices cannot detect all the real persons and vehicles moving close to them since not all of them emit BT or WiFi signals, however, after an open poll, which $600$ people answered, we conclude that around the $22\%$ of the drivers emit BT and around the $70\%$ of the drivers emit WiFi signal. We consider the sample is good and representative of the real world. 
-
-For this starting experiment, we measure the  time taken to go from the first to the second MOBYWIT device for each monitored device. The results of this experiment are displayed in Figure \ref{fig:mososTiempo}. In this figure, we have defined eight terms for the twenty-four hours of one day and they are placed over X axis. We calculate the average trip time, using all the collected data, being this value $85$ seconds. We referee that value as Global Trip Time Average (GTTA). After that, we calculate the boxplot for each term, scale the results to $[0,1]$ interval and represent it using their rate respect to GTTA value placed on the Y axis over $0.50$. That is, if the box is
-over $0.50$ value means that all the trips of that term are longer that GTTA value and if the box is below $0.50$ means that all the trips of this term are shorter than GTTA value. As you can see in the Figure, three terms are over $0.50$ so all the trips of these terms are longer than GTTA which indicates the trips during these terms are slower. The rest of the terms are below the $0.50$ level, so the trip times during these terms are faster than the GTTA value.
-
-\begin{figure}[htb]
+\begin{figure}[!htb]
 	\begin{center}
 		\includegraphics[scale=0.4]{imgs/mososMapa.eps}
 		\caption{Urban nodes location in Granada city.}
@@ -760,15 +756,25 @@ over $0.50$ value means that all the trips of that term are longer that GTTA val
 	\end{center}
 \end{figure}
 
-\begin{figure}[htb]
+Firstly we should note that, obviously, our devices cannot detect all the real people and vehicles moving close to them, since not all of them emit BT or WiFi signals. However, we conducted an open poll to $600$ people from which we conclude that around the $22\%$ of the drivers have the BT of the car activated and around the $70\%$ of the drivers emit WiFi signal. We consider the sample is good and representative of the real world, so we will use these results as a reference. 
+
+In the experiment we measure the average time taken to go from node A to B for each monitored device. The results of this experiment are displayed in Figure \ref{fig:mososTiempo}. 
+
+\begin{figure}[!htb]
 	\begin{center}
-		\includegraphics[scale=0.4]{imgs/MOSOS/mosos_graph_tiempos.eps}
-		\caption{Average time along the day for movements from node A to node B. We have grouped the hours of a day using eight terms. The first and the eighth terms include the night, in the second one the rush hour for morning beginning is included. The third period includes from 9:00am to 11:59am. The fourth term includes the evening until 2:59pm. The fifth includes from 3:00pm to 5:59pm, the sixth from 6:00 pm to 8:59pm and the seventh from 9:00pm to 11:59pm. The boxplot represents descriptive statistics for each term scaled to $[0,1]$ interval. The global trip time average is placed on $0.5$.}
+		\includegraphics[scale=0.35]{imgs/MOSOS/mosos_graph_tiempos.eps}
+		\caption{Average time in a day for displacements from node A to node B. We have grouped the hours of the day in eight terms (lapses). The first and the eighth terms belongs to the night. The second one includes the early rush hour in the morning. The third period (from 9:00 am to 11:59 am) is normally quite. The fourth term includes a second rush time period. Fifth period is also quite, while the sixth one (from 6:00 pm to 8:59 pm) is in another rush. The boxplot represents the relative time with regard to the global average trip duration ($0.5$).}
 	\label{fig:mososTiempo}
 	\end{center}
 \end{figure}
 
-In short, we demonstrate that only using MOBYWIT, without any additional data it is easy to know if the trip times are increasing or decreasing along the day. The utility that any council is able to give to this information could be rich and diverse. For example, if any council wants to monitor the streets and links the MOBYWIT output to the traffic light network, the traffic light regulation could be autonomous depending on the time that a monitored device spends to go from one checkpoint to another. 
+In this figure the day has been sliced into eight different terms (or lapses). We calculate the average trip time, using all the collected data, being this value $85$ seconds, and called Global Trip Time Average (GTTA). After that, we calculate the boxplot for each term, scale the results to $[0,1]$ interval and represent it using their rate with respect to GTTA value placed on the Y axis on $0.50$. That is, if the box is over $0.50$ means that all the trips of that term are longer that GTTA, and if the box is below $0.50$ means that all the trips of this term are shorter than GTTA. 
+
+Figure shows that four terms are over GTTA, meaning slower periods, with terms 2, 4 and 6 above all. This is an expected result since these periods include the rush hours. However, this has been contrasted just using data provided by MOBYWIT, which means that the system can be reliable.
+Thus, this could be useful to, for instance, adjust the duration of light traffic red/green intervals automatically, using these values as a reference.
+
+%without any additional data it is easy to know if the trip times are increasing or decreasing along the day. The utility that any council is able to give to this information could be rich and diverse. For example, if any council wants to monitor the streets and links the MOBYWIT output to the traffic light network, the traffic light regulation could be autonomous depending on the time that a monitored device spends to go from one checkpoint to another. 
+
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   CONCLUSIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
