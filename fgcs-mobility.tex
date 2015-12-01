@@ -298,7 +298,7 @@ As it can be seen in that figure, there are six main parts in the software layer
 
 \item \textit{Abdiel}: This component implements a set of services for accessing the devices from `outside' (mainly for activate/deactivate or update them). In addition, it performs the storage of gathered data (in blocks) in the server database. It is also implemented in PHP.
 
-\item \textit{Alejandría}: This is the system database. It is a MySQL instance placed in a local server. It is optimised (using indexes and table partitioning) to provide a close to real-time processing and data service.
+\item \textit{Alejandría}: This is the system database. It is a MySQL instance placed in a local server. It is optimised using b-tree indexes, stored procedures, table partitioning and temporally memory tables to provide a close to real-time processing and data service.
 
 \item \textit{Ezequiel}: This module is responsible for the publication of data in a cloud-based storage. It includes data mining, machine learning and forecast techniques to process these data in order to publish interesting or useful information about them.
 
@@ -306,11 +306,8 @@ As it can be seen in that figure, there are six main parts in the software layer
 
 \end{itemize}
 
-
 In addition, and as it is shown in Figure \ref{fig:mobywit}, the device runs a specific Operative System, called \textit{Horeb}, which is a modification of the original Raspbian 3.10.24, adapted by MOBYWIT system designer to be more robust (to power fails, for instance) and reliable.
 
-*** CONTAR CÓMO FUNCIONA AL DETECTAR ***
-% Antonio - TODO: ANTARES, revisa esto porfa. ;)
 There are several configuration parameters in the system, which sets important parts of the functionality, such as the intensity threshold to collect a received WiFi signal, or time limits to consider a device as obsolete or out of the range of the device.
 
 Every detected `pass-by' or mobility `event' is associated with a detection time, obtained by NTP (Network Time Protocol). These `events' are stored initially in the device's memory. After some time (also set in a parameter) the information is sent, in blocks, to the server, to avoid an overuse/saturation of the network.
@@ -327,13 +324,14 @@ MOBYWIT's system is tested in four different scenarios, described in the followi
 Firstly, we were interested in checking the possibilities of the system in an environment where change is very fast and it is, a priory, possible to detect a big amount of devices. Thus we decided to test MOBYWIT in a disco, using it also as a test for its utility inside buildings.
 Five devices have been deployed, one in every of the three main
 rooms, each one devoted to a different type of music, one on the main
-entrance, and one on the outdoor terrace (See the Appendix for more details). This scenario is interesting because it is assumed that 100\% of users have a smartphone, thus it would be a priori possible to track every single present device. The electromagnetic scenario is also quite {\em heavy}, which presented a challenge for testing the device.
+entrance, and one on the outdoor terrace (see the Appendix for more details). This scenario is interesting because it is assumed that 100\% of users have a smartphone, thus it would be a priori possible to track every single present device. The electromagnetic scenario is also quite {\em heavy}, which presented a challenge for testing the device.
 
 After processing and summarising data, a total of 2200 different devices were detected in one of the busiest nights in September (from a Thursday at 8 pm to Friday at 8 am), following the distribution per node shown in Figure \ref{fig:disco_data}. 
 
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{imgs/DISCO/time_series-linesPoints.eps}
+		%%%\includegraphics[width=\textwidth]{imgs/DISCO/time_series-linesPoints.eps}
+		\includegraphics[width=\textwidth]{imgs/DISCO/time_series-bars.png}
 		\caption{Detected devices distribution in a night in the Discotheque scenario by room.}
 		\label{fig:disco_data}
 	\end{center}
@@ -745,7 +743,7 @@ Traffic jams are present in every town, produced when the street/road capacity i
 
 %When a driver finds himself in a traffic jam, the natural response is to plan another path to arrive his destination and the information, the competent authority provides, about other available path is appreciated by them. The selection of another path depends on driver destination and it could be different for each case. So, the first stage is to inform about the traffic jam and then the drivers decide to go across or miss it. The second stage is to provide the available paths and to turn off the vehicles, but this goal has not been addressed in the paper. 
 
-To illustrate MOBYWIT's utility for early detection of traffic jams a small experiment has been carried out in Granada city (Spain). The goal of this experiment is to detect how the trip time varies between two nodes, A and B, in one of the main streets of the town, which is one-way, has four lanes, and it is regularly collapsed several hours a day. Figure \ref{fig:mososMapa} shows a map of this street and the location of the nodes. 
+To illustrate MOBYWIT's utility for early detection of traffic jams a small experiment has been carried out in Granada city (Spain). The goal of this experiment is to detect how the trip time varies between two nodes, A and B, in one of the main streets of the town, which is one-way, has four lanes, and it is regularly collapsed several hours a day. Figure \ref{fig:mososMapa} shows a map of this street and the location of the nodes (the exact location is shown in the Appendix). 
 The distance between both nodes is $168$ metres. 
 
 \begin{figure}[!htb]
@@ -832,14 +830,14 @@ This appendix presents additional information about the scenarios, such as the g
 \begin{tabular}{|c|c|p{5cm}|c|c|}
 \hline
 ID   &  Location & Latitude & Longitude \\ \hline
-102	 &  DISCO Terrace & -- & -- \\ \hline
-112	 &  DISCO Main room  & -- & --  \\ \hline
-122	 &  DISCO Minor room 1& -- & -- \\ \hline
-132	 &  DISCO Ticket office & -- & -- \\ \hline
-142	 &  DISCO Minor room 2& -- &  -- \\ \hline
+102	 &  DISCO Terrace & -Non-Allowed- & -Non-Allowed- \\ \hline
+112	 &  DISCO Main room  & -Non-Allowed- & -Non-Allowed-  \\ \hline
+122	 &  DISCO Minor room 1& -Non-Allowed- & -Non-Allowed- \\ \hline
+132	 &  DISCO Ticket office & -Non-Allowed- & -Non-Allowed- \\ \hline
+142	 &  DISCO Minor room 2& -Non-Allowed- &  -Non-Allowed- \\ \hline
 \end{tabular}
 }
-\caption{Location of the devices for Discotheque scenario.}
+\caption{Location of the devices for Discotheque scenario. The exact coordinates cannot be shown due to privacy reasons in a contract.}
 \label{tab:nodosDisco}
 \end{table}
 
