@@ -288,6 +288,7 @@ In each device, called MOBYWIT (Mobility by Wireless Tracking) the monitoring sy
 	\label{fig:mobywit}
 	\end{center}
 \end{figure}
+% Antonio - TODO - Pasar la imagen a inglés (S.O. -> O.S.)
 
 As it can be seen in that figure, there are six main parts in the software layer of the system, which are unidirectionally connected by a strict data flow. Those parts have been named as:
 \begin{itemize}
@@ -308,11 +309,11 @@ As it can be seen in that figure, there are six main parts in the software layer
 
 In addition, and as it is shown in Figure \ref{fig:mobywit}, the device runs a specific Operative System, called \textit{Horeb}, which is a modification of the original Raspbian 3.10.24, adapted by MOBYWIT system designer to be more robust (to power fails, for instance) and reliable.
 
-There are several configuration parameters in the system, which sets important parts of the functionality, such as the intensity threshold to collect a received WiFi signal, or time limits to consider a device as obsolete or out of the range of the device.
+There are several configuration parameters in the system, which set important parts of the functionality, such as the intensity threshold to collect a received WiFi signal, or time limits to consider a device as obsolete or out of the range of the device.
 
 Every detected `pass-by' or mobility `event' is associated with a detection time, obtained by NTP (Network Time Protocol). These `events' are stored initially in the device's memory. After some time (also set in a parameter) the information is sent, in blocks, to the server, to avoid an overuse/saturation of the network.
 
-MOBYWIT's system is tested in four different scenarios, described in the following sections, in order to prove its value in different urban problems.
+MOBYWIT system is tested in four different scenarios, described in the following sections, in order to prove its value in different urban problems.
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%   PEOPLE'S MOBILITY IN A DISCO  %%%%%%%%%%%%%%%%%%%%
@@ -526,8 +527,8 @@ realistic \textit{ratio} between both numbers has been computed.
 
 Six nodes were placed along different roads in Andalusia (southern Spain). 
 Figure \ref{fig:nodosDGT} shows the identifiers of these devices and their 
- placement. Exact locations is described in Appendix section. These locations have been chosen because they are the nearest   
-ones to existent loop detectors monitored by the DGT, and also, they have an
+ placement. Exact locations are described in Appendix section. These locations have been chosen because they are the nearest   
+ones to existing loop detectors monitored by the DGT, and also, they have an
 Internet connection to allow the transmission of data to our server. 
 There exist two groups of nodes: one in the province of Granada area 
 (1010, 1020 and 1030) and the other on the road to M{\'a}laga (1040, 1050 and 1060).
@@ -535,7 +536,7 @@ There exist two groups of nodes: one in the province of Granada area
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale=0.4]{imgs/nodos_dgt.eps}
-		\caption{Location of MOBYWIT devices for the highway traffic scenario}
+		\caption{Location of MOBYWIT devices in the highway traffic scenario}
 	\label{fig:nodosDGT}
 	\end{center}
 \end{figure}
@@ -761,7 +762,7 @@ In the experiment we measure the average time taken to go from node A to B for e
 \begin{figure}[!htb]
 	\begin{center}
 		\includegraphics[scale=0.35]{imgs/MOSOS/mosos_graph_tiempos.eps}
-		\caption{Average time in a day for displacements from node A to node B. We have grouped the hours of the day in eight terms (lapses). The first and the eighth terms belongs to the night. The second one includes the early rush hour in the morning. The third period (from 9:00 am to 11:59 am) is normally quite. The fourth term includes a second rush time period. Fifth period is also quite, while the sixth one (from 6:00 pm to 8:59 pm) is in another rush. The boxplot represents the relative time with regard to the global average trip duration ($0.5$).}
+		\caption{Average time in a day for displacements from node A to node B, grouping the hours of the day in eight terms (lapses). The first and the eighth terms belongs to the night. The second one includes the early rush hour in the morning. The third period (from 9:00 am to 11:59 am) is normally quite. The fourth term includes a second rush time period. Fifth period is also quite, while the sixth one (from 6:00 pm to 8:59 pm) is in another rush. The boxplot represents the relative time with regard to the global average trip duration ($0.5$).}
 	\label{fig:mososTiempo}
 	\end{center}
 \end{figure}
@@ -879,6 +880,8 @@ ID   & Province & Location & Latitude & Longitude \\ \hline
 \centering
 \resizebox{12cm}{!}{
 \begin{tabular}{|c|c|p{5cm}|c|c|}
+\hline
+ID   & Province & Location & Latitude & Longitude \\
 \hline
 A	 & Granada & Dr. Olóriz Street & 37.188187 & -3.607241\\ \hline
 B	 & Granada & Dr. Olóriz Street & 37.186997 & -3.607882\\ \hline
