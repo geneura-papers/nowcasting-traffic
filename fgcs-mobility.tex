@@ -47,7 +47,7 @@ $^2$ Departamento de Informática. EPS. Universidad de Jaén, Spain}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   ABSTRACT   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \begin{abstract}
-This paper presents a novel mobility monitoring system and some of its applications to address problems that would be solved in a Smart City, such as the optimization of traffic flows in terms of trip-time and security (Smart Traffic), and the improvement of security or energetic issues inside buildings.
+This paper presents a novel mobility monitoring system and some of its applications to address problems that would be solved in a Smart City, such as the optimisation of traffic flows in terms of trip-time and security (Smart Traffic), and the improvement of security or energetic issues inside buildings.
 The system tracks the movement of people and vehicles monitoring the
 radioelectric space, catching the  WiFi and Bluetooth signals emitted by personal (smartphones) or on-board (hands-free) devices. 
 A study has been conducted in four different real scenarios,
@@ -122,7 +122,7 @@ The huge amount of data produced have been processed using \textit{Big Data}
 % del Special Issue. ;D. Antares, esto es Big Data, ¿no? :D 
 % No es big data. Es mucho data. Y "deeply processed" no sé qué
 % significa - JJ
-techniques, transforming or summarizing them, in order to conduct
+techniques, transforming or summarising them, in order to conduct
 further analyses. Different methods have been applied, such as Data
 Mining, Time Series Forecasting, In/Out (Origin/Destination) matrices,
 or statistical procedures. % pero ¿con qué objetivo? - JJ
@@ -228,7 +228,7 @@ Moreover, being the traffic flow forecasting a trending topic, several surveys c
 
 In the last years the researches even assimilate new technologies
 for data analysis in this scope, such as Big Data \cite{TrafficFlowPredictionWithBigData2015} or Cloud-Computing approaches \cite{CloudComputing2014}. In the first one, Yisheng et al. face the traffic flow forecasting problem using temporal and spatial models at the same time, using simple forecasting models and assembling them in a global complex system. The results provide a time and a spatial place for each prediction. The second work, by Zhaosheng Yang et al., presents a traffic flow prediction model for large-scale road network using Cloud-Computing techniques. Thus, it implements
-successfully a Genetic Algorithm (GA) for optimizing a Support Vector
+successfully a Genetic Algorithm (GA) for optimising a Support Vector
 Machine (SVM) getting a higher prediction accuracy and a smaller
 running time.  
 
@@ -275,7 +275,7 @@ However, by joining BT and WiFi we pursue to increase the detection rate further
 \section{MOBYWIT}
 \label{sec:mobywit}
 
-Proposed device is a single-board computer, based on the Raspberri
+Proposed device is a single-board computer, based on the Raspberry
 Pi\footnote{https://es.wikipedia.org/wiki/Raspberry\_Pi} board. It includes two
 USB cards, namely BT and WiFi ones, both configured in monitor mode, to scan the radioelectric space searching for BT devices and beacon frames (for WiFi). 
 
@@ -340,7 +340,7 @@ After processing and summarising data, a total of 2200 different devices were de
 
 These data have been processed extracting several variables from them, in order to apply clustering methods. The aim is to find group behavioural patterns in the data, which could aid to make decisions about marketing or security in the building, for instance.
 
-The clustering study has been conducted by means of a Self-Organizing
+The clustering study has been conducted by means of a Self-Organising
 Map (SOM) \cite{Kohonen90}, a feed-forward neural network
 \cite{NN_Haykin94} that uses an unsupervised training algorithm and
 nonlinear regression techniques to learn or find unknown relationships
@@ -349,7 +349,7 @@ of the SOM is that it makes a nonlinear projection from a
 high-dimensional data space on a regular, low-dimensional (usually 2D)
 grid of neurons, called units. This grid can be later processed to
 obtain the unified distance matrix (U-matrix) \cite{UmatUlts} which
-uses SOM yielded neurons' codevectors (vectors of variables of the
+uses SOM yielded neurons' code-vectors (vectors of variables of the
 problem) as data source, and generates a matrix where each component
 is a distance measure between two adjacent neurons. Then, these
 distances are codified as different colour shades in a graph. 
@@ -450,7 +450,7 @@ The results of this study are shown in Figure \ref{fig:som_disco_recurrencia}.
 	\end{center}
 \end{figure}
 
-As it can be seen in the U-MATRIX, every neuron (cell in the graph) has been labelled according to the class of the majority of the most similar input patterns. To this end the distance from every pattern to every neuron is computed considering their respective codevectors, the closest neuron to an input is named the best matching unit (BMU), and it is labelled with the pattern class (stage in this problem). Once the process has finished every neuron with more than one associated class finally displays the label with more occurrences.
+As it can be seen in the U-MATRIX, every neuron (cell in the graph) has been labelled according to the class of the majority of the most similar input patterns. To this end the distance from every pattern to every neuron is computed considering their respective code-vectors, the closest neuron to an input is named the best matching unit (BMU), and it is labelled with the pattern class (stage in this problem). Once the process has finished every neuron with more than one associated class finally displays the label with more occurrences.
 
 U-MATRIX graph shows three big clusters (blue areas), corresponding the bottom one to very frequent devices (they have returned more than 30 times). This leads us to think in staff going to work. Most of them are related to high stay times in the Terrace (node 102), as it is displayed in the Plane Analysis.
 The top cluster represents the amount of recurrences of people just going to the Ticket Office, since it corresponds to an area of high values for the variable `rel\_time\_n132', but apparently, most of these people seem cannot access the rooms, as they spend a high percentage of their time close to that node.
