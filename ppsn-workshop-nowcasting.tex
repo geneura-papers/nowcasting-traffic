@@ -90,11 +90,9 @@ available. Data, as well as its processing, is available in a GitHub
 repository as part of the Open Science policy of our group. 
 
 The rest of the work is structured as follows. Section \ref{sec:soa}
-presents the background and state of the art on the main topics of the
-work: traffic and mobility monitoring, traffic series forecast, and
-smart city tools, among others. 
-Then, our monitoring device is introduced in Section \ref{sec:mobywit}.
-After this, there are four sections devoted to describe and analyse the different scenarios, namely: Section \ref{sec:disco} explains the discotheque scenario and the methods applied to its data, Section \ref{sec:etsiit} presents the study on the University building, Section \ref{sec:traffic} shows the analysis on the highway traffic, and Section \ref{sec:city} comments the scenario on the street of Granada.
+presents the background and state of the art. Then, our monitoring device is introduced in Section
+\ref{sec:mobywit}. The results on trying to use different prediction
+methods are described in section 
 Finally, Section \ref{sec:conclusions} plots the conclusions that we
 have reached in the work. 
 
@@ -152,11 +150,12 @@ There are several configuration parameters in the system, which set important pa
 
 Every detected `pass-by' or mobility `event' is associated with a detection time, obtained by NTP (Network Time Protocol). These `events' are stored initially in the device's memory. After some time (also set in a parameter) the information is sent, in blocks, to the server, to avoid an overuse/saturation of the network.
 
-MOBYWIT system is tested in four different scenarios, described in the
+The MOBYWIT system is tested in four different scenarios, described in the
 following sections, in order to prove its value in different urban
 problems. 
 
-\subsection{Data validation using other sources of data}
+\section{Nowcasting traffic}
+\label{sec:nowcasting}
 
 Different metrics will be used to obtain a correct correlation between the number of detected devices and the real number detected by the loop detectors. 
 
@@ -213,114 +212,27 @@ Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applyin
 \section{Conclusions}
 \label{sec:conclusions}
 
-In this work, MOBYWIT, a novel monitoring and tracking system which gathers mobility data from people and vehicles has been presented. Some of its applications have been shown, using the data collected by the system to address different issues in a city in order to make it `smarter'.
-Thus, four different scenarios have been studied:
-
-\begin{itemize}
-    \item A discotheque, which has been used as a `stress test' for the system and also to address issues on marketing, energetic efficiency and security in the building, considering the mobility of people inside it on different nights. Clustering methods have been applied in order to visualise and extract interesting knowledge about people's movements and recurrences to the disco.
-    \item A public building of the University of Granada, in which students', teachers' and other staff's movements have been analysed using origin/destination matrices with a similar objective than before: security, access improvements and (possibly) marketing reasons.
-    \item An interurban road, where the traffic flows have been studied and contrasted with real traffic data, using statistical methods to estimate the real number of vehicles. Forecast techniques have been applied with very good results in the short-term. The forecast has been applied with both real traffic values and captured values with MOBYWIT, adjusted with the calculated ratio of real vehicles / detected vehicles. Moreover, a matrix to show the average travel duration between nodes has been calculated.
-    \item An urban street, which is one of the main arteries of the city of Granada, so it is usually collapsed. A statistical analysis has been conducted to study the traffic flows, detecting possible jams. This information could be potentially used in order to improve the light signal synchronisations in that street.
-\end{itemize}
-
-The aim of the work was to show that the results of these studies could be the basis for solving the commented issues, as well as to prove the value and reliability of the presented system. 
-
-Since this paper is a kind of `proof of concept' for MOBYWIT, several future lines of research are open.
-Firstly, a deeper study on every issue addressed in the work can be done, focusing on every scenario, considering bigger amounts of data and applying some other techniques, which would improve the quality of the results. Moreover, we could aim to improve the methods of the state of the art for different problems, such as traffic forecast, for instance, but considering our gathered real data, offering these data as benchmarks for the scientific community.
-
-Also, some other problems in the city could be addressed using MOBYWIT devices, for instance, analysing people's and traffic mobility in the city, in order to improve services (to the tourists, for instance), conduct geo-marketing analyses \cite{Flyers-GeoMarketing,LaMarca-GeoMarketing}, increase the security mechanisms, or improve the public transport system.
-This would require the deployment of several devices around the city, in order to better build mobility graphs, origin/destination matrices and other mobility models.
-
-The system itself has some flaws or weak points that could be improved, such as avoiding the overlapping between detections in two different nodes (using unidirectional antennas or some kind of filters or blocking panels).
-
-Another point of improvement could be the use of Time Series Forecast techniques in order to complete `holes' in the detected `events' when there is a power cutoff on a device.
+`holes' in the detected `events' when there is a power cutoff on a device.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  ACKNOWLEDGEMENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Acknowledgements}
 
-This work has been supported in part by projects EPHEMECH (TIN2014-56494-C4-3-P, Spanish Ministry of Economy and Competitivity), PETRA (SPIP2014-01437, funded by Dirección General de Tráfico), PYR-2014-17 (GENIL project, awarded by CEI-BIOTIC Granada), and MOSOS (This work has been supported by the project with reference PRY142/14, which has been granted by Fundación Pública Andaluza Centro de Estudios Andaluces in the call 'IX Convocatoria de Proyectos de Investigación). We also thank the DGT and local council of Granada city, and their staff and researchers for their dedication and professionalism. 
+This work has been supported in part by projects EPHEMECH
+(TIN2014-56494-C4-3-P, Spanish Ministry of Economy and Competitivity),
+PETRA (SPIP2014-01437, funded by Dirección General de Tráfico),
+PYR-2014-17 (GENIL project, awarded by CEI-BIOTIC Granada), and MOSOS
+(This work has been supported by the project with reference PRY142/14,
+which has been granted by Fundación Pública Andaluza Centro de
+Estudios Andaluces in the call 'IX Convocatoria de Proyectos de
+Investigación). We also thank the DGT and their staff and researchers for their dedication and
+professionalism.  
 
 
 % ---------------------- BIBLIOGRAFÍA -----------------------
 
 \bibliographystyle{elsarticle-num}
-\bibliography{mobility}
-
-
-% ------------------------- APÉNDICE -----------------------
-
-
-\section{Appendix} 
-\label{appendix}
-
-This appendix presents additional information about the scenarios, such as the geographical position of the nodes and a comment about them, or some graphs showing the distribution of the gathered data.
-
-\begin{table}[H]
-\centering
-\resizebox{12cm}{!}{
-\begin{tabular}{|c|c|p{5cm}|c|c|}
-\hline
-ID   &  Location & Latitude & Longitude \\ \hline
-102	 &  DISCO Terrace & -Non-Allowed- & -Non-Allowed- \\ \hline
-112	 &  DISCO Main room  & -Non-Allowed- & -Non-Allowed-  \\ \hline
-122	 &  DISCO Minor room 1& -Non-Allowed- & -Non-Allowed- \\ \hline
-132	 &  DISCO Ticket office & -Non-Allowed- & -Non-Allowed- \\ \hline
-142	 &  DISCO Minor room 2& -Non-Allowed- &  -Non-Allowed- \\ \hline
-\end{tabular}
-}
-\caption{Location of the devices for Discotheque scenario. The exact coordinates cannot be shown due to privacy reasons in a contract.}
-\label{tab:nodosDisco}
-\end{table}
-
-\begin{table}[H]
-\centering
-\resizebox{12cm}{!}{
-\begin{tabular}{|c|c|p{5cm}|c|c|}
-\hline
-ID   &  Location & Latitude & Longitude \\ \hline
-42	 &  ETSIIT Parking & 37.197377 & -3.6247944\\ \hline
-52	 &  ETSIIT Main access of Students& 37.196729 &  -3.62435722\\ \hline
-62	 &  ETSIIT Main access of Staff & 37.196928 & -3.6244201\\ \hline
-\end{tabular}
-}
-\caption{Location of the devices for the Building of the University scenario.}
-\label{tab:nodosETSIIT}
-\end{table}
-
-\begin{table}[H]
-\centering
-\resizebox{12cm}{!}{
-\begin{tabular}{|c|c|p{5cm}|c|c|}
-\hline
-ID   & Province & Location & Latitude & Longitude \\ \hline
-1010 & Granada  & A-44 K.P. 118+300 increasing direction (link A-44 K.P. 118+300 with A-92 K.P. 241+000) & 37.241668  & -3.6526 \\ \hline
-1020 & Granada  & A-92 K.P. 294+300 increasing direction  & 37.318763 & -3.137978 \\ \hline
-1030 & Granada  & A-92 K.P. 344+950, increasing direction & 37.141298 & -2.710871 \\ \hline
-1040 & M{\'a}laga  & A-7  K.P. 241+800, decreasing direction (Link A-7 K.P. 241+800 with A-45 K.P. 142+400) &  36.757427 & -4.426879 \\ \hline
-1050 & M{\'a}laga  & A-45 K.P. 121+700, decreasing direction & 36.910454 & -4.444769 \\ \hline
-1060 & Granada & A-92 K.P. 177+900, decreasing direction (Link A-92 with A-92M) & 37.136209 & -4.282619 \\ \hline
-\end{tabular}
-}
-\caption{Location of the devices for the highway traffic scenario (K.P. = Kilometric Point).}
-\label{tab:nodosDGT}
-\end{table}
-
-
-\begin{table}[H]
-\centering
-\resizebox{12cm}{!}{
-\begin{tabular}{|c|c|p{5cm}|c|c|}
-\hline
-ID   & Province & Location & Latitude & Longitude \\
-\hline
-A	 & Granada & Dr. Olóriz Street & 37.188187 & -3.607241\\ \hline
-B	 & Granada & Dr. Olóriz Street & 37.186997 & -3.607882\\ \hline
-\end{tabular}
-}
-\caption{Location of the devices for the city traffic scenario.}
-\label{tab:nodosCity}
-\end{table}
+\bibliography{mobility,geneura-latin1}
 
 
 \end{document}
