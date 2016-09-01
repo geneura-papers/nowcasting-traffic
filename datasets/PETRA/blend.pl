@@ -13,6 +13,7 @@ my $id = shift || "1011";
 my %count_dgt = process_file( "DGT_$id.csv");
 my %count_petra = process_file( "PETRA_$id.csv");
 
+say "DoW,Mon,Hour,Detected,Real";
 for my $date ( keys %count_dgt ) {
   next if !$count_petra{$date};
   my ($year,$mon,$day,$hour) = ($date =~ /(\d+)-(\d+)-(\d+)\s+(\d)/);
