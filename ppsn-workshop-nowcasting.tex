@@ -26,15 +26,15 @@ $^2$ Departamento de Informática. EPS. Universidad de Jaén, Spain}
 
 
 \begin{abstract}
-Traffic flow measurement methods suffer must keep a balance between being comprehensive, expensive and cumbersome, such as traffic spirals, or being cheap, mobile but missing some counts.
+Traffic flow measurement methods must keep a balance between being comprehensive, expensive and cumbersome, such as traffic spirals, or being cheap, mobile but missing some counts.
 In the framework of a smart city project, our group has been
 developing MOBYWIT, a device that detects unique Bluetooth and Wifi
 MACs and thus is able to measure their traffic, but also to identify
 uniquely bearers so that we can find out the actual path a particular
-vehicle has followed. However, not all vehicles have bluetooth devices
+vehicle has followed. However, not all vehicles have Bluetooth devices
 and the relation between them and the actual number of vehicles varies
 along the day, the time of the day and characteristics of the road. 
-In this work our objective is to "nowcast", that is, to predict, using
+In this work our objective is to ``nowcast'', that is, to predict, using
 all available information, the real number of vehicles given that we
 have the number of vehicles bearing a wireless device. We will use
 classic and neural network techniques on data gathered in
@@ -62,10 +62,10 @@ Smart traffic \sep Transit indicators \sep Traffic forecast \sep Mobility analys
 
 Monitoring traffic and knowing the exact amount of vehicles that are
 occupying a street in a particular moment is an issue where you have
-to balance accuracy and price or convenience. Spirals embedded on the
+to balance accuracy and price or convenience. Spirals embedded in the
 road can give you the exact number of vehicles and even its type;
-however, besides being expensive per se, the road has to be opened
-and re-asphalted to install them so they cannot be intalled at short
+however, besides being expensive \textit{per se}, the road has to be opened
+and re-asphalted to install them so they cannot be installed at short
 notice. On the other hand, devices such as Mobywit
 \cite{DBLP:conf/smartct/Fernandez-AresA16}, which use some feature of
 vehicles such as the emitting devices in them, only count part of the
@@ -77,14 +77,16 @@ vehicles.
 On the other hand, the accurate knowledge of the amount of traffic is
 direly needed in the context of Smart Cities in order to avoid
 congestions and also be able to plan routes in advance. In this
-context, a solution can be using the less-acurate devices, which can
+context, a solution can be using the less-accurate devices, which can
 be deployed in a massive amount of places, to {\em now-cast}, that it,
 predict, the actual traffic passing by a particular point in that
 precise moment. 
 
-In this paper we will use data collected in the course of the PETRA
+In this paper, we will use data collected in the course of the PETRA \footnote{\url{https://proyectopetra.wordpress.com/}}
+%FERGU: el problema es que la web de PETRA está en español, pero la pongo por si acaso
 project to find out, from available data, the actual vehicle count in
 a place. We will use standard and bioinspired methods, and try to find
+%FERGU: se va a usar también los datos de espiras para validar? Si es así, indicarlo aquí
 what could be the best option for the volume and type of data
 available. Data, as well as its processing, is available in a GitHub
 repository as part of the Open Science policy of our group. 
@@ -105,7 +107,9 @@ have reached in the work.
 \section{Background and state of the art}
 \label{sec:soa}
 
-Nowcasting is just a way of predicting the value of data, and thus is not really a new methodology. However, as far as we have been able to find out, it has not been applied to vehicle traffic in the way we do in this paper. In \cite{hanabusa2013development} a model is used to nowcast traffic, instead of partial measurements, and in \cite{scharsching1996nowcasting} road conditions are predicted; in fact, many of the nowcasting applications are related to weather and merge data from different sources in order to predict with a certan spatial accuracy weather conditions.
+Nowcasting is just a way of predicting the value of data, and thus is not really a new methodology.
+%FERGU: is nowcasting a new term invented by us? If not, add citation.
+ However, as far as we have been able to find out, it has not been applied to vehicle traffic in the way we do in this paper. In \cite{hanabusa2013development} a model is used to nowcast traffic, instead of partial measurements, and in \cite{scharsching1996nowcasting} road conditions are predicted; in fact, many of the nowcasting applications are related to weather and merge data from different sources in order to predict with a certain spatial accuracy weather conditions.
 
 Our previous work has been mainly devoted to the design and description of the monitoring device itself \cite{DBLP:conf/smartct/Fernandez-AresA16}. In this paper, after describing the system in the next section, we will use available data to predict real traffic. 
 
