@@ -2,6 +2,7 @@
 # Makefile
 ###############################################################################
 
+LMK = -auxdir=../biblio latexmk -bibtex -pdf
 TEX = $(wildcard *.tex)
 PDF = $(TEX:.tex=.pdf)
 
@@ -10,7 +11,7 @@ PDF = $(TEX:.tex=.pdf)
 all: $(PDF)
 
 auto:
-	latexmk -bibtex -f -pdf -pvc
+	$(LMK)-f -pvc
 
 clean:
 	latexmk -C
@@ -19,7 +20,7 @@ clean:
 ###############################################################################
 
 %.pdf: %.tex
-	latexmk -bibtex -pdf $*
+	$(LMK) $*
 
 ###############################################################################
 
