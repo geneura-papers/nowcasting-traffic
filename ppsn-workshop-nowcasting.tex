@@ -107,10 +107,7 @@ have reached in the work.
 
 Nowcasting is just a way of predicting the value of data, and thus is not really a new methodology. However, as far as we have been able to find out, it has not been applied to vehicle traffic in the way we do in this paper. In \cite{hanabusa2013development} a model is used to nowcast traffic, instead of partial measurements, and in \cite{scharsching1996nowcasting} road conditions are predicted; in fact, many of the nowcasting applications are related to weather and merge data from different sources in order to predict with a certan spatial accuracy weather conditions.
 
-Our previous work has been mainly devoted to the design and description of the monitoring device itself \cite{DBLP:conf/smartct/Fernandez-AresA16}. In this paper, after describing the system, we will use available data to predict real traffic. 
-
-
-
+Our previous work has been mainly devoted to the design and description of the monitoring device itself \cite{DBLP:conf/smartct/Fernandez-AresA16}. In this paper, after describing the system in the next section, we will use available data to predict real traffic. 
 
 
 %------------------------------------------------------------------------------
@@ -120,11 +117,15 @@ Our previous work has been mainly devoted to the design and description of the m
 \section{MOBYWIT}
 \label{sec:mobywit}
 
-Proposed device is a single-board computer, based on the Raspberry
-Pi\footnote{https://es.wikipedia.org/wiki/Raspberry\_Pi} board. It includes two
-USB cards, namely BT and WiFi ones, both configured in monitor mode, to scan the radioelectric space searching for BT devices and beacon frames (for WiFi). 
+The proposed device, which we call MOBYWIT (Mobility monitoring by Wireless Tracking)  is a single-board computer, based on the Raspberry
+Pi\footnote{https://es.wikipedia.org/wiki/Raspberry\_Pi}. It includes
+BT and WiFi devices connected via USB and configured in monitor mode
+so that they can scan the radioelectric space searching for BT devices
+and beacon frames (for WiFi).
 
-In each device, called MOBYWIT (Mobility by Wireless Tracking) the monitoring system is formed by a hardware and a software layer very interconnected. It also includes Cloud-based storage and computing services. The software architecture of the system is shown in Figure \ref{fig:mobywit}. 
+In every device the monitoring system is formed by a closely coupled
+hardware and software layer. The device has to be connected to the
+Internet and stores data in the cloud. The software architecture of the system is shown in Figure \ref{fig:mobywit}. 
 
 \begin{figure}[ht]
 	\begin{center}
@@ -133,37 +134,100 @@ In each device, called MOBYWIT (Mobility by Wireless Tracking) the monitoring sy
 	\label{fig:mobywit}
 	\end{center}
 \end{figure}
-% Antonio - TODO - Pasar la imagen a inglés (S.O. -> O.S.)
 
-As it can be seen in that figure, there are six main parts in the software layer of the system, which are unidirectionally connected by a strict data flow. Those parts have been named as:
+Figure \ref{fig:mobywit} shows the six main parts in the software
+layer of the system, which are unidirectionally connected by a strict
+data flow. These parts perform the following functions:
 \begin{itemize}
 
-\item \textit{Raziel}: This module is in charge of the detection of BT and WiFi devices as well as of their identification (extracting and encrypting the MAC) and the periodic submission of this information to the server. It runs on the device and has been implemented in Java.
+\item \textit{Raziel} is in charge of the detection of BT and WiFi
+  devices as well as of their identification, that is, extracting and
+  encrypting the MAC,  as well as the periodic submission of this information
+  to the server. It runs on the device and has been implemented in
+  Java.
 
-\item \textit{Lilith}: This module acts as a gateway between the network of devices and the server. It allows the communications between nodes and between them and external networks. This component is also run on every device and implemented in PHP.
+\item \textit{Lilith} acts as a gateway between the network of devices
+  and the server, enabling the communications between nodes and between them and external networks. This component is also run on every device and implemented in PHP.
 
 \item \textit{Abdiel}: This component implements a set of services for accessing the devices from `outside' (mainly for activate/deactivate or update them). In addition, it performs the storage of gathered data (in blocks) in the server database. It is also implemented in PHP.
 
-\item \textit{Alejandría}: This is the system database. It is a MySQL instance placed in a local server. It is optimised using b-tree indexes, stored procedures, table partitioning and temporally memory tables to provide a close to real-time processing and data service.
+\item \textit{Alejandría} is the database managing subsystem, a MySQL
+  instance placed in a local server. It is optimised using b-tree
+  indexes, stored procedures, table partitioning and temporally memory
+  tables to provide a close to real-time processing and data service. 
 
-\item \textit{Ezequiel}: This module is responsible for the publication of data in a cloud-based storage. It includes data mining, machine learning and forecast techniques to process these data in order to publish interesting or useful information about them.
+\item \textit{Ezequiel} is responsible for the publication of data in
+  a cloud-based storage. It includes data mining, machine learning and
+  forecasting techniques that act on the data in order to publish
+  interesting or useful information about them. 
 
-\item \textit{Anan}: This is the cloud-based storage and services. It is based on Google technology so Anan stores and manages the data in a NoSQL format, by means of Google Fusion Tables. It also offers advanced visualisation methods to be more usable and attractive to the end-user of the system.
+\item \textit{Anan} is the cloud-based storage and services. It is
+  based on Google technology, storing the data in a NoSQL format by
+  means of Google Fusion Tables. It also offers advanced visualisation
+  methods to be more usable and attractive to the end-user of the
+  system. 
 
 \end{itemize}
 
-In addition, and as it is shown in Figure \ref{fig:mobywit}, the device runs a specific Operative System, called \textit{Horeb}, which is a modification of the original Raspbian 3.10.24, adapted by MOBYWIT system designer to be more robust (to power fails, for instance) and reliable.
+In addition the device runs a customized Operating System, called
+\textit{Horeb}, a modification of the original Raspbian 3.10.24,
+adapted by us to be more robust (to power failures, for instance) and
+reliable.
 
-There are several configuration parameters in the system, which set important parts of the functionality, such as the intensity threshold to collect a received WiFi signal, or time limits to consider a device as obsolete or out of the range of the device.
+There are several configuration parameters in the system, which set
+important parts of the functionality, such as the intensity threshold
+to collect a received WiFi signal, or time limits to consider a device
+as obsolete or out of the range of the device. 
 
-Every detected `pass-by' or mobility `event' is associated with a detection time, obtained by NTP (Network Time Protocol). These `events' are stored initially in the device's memory. After some time (also set in a parameter) the information is sent, in blocks, to the server, to avoid an overuse/saturation of the network.
+Every detected `pass-by' or mobility `event' is associated with a
+detection time, obtained by NTP (Network Time Protocol). These
+`events' are stored initially in the device's memory, but after some
+time (also set in a parameter) the information is sent, in blocks, to
+the server, to avoid an overuse/saturation of the network and also
+save bandwidth.
 
-The MOBYWIT system is tested in four different scenarios, described in the
-following sections, in order to prove its value in different urban
-problems. 
+Fron the point of view of this paper, MOBYWIT will collect the number
+of devices detected in a particular period of time; so the data we
+will have will be a timestamp and a vehicle count. 
 
 \section{Nowcasting traffic}
 \label{sec:nowcasting}
+
+Our intention in this paper, and particularly in this section, is to
+show that, in fact, there is a high correlation between the number of
+vehicles detected and the actual number of vehicles. In order to check
+it, the national traffic directorate made available data from their
+own spirals, situated near or in the same place as our MOBYWIT. This
+data is available from the same repository as this paper,
+\url{https://github.com/geneura-papers/nowcasting-traffic}. These data
+are from a single month in a single year, and only during 3 hours,
+although we have different days the week. The data is not too
+comprehensive, but at least gives us an idea of how the existing
+factors might influence the outcome. 
+
+
+One of the things we will have to take into account is that our device
+only detects WiFi and Bluetooth devices. In the case of vehicles, it
+is mainly hands-free BlueeTooth devices. These devices have to be
+installed and connected to be detected, unlike WiFi defices that do
+not actually need to be activated; however, very few vehicles nowadays
+actually include these devices. Only a fraction of vehicles will be
+equipped with any of them, and this amount will change with the time
+of the day and also the type of road; while you might expect many more
+hands-free devices in urban areas, there might not be as many in rural
+areas. Probably the time of the day and the type of traffic,
+commuters, services or professional traffic will also present a very
+different profile. While commuters might have a lower amount of BT
+devices, services or professional will almost always have one. That is
+why even as we know that it will always be a fraction, the actual
+number will change depending on many different factors. 
+
+In the next subsection we will use only the number of detected
+vehicles for nowcasting. In Subsection \ref{ss:nc} we will test
+different methods and also different variables to increase the
+accuracy.
+
+\subsection{Correlation between detected and actual number of vehicles}
 
 Different metrics will be used to obtain a correct correlation between the number of detected devices and the real number detected by the loop detectors. 
 
@@ -201,8 +265,6 @@ Median By Quarter of Hour Ratio & Depends on the hour  & \textbf{58.326} & \text
 
 Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applying the chosen correction ratio. As it can be seen, certain correlation exists. However, different peaks appear in the figure, being those elements the product of detecting few devices in comparison with the DGT.
 
-
-
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale=0.22]{imgs/petra_graph_DGT-Mobywit-mended.eps}
@@ -211,7 +273,8 @@ Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applyin
 	\end{center}
 \end{figure}
 
-
+\subsection{Context-sensitive nowcasting}
+\label{ss:nc}
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   CONCLUSIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
