@@ -27,7 +27,8 @@ $^2$ Departamento de Informática. EPS. Universidad de Jaén, Spain}
 
 \begin{abstract}
 Traffic flow measurement methods must keep a balance between being
-comprehensive, expensive and cumbersome, such as traffic spirals, or
+comprehensive, expensive and cumbersome, such as traffic spirals, also
+called {\em loops}, or
 being cheap, mobile but missing some vehicles. 
 In the framework of a smart city project, our group has been
 developing MOBYWIT, a device that detects unique Bluetooth and Wifi
@@ -64,12 +65,14 @@ Smart traffic \sep Transit indicators \sep Traffic forecast \sep Mobility analys
 
 Monitoring traffic and knowing the exact amount of vehicles that are
 occupying a street in a particular moment is an issue where you have
-to balance accuracy and price or convenience. Spirals embedded in the
+to balance accuracy and price or convenience. Spirals, also called
+traffic loops, 
+\cite{klein2006traffic} embedded in the
 road can give you the exact number of vehicles and even its type;
 however, besides being expensive \textit{per se}, the road has to be opened
 and re-asphalted to install them so they cannot be installed at short
 notice. On the other hand, devices such as Mobywit
-\cite{DBLP:conf/smartct/Fernandez-AresA16}, which use some feature of
+\cite{Castillo2014caplibro, DBLP:conf/smartct/Fernandez-AresA16}, which use some feature of
 vehicles such as the emitting devices in them, only count part of the
 devices and thus their accuracy is limited; incidentally, systems such
 as the one used by Google Maps also rely on mobile devices
@@ -254,18 +257,36 @@ accuracy.
 
 \subsection{Correlation between detected and actual number of vehicles}
 
-Different metrics will be used to obtain a correct correlation between the number of detected devices and the real number detected by the loop detectors. 
+Different metrics will be used to obtain a correct correlation between
+the number of detected devices and the real number detected by the
+loop detectors.  In this subsection we will only look at these two
+variables to check the relationship between them. We will examine the
+following ratios:
 
 \begin{itemize}
-\item {\em Total ratio}: ratio between the total number of vehicles detected by the DGT and the total number of vehicles detected by our device.
-\item {\em Mean ratio}: as the maximum granularity of the data provided by the DGT is 15 minutes, the sum of all ratios between the DGT data and our data in each 15 minute section has been divided by the total number of sections to calculate the average.
-\item {\em Median ratio}: instead the average ratio as in previous metric, this one uses the median of all ratios.
-\item {\em Mean by quarter ratio}: this metric calculates a vector of ratios separated by quarter of hour during the day, instead obtaining a global ratio for all data. An average ratio per quarter per hour in the vector is calculated taking into account all the ratios of that quarter during all the days we have data.
+\item {\em Total ratio}: ratio between the total number of vehicles
+  detected by the DGT and the total number of vehicles detected by our
+  device. 
+\item {\em Mean ratio}: as the maximum granularity of the data
+  provided by the DGT is 15 minutes, the sum of all ratios between the
+  DGT data and our data in each 15 minute section has been divided by
+  the total number of sections to calculate the average. 
+\item {\em Median ratio}: instead the average ratio as in previous
+  metric, this one uses the median of all ratios. 
+\item {\em Mean by quarter ratio}: this metric calculates a vector of
+  ratios separated by quarter of hour during the day, instead
+  obtaining a global ratio for all data. An average ratio per quarter
+  per hour in the vector is calculated taking into account all the
+  ratios of that quarter during all the days we have data. 
 \item {\em Median by quarter ratio}: as in the previous metric, this one uses a vector of ratios per quarter of hour, but every element is calculated using the median, instead the average.
 \end{itemize}
 
-
-Table \ref{tab:ratiosDGT} shows the obtained ratios. To simplify the data analysis and discussion only the data of one node (1010) are shown. Results show that our device detects one vehicle per approximately 19 detected by the DGT, according Total, Mean and Median ratios. However, best results in MAE and MAPE are attained obtaining ratios dividing by quarter. Therefore, for the rest of the paper this ratio has been chosen, as we need to deal with absolute values to perform forecasting analysis later.
+Table \ref{tab:ratiosDGT} shows the obtained ratios. To simplify the
+data analysis and discussion only the data for one node ({\tt 1010}) is
+shown. In general, our device detects one vehicle per
+approximately 19 detected by the DGT, according to Total, Mean and Median
+ratios. However, best results in MAE and MAPE are attained obtaining
+ratios dividing by quarter. 
 
 \begin{table}[htb]
 \centering
@@ -287,8 +308,11 @@ Median By Quarter of Hour Ratio & Depends on the hour  & \textbf{58.326} & \text
 \label{tab:ratiosDGT}
 \end{table}
 
-
-Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applying the chosen correction ratio. As it can be seen, certain correlation exists. However, different peaks appear in the figure, being those elements the product of detecting few devices in comparison with the DGT.
+Figure \ref{fig:dgtRatios} shows the number of devices detected in node
+{\tt 1010}, applying the chosen correction ratio. As it can be seen, certain
+correlation exists. However, different peaks appear in the figure,
+being those elements the product of detecting few devices in
+comparison with the DGT. 
 
 \begin{figure}[htb]
 	\begin{center}
@@ -297,6 +321,10 @@ Figure \ref{fig:dgtRatios} shows the number of devices of the node 1010, applyin
 	\label{fig:dgtRatios}
 	\end{center}
 \end{figure}
+
+The fact that the ratio of detected-to-actual vehicles is one in ten
+makes nowcasting a challenge. In the next section we will show how we
+can improve this result by using the context.
 
 \subsection{Context-sensitive nowcasting}
 \label{ss:nc}
