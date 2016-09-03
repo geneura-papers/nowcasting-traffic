@@ -26,7 +26,9 @@ $^2$ Departamento de Informática. EPS. Universidad de Jaén, Spain}
 
 
 \begin{abstract}
-Traffic flow measurement methods must keep a balance between being comprehensive, expensive and cumbersome, such as traffic spirals, or being cheap, mobile but missing some counts.
+Traffic flow measurement methods must keep a balance between being
+comprehensive, expensive and cumbersome, such as traffic spirals, or
+being cheap, mobile but missing some vehicles. 
 In the framework of a smart city project, our group has been
 developing MOBYWIT, a device that detects unique Bluetooth and Wifi
 MACs and thus is able to measure their traffic, but also to identify
@@ -85,8 +87,10 @@ precise moment.
 In this paper, we will use data collected in the course of the PETRA \footnote{\url{https://proyectopetra.wordpress.com/}}
 %FERGU: el problema es que la web de PETRA está en español, pero la pongo por si acaso
 project to find out, from available data, the actual vehicle count in
-a place. We will use standard and bioinspired methods, and try to find
-%FERGU: se va a usar también los datos de espiras para validar? Si es así, indicarlo aquí
+a place, obtained from the more precise spirals. We will use standard and bioinspired methods, and try to find
+%FERGU: se va a usar también los datos de espiras para validar? Si es
+%así, indicarlo aquíç
+%hecho - JJ
 what could be the best option for the volume and type of data
 available. Data, as well as its processing, is available in a GitHub
 repository as part of the Open Science policy of our group. 
@@ -107,11 +111,28 @@ have reached in the work.
 \section{Background and state of the art}
 \label{sec:soa}
 
-Nowcasting is just a way of predicting the value of data, and thus is not really a new methodology.
+Nowcasting \cite{tepper1971weather} is just a way of predicting the value of data, and thus is
+not really a new methodology; it refers to the type of data being
+predicted, that is, the value of some variable at the same time as the
+input variables, than to the actual way used to predict it. Initially
+it was applied to weather conditions, then was adopted by economics,
+and eventually extended to any field. 
 %FERGU: is nowcasting a new term invented by us? If not, add citation.
- However, as far as we have been able to find out, it has not been applied to vehicle traffic in the way we do in this paper. In \cite{hanabusa2013development} a model is used to nowcast traffic, instead of partial measurements, and in \cite{scharsching1996nowcasting} road conditions are predicted; in fact, many of the nowcasting applications are related to weather and merge data from different sources in order to predict with a certain spatial accuracy weather conditions.
+%Done - JJ
+ However, as far as we have been able to find out, it has not been
+ applied to vehicle traffic in the way we do in this paper. In
+ \cite{hanabusa2013development} a model is used to nowcast traffic,
+ instead of partial measurements, and in
+ \cite{scharsching1996nowcasting} road conditions are predicted; in
+ fact, many of the nowcasting applications are related to weather and
+ merge data from different sources in order to predict with a certain
+ spatial accuracy weather conditions. 
 
-Our previous work has been mainly devoted to the design and description of the monitoring device itself \cite{DBLP:conf/smartct/Fernandez-AresA16}. In this paper, after describing the system in the next section, we will use available data to predict real traffic. 
+Our previous work has been mainly devoted to the design and
+description of the monitoring device itself
+\cite{DBLP:conf/smartct/Fernandez-AresA16}. In this paper, after
+describing the system in the next section, we will use available data
+to predict real traffic.  
 
 
 %------------------------------------------------------------------------------
