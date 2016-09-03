@@ -329,6 +329,21 @@ can improve this result by using the context.
 \subsection{Context-sensitive nowcasting}
 \label{ss:nc}
 
+The information provided by the loops and MOBYWIT includes little more
+than the time. However, it is clear that the moment of the day and the
+weak has a clear influence on traffic, and it might also have an
+influence on the ratio of vehicles detected. That is why in this
+section we intend to train models taking into account the time: day of
+the week and time of the day. The month would have also been used, but
+all data available was for a single month, October, so it was not
+eventually relevant.
+
+We used the R datamining tool Rattle \cite{williams2009rattle} to
+perform this task. Rattle allows to analyze data in different ways, as
+well as train models and compare then with each other. We have tested
+four different models: Regression Trees, Forest Trees, Neural Networks
+and a simple linear model. 
+
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   CONCLUSIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %----------------------------------------------------------------------------
