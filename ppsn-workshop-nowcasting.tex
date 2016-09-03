@@ -384,7 +384,7 @@ Random Forest and Neural Net.
 %
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.2]{imgs/all_blended_plot-nn.png}
+		\includegraphics[scale=0.3]{imgs/all_blended_plot-nn.png}
 		\caption{Result of fit of the whole data set via a
                   backpropagation neural net.}
 	\end{center}
@@ -393,12 +393,27 @@ Random Forest and Neural Net.
 %
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.2]{imgs/all_blended_plot-rf.png}
+		\includegraphics[scale=0.3]{imgs/all_blended_plot-rf.png}
 		\caption{Result of fit of the whole data set via a random forest
                   (bottom). R-square value is inset.}
 	\end{center}
 	\label{fig:allfit:rf}
 \end{figure}
+%
+Plot of observed-vs-actual for the backpropagation neural net is shown
+in \ref{fig:allfit:nn} and for the random forest in
+\ref{fig:allfit:nn}. In this case, R-square results are worse than
+before, probably indicating that there is some specifity in the
+particular sensors that have an influence in result. The neural net
+obtains results that are slightly better with an R-square of around
+0.60 for 20 hidden nodes; the random forest R-square falls to 0.59
+with 400 trees. Besides, in this last case the hour matches its
+importance to the detected values, indicating that the context, in
+this case, is as important as the actual number of detected values;
+the importance for the day of the week is 2/3rds of them, so, in fact,
+context, that is, the day and the time of day have a high importance
+when nowcasting the actual number of vehicles in the road at a
+particular point in time. 
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   CONCLUSIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -407,7 +422,33 @@ Random Forest and Neural Net.
 \section{Conclusions}
 \label{sec:conclusions}
 
-`holes' in the detected `events' when there is a power cutoff on a device.
+In general, as we set to prove in this paper, detecting a fraction of
+vehicles using low-cost and mobile detectors such as MOBYWIT can help
+determine the actual number of vehicles with an accuracy that is
+around 70\% if sensor-specific data is available, or 60\% if it is
+not. In general, models underestimate the actual number of vehicles,
+and a backpropagation neural network trained with detected number of
+vehicles as well as the day of the week and hour has proved to obtain
+reliably good results, although it can be overcome by random forest if
+sensor-specific data is available.
+
+External factors not included in the model have a definite  influence
+in the result, as exemplified that sensor-independent models have less
+accuracy than sensor-specific ones. These might be type of road and
+type of traffic, but a deeper study of road conditions and traffic
+should be added to it. 
+
+The amount of vehicles detected is also related to the actual location
+of the sensor. Improving the antenna situation will definitely improve
+the signals detected by MOBYWIT. 10\%, as shown by the initial study,
+is really a low value and does not actually reflect the amount of
+vehicles bearing BT or WiFi antennas, so this study is actually
+telling us that a careful installation of antennas must be performed
+to improve the accuracy of the prediction.
+
+These conclusions above also inform future lines of work, along the
+lines of increasing context description and also the number of
+vehicles detected. This will be done in the near future.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%  ACKNOWLEDGEMENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
