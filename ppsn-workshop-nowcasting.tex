@@ -341,8 +341,46 @@ eventually relevant.
 We used the R datamining tool Rattle \cite{williams2009rattle} to
 perform this task. Rattle allows to analyze data in different ways, as
 well as train models and compare then with each other. We have tested
-four different models: Regression Trees, Forest Trees, Neural Networks
-and a simple linear model. 
+four different models: Regression Trees, Random Forest, Neural Networks
+and a simple linear model. As an initial exploration, we
+applied it to the data of a single node, {\tt 1011}. The results of
+different methods, with R-square values, are shown in Figure
+\ref{fig:1011fit}. 
+%
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.45]{imgs/blended_1011_plot.png}
+		\caption{Different regression models applied to the
+                  nowcasting of real traffic in node 1010. The graphs
+                  include R-square values, with higher is better. All
+                  graphs plot Real in the $x$ axis vs. predicted in
+                  the $y$ axis.}
+	\label{fig:1011fit}
+	\end{center}
+\end{figure}
+
+As is usually the case, the Random Forest, with 200 trees, model shows the best
+results, with an R-value of 0.7225. The backpropagation neural net
+model, with 10 hidden nodes, does have a good regression value of
+0.6868. The other two models show rather disappointing results, so
+they will be discarded. 
+
+It is interesting to note that the Random Forest, using the
+traditional algorithm, actually uses the context. While assigning an
+importance value of 7863.706 to the number of vehicles detected by
+MOBYWIT, it also assigns 3932.992 to the hour and 1000.817 to the day
+of the week. This indicates that these two context variables can
+actually {\em improve} the value of the prediction that we have shown
+before for just the detected value.
+
+In order to confirme these findings using the whole dataset, we will
+consider data from all detectors and blend them into a single file
+with 4755 observations, all of them in the same month. Even if the
+ratio of detected to actual might be different for different
+detectors, we will try to find out what would be the accuracy of a
+model that could be used in general for all detectors. Once again, we
+will use Rattle, but limited to the two models with the best R-value,
+Random Forest and Neural Net. 
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   CONCLUSIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
