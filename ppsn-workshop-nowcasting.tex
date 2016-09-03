@@ -349,7 +349,7 @@ different methods, with R-square values, are shown in Figure
 %
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.45]{imgs/blended_1011_plot.png}
+		\includegraphics[scale=0.35]{imgs/blended_1011_plot.png}
 		\caption{Different regression models applied to the
                   nowcasting of real traffic in node 1010. The graphs
                   include R-square values, with higher is better. All
@@ -380,7 +380,25 @@ ratio of detected to actual might be different for different
 detectors, we will try to find out what would be the accuracy of a
 model that could be used in general for all detectors. Once again, we
 will use Rattle, but limited to the two models with the best R-value,
-Random Forest and Neural Net. 
+Random Forest and Neural Net.
+%
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.2]{imgs/all_blended_plot-nn.png}
+		\caption{Result of fit of the whole data set via a
+                  backpropagation neural net.}
+	\end{center}
+	\label{fig:allfit:nn}
+\end{figure}
+%
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale=0.2]{imgs/all_blended_plot-rf.png}
+		\caption{Result of fit of the whole data set via a random forest
+                  (bottom). R-square value is inset.}
+	\end{center}
+	\label{fig:allfit:rf}
+\end{figure}
 
 %----------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   CONCLUSIONS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
