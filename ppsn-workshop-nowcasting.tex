@@ -226,7 +226,7 @@ will have will be a timestamp and a vehicle count.
 Our intention in this paper, and particularly in this section, is to
 show that, in fact, there is a high correlation between the number of
 vehicles detected and the actual number of vehicles. In order to check
-it, the national traffic directorate made available data from their
+it, the Spanish national traffic directorate (DGT) made available data from their
 own spirals, situated near or in the same place as our MOBYWIT. This
 data is available from the same repository as this paper,
 \url{https://github.com/geneura-papers/nowcasting-traffic}. These data
@@ -238,8 +238,8 @@ factors might influence the outcome.
 
 One of the things we will have to take into account is that our device
 only detects WiFi and Bluetooth devices. In the case of vehicles, it
-is mainly hands-free BlueeTooth devices. These devices have to be
-installed and connected to be detected, unlike WiFi defices that do
+is mainly hands-free Bluetooth devices. These devices have to be
+installed and connected to be detected, unlike WiFi devices that do
 not actually need to be activated; however, very few vehicles nowadays
 actually include these devices. Only a fraction of vehicles will be
 equipped with any of them, and this amount will change with the time
@@ -333,7 +333,7 @@ can improve this result by using the context.
 
 The information provided by the loops and MOBYWIT includes little more
 than the time. However, it is clear that the moment of the day and the
-weak has a clear influence on traffic, and it might also have an
+week has a clear influence on traffic, and it might also have an
 influence on the ratio of vehicles detected. That is why in this
 section we intend to train models taking into account the time: day of
 the week and time of the day. The month would have also been used, but
@@ -342,7 +342,7 @@ eventually relevant.
 
 We used the R datamining tool Rattle \cite{williams2009rattle} to
 perform this task. Rattle allows to analyze data in different ways, as
-well as train models and compare then with each other. We have tested
+well as train models and compare them with each other. We have tested
 four different models: Regression Trees, Random Forest, Neural Networks
 and a simple linear model. As an initial exploration, we
 applied it to the data of a single node, {\tt 1011}. The results of
@@ -446,7 +446,7 @@ the signals detected by MOBYWIT. 10\%, as shown by the initial study,
 is really a low value and does not actually reflect the amount of
 vehicles bearing BT or WiFi antennas, so this study is actually
 telling us that a careful installation of antennas must be performed
-to improve the accuracy of the prediction.
+to improve the accuracy of the prediction. %FERGU: we have not discussed about antenna location in the paper
 
 These conclusions above also inform future lines of work, along the
 lines of increasing context description and also the number of
