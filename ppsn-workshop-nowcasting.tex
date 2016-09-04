@@ -19,8 +19,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   AUTHORS   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\author{A.J. Fernández-Ares$^1$, A.M. Mora$^1$, M.G. Arenas$^1$, P. García-Sanchez$^1$, G. Romero$^1$, V. Rivas$^2$, P.A. Castillo$^1$, J.J. Merelo$^1$}
-\ead{\{antares, amorag, mgarenas, pablogarcia, gustavo, pacv, jmerelo\}@ugr.es, vrivas@ujaes.es}
+\author{A.J. Fernández-Ares$^1$, A.M. Mora$^1$, M.G. Arenas$^1$,
+  Paloma de las Cuevas$^1$, P. García-Sanchez$^1$, G. Romero$^1$, V. Rivas$^2$, P.A. Castillo$^1$, J.J. Merelo$^1$}
+\ead{\{antares, amorag, mgarenas, palomacd, pablogarcia, gustavo, pacv, jmerelo\}@ugr.es, vrivas@ujaes.es}
 \address{$^1$ Departamento de Arquitectura y Tecnología de Computadores.\\ ETSIIT - CITIC. University of Granada, Spain\\
 $^2$ Departamento de Informática. EPS. Universidad de Jaén, Spain}
 
@@ -36,15 +37,15 @@ MACs and thus is able to measure their generated traffic, but also to uniquely i
 vehicle has followed. However, not all vehicles have a Bluetooth device installed yet,
 and the ratio of vehicles with Bluetooth varies
 along the day, the time of the day, and characteristics of the road. 
-In this work our objective is to ``nowcast'', that is, to predict the actual number of vehicles, using
+In this work our objective is to ``nowcast'', that is, to predict the
+actual number of vehicles, using 
 all available information, 
- including the number of vehicles bearing a wireless device. 
-% I can not understand the previous sentence. Is it correctly written?   [pedro]
-% I've rewritten it [Paloma]
+including the number of vehicles bearing a wireless device and
+detected by a device. 
 We use classic and neural network techniques on data gathered in
 installations where we have both kinds of devices, MOBYWIT and spirals,
-%to try and find out some rules and give a more accurate estimate of the real number of cars in a particular road.
-obtaining good accuracies in the estimation of the real number of cars in a particular road.
+obtaining good accuracies in the estimation of the real number of cars
+in a particular road and usable results independently of the road. 
 \end{abstract}
 
 %
@@ -95,15 +96,17 @@ In this paper, we have used data collected in the course of the PETRA \footnote{
 %FERGU: el problema es que la web de PETRA está en español, pero la pongo por si acaso
 % ¿se podría poner una sección en inglés (un abstract al menos) y quien vaya a visitarla, que pueda entrar.  [pedro]
 project to find out, from the available data, the vehicle count in
-a place, which is then compared with the actual one from the more precise spirals. We use standard and bioinspired methods, trying to find
+a place, which is then compared with the actual one from the more precise spirals. We prove that,
+effectively, there is a correlation between both measurements so that predictions
+can actually be made. We will use standard and bioinspired methods, and try to find
 %FERGU: se va a usar también los datos de espiras para validar? Si es
 %así, indicarlo aquíç
 %hecho - JJ
-what is the best option for the volume and type of data
-available. Data, as well as its processing, is available in a GitHub
+what could be the best option for the volume and type of data
+available. Data, as well as its processing scripts, are available in a GitHub
 repository as part of the Open Science policy of our group. 
 % ¿podemos poner la URL en nota a pie de página?   [pedro]
-% (Paloma) Agree with Pedro
+% se pone al final del paper - JJ
 
 The rest of the work is structured as follows. Section \ref{sec:soa}
 presents the background and state of the art. Then, our monitoring device is introduced in Section
@@ -247,7 +250,9 @@ Our intention in this paper, and particularly in this section, is to
 show that, in fact, there is a high correlation between the number of
 vehicles detected and the actual number of vehicles. 
 % este objetivo creo que debería aparecer en el abstract. 
-% Es una buena frase para resumir el objetivo principal del paper  [pedro]
+% Es una buena frase para resumir el objetivo principal del paper
+% [pedro]
+% Añadido al principio - JJ
 In order to check
 it, the Spanish national traffic directorate (DGT) made available data from their
 own spirals, situated near or in the same place as our MOBYWIT. This
@@ -272,13 +277,16 @@ areas. %Si queréis se puede decir que la mayoría de los coches nuevos si dispone
 %de conexión BT, ya sea porque el vehículo es inteligente o porque dispone de 
 %conexión para el equipo de música. Voy a mirar que creo que tengo una referencia
 %citada en el trabajo de málaga.
+% Da igual el detalle. - JJ
  Probably the time of the day and the type of traffic,
 commuters, services or professional traffic will also present a very
 different profile. While commuters might have a lower amount of BT
 devices, services or professional will almost always have one. That is
 why even as we know that it will always be a fraction, the actual
 number will change depending on many different factors. 
-%El ejemplo que se pone siempre, es por ejemplo, que durante la noche viajan más "profesionales de la conducción" y menos tráfico "normal"
+%El ejemplo que se pone siempre, es por ejemplo, que durante la noche
+%viajan más "profesionales de la conducción" y menos tráfico "normal"
+%Lo tendré en cuenta en la presentación - JJ
 
 In the next subsection we will use only the number of detected
 vehicles for nowcasting. In Subsection \ref{ss:nc} we will test
@@ -379,7 +387,7 @@ different methods, with R-square values, are shown in Figure
 %
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale=0.35]{imgs/blended_1011_plot.png}
+		\includegraphics[scale=0.32]{imgs/blended_1011_plot.png}
 		\caption{Different regression models applied to the
                   nowcasting of real traffic in node 1010. The graphs
                   include R-square values, with higher is better. All
@@ -412,7 +420,7 @@ model that could be used in general for all detectors. Once again, we
 will use Rattle, but limited to the two models with the best R-value,
 Random Forest and Neural Net.
 %
-\begin{figure}[htb]
+\begin{figure}[h!tb]
 	\begin{center}
 		\includegraphics[scale=0.3]{imgs/all_blended_plot-nn.png}
 		\caption{Result of fit of the whole data set via a
@@ -421,7 +429,7 @@ Random Forest and Neural Net.
 	\label{fig:allfit:nn}
 \end{figure}
 %
-\begin{figure}[htb]
+\begin{figure}[h!tb]
 	\begin{center}
 		\includegraphics[scale=0.3]{imgs/all_blended_plot-rf.png}
 		\caption{Result of fit of the whole data set via a random forest
@@ -473,8 +481,12 @@ of the sensor. Improving the antenna situation will definitely improve
 the signals detected by MOBYWIT. 10\%, as shown by the initial study,
 is really a low value and does not actually reflect the amount of
 vehicles bearing BT or WiFi antennas, so this study is actually
-telling us that a careful installation of antennas must be performed
-to improve the accuracy of the prediction. %FERGU: we have not discussed about antenna location in the paper
+telling us that a careful installation of antennas or any other factor
+improving the number of vehicles detected must be performed
+to improve the accuracy of the prediction. %FERGU: we have not
+                                %discussed about antenna location in
+                                %the paper
+% En realidad cualquier medida que aumente el número de vehículos - JJ
 
 These conclusions above also inform future lines of work, along the
 lines of increasing context description and also the number of
