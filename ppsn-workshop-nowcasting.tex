@@ -152,7 +152,7 @@ to predict real traffic.
 
 The proposed device, which we call MOBYWIT (Mobility monitoring by Wireless Tracking)  is a single-board computer, based on the Raspberry
 Pi\footnote{https://es.wikipedia.org/wiki/Raspberry\_Pi}. It includes
-BT and WiFi devices connected via USB and configured in monitor mode
+BT and WiFi antenna connected via USB and configured in monitor mode (WiFi) and discovering mode (BT)
 so that they can scan the radioelectric space searching for BT devices
 and beacon frames (for WiFi).
 
@@ -170,37 +170,50 @@ Internet and stores data in the cloud. The software architecture of the system i
 
 Figure \ref{fig:mobywit} shows the six main parts in the software
 layer of the system, which are unidirectionally connected by a strict
-data flow. These parts perform the following functions:
-\begin{itemize}
+data flow. 
 
-\item \textit{Raziel} is in charge of the detection of BT and WiFi
-  devices as well as of their identification, that is, extracting and
-  encrypting the MAC,  as well as the periodic submission of this information
-  to the server. It runs on the device and has been implemented in
-  Java.
 
-\item \textit{Lilith} acts as a gateway between the network of devices
-  and the server, enabling the communications between nodes and between them and external networks. This component is also run on every device and implemented in PHP.
+\textit{Raziel} is the software in charge of the detection of BT and Wifi
+devices, identifying them by their MAC address. This software is able of upload
+the information in the server using \textit{Abdiel}, that provides an API REST
+to manage remotely the nodes and give access to the storage system: \textit{Alejandria}.
+The storage system is optimised to provide a close to real-time processing and data service.
+\textit{Ezequiel} is responsible for the data mining that act on the data in order to publish
+interesting or useful information about them in social networks and \textit{Anan}, the name of 
+the cloud-base storage and service based on the Google Technology of Google Fusion Tables.
+%Re-escrito resumido.
 
-\item \textit{Abdiel}: This component implements a set of services for accessing the devices from `outside' (mainly for activate/deactivate or update them). In addition, it performs the storage of gathered data (in blocks) in the server database. It is also implemented in PHP.
+% These parts perform the following functions:
+% \begin{itemize}
 
-\item \textit{Alejandría} is the database managing subsystem, a MySQL
-  instance placed in a local server. It is optimised using b-tree
-  indexes, stored procedures, table partitioning and temporally memory
-  tables to provide a close to real-time processing and data service. 
+% \item \textit{Raziel} is in charge of the detection of BT and WiFi
+%   devices as well as of their identification, that is, extracting and
+%   encrypting the MAC,  as well as the periodic submission of this information
+%   to the server. It runs on the device and has been implemented in
+%   Java.
 
-\item \textit{Ezequiel} is responsible for the publication of data in
-  a cloud-based storage. It includes data mining, machine learning and
-  forecasting techniques that act on the data in order to publish
-  interesting or useful information about them. 
+% \item \textit{Lilith} acts as a gateway between the network of devices
+%   and the server, enabling the communications between nodes and between them and external networks. This component is also run on every device and implemented in PHP.
 
-\item \textit{Anan} is the cloud-based storage and services. It is
-  based on Google technology, storing the data in a NoSQL format by
-  means of Google Fusion Tables. It also offers advanced visualisation
-  methods to be more usable and attractive to the end-user of the
-  system. 
+% \item \textit{Abdiel}: This component implements a set of services for accessing the devices from `outside' (mainly for activate/deactivate or update them). In addition, it performs the storage of gathered data (in blocks) in the server database. It is also implemented in PHP.
 
-\end{itemize}
+% \item \textit{Alejandría} is the database managing subsystem, a MySQL
+%   instance placed in a local server. It is optimised using b-tree
+%   indexes, stored procedures, table partitioning and temporally memory
+%   tables to provide a close to real-time processing and data service. 
+
+% \item \textit{Ezequiel} is responsible for the publication of data in
+%   a cloud-based storage. It includes data mining, machine learning and
+%   forecasting techniques that act on the data in order to publish
+%   interesting or useful information about them. 
+
+% \item \textit{Anan} is the cloud-based storage and services. It is
+%   based on Google technology, storing the data in a NoSQL format by
+%   means of Google Fusion Tables. It also offers advanced visualisation
+%   methods to be more usable and attractive to the end-user of the
+%   system. 
+
+% \end{itemize}
 
 %FERGU: if there is space constriction we could remove the parts of the system (already explained in other papers)
 
@@ -253,7 +266,11 @@ actually include these devices. Only a fraction of vehicles will be
 equipped with any of them, and this amount will change with the time
 of the day and also the type of road; while you might expect many more
 hands-free devices in urban areas, there might not be as many in rural
-areas. Probably the time of the day and the type of traffic,
+areas. %Si queréis se puede decir que la mayoría de los coches nuevos si disponen
+%de conexión BT, ya sea porque el vehículo es inteligente o porque dispone de 
+%conexión para el equipo de música. Voy a mirar que creo que tengo una referencia
+%citada en el trabajo de málaga.
+ Probably the time of the day and the type of traffic,
 commuters, services or professional traffic will also present a very
 different profile. While commuters might have a lower amount of BT
 devices, services or professional will almost always have one. That is
