@@ -64,19 +64,17 @@ Smart traffic \sep Transit indicators \sep Traffic forecast \sep Mobility analys
 \section{Introduction}
 \label{sec:intro}
 
-Monitoring traffic and knowing the exact amount of vehicles that are
-occupying a street in a particular moment is an issue where you have
-to balance accuracy and price or convenience. Spirals, also called
+When monitoring traffic, knowing the exact amount of vehicles that are
+occupying a street in a particular moment usualy requires finding a balance between accuracy and price or convenience. Spirals, also called
 traffic loops, 
-\cite{klein2006traffic} embedded in the
-road can give you the exact number of vehicles and even its type;
+\cite{klein2006traffic} are embedded in the
+road and can provide the exact number of vehicles as well as their weight, so that their type can be inferred;
 %Antares : Mediante el número de ejes o el peso, por si se quiere especificar
+% (Paloma) He incluido esta info que dice Antares
 however, besides being expensive \textit{per se}, the road has to be opened
 and re-asphalted to install them so they cannot be installed at short
 notice. On the other hand, devices such as MOBYWIT
-\cite{Castillo2014caplibro, DBLP:conf/smartct/Fernandez-AresA16}, which use some feature of
-vehicles such as the emitting devices in them, only count part of the
-devices and thus their accuracy is limited; incidentally, systems such
+\cite{Castillo2014caplibro, DBLP:conf/smartct/Fernandez-AresA16}, which take advantage of the emitting devices in the vehicles, cannot count those without this feature and thus their accuracy is limited; incidentally, systems such
 as the one used by Google Maps also rely on mobile devices
 transmitting their location and thus do not cover the totality of
 vehicles.
@@ -151,7 +149,7 @@ to predict real traffic.
 \label{sec:mobywit}
 
 The proposed device, which we call MOBYWIT (Mobility monitoring by Wireless Tracking)  is a single-board computer, based on the Raspberry
-Pi\footnote{https://es.wikipedia.org/wiki/Raspberry\_Pi}. It includes
+Pi\footnote{https://es.wikipedia.org/wiki/Raspberry\_Pi}. It includes both
 Bluetooth (BT) and WiFi antennas connected via USB and configured in monitor mode (WiFi) and discovering mode (BT), so that they can scan the radioelectric space searching for BT devices
 and beacon frames (for WiFi).
 
