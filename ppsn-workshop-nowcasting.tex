@@ -79,31 +79,36 @@ as the one used by Google Maps also rely on mobile devices
 transmitting their location and thus do not cover the totality of
 vehicles.
 
-On the other hand, the accurate knowledge of the amount of traffic is
+As a matter of fact, the accurate knowledge of the amount of traffic is
 direly needed in the context of Smart Cities in order to avoid
 congestions and also be able to plan routes in advance. In this
-context, a solution can be using the less-accurate devices, which can
-be deployed in a massive amount of places, to {\em now-cast}, that it,
+context, a solution can be using the less-accurate 
+% (Paloma) but cheaper ?
+devices, which can
+be deployed in a massive amount of places, to {\em now-cast}
+% (Paloma) Do we want to write nowcast like {\em now-cast} or like ``nowcast'' ?
+, that is,
 predict, the actual traffic passing by a particular point in that
 precise moment. 
 
-In this paper, we will use data collected in the course of the PETRA \footnote{\url{https://proyectopetra.wordpress.com/}}
+In this paper, we have used data collected in the course of the PETRA \footnote{\url{https://proyectopetra.wordpress.com/}}
 %FERGU: el problema es que la web de PETRA está en español, pero la pongo por si acaso
 % ¿se podría poner una sección en inglés (un abstract al menos) y quien vaya a visitarla, que pueda entrar.  [pedro]
-project to find out, from available data, the actual vehicle count in
-a place, obtained from the more precise spirals. We will use standard and bioinspired methods, and try to find
+project to find out, from the available data, the vehicle count in
+a place, which is then compared with the actual one from the more precise spirals. We use standard and bioinspired methods, trying to find
 %FERGU: se va a usar también los datos de espiras para validar? Si es
 %así, indicarlo aquíç
 %hecho - JJ
-what could be the best option for the volume and type of data
+what is the best option for the volume and type of data
 available. Data, as well as its processing, is available in a GitHub
 repository as part of the Open Science policy of our group. 
 % ¿podemos poner la URL en nota a pie de página?   [pedro]
+% (Paloma) Agree with Pedro
 
 The rest of the work is structured as follows. Section \ref{sec:soa}
 presents the background and state of the art. Then, our monitoring device is introduced in Section
 \ref{sec:mobywit}. The results on trying to use different prediction
-methods are described in section 
+methods are described in section \ref{sec:nowcasting}.
 Finally, Section \ref{sec:conclusions} plots the conclusions that we
 have reached in the work. 
 
