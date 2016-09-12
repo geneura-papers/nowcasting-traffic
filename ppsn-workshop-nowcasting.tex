@@ -35,7 +35,7 @@ called {\em loops}, or being cheap and mobile
 % Antonio - mobile -> non-intrusive? ¿por qué tienen que perder detecciones de vehículos?
 but missing some vehicles. 
 In the framework of a smart city project, our group has been
-developing MOBYWIT, a device that detects unique Bluetooth and Wifi
+developing MOBYWIT, a device that detects unique Bluetooth and WiFi
 % Antonio - detecta señales y 'extrae' las MACs 
 MACs and thus is able to measure their generated 
 % Antonio - generated -> associated
@@ -85,7 +85,7 @@ road and can provide the exact number of vehicles as well as their weight, so th
 however, besides being expensive \textit{per se}, the road has to be opened
 and re-asphalted to install them, so they cannot be installed at short
 notice. On the other hand, devices such as MOBYWIT
-\cite{Castillo2014caplibro, DBLP:conf/smartct/Fernandez-AresA16}, which take advantage of the emitting Bluetooth or Wifi devices on board the vehicles, cannot count those without this feature and thus their accuracy is limited; incidentally, 
+\cite{Castillo2014caplibro, DBLP:conf/smartct/Fernandez-AresA16}, which take advantage of the emitting Bluetooth or WiFi devices on board the vehicles, cannot count those without this feature and thus their accuracy is limited; incidentally, 
 % Antonio - yo borraría el 'incidentally' y pondría un punto y seguido. O pondría 'For instance'
 systems such as the one used by Google Maps also rely on mobile devices transmitting their location and thus do not cover the totality of
 vehicles.
@@ -99,7 +99,7 @@ devices, which can
 be deployed in a massive amount of places, to {\em now-cast}
 % (Paloma) Do we want to write nowcast like {\em now-cast} or like ``nowcast'' ?
 , that is, predict 
-% Antonio - yo añadiría ', rather than detect,' o ', in addition to detect,'
+% Antonio - yo añadiría ', rather than just detect,' o ', in addition to detect,'
 the actual traffic passing by a particular point in that precise moment. 
 
 In this paper, we have used data collected in the course of the PETRA \footnote{\url{https://proyectopetra.wordpress.com/}}
@@ -137,11 +137,9 @@ have reached in the work.
 \section{Background and state of the art}
 \label{sec:soa}
 
-Nowcasting \cite{tepper1971weather} is just a way of predicting the value of data, and thus is
-not really a new methodology; it refers to the type of data being
-predicted, that is, the value of some variable at the same time as the
-input variables, than to the actual way used to predict it. Initially,
-it was applied to weather conditions, then was adopted by economics,
+Nowcasting \cite{tepper1971weather} is just a way of predicting the value of data, and thus is not really a new methodology; it refers to the type of data being predicted, that is, the value of some variable at the same time as the
+input variables, rather than to the actual way used to predict it. Initially,
+it was applied to weather conditions, then it was adopted by economics,
 and eventually extended to any field. 
 %FERGU: is nowcasting a new term invented by us? If not, add citation.
 %Done - JJ
@@ -161,6 +159,7 @@ description of the monitoring device itself
 describing the system in the next section, we will use available data
 to predict real traffic.  
 
+% Antonio - esta sección habría que ampliarla un poco, ¿no? Sólo hay dos referencias a trabajos similares y no se ahonda siquiera en ellos.
 
 %------------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  MOBYWIT  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -169,10 +168,9 @@ to predict real traffic.
 \section{MOBYWIT}
 \label{sec:mobywit}
 
-The proposed device, which we call MOBYWIT (Mobility monitoring by Wireless Tracking)  is a single-board computer, based on the Raspberry
+The proposed device, which we call MOBYWIT (Mobility monitoring by Wireless Tracking) is a single-board computer, based on the Raspberry
 Pi\footnote{https://es.wikipedia.org/wiki/Raspberry\_Pi}. It includes both
-Bluetooth (BT) and WiFi antennas connected via USB and configured in monitor mode (WiFi) and discovering mode (BT), so that they can scan the radioelectric space searching for BT devices
-and beacon frames (for WiFi).
+Bluetooth (BT) and WiFi antennas connected via USB and configured in monitor mode (WiFi) and discovering mode (BT), so that they can scan the radioelectric space searching for BT devices and beacon frames (for WiFi).
 
 In every device the monitoring system is formed by a closely coupled
 hardware and software layer. The device has to be connected to the
@@ -191,7 +189,7 @@ layer of the system, which are unidirectionally connected by a strict
 data flow. 
 
 
-\textit{Raziel} is the software in charge of the detection of BT and Wifi
+\textit{Raziel} is the software in charge of the detection of BT and WiFi
 devices, identifying them by their MAC address. This software is able of upload
 the information in the server using \textit{Abdiel}, that provides an API REST
 to manage remotely the nodes and give access to the storage system: \textit{Alejandria}.
@@ -256,6 +254,11 @@ From the point of view of this paper, MOBYWIT will collect the number
 of devices detected in a particular period of time; so the data we
 will have will be a timestamp and a vehicle count. 
 
+
+%------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  NOWCASTING TRAFFIC  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------------------------------------------------------------------
+
 \section{Nowcasting traffic}
 \label{sec:nowcasting}
 
@@ -266,20 +269,19 @@ vehicles detected and the actual number of vehicles.
 % Es una buena frase para resumir el objetivo principal del paper
 % [pedro]
 % Añadido al principio - JJ
-In order to check
-it, the Spanish national traffic directorate (DGT) made available data from their
-own spirals, situated near or in the same place as our MOBYWIT. This
-data is available from the same repository as this paper,
-\url{https://github.com/geneura-papers/nowcasting-traffic}. These data
-are from a single month in a single year, and only during 3 hours,
-although we have different days the week. The data is not too
-comprehensive, but at least gives us an idea of how the existing
-factors might influence the outcome. 
+In order to check it, the Spanish national traffic agency (DGT) made available data from their own spirals, situated near or in the same place as our MOBYWIT nodes. This data are available from the same repository as this paper,
+\url{https://github.com/geneura-papers/nowcasting-traffic}. 
+% Antonio - entonces en el paper decimos de dónde se pueden descargar los fuentes del paper??? Yo pondría el enlace a los datos: https://github.com/geneura-papers/nowcasting-traffic/tree/master/datasets/PETRA
+These data
+are from a single month in a single year, and only during 3 hours per day,
+% Antonio - supongo que eran 3 horas por día
+although we have different days the week. The data is not too comprehensive, but at least gives us an idea of how the existing factors might influence the outcome. 
 
+% Antonio - en algún sitio habría que describir el escenario donde se recopilan los datos, ¿no? O al menos decir que es una autovía entre Granada y Málaga (o donde esté el punto que se ha considerado).
 
 One of the things we will have to take into account is that our device
-only detects WiFi and Bluetooth devices. In the case of vehicles, it
-is mainly hands-free Bluetooth devices. These devices have to be
+only detects WiFi and Bluetooth devices. In the case of vehicles, they
+are mainly hands-free Bluetooth devices. These devices have to be
 installed and connected to be detected, unlike WiFi devices that do
 not actually need to be activated; however, very few vehicles nowadays
 actually include these devices. Only a fraction of vehicles will be
@@ -294,7 +296,7 @@ areas. %Si queréis se puede decir que la mayoría de los coches nuevos si dispone
  Probably the time of the day and the type of traffic,
 commuters, services or professional traffic will also present a very
 different profile. While commuters might have a lower amount of BT
-devices, services or professional will almost always have one. That is
+devices, services or professionals will almost always have one. That is
 why even as we know that it will always be a fraction, the actual
 number will change depending on many different factors. 
 %El ejemplo que se pone siempre, es por ejemplo, que durante la noche
@@ -305,6 +307,8 @@ In the next subsection we will use only the number of detected
 vehicles for nowcasting. In Subsection \ref{ss:nc} we will test
 different methods and also different variables to increase the
 accuracy.
+
+% --------------------------------------------------------------------------
 
 \subsection{Correlation between detected and actual number of vehicles}
 
@@ -327,17 +331,22 @@ following ratios:
 \item {\em Mean by quarter ratio}: this metric calculates a vector of
   ratios separated by quarter of hour during the day, instead
   obtaining a global ratio for all data. An average ratio per quarter
-  per hour in the vector is calculated taking into account all the
-  ratios of that quarter during all the days we have data. 
+  per 
+ % Antonio - per -> of?
+  hour in the vector is calculated taking into account all the
+  ratios of that quarter during all the days for which we have data. 
 \item {\em Median by quarter ratio}: as in the previous metric, this one uses a vector of ratios per quarter of hour, but every element is calculated using the median, instead the average.
 \end{itemize}
 
 Table \ref{tab:ratiosDGT} shows the obtained ratios. To simplify the
-data analysis and discussion only the data for one node ({\tt 1010}) is
-shown. In general, our device detects one vehicle per
+data analysis and discussion only the data for one node ({\tt 1010}) are
+shown. 
+% Antonio - ¿Cómo se sabe qué nodo es ese? Poner una imagen o algo decir dónde está...
+In general, our device detects one vehicle per
 approximately 19 detected by the DGT, according to Total, Mean and Median
 ratios. However, best results in MAE and MAPE are attained obtaining
 ratios dividing by quarter. 
+% Antonio - Explicar qué implica o quiere decir este último apunte
 
 \begin{table}[htb]
 \centering
@@ -369,13 +378,18 @@ comparison with the DGT.
 	\begin{center}
 		\includegraphics[scale=0.22]{imgs/petra_graph_DGT-Mobywit-mended.eps}
 		\caption{Devices detected by DGT and detected by our device (node 1010) applying the correction ratio (median by quarter). Note: no DGT data available during October 14th.}
+% Antonio - no se ve apenas el título lateral de las gráficas. Yo lo quitaría y lo diría en el pie de la figura
 	\label{fig:dgtRatios}
 	\end{center}
 \end{figure}
+% Antonio - se podría mostrar también la gráfica de MOBYWIT sin ajustar, para ver el efecto del ajuste. ;)
+
 
 The fact that the ratio of detected-to-actual vehicles is one in ten
 makes nowcasting a challenge. In the next section we will show how we
 can improve this result by using the context.
+
+% --------------------------------------------------------------------------
 
 \subsection{Context-sensitive nowcasting}
 \label{ss:nc}
@@ -389,11 +403,13 @@ the week and time of the day. The month would have also been used, but
 all data available was for a single month, October, so it was not
 eventually relevant.
 
-We used the R datamining tool Rattle \cite{williams2009rattle} to
+We used the R data mining tool Rattle \cite{williams2009rattle} to
 perform this task. Rattle allows to analyze data in different ways, as
 well as train models and compare them with each other. We have tested
 four different models: Regression Trees, Random Forest, Neural Networks
-and a simple linear model. As an initial exploration, we
+and a simple linear model. 
+% Antonio - yo pondría una cita a cada uno
+As an initial exploration, we
 applied it to the data of a single node, {\tt 1011}. The results of
 different methods, with R-square values, are shown in Figure
 \ref{fig:1011fit}. 
@@ -404,30 +420,40 @@ different methods, with R-square values, are shown in Figure
 		\caption{Different regression models applied to the
                   nowcasting of real traffic in node 1010. The graphs
                   include R-square values, with higher is better. All
-                  graphs plot Real in the $x$ axis vs. predicted in
+                  graphs plot Real in the $x$ axis vs. Predicted in
                   the $y$ axis.}
 	\label{fig:1011fit}
 	\end{center}
 \end{figure}
+% Antonio - no se ve la cabecera de las figuras. Quitar texto y poner sólo el título 
 
-As is usually the case, the Random Forest, with 200 trees, model shows the best
+As is usually the case, 
+% Antonio - esto lo quitaría
+the Random Forest model, with 200 trees, shows the best
 results, with an R-value of 0.7225. The backpropagation neural net
 model, with 10 hidden nodes, does have a good regression value of
 0.6868. The other two models show rather disappointing results, so
 they will be discarded. 
 
 It is interesting to note that the Random Forest, using the
-conditional algorithm, actually uses the context. While assigning an
+conditional algorithm,
+% Antonio - ¿Qué es el 'conditional algorithm'?
+ actually uses the context. While assigning an
 importance value of 7863.706 to the number of vehicles detected by
 MOBYWIT, it also assigns 3932.992 to the hour and 1000.817 to the day
-of the week. This indicates that these two context variables can
+of the week. 
+% Antonio - estos valores no sé si son indicativos de algo, me refiero a los valores en sí o su magnitud, para un lector no experto.
+This indicates that these two context variables can
 actually {\em improve} the value of the prediction that we have shown
 before for just the detected value.
+% Antonio - Esta explicación es un tanto 'vaga'. Si se ponen los valores, yo daria una explicación basada en ellos.
 
-In order to confirme these findings using the whole dataset, we will
+In order to confirm these findings using the whole dataset, we will
 consider data from all detectors and blend them into a single file
 with 4755 observations, all of them in the same month. Even if the
-ratio of detected to actual might be different for different
+ratio of detected to 
+% Antonio - to -> versus
+actual might be different for different
 detectors, we will try to find out what would be the accuracy of a
 model that could be used in general for all detectors. Once again, we
 will use Rattle, but limited to the two models with the best R-value,
@@ -454,7 +480,7 @@ Random Forest and Neural Net.
 Plot of observed-vs-actual for the backpropagation neural net is shown
 in \ref{fig:allfit:nn} and for the random forest in
 \ref{fig:allfit:nn}. In this case, R-square results are worse than
-before, probably indicating that there is some specifity in the
+before, probably indicating that there is some specificity in the
 particular sensors that have an influence in result. The neural net
 obtains results that are slightly better with an R-square of around
 0.60 for 20 hidden nodes; the random forest R-square falls to 0.59
@@ -509,10 +535,8 @@ vehicles detected. This will be done in the near future.
 
 \section*{Acknowledgements}
 
-This work has been supported in part by projects EPHEMECH
-(TIN2014-56494-C4-3-P, Spanish Ministry of Economy and Competitivity),
-PETRA (SPIP2014-01437, funded by Dirección General de Tráfico),
-PYR-2014-17 (GENIL project, awarded by CEI-BIOTIC Granada), 
+This work has been supported in part by projects EPHEMECH (TIN2014-56494-C4-3-P, Spanish Ministry of Economy and Competitiveness), KNOWAVES (TEC2015-68752, Spanish Ministry of Economy and Competitiveness and FEDER),
+PETRA (SPIP2014-01437, funded by Dirección General de Tráfico), 
 PROY-PP2015-06 (Plan Propio 2015, funded by the University of Granada, Spain),
 and MOSOS (PRY142/14, granted by Fundación Pública Andaluza Centro de
 Estudios Andaluces in the call 'IX Convocatoria de Proyectos de Investigación). 
