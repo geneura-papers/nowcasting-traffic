@@ -77,18 +77,17 @@ Smart traffic \sep Transit indicators \sep Traffic forecast \sep Mobility analys
 \label{sec:intro}
 
 When monitoring traffic, knowing the exact amount of vehicles that are
-occupying a street in a particular moment usualy requires finding a balance between accuracy and price or convenience. Spirals, also called
-traffic loops, 
-\cite{klein2006traffic} are embedded in the
+occupying a street in a particular moment usually requires finding a balance between accuracy and price or convenience. Spirals, also called
+traffic loops, \cite{klein2006traffic} are embedded in the
 road and can provide the exact number of vehicles as well as their weight, so that their type can be inferred;
 %Antares : Mediante el número de ejes o el peso, por si se quiere especificar
 % (Paloma) He incluido esta info que dice Antares
 however, besides being expensive \textit{per se}, the road has to be opened
-and re-asphalted to install them so they cannot be installed at short
+and re-asphalted to install them, so they cannot be installed at short
 notice. On the other hand, devices such as MOBYWIT
-\cite{Castillo2014caplibro, DBLP:conf/smartct/Fernandez-AresA16}, which take advantage of the emitting devices in the vehicles, cannot count those without this feature and thus their accuracy is limited; incidentally, systems such
-as the one used by Google Maps also rely on mobile devices
-transmitting their location and thus do not cover the totality of
+\cite{Castillo2014caplibro, DBLP:conf/smartct/Fernandez-AresA16}, which take advantage of the emitting Bluetooth or Wifi devices on board the vehicles, cannot count those without this feature and thus their accuracy is limited; incidentally, 
+% Antonio - yo borraría el 'incidentally' y pondría un punto y seguido. O pondría 'For instance'
+systems such as the one used by Google Maps also rely on mobile devices transmitting their location and thus do not cover the totality of
 vehicles.
 
 As a matter of fact, the accurate knowledge of the amount of traffic is
@@ -99,9 +98,9 @@ context, a solution can be using the less-accurate
 devices, which can
 be deployed in a massive amount of places, to {\em now-cast}
 % (Paloma) Do we want to write nowcast like {\em now-cast} or like ``nowcast'' ?
-, that is,
-predict, the actual traffic passing by a particular point in that
-precise moment. 
+, that is, predict 
+% Antonio - yo añadiría ', rather than detect,' o ', in addition to detect,'
+the actual traffic passing by a particular point in that precise moment. 
 
 In this paper, we have used data collected in the course of the PETRA \footnote{\url{https://proyectopetra.wordpress.com/}}
 %FERGU: el problema es que la web de PETRA está en español, pero la pongo por si acaso
@@ -109,7 +108,9 @@ In this paper, we have used data collected in the course of the PETRA \footnote{
 project to find out, from the available data, the vehicle count in
 a place, which is then compared with the actual one from the more precise spirals. We prove that,
 effectively, there is a correlation between both measurements so that predictions
-can actually be made. We will use standard and bioinspired methods, and try to find
+can actually be made. We will use standard and 
+% Antonio - ¿cuáles son los métodos 'estándar' y por qué lo denominas así? Las ANNs son métodos bioinspirados y bastante estándar...
+bioinspired methods, and try to find
 %FERGU: se va a usar también los datos de espiras para validar? Si es
 %así, indicarlo aquíç
 %hecho - JJ
@@ -118,6 +119,7 @@ available. Data, as well as its processing scripts, are available in a GitHub
 repository as part of the Open Science policy of our group. 
 % ¿podemos poner la URL en nota a pie de página?   [pedro]
 % se pone al final del paper - JJ
+% Antonio - esta última frase no la pondría aquí, sino donde vaya el enlace y lo de la política del grupo carece de interés para el artículo. ;)
 
 The rest of the work is structured as follows. Section \ref{sec:soa}
 presents the background and state of the art. Then, our monitoring device is introduced in Section
