@@ -411,13 +411,13 @@ section we intend to train models taking into account the time: day of
 the week and time of the day. 
 % Antonio - incluir una tablita o lista de los campos a considerar, para que el lector tenga esa referencia cuando lea el texto de abajo
 The month would have also been used, but
-all data available was for a single month, October, so it was not
+all available data was for a single month, October, so it was not
 eventually relevant.
 
 We used the R data mining tool Rattle \cite{williams2009rattle} to
 perform this task. Rattle allows to analyze data in different ways, as
-well as train models and compare them with each other. We have tested
-four different models: Regression Trees, Random Forest, Neural Networks
+well as training models and compare them with each other. We have tested
+four different models: Regression Trees, Random Forest, Neural Networks,
 and a simple linear model. 
 % Antonio - yo pondría una cita a cada uno
 As an initial exploration, we
@@ -429,7 +429,8 @@ different methods, with R-square values, are shown in Figure
 	\begin{center}
 		\includegraphics[scale=0.32]{imgs/blended_1011_plot.png}
 		\caption{Different regression models applied to the
-                  nowcasting of real traffic in node 1010. The graphs
+                  nowcasting of real traffic in node 1010. % (Paloma) 1010? 1011? It's contradictory all along the paper, please review.
+                   The graphs
                   include R-square values, with higher is better. All
                   graphs plot Real in the $x$ axis vs. Predicted in
                   the $y$ axis.}
@@ -462,9 +463,7 @@ before for just the detected value.
 In order to confirm these findings using the whole dataset, we will
 consider data from all detectors and blend them into a single file
 with 4755 observations, all of them in the same month. Even if the
-ratio of detected to 
-% Antonio - to -> versus
-actual might be different for different
+ratio of detected-to-actual might be different for different
 detectors, we will try to find out what would be the accuracy of a
 model that could be used in general for all detectors. Once again, we
 will use Rattle, but limited to the two models with the best R-value,
@@ -488,13 +487,13 @@ Random Forest and Neural Net.
 	\label{fig:allfit:rf}
 \end{figure}
 %
-Plot of observed-vs-actual for the backpropagation neural net is shown
-in \ref{fig:allfit:nn} and for the random forest in
+The plot of detected-to-actual for the backpropagation Neural Net is shown
+in \ref{fig:allfit:nn} and for the Random Forest in
 \ref{fig:allfit:nn}. In this case, R-square results are worse than
 before, probably indicating that there is some specificity in the
-particular sensors that have an influence in result. The neural net
+particular sensors that have an influence in result. The Neural Net
 obtains results that are slightly better with an R-square of around
-0.60 for 20 hidden nodes; the random forest R-square falls to 0.59
+0.60 for 20 hidden nodes; the Random Forest R-square falls to 0.59
 with 400 trees.
 % Antonio - yo habría incluido una breve explicación del R y qué indica su valor par alos lectores no expertos. ;)
 Besides, in this last case the hour matches its
@@ -502,8 +501,8 @@ importance to the detected values,
 % Antonio - ¿dónde puede ver el lector lo que se cuenta de la hora?
 indicating that the context, in
 this case, is as important as the actual number of detected values;
-the importance for the day of the week is 2/3rds of them, so, in fact,
-context, that is, the day and the time of day have a high importance
+the importance for the day of the week is 2/3rds of them so, in fact,
+context, that is the day and the time of day, has a high importance
 when nowcasting the actual number of vehicles in the road at a
 particular point in time. 
 % Antonio - ¿todas estas conclusiones dónde puede verlas el lector? No hay datos/gráficas relativas a las diferentes variables, ¿no?
