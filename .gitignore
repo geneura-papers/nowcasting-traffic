@@ -13,6 +13,8 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.spl
+*.pdf
+*.synctex.gz
 *~
 .apdisk
 .AppleDB
