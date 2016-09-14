@@ -276,24 +276,25 @@ vehicles detected and the actual number of vehicles.
 % Es una buena frase para resumir el objetivo principal del paper
 % [pedro]
 % Añadido al principio - JJ
-In order to check it, the Spanish national traffic agency (DGT) made available data from their own spirals, situated near or in the same place as our MOBYWIT nodes. This data are available from the same repository as this paper,
-\url{https://github.com/geneura-papers/nowcasting-traffic}. 
+In order to check it, the Spanish national traffic agency (DGT) provided data from their own spirals, situated near or in the same place as our MOBYWIT nodes. These data are available from the same repository as this paper,
+\url{https://github.com/geneura-papers/nowcasting-traffic}, 
 % Antonio - entonces en el paper decimos de dónde se pueden descargar los fuentes del paper??? Yo pondría el enlace a los datos: https://github.com/geneura-papers/nowcasting-traffic/tree/master/datasets/PETRA
-These data
-are from a single month in a single year, and only during 3 hours per day,
+and belong to a single month in a single year, only during 3 hours per day,
 % Antonio - supongo que eran 3 horas por día
-although we have different days the week. The data is not too comprehensive, but at least gives us an idea of how the existing factors might influence the outcome. 
+although we have different days of the week. The data is not too comprehensive, but at least gives us an idea of how the existing factors might influence the outcome. 
 
 % Antonio - en algún sitio habría que describir el escenario donde se recopilan los datos, ¿no? O al menos decir que es una autovía entre Granada y Málaga (o donde esté el punto que se ha considerado).
 
-One of the things we will have to take into account is that our device
-only detects WiFi and Bluetooth devices. In the case of vehicles, they
-are mainly hands-free Bluetooth devices. These devices have to be
+One of the things have to take into account is which devices our device
+is able to detect through WiFi and BT signal detection. In the case of vehicles, they
+are mainly hands-free BT devices. These devices have to be
 installed and connected to be detected, unlike WiFi devices that do
-not actually need to be activated; however, very few vehicles nowadays
-actually include these devices. Only a fraction of vehicles will be
-equipped with any of them, and this amount will change with the time
-of the day and also the type of road; while you might expect many more
+not actually need to be activated. 
+% (Paloma) This is simply not true, as one has to manually activate WiFi in their smartphone. And in the case of vehicles is the same, they can natively have either WiFi or BT, or be installed manually in the case of BT (don't know about installing WiFi receivers in vehicles).
+However, very few vehicles
+actually include these devices nowadays. Only a fraction of vehicles are
+equipped with any of them, and this amount changes with the time
+of the day and also the type of road; while it might be expected many more
 hands-free devices in urban areas, there might not be as many in rural
 areas. %Si queréis se puede decir que la mayoría de los coches nuevos si disponen
 %de conexión BT, ya sea porque el vehículo es inteligente o porque dispone de 
@@ -302,7 +303,7 @@ areas. %Si queréis se puede decir que la mayoría de los coches nuevos si dispone
 % Da igual el detalle. - JJ
  Probably the time of the day and the type of traffic,
 commuters, services or professional traffic will also present a very
-different profile. While commuters might have a lower amount of BT
+different profile. While there might be a lower amount of commuters with BT
 devices, services or professionals will almost always have one. That is
 why even as we know that it will always be a fraction, the actual
 number will change depending on many different factors. 
