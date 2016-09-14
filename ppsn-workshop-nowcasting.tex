@@ -339,11 +339,12 @@ following ratios:
 \item {\em Mean by quarter ratio}: this metric calculates a vector of
   ratios separated by quarter of hour during the day, instead
   obtaining a global ratio for all data. An average ratio per quarter
-  per 
+  %per 
  % Antonio - per -> of?
+ % (Paloma) De hecho no es ni lo uno ni lo otro. Es quarter hour a secas.
   hour in the vector is calculated taking into account all the
   ratios of that quarter during all the days for which we have data. 
-\item {\em Median by quarter ratio}: as in the previous metric, this one uses a vector of ratios per quarter of hour, but every element is calculated using the median, instead the average.
+\item {\em Median by quarter ratio}: as in the previous metric, this one uses a vector of ratios per quarter hour, but every element is calculated using the median, instead the average.
 \end{itemize}
 
 Table \ref{tab:ratiosDGT} shows the obtained ratios. To simplify the
