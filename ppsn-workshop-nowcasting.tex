@@ -197,13 +197,12 @@ data flow.
 
 
 \textit{Raziel} is the software in charge of the detection of BT and WiFi
-devices, identifying them by their MAC address. This software is able of upload
+devices, identifying them by their MAC address. This software is able to upload
 the information in the server using \textit{Abdiel}, that provides an API REST
 to manage remotely the nodes and give access to the storage system: \textit{Alejandria}.
 The storage system is optimised to provide a close to real-time processing and data service.
-\textit{Ezequiel} is responsible for the data mining that act on the data in order to publish
-interesting or useful information about them in social networks and \textit{Anan}, the name of 
-the cloud-base storage and service based on the Google Technology of Google Fusion Tables.
+\textit{Ezequiel} is responsible for the data mining performed over the data, in order to publish
+interesting or useful information about them in social networks as well as in \textit{Anan}, the cloud-base storage and service based on the Google Technology of Google Fusion Tables.
 %Re-escrito resumido.
 
 % These parts perform the following functions:
@@ -240,26 +239,27 @@ the cloud-base storage and service based on the Google Technology of Google Fusi
 
 %FERGU: if there is space constriction we could remove the parts of the system (already explained in other papers)
 
-In addition the device runs a customized Operating System, called
+In addition, the device runs a customized Operating System called
 \textit{Horeb}, a modification of the original Raspbian 3.10.24,
 adapted by us to be more robust (to power failures, for instance) and
 reliable.
+% (Paloma) Aquí añadiría "for our purposes", porque si no estamos diciendo que Raspbian no es reliable :$
 
 There are several configuration parameters in the system, which set
 important parts of the functionality, such as the intensity threshold
 to collect a received WiFi signal, or time limits to consider a device
 as obsolete or out of the range of the device. 
+% (Paloma) ¿Por qué obsoleto? Obsolete es out of use, no out of range.
 
 Every detected `pass-by' or mobility `event' is associated with a
 detection time, obtained by NTP (Network Time Protocol). These
-`events' are stored initially in the device's memory, but after some
-time (also set in a parameter) the information is sent, in blocks, to
-the server, to avoid an overuse/saturation of the network and also
-save bandwidth.
+`events' are stored initially in the device memory, but after some
+time, which is also set in a parameter, the information is sent in blocks to
+the server to avoid an overuse/saturation of the network, as well as saving bandwidth.
 
-From the point of view of this paper, MOBYWIT will collect the number
-of devices detected in a particular period of time; so the data we
-will have will be a timestamp and a vehicle count. 
+From the point of view of this paper, MOBYWIT collects the number
+of devices detected in a particular period of time, so that the data we
+have consists of a timestamp and a vehicle count. 
 
 
 %------------------------------------------------------------------------------
