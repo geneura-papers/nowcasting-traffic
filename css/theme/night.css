@@ -16,7 +16,7 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 30px;
   font-weight: normal;
-  color: #eee; }
+  color: #111; }
 
 ::selection {
   color: #fff;
@@ -118,17 +118,17 @@ body {
   margin-left: 40px; }
 
 blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
+    color: #222 ;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
 }
 
 .reveal q,
 .reveal blockquote {
-    border-left: 10px solid #ccc;
+    border-left: 10px solid #333;
     quotes: "\201C""\201D""\2018""\2019"
 }
 
